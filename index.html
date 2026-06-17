@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KJ Digital World — Digital Marketing Expert</title>
+  <meta name="description" content="KJ Digital World helps businesses grow online through expert SEO, paid advertising, web design & development, and content marketing strategies.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ========================================
+       Global Styles & Resets
+       ======================================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --bg-dark: #0a0c10;
+      --bg-light: #ffffff;
+      --bg-light-alt: #f8f9fa;
+      --primary: #0066ff;
+      --primary-hover: #0052cc;
+      --text-white: #ffffff;
+      --text-gray: rgba(255, 255, 255, 0.7);
+      --text-dark: #111827;
+      --text-dark-gray: #4b5563;
+      --border-dark: rgba(255, 255, 255, 0.08);
+      --border-light: #e5e7eb;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4, .serif-text {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.2s ease;
+    }
+    
+    /* ========================================
+       Navigation
+       ======================================== */
+    .navbar {
+      padding: 24px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+    }
+    
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-white);
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    
+    /* ========================================
+       Buttons
+       ======================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary);
+      color: #fff;
+      border: none;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .btn-outline:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    
+    /* ========================================
+       Hero Section (Dark)
+       ======================================== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: 120px 20px 60px;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(0,255,128,0.1) 0%, rgba(0,102,255,0.15) 30%, rgba(0,0,0,0) 70%);
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      filter: blur(80px);
+    }
+    
+    .hero-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 24px;
+    }
+    
+    .hero h1 {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.1;
+      max-width: 900px;
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+    
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-gray);
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    /* ========================================
+       Stats Section (Light)
+       ======================================== */
+    .stats {
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      padding: 80px 5%;
+    }
+    
+    .stats-grid {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    
+    .stat-item {
+      text-align: center;
+      flex: 1;
+      min-width: 150px;
+      position: relative;
+    }
+    
+    .stat-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 15%;
+      height: 70%;
+      width: 1px;
+      background: var(--border-light);
+    }
+    
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      line-height: 1;
+    }
+    
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-dark-gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+    
+    /* ========================================
+       Services Section (Dark)
+       ======================================== */
+    .services {
+      padding: 120px 5%;
+      background: var(--bg-dark);
+      text-align: center;
+      position: relative;
+    }
+    
+    .section-tag {
+      color: var(--primary);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      display: inline-block;
+      font-weight: 600;
+    }
+    
+    .services h2 {
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      margin-bottom: 80px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.2;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .service-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-dark);
+      border-radius: 24px;
+      padding: 40px;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 150px;
+      opacity: 0.15;
+      filter: blur(40px);
+      z-index: 0;
+    }
+    
+    .service-card.blue::before { background: #0066ff; }
+    .service-card.green::before { background: #00ff88; }
+    .service-card.orange::before { background: #ff7700; }
+    
+    .service-card > * {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .service-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      font-size: 1.2rem;
+    }
+    
+    .service-card.blue .service-icon-box { background: rgba(0, 102, 255, 0.2); color: #66a3ff; }
+    .service-card.green .service-icon-box { background: rgba(0, 255, 136, 0.2); color: #33ff99; }
+    .service-card.orange .service-icon-box { background: rgba(255, 119, 0, 0.2); color: #ff9933; }
+    
+    .service-card h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    
+    .service-card p {
+      color: var(--text-gray);
+      font-size: 0.95rem;
+      margin-bottom: 30px;
+    }
+    
+    /* CSS Graphics for Cards */
+    .chart-graphic {
+      height: 120px;
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .chart-bar {
+      flex: 1;
+      background: rgba(255,255,255,0.1);
+      border-radius: 4px 4px 0 0;
+      transition: height 0.5s ease;
+    }
+    
+    .service-card.blue .chart-bar { background: linear-gradient(to top, rgba(0,102,255,0.2), rgba(0,102,255,0.8)); }
+    .service-card.green .chart-bar { background: linear-gradient(to top, rgba(0,255,136,0.2), rgba(0,255,136,0.8)); }
+    .service-card.orange .chart-bar { background: linear-gradient(to top, rgba(255,119,0,0.2), rgba(255,119,0,0.8)); }
+    
+    /* ========================================
+       Features Sections (Alternating Dark)
+       ======================================== */
+    .feature-row {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      padding: 100px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .feature-row:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    
+    .feature-content {
+      flex: 1;
+    }
+    
+    .feature-content h2 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+    
+    .feature-content p {
+      color: var(--text-gray);
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+    
+    .feature-list {
+      list-style: none;
+    }
+    
+    .feature-list li {
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1rem;
+    }
+    
+    .feature-list li::before {
+      content: '✓';
+      color: #00ff88;
+      font-weight: bold;
+      background: rgba(0, 255, 136, 0.1);
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 0.8rem;
+    }
+    
+    .feature-visual {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-dark);
+      border-radius: 24px;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 40px;
+    }
+    
+    /* Feature Graphics */
+    .graph-visual {
+      display: flex;
+      align-items: flex-end;
+      gap: 15px;
+      width: 100%;
+      height: 70%;
+    }
+    .graph-bar {
+      flex: 1;
+      background: linear-gradient(to top, #0033cc, #0066ff);
+      border-radius: 8px 8px 0 0;
+      box-shadow: 0 0 20px rgba(0,102,255,0.4);
+    }
+    
+    .social-visual {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .social-icon-lg {
+      width: 80px;
+      height: 80px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .social-icon-lg.meta { color: #1877f2; }
+    .social-icon-lg.ig { color: #e1306c; }
+    .social-icon-lg.tt { color: #fff; }
+    .social-icon-lg.yt { color: #ff0000; }
+    .social-icon-lg.ln { color: #0077b5; }
+    .social-icon-lg.x { color: #fff; }
+    
+    .browser-visual {
+      width: 100%;
+      height: 100%;
+      background: #1e1e1e;
+      border-radius: 12px;
+      border: 1px solid #333;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .browser-top {
+      height: 30px;
+      background: #2d2d2d;
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+      gap: 8px;
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot.r { background: #ff5f56; }
+    .dot.y { background: #ffbd2e; }
+    .dot.g { background: #27c93f; }
+    .browser-content {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .wire-hero { height: 40%; background: rgba(0,255,136,0.1); border-radius: 8px; }
+    .wire-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; flex: 1; }
+    .wire-box { background: rgba(255,255,255,0.05); border-radius: 8px; }
+    
+    /* ========================================
+       Trusted By (Dark)
+       ======================================== */
+    .trusted {
+      padding: 100px 5%;
+      text-align: center;
+      background: var(--bg-dark);
+      border-top: 1px solid var(--border-dark);
+      border-bottom: 1px solid var(--border-dark);
+    }
+    
+    .trusted h3 {
+      font-size: 2rem;
+      margin-bottom: 60px;
+    }
+    
+    .trusted h3 span {
+      color: #00ccff;
+    }
+    
+    .flags-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .flag-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    
+    .flag-item:hover {
+      opacity: 1;
+    }
+    
+    .flag-icon {
+      width: 48px;
+      height: 32px;
+      background: #333;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    
+    .flag-label {
+      font-size: 0.85rem;
+      color: var(--text-gray);
+    }
+    
+    /* ========================================
+       Process Section (Light)
+       ======================================== */
+    .process {
+      background: var(--bg-light-alt);
+      color: var(--text-dark);
+      padding: 120px 5%;
+      text-align: center;
+    }
+    
+    .process h2 {
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      margin-bottom: 80px;
+    }
+    
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .process-step {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .process-icon {
+      width: 70px;
+      height: 70px;
+      background: white;
+      color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(0,102,255,0.1);
+      border: 1px solid rgba(0,102,255,0.1);
+    }
+    
+    .process-step h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    
+    .process-step p {
+      color: var(--text-dark-gray);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    
+    /* ========================================
+       Packages Section (Light)
+       ======================================== */
+    .packages {
+      background: var(--bg-light);
+      color: var(--text-dark);
+      padding: 120px 5%;
+      text-align: center;
+    }
+    
+    .packages h2 {
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      margin-bottom: 80px;
+    }
+    
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .package-card {
+      background: #fff;
+      padding: 32px;
+      border-radius: 20px;
+      border: 1px solid var(--border-light);
+      text-align: left;
+      transition: box-shadow 0.3s;
+    }
+    
+    .package-card:hover {
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    }
+    
+    .package-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+    
+    .pkg-1 { background: rgba(0, 102, 255, 0.1); color: #0066ff; }
+    .pkg-2 { background: rgba(0, 204, 255, 0.1); color: #00ccff; }
+    .pkg-3 { background: rgba(0, 255, 136, 0.1); color: #00ff88; }
+    .pkg-4 { background: rgba(255, 153, 0, 0.1); color: #ff9900; }
+    .pkg-5 { background: rgba(255, 68, 68, 0.1); color: #ff4444; }
+    .pkg-6 { background: rgba(153, 0, 255, 0.1); color: #9900ff; }
+    
+    .package-card h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    
+    .package-card p {
+      color: var(--text-dark-gray);
+      font-size: 0.95rem;
+    }
+    
+    /* ========================================
+       Pricing Section (Dark)
+       ======================================== */
+    .pricing {
+      padding: 120px 5%;
+      text-align: center;
+      background: var(--bg-dark);
+      position: relative;
+    }
+    
+    .pricing h2 {
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      margin-bottom: 20px;
+    }
+    
+    .pricing-desc {
+      color: var(--text-gray);
+      margin-bottom: 80px;
+      font-size: 1.1rem;
+    }
+    
+    .pricing-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: stretch;
+      flex-wrap: wrap;
+    }
+    
+    .price-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-dark);
+      border-radius: 24px;
+      padding: 48px 40px;
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    
+    .price-card.featured {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(0, 102, 255, 0.4);
+      transform: scale(1.05);
+      z-index: 10;
+      box-shadow: 0 20px 60px rgba(0, 102, 255, 0.1);
+    }
+    
+    .featured-badge {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    
+    .price-card h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+    
+    .price-amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      margin-bottom: 16px;
+      line-height: 1;
+      font-weight: 600;
+    }
+    
+    .price-amount span {
+      font-size: 1.1rem;
+      color: var(--text-gray);
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+    }
+    
+    .price-card > p {
+      color: var(--text-gray);
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+      min-height: 45px;
+    }
+    
+    .price-features {
+      list-style: none;
+      margin-bottom: 40px;
+      flex: 1;
+    }
+    
+    .price-features li {
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    
+    .price-features li::before {
+      content: '✓';
+      color: var(--primary);
+      font-weight: bold;
+    }
+    
+    .btn-full {
+      width: 100%;
+      justify-content: center;
+    }
+    
+    /* ========================================
+       Footer
+       ======================================== */
+    footer {
+      padding: 60px 5% 40px;
+      background: var(--bg-dark);
+      border-top: 1px solid var(--border-dark);
+      text-align: center;
+      color: var(--text-gray);
+      font-size: 0.95rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero h1 { font-size: 3.5rem; }
+      .feature-row, .feature-row:nth-child(even) { flex-direction: column; gap: 40px; }
+      .price-card.featured { transform: scale(1); }
+      .stat-item:not(:last-child)::after { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-logo">KJ Digital</div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#" class="btn btn-outline" style="padding: 10px 24px; font-size:0.9rem;">Contact us</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-label">KJ Digital World</div>
+    <h1>Grow your business beyond borders</h1>
+    <p>We help businesses dominate their market through data-driven SEO, high-ROI paid advertising, stunning web design, and engaging content.</p>
+    <div class="hero-buttons">
+      <a href="#pricing" class="btn btn-primary">Start Building</a>
+      <a href="#contact" class="btn btn-outline">Book a call</a>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">150<span style="color:var(--primary)">+</span></div>
+        <div class="stat-label">Clients Served</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">120<span style="color:var(--primary)">+</span></div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Industry Awards</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">11</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <span class="section-tag">Services</span>
+    <h2>Every service your brand needs — In one place.</h2>
+    <div class="services-grid">
+      <!-- Card 1 -->
+      <div class="service-card blue">
+        <div class="service-icon-box">📈</div>
+        <h3>Paid Advertising</h3>
+        <p>Maximize your ROI with targeted Google and Meta campaigns that put your brand in front of the right audience.</p>
+        <div class="chart-graphic">
+          <div class="chart-bar" style="height: 30%"></div>
+          <div class="chart-bar" style="height: 50%"></div>
+          <div class="chart-bar" style="height: 70%"></div>
+          <div class="chart-bar" style="height: 90%"></div>
+          <div class="chart-bar" style="height: 100%"></div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="service-card green">
+        <div class="service-icon-box">🔍</div>
+        <h3>Search Engine Optimization</h3>
+        <p>Dominate search results with data-driven SEO strategies to drive organic traffic and outperform competitors.</p>
+        <div class="chart-graphic">
+          <div class="chart-bar" style="height: 40%"></div>
+          <div class="chart-bar" style="height: 60%"></div>
+          <div class="chart-bar" style="height: 85%"></div>
+          <div class="chart-bar" style="height: 95%"></div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="service-card orange">
+        <div class="service-icon-box">✍️</div>
+        <h3>Content Marketing</h3>
+        <p>Engaging content that tells your brand story, builds authority, and drives engagement across all platforms.</p>
+        <div class="chart-graphic">
+          <div class="chart-bar" style="height: 50%"></div>
+          <div class="chart-bar" style="height: 60%"></div>
+          <div class="chart-bar" style="height: 70%"></div>
+          <div class="chart-bar" style="height: 100%"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 1 -->
+  <section class="feature-row">
+    <div class="feature-content">
+      <span class="section-tag" style="color: #00ff88;">Organic Growth</span>
+      <h2>SEO that puts you on page one.</h2>
+      <p>Stop hiding on page two. Our technical and content-driven SEO strategies ensure your customers find you exactly when they're looking for your services.</p>
+      <ul class="feature-list">
+        <li>Comprehensive site audits</li>
+        <li>On-page & Off-page optimization</li>
+        <li>Keyword research & strategy</li>
+        <li>Monthly performance reporting</li>
+      </ul>
+      <br>
+      <a href="#" class="btn btn-primary" style="background:#0066ff">Learn More</a>
+    </div>
+    <div class="feature-visual">
+      <div class="graph-visual">
+        <div class="graph-bar" style="height: 20%"></div>
+        <div class="graph-bar" style="height: 35%"></div>
+        <div class="graph-bar" style="height: 50%"></div>
+        <div class="graph-bar" style="height: 75%"></div>
+        <div class="graph-bar" style="height: 100%"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 2 -->
+  <section class="feature-row">
+    <div class="feature-content">
+      <span class="section-tag" style="color: #0066ff;">Paid Media</span>
+      <h2>Every platform.<br>Maximum reach.</h2>
+      <p>We leverage industry-leading platforms to put your brand in front of high-intent audiences, driving conversions and reducing your cost-per-acquisition.</p>
+      <br>
+      <a href="#" class="btn btn-primary">Start a Campaign</a>
+    </div>
+    <div class="feature-visual">
+      <div class="social-visual">
+        <div class="social-icon-lg meta">f</div>
+        <div class="social-icon-lg ig">📸</div>
+        <div class="social-icon-lg x">𝕏</div>
+        <div class="social-icon-lg tt">♪</div>
+        <div class="social-icon-lg yt">▶</div>
+        <div class="social-icon-lg ln">in</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 3 -->
+  <section class="feature-row">
+    <div class="feature-content">
+      <span class="section-tag" style="color: #00ff88;">Web Design</span>
+      <h2>Websites that work as hard as you.</h2>
+      <p>Your website is your best salesperson. We build blazing-fast, conversion-optimized websites that look stunning and turn visitors into loyal customers.</p>
+      <ul class="feature-list">
+        <li>Custom UI/UX Design</li>
+        <li>Mobile-first development</li>
+        <li>E-commerce solutions</li>
+        <li>Performance optimization</li>
+      </ul>
+      <br>
+      <a href="#" class="btn btn-primary" style="background:#0066ff">View Portfolio</a>
+    </div>
+    <div class="feature-visual">
+      <div class="browser-visual">
+        <div class="browser-top">
+          <div class="dot r"></div>
+          <div class="dot y"></div>
+          <div class="dot g"></div>
+        </div>
+        <div class="browser-content">
+          <div class="wire-hero"></div>
+          <div class="wire-grid">
+            <div class="wire-box"></div>
+            <div class="wire-box"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted By -->
+  <section class="trusted">
+    <h3>Trusted by businesses across <span>40 countries.</span></h3>
+    <div class="flags-grid">
+      <div class="flag-item"><div class="flag-icon">🇺🇸</div><div class="flag-label">USA</div></div>
+      <div class="flag-item"><div class="flag-icon">🇬🇧</div><div class="flag-label">UK</div></div>
+      <div class="flag-item"><div class="flag-icon">🇨🇦</div><div class="flag-label">Canada</div></div>
+      <div class="flag-item"><div class="flag-icon">🇦🇺</div><div class="flag-label">Australia</div></div>
+      <div class="flag-item"><div class="flag-icon">🇮🇪</div><div class="flag-label">Ireland</div></div>
+      <div class="flag-item"><div class="flag-icon">🇦🇪</div><div class="flag-label">UAE</div></div>
+      <div class="flag-item"><div class="flag-icon">🇮🇳</div><div class="flag-label">India</div></div>
+      <div class="flag-item"><div class="flag-icon">🇩🇪</div><div class="flag-label">Germany</div></div>
+      <div class="flag-item"><div class="flag-icon">🇳🇱</div><div class="flag-label">Netherlands</div></div>
+      <div class="flag-item"><div class="flag-icon">🇳🇿</div><div class="flag-label">New Zealand</div></div>
+      <div class="flag-item"><div class="flag-icon">🇧🇩</div><div class="flag-label">Bangladesh</div></div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process" id="process">
+    <span class="section-tag" style="margin-bottom: 20px;">Workflow</span>
+    <h2>A simple process.<br>Exceptional results.</h2>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-icon">1</div>
+        <h4>Discovery</h4>
+        <p>We analyze your business, market, and competitors to find the best growth opportunities.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-icon">2</div>
+        <h4>Strategy</h4>
+        <p>We develop a custom digital marketing roadmap tailored specifically to your goals.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-icon">3</div>
+        <h4>Execution</h4>
+        <p>Our team implements the strategy, optimizing campaigns and content for maximum impact.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-icon">4</div>
+        <h4>Scaling</h4>
+        <p>We analyze the data, refine our approach, and scale what works to drive massive growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages -->
+  <section class="packages">
+    <span class="section-tag">Solutions</span>
+    <h2>Packages.<br>All services. Real results.</h2>
+    <div class="packages-grid">
+      <div class="package-card">
+        <div class="package-icon pkg-1">🔍</div>
+        <h4>SEO Audit & Fixes</h4>
+        <p>Complete technical audit, on-page optimization, and quick wins to boost rankings immediately.</p>
+      </div>
+      <div class="package-card">
+        <div class="package-icon pkg-2">📈</div>
+        <h4>PPC Campaign Setup</h4>
+        <p>From keyword research to ad copy and landing pages, we build campaigns that convert.</p>
+      </div>
+      <div class="package-card">
+        <div class="package-icon pkg-3">💻</div>
+        <h4>Website Redesign</h4>
+        <p>A complete overhaul of your digital storefront to improve aesthetics and user experience.</p>
+      </div>
+      <div class="package-card">
+        <div class="package-icon pkg-4">✍️</div>
+        <h4>Content Strategy</h4>
+        <p>Monthly blog posts, social media content, and email newsletters to engage your audience.</p>
+      </div>
+      <div class="package-card">
+        <div class="package-icon pkg-5">🎯</div>
+        <h4>Conversion Optimization</h4>
+        <p>A/B testing and funnel optimization to get more value from your existing traffic.</p>
+      </div>
+      <div class="package-card">
+        <div class="package-icon pkg-6">🚀</div>
+        <h4>Full-Stack Growth</h4>
+        <p>Our ultimate package combining SEO, Ads, and Content for aggressive market expansion.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing" id="pricing">
+    <span class="section-tag">Plans</span>
+    <h2>Simple, transparent pricing for every stage.</h2>
+    <p class="pricing-desc">Choose the plan that fits your current business needs.</p>
+    
+    <div class="pricing-grid">
+      <!-- Tier 1 -->
+      <div class="price-card">
+        <h3>Starter</h3>
+        <div class="price-amount">$299<span>/mo</span></div>
+        <p>Perfect for small businesses looking to establish their online presence.</p>
+        <ul class="price-features">
+          <li>Basic SEO Optimization</li>
+          <li>1 Ad Campaign Management</li>
+          <li>Monthly Performance Report</li>
+          <li>Email Support</li>
+        </ul>
+        <a href="#" class="btn btn-outline btn-full">Get Started</a>
+      </div>
+      
+      <!-- Tier 2 -->
+      <div class="price-card featured">
+        <div class="featured-badge">Most Popular</div>
+        <h3>Growth</h3>
+        <div class="price-amount">$499<span>/mo</span></div>
+        <p>Ideal for growing businesses ready to scale their lead generation.</p>
+        <ul class="price-features">
+          <li>Advanced SEO & Link Building</li>
+          <li>Up to 3 Ad Campaigns</li>
+          <li>Content Marketing (2 posts/mo)</li>
+          <li>Bi-weekly Strategy Calls</li>
+          <li>Priority Support</li>
+        </ul>
+        <a href="#" class="btn btn-primary btn-full">Get Started</a>
+      </div>
+      
+      <!-- Tier 3 -->
+      <div class="price-card">
+        <h3>Enterprise</h3>
+        <div class="price-amount">Custom</div>
+        <p>For established brands needing full-scale digital dominance.</p>
+        <ul class="price-features">
+          <li>Enterprise-level SEO Strategy</li>
+          <li>Unlimited Ad Campaigns</li>
+          <li>Full Content & PR Strategy</li>
+          <li>Custom Web Development</li>
+          <li>Dedicated Account Manager</li>
+        </ul>
+        <a href="#" class="btn btn-outline btn-full">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div style="font-size: 1.5rem; font-family: 'Playfair Display', serif; font-weight: 700; color: white; margin-bottom: 20px;">KJ Digital</div>
+    <p>&copy; 2026 KJ Digital World. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
