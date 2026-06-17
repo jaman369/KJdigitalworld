@@ -1530,21 +1530,27 @@ document.addEventListener('DOMContentLoaded', () => {
       const text = node.nodeValue.trim();
       if (flags[text]) {
         const parent = node.parentNode;
-        if (parent && parent.childNodes.length === 1 && ['H1','H2','H3','H4','H5','H6','DIV','SPAN','P'].includes(parent.tagName)) {
+        // Check if parent only contains this text, ignoring comments/whitespace nodes
+        if (parent && !['SCRIPT', 'STYLE', 'TITLE'].includes(parent.tagName) && parent.textContent.trim() === text) {
           toReplace.push({node: node, parent: parent, url: flags[text], alt: text});
         }
       }
     }
     
     toReplace.forEach(item => {
+      // make sure we don't replace if it's already an img
+      if (item.parent.querySelector && item.parent.querySelector('img')) return;
+      
       const img = document.createElement('img');
       img.src = item.url;
       img.alt = item.alt;
-      img.style.width = '54px';
+      img.style.width = '60px'; // Made slightly larger to match original text prominence
       img.style.height = 'auto';
       img.style.display = 'block';
       img.style.margin = '0 auto';
       item.parent.replaceChild(img, item.node);
+      item.parent.style.display = 'flex';
+      item.parent.style.justifyContent = 'center';
     });
   }
 
@@ -1553,11 +1559,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new MutationObserver(() => {
       replaceFlags();
     });
-    observer.observe(document.body, { childList: true, subtree: true });
+    observer.observe(document.body, { childList: true, subtree: true, characterData: true });
   });
 })();
 </script>
 </body></html>
+
 
 
 
