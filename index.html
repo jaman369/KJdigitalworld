@@ -1541,7 +1541,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (headers.snapshotLength > 0) {
         let node = headers.snapshotItem(0);
         while (node && node.tagName !== 'BODY') {
-          if (node.textContent.includes('GB') && node.textContent.includes('AU')) {
+          // Fixed text check to use full country names instead of 'GB'/'AU' since they might be emojis
+          if (node.textContent.includes('Australia') && node.textContent.includes('United Kingdom')) {
             whereIWorkContainer = node;
             break;
           }
@@ -1549,8 +1550,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     } catch(e) {}
-    
-    // We search the entire body so we can replace both hero pills and grid cards
+
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
     let node;
     const toReplace = [];
@@ -1577,14 +1577,12 @@ document.addEventListener('DOMContentLoaded', () => {
       img.alt = item.alt;
       
       if (isGrid) {
-        // Large flags for the Where I Work grid
         img.style.width = '64px';
         img.style.height = 'auto';
         img.style.display = 'block';
         img.style.margin = '0 auto 16px auto';
         item.parent.style.textAlign = 'center';
       } else {
-        // Small flags for the Hero section pills
         img.style.width = '20px';
         img.style.height = 'auto';
         img.style.display = 'inline-block';
@@ -1614,6 +1612,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 </script>
 </body></html>
+
 
 
 
