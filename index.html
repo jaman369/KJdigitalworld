@@ -1534,17 +1534,15 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   function replaceFlags() {
-    let rootForWalker = null;
+    let whereIWorkContainer = null;
     
-    // Find the specific "Where I Work" section to avoid breaking the Hero section pills
     try {
       const headers = document.evaluate("//*[contains(text(), 'Serving the world') or contains(text(), 'Based in Bangladesh')]", document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
       if (headers.snapshotLength > 0) {
         let node = headers.snapshotItem(0);
-        // Walk up until the container includes the grid text
         while (node && node.tagName !== 'BODY') {
           if (node.textContent.includes('GB') && node.textContent.includes('AU')) {
-            rootForWalker = node;
+            whereIWorkContainer = node;
             break;
           }
           node = node.parentElement;
@@ -1552,10 +1550,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     } catch(e) {}
     
-    // If we can't find the specific section, don't run to avoid breaking other areas
-    if (!rootForWalker) return;
-
-    const walker = document.createTreeWalker(rootForWalker, NodeFilter.SHOW_TEXT, null, false);
+    // We search the entire body so we can replace both hero pills and grid cards
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
     let node;
     const toReplace = [];
     while (node = walker.nextNode()) {
@@ -1572,18 +1568,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     toReplace.forEach(item => {
-      // Prevent multiple replacements
       if (item.parent.querySelector && item.parent.querySelector('img')) return;
+      
+      const isGrid = whereIWorkContainer && whereIWorkContainer.contains(item.node);
       
       const img = document.createElement('img');
       img.src = item.url;
       img.alt = item.alt;
-      img.style.width = '64px';
-      img.style.height = 'auto';
-      img.style.display = 'block';
-      img.style.margin = '0 auto 16px auto';
+      
+      if (isGrid) {
+        // Large flags for the Where I Work grid
+        img.style.width = '64px';
+        img.style.height = 'auto';
+        img.style.display = 'block';
+        img.style.margin = '0 auto 16px auto';
+        item.parent.style.textAlign = 'center';
+      } else {
+        // Small flags for the Hero section pills
+        img.style.width = '20px';
+        img.style.height = 'auto';
+        img.style.display = 'inline-block';
+        img.style.verticalAlign = 'middle';
+        img.style.marginRight = '6px';
+        img.style.borderRadius = '2px';
+      }
+      
       item.parent.replaceChild(img, item.node);
-      item.parent.style.textAlign = 'center';
     });
   }
 
@@ -1604,6 +1614,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 </script>
 </body></html>
+
 
 
 
