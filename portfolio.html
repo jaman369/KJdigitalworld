@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — KJ Digital World</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Global Resets */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-white: #ffffff;
+      --bg-light: #f8f9fa;
+      --bg-gray: #f3f4f6;
+      --bg-dark: #1a1a1a;
+      --text-dark: #111827;
+      --text-gray: #4b5563;
+      --text-light: #9ca3af;
+      --primary: #0066ff;
+      --border: #e5e7eb;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-white);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, .serif { font-family: 'Playfair Display', serif; }
+    a { text-decoration: none; color: inherit; transition: color 0.3s; }
+    
+    /* Navbar */
+    .navbar {
+      padding: 24px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--bg-dark);
+      color: #fff;
+    }
+    .nav-logo { font-size: 1.5rem; font-weight: 700; color: #fff; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { font-size: 0.95rem; font-weight: 500; color: rgba(255,255,255,0.8); }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 28px; border-radius: 50px; font-weight: 500; font-size: 0.95rem;
+      cursor: pointer; transition: all 0.3s ease; font-family: 'Inter', sans-serif; gap: 8px;
+    }
+    .btn-primary { background-color: var(--primary); color: #fff; border: none; }
+    .btn-primary:hover { background-color: #0052cc; transform: translateY(-2px); }
+    .btn-outline { background-color: transparent; border: 1px solid var(--border); color: var(--text-dark); }
+    .btn-outline:hover { border-color: var(--text-dark); }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 100px 5% 60px;
+      position: relative;
+    }
+    .hero::before {
+      content:''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+      width: 800px; height: 400px; background: radial-gradient(circle, rgba(0,255,128,0.05) 0%, transparent 70%);
+      z-index: -1; pointer-events: none;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 50px;
+      border: 1px solid var(--border); font-size: 0.8rem; font-weight: 500; color: var(--text-gray);
+      margin-bottom: 24px; background: #fff;
+    }
+    .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; }
+    
+    .hero h1 { font-size: clamp(3rem, 5vw, 5rem); margin-bottom: 24px; line-height: 1.1; font-weight: 600; }
+    .hero h1 span { color: var(--primary); font-style: italic; font-weight: 700; }
+    .hero p { max-width: 600px; margin: 0 auto; color: var(--text-gray); font-size: 1.1rem; line-height: 1.6; }
+
+    /* Stats Bar */
+    .stats-bar {
+      background-color: var(--bg-gray);
+      padding: 40px 5%;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stats-grid {
+      display: flex; justify-content: center; align-items: center; max-width: 1000px; margin: 0 auto;
+    }
+    .stat-item {
+      flex: 1; text-align: center; position: relative;
+    }
+    .stat-item:not(:last-child)::after {
+      content: ''; position: absolute; right: 0; top: 20%; height: 60%; width: 1px; background: var(--border);
+    }
+    .stat-num { font-size: 2rem; font-weight: 700; font-family: 'Playfair Display', serif; margin-bottom: 4px; color: var(--text-dark); }
+    .stat-label { font-size: 0.8rem; color: var(--text-gray); text-transform: uppercase; letter-spacing: 1px; }
+
+    /* Category Tabs */
+    .tabs-wrapper { padding: 30px 5%; background: var(--bg-white); }
+    .tabs {
+      display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; max-width: 1000px; margin: 0 auto;
+    }
+    .tab {
+      padding: 8px 20px; border-radius: 50px; border: 1px solid var(--border);
+      font-size: 0.9rem; color: var(--text-gray); white-space: nowrap; cursor: pointer; transition: all 0.3s;
+      display: flex; align-items: center; gap: 8px; background: #fff;
+    }
+    .tab span { background: var(--bg-light); border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: var(--text-gray); }
+    .tab:hover { border-color: var(--text-dark); color: var(--text-dark); }
+    .tab.active { background-color: var(--text-dark); color: #fff; border-color: var(--text-dark); }
+    .tab.active span { background: rgba(255,255,255,0.2); color: #fff; }
+
+    /* Projects Grid */
+    .projects-sec { background-color: var(--bg-gray); padding: 60px 5% 100px; }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .p-card {
+      background: #fff; border-radius: 20px; overflow: hidden; border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.02); transition: transform 0.3s;
+    }
+    .p-card:hover { transform: translateY(-5px); }
+    
+    .p-img-wrapper { position: relative; width: 100%; }
+    .p-card.wide .p-img-wrapper { height: 350px; background: #111; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+    .p-card.narrow .p-img-wrapper { height: 250px; background: linear-gradient(135deg, #1e3c72, #2a5298); display: flex; align-items: center; justify-content: center; position: relative; }
+    
+    /* Mockup visuals for images since we don't have the actual assets */
+    .mock-watch { font-family: 'Playfair Display', serif; color: #fff; text-align: left; width: 100%; padding: 40px; position: relative; z-index: 2; }
+    .mock-watch::before { content:''; position: absolute; inset:0; background: radial-gradient(circle at center, transparent, rgba(0,0,0,0.8)); z-index: -1; }
+    .mock-watch h3 { font-size: 3rem; line-height: 1.1; font-weight: 400; margin-bottom: 16px; color: #facc15; }
+    .mock-watch h3 span { color: #fff; font-style: italic; }
+    .mock-watch p { font-size: 0.85rem; max-width: 300px; opacity: 0.8; }
+    
+    .mock-seo { width: 100%; height: 100%; position: relative; }
+    .mock-seo::after { content: 'আমরা এই দুরত্বটা কমাতে আসছি'; position: absolute; top: 50%; left: 10%; transform: translateY(-50%); font-family: sans-serif; font-size: 1.5rem; font-weight: 700; color: #fff; max-width: 200px; }
+
+    .img-badge {
+      position: absolute; top: 20px; left: 20px; background: #fff; color: #111;
+      font-size: 0.7rem; font-weight: 600; padding: 4px 12px; border-radius: 50px; z-index: 10;
+    }
+    
+    .p-content { padding: 32px; }
+    .p-cat { color: var(--primary); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+    .p-content h3 { font-family: 'Inter', sans-serif; font-size: 1.25rem; font-weight: 600; margin-bottom: 16px; line-height: 1.3; }
+    .p-content p { color: var(--text-gray); font-size: 0.9rem; line-height: 1.6; }
+
+    /* CTA Section */
+    .cta-sec { text-align: center; padding: 120px 5%; background: var(--bg-white); position: relative; }
+    .cta-sec::before { content:''; position: absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:600px; height:400px; background:radial-gradient(circle, rgba(0,102,255,0.05) 0%, transparent 70%); z-index:0; pointer-events:none; }
+    .cta-sec > * { position: relative; z-index: 1; }
+    .cta-sec h2 { font-size: clamp(2.5rem, 4vw, 4rem); margin-bottom: 24px; line-height: 1.1; }
+    .cta-sec h2 span { color: var(--primary); font-style: italic; }
+    .cta-sec p { color: var(--text-gray); max-width: 500px; margin: 0 auto 40px; font-size: 1.05rem; }
+    .cta-btns { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    /* Footer */
+    footer { background: #1a1a1a; color: var(--text-light); padding: 80px 5% 40px; font-size: 0.9rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto 60px; }
+    .f-logo { font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 16px; font-family: 'Playfair Display', serif; }
+    .f-links { list-style: none; }
+    .f-links li { margin-bottom: 12px; }
+    .f-links a:hover { color: #fff; }
+    .f-socials { display: flex; gap: 12px; margin-top: 24px; }
+    .f-social { width: 36px; height: 36px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .f-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; }
+    
+    @media(max-width: 992px) {
+      .projects-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width: 600px) {
+      .stats-grid { flex-wrap: wrap; gap: 20px; }
+      .stat-item { flex: 1 1 40%; }
+      .stat-item:not(:last-child)::after { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="navbar">
+    <div class="nav-logo">KJ Digital World</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn-primary" style="padding: 10px 24px; font-size:0.9rem; color:#fff">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="badge"><div class="dot"></div> Real projects. Real results.</div>
+    <h1>Work that <span>speaks</span><br>for itself.</h1>
+    <p>Explore a selection of projects across SEO, web design, paid advertising and more — delivered for clients across 11 countries worldwide.</p>
+  </section>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">0</div>
+        <div class="stat-label">Projects Delivered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">0</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">0</div>
+        <div class="stat-label">Countries</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">0</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs-wrapper">
+    <div class="tabs">
+      <div class="tab active">All Projects <span>2</span></div>
+      <div class="tab">SEO <span>1</span></div>
+      <div class="tab">Web Design & Dev <span>1</span></div>
+      <div class="tab">PPC / Paid Ads <span>0</span></div>
+      <div class="tab">Social Media Ads <span>0</span></div>
+      <div class="tab">Content Marketing <span>0</span></div>
+      <div class="tab">CRO <span>0</span></div>
+    </div>
+  </div>
+
+  <!-- Projects Grid -->
+  <section class="projects-sec">
+    <div class="projects-grid">
+      
+      <!-- Card 1 (Wide) -->
+      <div class="p-card wide">
+        <div class="p-img-wrapper">
+          <div class="img-badge">Web Design & Dev</div>
+          <div class="mock-watch">
+            <h6 style="color:#facc15; letter-spacing:2px; font-size:0.7rem; font-family:sans-serif; text-transform:uppercase; margin-bottom:12px;">Maison Tempura - Est. 2021</h6>
+            <h3><span>Allow yourself</span><br>to be a step ahead.</h3>
+            <p>Choose a timepiece that expresses your uniqueness. Curated Swiss and luxury watches delivered across Bangladesh.</p>
+          </div>
+        </div>
+        <div class="p-content">
+          <div class="p-cat">WEB DESIGN & DEV</div>
+          <h3>Web Design and Development for Watch brand</h3>
+          <p>High-level CRO audit to identify traffic and conversion issues. Full technical SEO audit on Shopify CMS — implemented all fixes including schema markup (JSON-LD for products, breadcrumbs, reviews), canonicalization errors...</p>
+        </div>
+      </div>
+
+      <!-- Card 2 (Narrow) -->
+      <div class="p-card narrow">
+        <div class="p-img-wrapper">
+          <div class="img-badge">SEO Portfolio</div>
+          <div class="mock-seo"></div>
+        </div>
+        <div class="p-content">
+          <div class="p-cat">SEO PORTFOLIO</div>
+          <h3>Jewelry E-Commerce</h3>
+          <p>The client is a luxury women's Jewelry ecommerce store on Shopify. They approached me with minimal organic visibility, weak keyword rankings, and no structured SEO strategy. The goal was to grow organic traffic and...</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-sec">
+    <h2>Ready to be our<br>next <span>success story?</span></h2>
+    <p>Every project starts with a free 30-minute strategy call. No obligation — just honest advice on how to grow your business.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="btn btn-primary" style="padding:14px 32px">Book Free Consultation &rarr;</a>
+      <a href="services.html" class="btn btn-outline" style="padding:14px 32px">View All Services</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="f-logo">KJ Digital World</div>
+        <p>Full-Service Digital Marketing Agency. 5 Years Experience. Serving 11 countries worldwide.</p>
+        <div class="f-socials">
+          <a href="#" class="f-social">f</a>
+          <a href="#" class="f-social">ig</a>
+          <a href="#" class="f-social">in</a>
+          <a href="#" class="f-social">x</a>
+        </div>
+        <div style="margin-top:20px;">
+          <a href="contact.html" class="btn btn-primary" style="font-size:0.85rem">Book Free Consultation</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="color:#fff; margin-bottom:16px; font-family:'Inter', sans-serif">SEO Services</h4>
+        <ul class="f-links">
+          <li><a href="#">Local SEO</a></li>
+          <li><a href="#">Ecommerce SEO</a></li>
+          <li><a href="#">International SEO</a></li>
+          <li><a href="#">SaaS SEO</a></li>
+          <li><a href="#">Semantic SEO</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:#fff; margin-bottom:16px; font-family:'Inter', sans-serif">Web & Ads</h4>
+        <ul class="f-links">
+          <li><a href="#">WordPress Development</a></li>
+          <li><a href="#">Shopify Development</a></li>
+          <li><a href="#">Google Ads (PPC)</a></li>
+          <li><a href="#">Facebook & Instagram Ads</a></li>
+          <li><a href="#">Content Marketing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:#fff; margin-bottom:16px; font-family:'Inter', sans-serif">Company</h4>
+        <ul class="f-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li style="margin-top:16px"><a href="mailto:rj.jamon205@gmail.com">rj.jamon205@gmail.com</a></li>
+          <li><a href="tel:+8801780607820">+880 1780-607820</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>&copy; 2026 Digital World - Kamrujjaman Mufti. All rights reserved.</p>
+      <p>Based in Dhaka, Bangladesh - Available worldwide</p>
+    </div>
+  </footer>
+
+</body>
+</html>
