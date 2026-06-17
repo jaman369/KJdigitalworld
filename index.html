@@ -1534,16 +1534,36 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   function replaceFlags() {
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    let rootForWalker = null;
+    
+    // Find the specific "Where I Work" section to avoid breaking the Hero section pills
+    try {
+      const headers = document.evaluate("//*[contains(text(), 'Serving the world') or contains(text(), 'Based in Bangladesh')]", document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+      if (headers.snapshotLength > 0) {
+        let node = headers.snapshotItem(0);
+        // Walk up until the container includes the grid text
+        while (node && node.tagName !== 'BODY') {
+          if (node.textContent.includes('GB') && node.textContent.includes('AU')) {
+            rootForWalker = node;
+            break;
+          }
+          node = node.parentElement;
+        }
+      }
+    } catch(e) {}
+    
+    // If we can't find the specific section, don't run to avoid breaking other areas
+    if (!rootForWalker) return;
+
+    const walker = document.createTreeWalker(rootForWalker, NodeFilter.SHOW_TEXT, null, false);
     let node;
     const toReplace = [];
     while (node = walker.nextNode()) {
       if (!node.nodeValue) continue;
-      const text = node.nodeValue.trim().toUpperCase(); // Emoji toUpperCase is a no-op, which is fine
+      const text = node.nodeValue.trim().toUpperCase();
       if (flags[text]) {
         const parent = node.parentNode;
         if (parent && !['SCRIPT', 'STYLE', 'TITLE', 'NOSCRIPT'].includes(parent.tagName)) {
-           // Emojis are 2 or 4 chars usually. Allow slightly larger parent text context just in case.
            if (parent.textContent.trim().length <= 6) {
              toReplace.push({node: node, parent: parent, url: flags[text], alt: text});
            }
@@ -1552,6 +1572,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     toReplace.forEach(item => {
+      // Prevent multiple replacements
+      if (item.parent.querySelector && item.parent.querySelector('img')) return;
+      
       const img = document.createElement('img');
       img.src = item.url;
       img.alt = item.alt;
@@ -1581,6 +1604,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 </script>
 </body></html>
+
 
 
 
