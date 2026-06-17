@@ -1519,7 +1519,9 @@ document.addEventListener('DOMContentLoaded', () => {
     'DE': '/flags/1f1e9-1f1ea.svg',
     'NL': '/flags/1f1f3-1f1f1.svg',
     'ZA': '/flags/1f1ff-1f1e6.svg',
-    'NZ': '/flags/1f1f3-1f1ff.svg'
+    'NZ': '/flags/1f1f3-1f1ff.svg',
+    'USA': '/flags/1f1fa-1f1f8.svg', // Just in case
+    'UAE': '/flags/1f1e6-1f1ea.svg'  // Just in case
   };
 
   function replaceFlags() {
@@ -1527,43 +1529,51 @@ document.addEventListener('DOMContentLoaded', () => {
     let node;
     const toReplace = [];
     while (node = walker.nextNode()) {
-      const text = node.nodeValue.trim();
+      if (!node.nodeValue) continue;
+      const text = node.nodeValue.trim().toUpperCase();
       if (flags[text]) {
         const parent = node.parentNode;
-        // Check if parent only contains this text, ignoring comments/whitespace nodes
-        if (parent && !['SCRIPT', 'STYLE', 'TITLE'].includes(parent.tagName) && parent.textContent.trim() === text) {
-          toReplace.push({node: node, parent: parent, url: flags[text], alt: text});
+        if (parent && !['SCRIPT', 'STYLE', 'TITLE', 'NOSCRIPT'].includes(parent.tagName)) {
+           // We only want to replace if the text node is the primary content, not part of a sentence
+           // A good heuristic: the text length is very short (2-3 chars), and parent textContent is also very short.
+           if (parent.textContent.trim().length <= 5) {
+             toReplace.push({node: node, parent: parent, url: flags[text], alt: text});
+           }
         }
       }
     }
     
     toReplace.forEach(item => {
-      // make sure we don't replace if it's already an img
-      if (item.parent.querySelector && item.parent.querySelector('img')) return;
-      
       const img = document.createElement('img');
       img.src = item.url;
       img.alt = item.alt;
-      img.style.width = '60px'; // Made slightly larger to match original text prominence
+      img.style.width = '64px';
       img.style.height = 'auto';
       img.style.display = 'block';
-      img.style.margin = '0 auto';
+      img.style.margin = '0 auto 16px auto';
       item.parent.replaceChild(img, item.node);
-      item.parent.style.display = 'flex';
-      item.parent.style.justifyContent = 'center';
+      item.parent.style.textAlign = 'center';
     });
   }
 
   document.addEventListener('DOMContentLoaded', () => {
     replaceFlags();
-    const observer = new MutationObserver(() => {
-      replaceFlags();
+    const observer = new MutationObserver((mutations) => {
+      let shouldRun = false;
+      for (let m of mutations) {
+        if (m.addedNodes.length > 0 || m.type === 'characterData') {
+          shouldRun = true;
+          break;
+        }
+      }
+      if (shouldRun) replaceFlags();
     });
     observer.observe(document.body, { childList: true, subtree: true, characterData: true });
   });
 })();
 </script>
 </body></html>
+
 
 
 
