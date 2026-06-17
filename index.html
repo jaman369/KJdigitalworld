@@ -1438,6 +1438,42 @@ img,video{max-width:100%;height:auto;}
 		});
 	}
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('.cnt');
+  const speed = 200; // The lower the slower
+  
+  const animate = () => {
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const inc = target / speed;
+        
+        if (count < target) {
+          counter.innerText = Math.ceil(count + inc);
+          setTimeout(updateCount, 15);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      
+      // Use IntersectionObserver to start animation when visible
+      const observer = new IntersectionObserver((entries) => {
+        if(entries[0].isIntersecting) {
+          updateCount();
+          observer.disconnect();
+        }
+      }, { threshold: 0.5 });
+      
+      observer.observe(counter);
+    });
+  };
+  
+  animate();
+});
+</script>
 </body></html>
+
 
 
