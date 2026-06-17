@@ -1,1201 +1,1441 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KJ Digital World — Digital Marketing Expert</title>
-  <meta name="description" content="KJ Digital World helps businesses grow online through expert SEO, paid advertising, web design & development, and content marketing strategies.">
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="https://kjdigitalworld.lovable.app/assets/styles-CTiEy21t.css" data-precedence="default"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital,wght@0,400;1,400&amp;family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&amp;display=swap" data-precedence="default"/><title>Digital World — Full-Service Digital Marketing Agency</title><meta name="author" content="Lovable"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Lovable App"/><meta name="twitter:description" content="My Creative Space is a personal website builder for showcasing creative work and professional information."/><meta name="description" content=""/><meta property="og:title" content="Digital World — Full-Service Digital Marketing Agency"/><meta property="og:description" content=""/><link rel="modulepreload" href="https://kjdigitalworld.lovable.app/assets/index-elsVIIk3.js"/><link rel="modulepreload" href="https://kjdigitalworld.lovable.app/assets/index-DoY3LYWr.js"/><link rel="modulepreload" href="https://kjdigitalworld.lovable.app/assets/useQuery-DiZmGRUo.js"/><link rel="modulepreload" href="https://kjdigitalworld.lovable.app/assets/useServerFn-mps-Pylf.js"/><link rel="modulepreload" href="https://kjdigitalworld.lovable.app/assets/pricing-data-dPSam-IC.js"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+<style>
+	@font-face {
+		font-family: 'CameraPlainVariable';
+		src: url('https://cdn.gpteng.co/mcp-widgets/v1/fonts/CameraPlainVariable.woff2') format('woff2');
+		font-weight: 100 900;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	#lovable-badge {
+		--badge-bg: #1b1b1b;
+		--badge-text: #c5c1b9;
+		--badge-text-hover: #dcdad5;
+		--badge-radius: 6px;
+		--badge-padding: 8px;
+		--badge-gap: 6px;
+		--badge-shadow: 
+			0 0 0 1px rgba(0, 0, 0, 0.88),
+			0 1px 0 0 rgba(0, 0, 0, 0.04),
+			0 2px 2px -1px rgba(0, 0, 0, 0.08),
+			0 4px 4px -2px rgba(0, 0, 0, 0.08),
+			0 8px 8px -4px rgba(0, 0, 0, 0.08),
+			0 16px 16px -8px rgba(0, 0, 0, 0.08);
+		--badge-transition-duration: 0.2s;
+		--badge-transition-easing: cubic-bezier(0.16, 1, 0.32, 1);
+		--focus-color: #575ECF;
+		--focus-offset: 2px;
+		--focus-width: 2px;
+		
+		position: fixed;
+		bottom: 12px;
+		right: 12px;
+		height: 24px;
+		display: flex;
+		align-items: center;
+		z-index: 1000000;
+		background-color: var(--badge-bg) !important;
+		color: var(--badge-text) !important;
+		border-radius: var(--badge-radius);
+		box-shadow: var(--badge-shadow) !important;
+		font-size: 12px;
+		font-family: CameraPlainVariable, "CameraPlainVariable Fallback", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+		font-weight: 400 !important;
+		text-transform: none !important;
+		font-feature-settings: normal !important;
+		transform: translateZ(0);
+		will-change: transform, opacity;
+	}
+
+	#lovable-badge-cta {
+		display: flex;
+		align-items: center;
+		gap: var(--badge-gap);
+		padding: 0 var(--badge-padding);
+		height: 100%;
+		color: inherit;
+		text-decoration: none;
+		white-space: nowrap;
+		border-radius: var(--badge-radius) 0 0 var(--badge-radius);
+		transition: 
+			background-color var(--badge-transition-duration) ease,
+			color var(--badge-transition-duration) ease,
+			transform 0.1s ease;
+	}
+
+	#lovable-badge-cta:hover {
+		background: rgba(255, 255, 255, 0.04);
+		color: var(--badge-text-hover);
+	}
+
+	#lovable-badge-cta:active {
+		transform: scale(0.98);
+	}
+
+	#lovable-badge-cta:focus {
+		outline: none;
+	}
+
+	#lovable-badge-cta:focus-visible {
+		outline: var(--focus-width) solid var(--focus-color);
+		outline-offset: var(--focus-offset);
+		z-index: 1;
+	}
+
+	#lovable-badge-text {
+		line-height: 1;
+	}
+
+	#lovable-badge-divider {
+		width: 1px;
+		height: 24px;
+		background-color: rgba(255, 255, 255, 0.04);
+		flex-shrink: 0;
+	}
+
+	#lovable-badge-close {
+		width: 24px;
+		height: 24px;
+		min-width: 24px;
+		min-height: 24px;
+		cursor: pointer;
+		background: none;
+		border: none;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 0 var(--badge-radius) var(--badge-radius) 0;
+		flex-shrink: 0;
+		transition: 
+			background-color var(--badge-transition-duration) ease,
+			transform 0.1s ease;
+	}
+
+	#lovable-badge-close:hover {
+		background: rgba(255, 255, 255, 0.04);
+	}
+
+	#lovable-badge-close:active {
+		transform: scale(0.92);
+	}
+
+	#lovable-badge-close:focus {
+		outline: none;
+	}
+
+	#lovable-badge-close:focus-visible {
+		outline: var(--focus-width) solid var(--focus-color);
+		outline-offset: calc(var(--focus-offset) * -1);
+		z-index: 1;
+	}
+
+	#lovable-badge-close svg path {
+		fill: var(--badge-text);
+		transition: fill var(--badge-transition-duration) ease;
+	}
+
+	#lovable-badge-close:hover svg path {
+		fill: var(--badge-text-hover);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		#lovable-badge-cta,
+		#lovable-badge-close,
+		#lovable-badge-close svg path {
+			transition: none;
+		}
+		
+		#lovable-badge-cta:active,
+		#lovable-badge-close:active {
+			transform: none;
+		}
+	}
+
+	@media (prefers-contrast: high) {
+		#lovable-badge {
+			--badge-bg: #000;
+			--badge-text: #fff;
+			--badge-text-hover: #fff;
+			border: 2px solid currentColor;
+		}
+		
+		#lovable-badge-cta:focus-visible,
+		#lovable-badge-close:focus-visible {
+			outline-width: 3px;
+		}
+	}
+</style>
+<script defer src="https://kjdigitalworld.lovable.app/~flock.js" data-proxy-url="/~api/analytics"></script><script defer src="https://kjdigitalworld.lovable.app/__l5e/events.js" data-artifact-kind="dwl_content_hash" data-artifact-id="7ee6cea11ee6d84d1ee9d37b0a173e7e1da6933e6ae3ed89c39fe498415453fe" data-commit-sha="7d96d87ba962d6eb64466850fe634a8ca239e70c" data-context-token="v1.eyJwcm9qZWN0X2lkIjoiNmZkMzkzZTQtNDczOS00ODQwLTk4YzEtOWIxNDAwNzFhNThmIiwiYXJ0aWZhY3Rfa2luZCI6ImR3bF9jb250ZW50X2hhc2giLCJhcnRpZmFjdF9pZCI6IjdlZTZjZWExMWVlNmQ4NGQxZWU5ZDM3YjBhMTczZTdlMWRhNjkzM2U2YWUzZWQ4OWMzOWZlNDk4NDE1NDUzZmUiLCJjb21taXRfc2hhIjoiN2Q5NmQ4N2JhOTYyZDZlYjY0NDY2ODUwZmU2MzRhOGNhMjM5ZTcwYyIsImV4cCI6MTc4MTY3NjAzNn0.Dv8VBhalnKBm0SYNBSge7jc2zZUVgFOfYugzrwXejyU" data-replay="rrweb" data-replay-sample-rate="0.1" data-replay-crash-sample-rate="0.1" data-replay-url="/__l5e/replay" data-replay-script-url="/__l5e/rrweb-record.js?__l5e_v=0.1.2-error-event-hardening"></script><meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f5a6a46a-971b-46cc-99a5-6d4096c83b4e/id-preview-b2641176--6fd393e4-4739-4840-98c1-9b140071a58f.lovable.app-1778659816330.png"><meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f5a6a46a-971b-46cc-99a5-6d4096c83b4e/id-preview-b2641176--6fd393e4-4739-4840-98c1-9b140071a58f.lovable.app-1778659816330.png"></head><body><!--$--><style>
+/* ── RESET & BASE ── */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:#000;
+  color:#1d1d1f;
+  overflow-x:hidden;
+  cursor:auto;
+}
+
+/* ── CUSTOM CURSOR ── */
+#cursor{
+  position:fixed;width:10px;height:10px;
+  background:#fff;border-radius:50%;
+  pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%);
+  transition:transform .1s ease,width .25s ease,height .25s ease,background .25s ease;
+  mix-blend-mode:difference;
+}
+#cursor-ring{
+  position:fixed;width:36px;height:36px;
+  border:1.5px solid rgba(255,255,255,.5);
+  border-radius:50%;pointer-events:none;z-index:9998;
+  transform:translate(-50%,-50%);
+  transition:transform .18s ease,width .3s ease,height .3s ease,opacity .3s ease;
+}
+body:hover #cursor-ring{opacity:1;}
+
+/* ── CSS VARIABLES ── */
+:root{
+  --black:#000000;
+  --near-black:#1d1d1f;
+  --gray:#6e6e73;
+  --light-gray:#86868b;
+  --bg-light:#f5f5f7;
+  --white:#ffffff;
+  --blue:#0071e3;
+  --blue-h:#0077ed;
+  --green:#34c759;
+  --amber:#ff9f0a;
+  --nav-h:52px;
+  --radius:20px;
+  --font-d:'DM Serif Display',Georgia,serif;
+  --font-b:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+
+/* ── NAVBAR ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  height:var(--nav-h);
+  background:rgba(29,29,31,.78);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:.5px solid rgba(255,255,255,.06);
+  transition:background .3s;
+}
+
+a{text-decoration:none;color:white;font-family:'DM Sans',sans-serif;font-size:0.8rem;}
+.nav-wrap{
+  max-width:1160px;margin:0 auto;height:100%;
+  padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{
+  font-family:var(--font-d);
+  font-size:17px;color:#fff;cursor:pointer;
+  letter-spacing:-.3px;
+  display:flex;align-items:center;gap:8px;
+  user-select:none;
+}
+.logo-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--blue);
+  box-shadow:0 0 12px var(--blue);
+  animation:dotPulse 2.5s ease-in-out infinite;
+}
+@keyframes dotPulse{0%,100%{box-shadow:0 0 8px var(--blue);}50%{box-shadow:0 0 20px var(--blue),0 0 40px rgba(0,113,227,.3);}}
+.nav-links{display:flex;align-items:center;gap:2px;}
+.nav-link{
+  position:relative;
+  color:rgba(255,255,255,.72);
+  font-size:12px;font-weight:400;
+  padding:6px 12px;border-radius:8px;
+  cursor:pointer;
+  transition:color .2s,background .2s;
+  letter-spacing:.01em;
+}
+.nav-link:hover{color:#fff;background:rgba(255,255,255,.06);}
+.nav-link.has-drop:after{
+  content:'';display:inline-block;
+  width:4px;height:4px;
+  border-right:1px solid currentColor;
+  border-bottom:1px solid currentColor;
+  transform:rotate(45deg);
+  margin-left:5px;vertical-align:middle;
+  transition:transform .2s;
+}
+.nav-link.has-drop:hover:after{transform:rotate(-135deg);}
+
+/* ── MEGA MENU ── */
+.mega-drop{
+  position:fixed;top:var(--nav-h);left:0;right:0;
+  background:rgba(18,18,20,.97);
+  backdrop-filter:blur(30px);
+  border-bottom:.5px solid rgba(255,255,255,.08);
+  padding:32px 0 36px;
+  opacity:0;pointer-events:none;
+  transition:opacity .22s var(--ease),transform .22s var(--ease);
+  transform:translateY(-8px);
+  z-index:999;
+}
+.nav-link.has-drop:hover .mega-drop{opacity:1;pointer-events:all;transform:translateY(0);}
+.mega-inner{max-width:1160px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
+.mega-col h4{font-size:10px;font-weight:600;color:rgba(255,255,255,.28);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;padding-bottom:8px;border-bottom:.5px solid rgba(255,255,255,.07);}
+.mega-col a{display:block;font-size:12px;color:rgba(255,255,255,.55);padding:5px 0;transition:color .15s;cursor:pointer;}
+.mega-col a:hover{color:#fff;}
+.mega-more{font-size:10px;color:var(--blue);margin-top:6px;cursor:pointer;}
+
+/* Simple dropdown */
+.drop{
+  position:absolute;top:calc(100% + 10px);left:50%;
+  transform:translateX(-50%) translateY(-8px);
+  background:rgba(29,29,31,.96);
+  backdrop-filter:blur(30px);
+  border:.5px solid rgba(255,255,255,.1);
+  border-radius:14px;padding:8px;
+  min-width:200px;
+  opacity:0;pointer-events:none;
+  transition:opacity .2s var(--ease),transform .2s var(--ease);
+}
+.nav-link:not(.has-mega):hover .drop{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0);}
+.drop-section{font-size:10px;color:rgba(255,255,255,.3);padding:6px 10px 3px;text-transform:uppercase;letter-spacing:.07em;}
+.drop a{display:block;font-size:12px;color:rgba(255,255,255,.65);padding:7px 10px;border-radius:8px;transition:background .15s,color .15s;cursor:pointer;}
+.drop a:hover{background:rgba(255,255,255,.07);color:#fff;}
+
+.nav-cta{
+  background:var(--blue);color:#fff;
+  font-size:12px;font-weight:500;
+  padding:7px 16px;border-radius:980px;
+  cursor:pointer;border:none;
+  font-family:var(--font-b);
+  transition:background .2s,transform .15s;
+}
+.nav-cta:hover{background:var(--blue-h);transform:scale(1.03);}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  background:#000;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  position:relative;overflow:hidden;
+  padding-top:var(--nav-h);
+}
+.hero-mesh{position:absolute;inset:0;overflow:hidden;}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);will-change:transform;}
+.orb-1{width:700px;height:700px;background:radial-gradient(circle,rgba(0,113,227,.5) 0%,transparent 70%);top:-200px;left:-200px;animation:drift1 12s ease-in-out infinite;}
+.orb-2{width:600px;height:600px;background:radial-gradient(circle,rgba(52,199,89,.3) 0%,transparent 70%);bottom:-150px;right:-100px;animation:drift2 10s ease-in-out infinite;}
+.orb-3{width:500px;height:500px;background:radial-gradient(circle,rgba(94,92,230,.3) 0%,transparent 70%);top:30%;left:40%;animation:drift3 14s ease-in-out infinite;}
+.orb-4{width:300px;height:300px;background:radial-gradient(circle,rgba(255,159,10,.2) 0%,transparent 70%);top:60%;left:10%;animation:drift1 8s ease-in-out infinite reverse;}
+@keyframes drift1{0%,100%{transform:translate(0,0) scale(1);}33%{transform:translate(40px,-30px) scale(1.05);}66%{transform:translate(-20px,20px) scale(.95);}}
+@keyframes drift2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-40px,-40px) scale(1.08);}}
+@keyframes drift3{0%,100%{transform:translate(0,0) scale(1);}40%{transform:translate(30px,40px) scale(1.1);}80%{transform:translate(-30px,-10px) scale(.9);}}
+.grain{position:absolute;inset:0;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");pointer-events:none;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;mask-image:radial-gradient(ellipse 60% 60% at 50% 50%,black 0%,transparent 100%);}
+.hero-content{position:relative;z-index:2;max-width:920px;padding:40px 24px;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:500;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px;padding:6px 14px;border:.5px solid rgba(255,255,255,.12);border-radius:980px;background:rgba(255,255,255,.04);opacity:0;animation:fadeUp .9s .2s var(--ease) forwards;}
+.eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);}
+.hero-title{font-family:var(--font-d);font-size:clamp(52px,8vw,100px);line-height:1.02;font-weight:400;color:#fff;margin-bottom:28px;letter-spacing:-.02em;opacity:0;animation:fadeUp .9s .4s var(--ease) forwards;}
+.hero-title em{font-style:italic;color:transparent;background:linear-gradient(135deg,#0071e3 0%,#34c759 50%,#5e5ce6 100%);-webkit-background-clip:text;background-clip:text;background-size:200% 200%;animation:gradShift 5s ease-in-out infinite;}
+@keyframes gradShift{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}
+.hero-sub{font-size:clamp(17px,2.2vw,22px);font-weight:300;color:rgba(255,255,255,.45);max-width:640px;margin:0 auto 48px;line-height:1.65;opacity:0;animation:fadeUp .9s .6s var(--ease) forwards;}
+.hero-sub strong{color:rgba(255,255,255,.75);font-weight:400;}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp .9s .8s var(--ease) forwards;}
+.btn-fill{background:var(--blue);color:#fff;font-size:15px;font-weight:500;padding:15px 30px;border-radius:980px;border:none;cursor:pointer;font-family:var(--font-b);transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 0 0 rgba(0,113,227,0);}
+.btn-fill:hover{background:var(--blue-h);transform:scale(1.03);box-shadow:0 8px 30px rgba(0,113,227,.4);}
+.btn-ghost{background:transparent;color:#fff;font-size:15px;font-weight:400;padding:15px 30px;border-radius:980px;border:1px solid rgba(255,255,255,.22);cursor:pointer;font-family:var(--font-b);transition:border-color .2s,transform .2s,background .2s;}
+.btn-ghost:hover{border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.05);transform:scale(1.03);}
+.scroll-hint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeIn 1s 1.4s forwards;}
+.scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,rgba(255,255,255,.5),transparent);animation:scrollLine 2s ease-in-out infinite;}
+@keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform:scaleY(1);transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+.scroll-txt{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);}
+.flags-strip{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:center;opacity:0;animation:fadeIn 1s 1.2s forwards;margin:32px auto 0;max-width:920px;padding:0 24px;width:100%;}
+@media(min-width:901px){.hero{display:flex;}.flags-strip{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);margin:0;padding:0;width:auto;}}
+@media(max-width:900px){.hero{display:flex;flex-direction:column;justify-content:flex-start;padding-top:calc(var(--nav-h) + 24px);padding-bottom:48px;min-height:auto;}}
+.flag-pill{display:flex;align-items:center;gap:5px;font-size:11px;color:rgba(255,255,255,.4);padding:4px 10px;border-radius:980px;background:rgba(255,255,255,.05);border:.5px solid rgba(255,255,255,.08);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+/* ── MARQUEE ── */
+.marquee-section{background:#0a0a0a;border-top:.5px solid rgba(255,255,255,.06);border-bottom:.5px solid rgba(255,255,255,.06);overflow:hidden;padding:18px 0;}
+.marquee-track{display:flex;gap:0;animation:marqueeScroll 38s linear infinite;}
+.marquee-item{display:flex;align-items:center;gap:8px;padding:0 32px;flex-shrink:0;font-size:13px;font-weight:400;color:rgba(255,255,255,.35);letter-spacing:.02em;white-space:nowrap;}
+.marquee-item span{color:rgba(255,255,255,.12);}
+.marquee-item b{color:rgba(255,255,255,.55);font-weight:500;}
+@keyframes marqueeScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ── STATS ── */
+.stats-section{background:#f5f5f7;padding:72px 24px;}
+.stats-wrap{max-width:1100px;margin:0 auto;}
+.stats-label{text-align:center;font-size:12px;font-weight:500;color:var(--gray);letter-spacing:.08em;text-transform:uppercase;margin-bottom:48px;}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e0e0e5;border-radius:20px;overflow:hidden;}
+.stat-box{background:#f5f5f7;padding:40px 24px;text-align:center;transition:background .25s;}
+.stat-box:hover{background:#ebebef;}
+.stat-num{font-family:var(--font-d);font-size:clamp(44px,5vw,68px);color:#1d1d1f;line-height:1;margin-bottom:6px;}
+.stat-suffix{font-size:.6em;vertical-align:super;color:var(--blue);}
+.stat-lbl{font-size:13px;color:var(--gray);}
+
+/* ── SECTION HELPERS ── */
+.section{padding:96px 24px;}
+.section-w{max-width:1120px;margin:0 auto;}
+.eyebrow-sm{font-size:11px;font-weight:600;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;display:block;}
+.eyebrow-sm.green{color:var(--green);}
+.section-title{font-family:var(--font-d);font-size:clamp(34px,4.5vw,58px);color:#fff;line-height:1.06;margin-bottom:16px;letter-spacing:-.02em;}
+.section-title.dark{color:#1d1d1f;}
+.section-sub{font-size:17px;font-weight:300;color:rgba(255,255,255,.42);line-height:1.7;max-width:520px;}
+.section-sub.dark{color:var(--gray);}
+
+/* ── SERVICES SECTION ── */
+.services-section{background:#000;padding:96px 24px;}
+.services-intro{text-align:center;max-width:700px;margin:0 auto 64px;}
+.services-intro .section-sub{margin:0 auto;}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.svc-card{background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:36px 30px;cursor:pointer;position:relative;overflow:hidden;transition:background .3s,border-color .3s,transform .3s;}
+.svc-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(0,113,227,.12) 0%,transparent 60%);opacity:0;transition:opacity .4s;}
+.svc-card:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.14);transform:translateY(-5px);}
+.svc-card:hover::before{opacity:1;}
+.seo-card:hover{transform:translateY(-6px);box-shadow:0 18px 50px rgba(20,104,134,.45) !important;border-color:rgba(255,255,255,.18) !important;}
+.svc-icon{width:52px;height:52px;border-radius:14px;margin-bottom:24px;display:flex;align-items:center;justify-content:center;font-size:26px;position:relative;}
+.svc-name{font-size:19px;font-weight:600;color:#fff;margin-bottom:10px;}
+.svc-desc{font-size:14px;color:rgba(255,255,255,.42);line-height:1.65;}
+.svc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px;}
+.svc-tag{font-size:11px;color:rgba(255,255,255,.35);background:rgba(255,255,255,.05);padding:4px 10px;border-radius:980px;border:.5px solid rgba(255,255,255,.07);}
+.svc-arrow{position:absolute;top:28px;right:28px;color:var(--blue);font-size:18px;opacity:0;transform:translateX(-6px);transition:opacity .25s,transform .25s;}
+.svc-card:hover .svc-arrow{opacity:1;transform:translateX(0);}
+
+/* ── ANIMATED SECTIONS ── */
+.feature-section{padding:0;background:#000;}
+.feature-block{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;padding:96px 24px;}
+.feature-block.reverse{direction:rtl;}
+.feature-block.reverse>*{direction:ltr;}
+.anim-seo-wrap{border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#020610 0%,#04091a 100%);padding:36px;border:.5px solid rgba(255,255,255,.07);position:relative;}
+.anim-seo-wrap::after{content:'SERP Position';position:absolute;top:18px;left:18px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.25);}
+.seo-chart{display:flex;align-items:flex-end;gap:10px;height:140px;margin-top:20px;}
+.seo-bar{flex:1;border-radius:6px 6px 0 0;background:linear-gradient(180deg,var(--blue) 0%,rgba(0,113,227,.4) 100%);transform-origin:bottom;animation:barRise 2s var(--ease) infinite alternate;}
+@keyframes barRise{from{transform:scaleY(.25);}to{transform:scaleY(1);}}
+.seo-bar:nth-child(1){animation-delay:0s;height:45%;}
+.seo-bar:nth-child(2){animation-delay:.12s;height:60%;}
+.seo-bar:nth-child(3){animation-delay:.24s;height:52%;}
+.seo-bar:nth-child(4){animation-delay:.36s;height:78%;}
+.seo-bar:nth-child(5){animation-delay:.48s;height:72%;}
+.seo-bar:nth-child(6){animation-delay:.60s;height:88%;}
+.seo-bar:nth-child(7){animation-delay:.72s;height:95%;}
+.seo-line-wrap{margin-top:20px;position:relative;height:2px;background:rgba(255,255,255,.06);}
+.seo-line{position:absolute;top:0;left:0;height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--blue));border-radius:2px;animation:lineGrow 3s var(--ease) infinite;}
+@keyframes lineGrow{0%{width:0;opacity:1;}80%{width:100%;opacity:1;}100%{width:100%;opacity:0;}}
+.seo-kpis{display:flex;gap:12px;margin-top:20px;}
+.kpi{flex:1;padding:14px;background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.07);border-radius:12px;text-align:center;}
+.kpi-val{font-size:20px;font-weight:600;color:#fff;font-family:var(--font-d);}
+.kpi-lbl{font-size:10px;color:rgba(255,255,255,.3);margin-top:2px;text-transform:uppercase;letter-spacing:.06em;}
+
+/* Social section */
+.anim-social-wrap{border-radius:var(--radius);background:linear-gradient(135deg,#08001a 0%,#0a0015 100%);padding:36px;border:.5px solid rgba(255,255,255,.07);position:relative;overflow:hidden;}
+.social-orbs-bg{position:absolute;inset:0;overflow:hidden;}
+.soc-orb{position:absolute;border-radius:50%;filter:blur(40px);animation:socOrb 5s ease-in-out infinite;}
+.soc-orb:nth-child(1){width:180px;height:180px;background:rgba(24,119,242,.25);top:-20px;left:-20px;animation-delay:0s;}
+.soc-orb:nth-child(2){width:150px;height:150px;background:rgba(225,48,108,.25);bottom:-20px;right:-20px;animation-delay:-2s;}
+.soc-orb:nth-child(3){width:120px;height:120px;background:rgba(10,102,194,.2);top:40%;left:50%;animation-delay:-4s;}
+@keyframes socOrb{0%,100%{transform:scale(1);}50%{transform:scale(1.2) translate(10px,-10px);}}
+.social-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,60px);gap:14px;justify-content:center;margin:20px 0;}
+.soc-icon{width:60px;height:60px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:#fff;animation:iconFloat 3s ease-in-out infinite;position:relative;box-shadow:0 8px 24px rgba(0,0,0,.4);}
+.soc-icon:nth-child(1){background:#1877f2;animation-delay:0s;}
+.soc-icon:nth-child(2){background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);animation-delay:.25s;}
+.soc-icon:nth-child(3){background:#0a66c2;animation-delay:.5s;}
+.soc-icon:nth-child(4){background:#000;border:.5px solid rgba(255,255,255,.15);animation-delay:.75s;}
+.soc-icon:nth-child(5){background:#ff0000;animation-delay:1s;}
+.soc-icon:nth-child(6){background:#00b2ff;animation-delay:1.25s;}
+@keyframes iconFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+.soc-stats{display:flex;gap:10px;margin-top:20px;}
+.soc-stat{flex:1;background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.06);border-radius:12px;padding:12px;text-align:center;}
+.soc-stat-val{font-size:18px;font-weight:600;color:#fff;}
+.soc-stat-lbl{font-size:10px;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.06em;}
+
+/* Web section */
+.anim-web-wrap{border-radius:var(--radius);background:linear-gradient(135deg,#001a08 0%,#001406 100%);padding:36px;border:.5px solid rgba(255,255,255,.07);}
+.browser{background:rgba(255,255,255,.05);border:.5px solid rgba(255,255,255,.1);border-radius:12px;overflow:hidden;}
+.browser-top{background:rgba(255,255,255,.06);padding:10px 14px;display:flex;align-items:center;gap:8px;}
+.btn-r{width:10px;height:10px;border-radius:50%;background:#ff5f57;}
+.btn-y{width:10px;height:10px;border-radius:50%;background:#febc2e;}
+.btn-g{width:10px;height:10px;border-radius:50%;background:#28c840;}
+.addr-bar{flex:1;height:18px;background:rgba(255,255,255,.06);border-radius:6px;margin:0 10px;position:relative;overflow:hidden;}
+.addr-bar::after{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);animation:addrShine 3s ease-in-out infinite;}
+@keyframes addrShine{to{left:200%;}}
+.browser-body{padding:16px;display:flex;flex-direction:column;gap:10px;}
+.brow-hero-img{width:100%;height:80px;border-radius:8px;background:linear-gradient(135deg,rgba(0,113,227,.3),rgba(52,199,89,.3));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.brow-hero-img::before{content:'';position:absolute;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(255,255,255,.05),transparent);animation:spin 6s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.brow-row{height:10px;border-radius:5px;background:rgba(255,255,255,.1);animation:shimmerLine 1.8s ease-in-out infinite;}
+.brow-row.w80{width:80%;}.brow-row.w60{width:60%;}.brow-row.w90{width:90%;}.brow-row.w45{width:45%;}
+@keyframes shimmerLine{0%,100%{opacity:.4;}50%{opacity:.9;}}
+.brow-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:4px;}
+.brow-card{height:40px;border-radius:8px;background:rgba(255,255,255,.06);border:.5px solid rgba(255,255,255,.08);animation:cardPulse 2.4s ease-in-out infinite;}
+.brow-card:nth-child(2){animation-delay:.4s;}.brow-card:nth-child(3){animation-delay:.8s;}
+@keyframes cardPulse{0%,100%{opacity:.5;}50%{opacity:1;}}
+
+/* ── WHY SECTION ── */
+.why-section{background:#f5f5f7;padding:96px 24px;}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:56px;}
+.why-card{background:#fff;border-radius:var(--radius);padding:36px 30px;transition:transform .25s,box-shadow .25s;}
+.why-card:hover{transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,.08);}
+.why-emoji{font-size:34px;margin-bottom:18px;display:block;}
+.why-title{font-size:17px;font-weight:600;color:#1d1d1f;margin-bottom:10px;}
+.why-desc{font-size:14px;color:var(--gray);line-height:1.65;}
+
+/* ── OUR CLIENTS ── */
+.clients-section{background:#000;padding:96px 24px;}
+.clients-intro{text-align:center;max-width:620px;margin:0 auto 56px;}
+.clients-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(255,255,255,.06);border-radius:var(--radius);overflow:hidden;margin-bottom:48px;}
+.client-box{background:#0a0a0a;padding:28px 16px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;transition:background .25s;cursor:default;min-height:140px;}
+.client-box:hover{background:rgba(255,255,255,.04);}
+.client-flag{display:flex;align-items:center;justify-content:center;margin-bottom:10px;line-height:1;}
+.client-country{font-size:13px;font-weight:600;color:rgba(255,255,255,.75);margin-bottom:2px;}
+.client-sub{font-size:11px;color:rgba(255,255,255,.25);}
+/* Industry cards */
+.industry-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.ind-card{background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.07);border-radius:16px;padding:22px 20px;display:flex;align-items:center;gap:14px;transition:background .25s,border-color .25s,transform .2s;}
+.ind-card:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);transform:translateY(-3px);}
+.ind-icon{font-size:22px;flex-shrink:0;}
+.ind-name{font-size:13px;font-weight:600;color:#fff;}
+.ind-sub{font-size:11px;color:rgba(255,255,255,.3);margin-top:2px;}
+
+/* ── PRICING (Glass / Dark) ── */
+.pricing-section{position:relative;background:#000;padding:120px 24px 100px;overflow:hidden;isolation:isolate;}
+.pricing-section::before{content:'';position:absolute;left:-12%;top:30%;width:55%;height:65%;background:radial-gradient(ellipse at center,rgba(0,113,227,.55) 0%,rgba(0,113,227,.18) 35%,transparent 70%);filter:blur(80px);z-index:-2;pointer-events:none;}
+.pricing-section::after{content:'';position:absolute;right:-10%;bottom:0%;width:55%;height:65%;background:radial-gradient(ellipse at center,rgba(80,160,255,.42) 0%,rgba(0,80,200,.14) 40%,transparent 70%);filter:blur(90px);z-index:-2;pointer-events:none;}
+.pricing-head{position:relative;text-align:center;max-width:720px;margin:0 auto 0;z-index:3;}
+.pricing-head .eyebrow-sm{color:rgba(255,255,255,.55);}
+.pricing-head .section-title{color:#fff;font-size:clamp(32px,4vw,52px);}
+.pricing-head p{font-size:16px;color:rgba(255,255,255,.5);margin-top:14px;line-height:1.6;}
+.pricing-bg-word{position:relative;text-align:center;font-family:var(--font-d);font-size:clamp(140px,20vw,300px);line-height:.85;letter-spacing:-.04em;color:transparent;background:linear-gradient(180deg,rgba(255,255,255,.14) 0%,rgba(255,255,255,.02) 100%);-webkit-background-clip:text;background-clip:text;margin:40px 0 -160px;user-select:none;pointer-events:none;z-index:1;font-style:italic;font-weight:400;}
+.pricing-grid{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1120px;margin:0 auto;z-index:4;align-items:stretch;}
+.price-card{position:relative;background:linear-gradient(180deg,rgba(20,22,28,.78) 0%,rgba(8,10,16,.85) 100%);backdrop-filter:blur(28px) saturate(140%);-webkit-backdrop-filter:blur(28px) saturate(140%);border:1px solid rgba(255,255,255,.10);border-radius:28px;padding:30px 28px 28px;display:flex;flex-direction:column;box-shadow:0 30px 80px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.06);transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;overflow:hidden;}
+.price-card::before{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(135deg,rgba(255,255,255,.08) 0%,transparent 45%);pointer-events:none;}
+.price-card>*{position:relative;z-index:1;}
+.price-card:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.18);box-shadow:0 40px 100px rgba(0,113,227,.20),inset 0 1px 0 rgba(255,255,255,.10);}
+.price-card.featured{transform:translateY(-18px);background:linear-gradient(180deg,rgba(28,32,44,.88) 0%,rgba(8,12,22,.92) 100%);border-color:rgba(255,255,255,.18);box-shadow:0 50px 120px rgba(0,113,227,.32),inset 0 1px 0 rgba(255,255,255,.10);}
+.price-card.featured:hover{transform:translateY(-24px);}
+.price-badge{position:absolute;top:18px;right:18px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:10px;font-weight:600;padding:5px 11px;border-radius:999px;letter-spacing:.10em;text-transform:uppercase;backdrop-filter:blur(8px);z-index:3;}
+.price-tier{font-size:13px;font-weight:500;color:rgba(255,255,255,.55);margin-bottom:14px;letter-spacing:.02em;}
+.price-amount{display:flex;align-items:baseline;gap:4px;margin-bottom:14px;}
+.price-num{font-family:var(--font-d);font-size:46px;color:#fff;letter-spacing:-.02em;line-height:1;}
+.price-per{font-size:16px;color:rgba(255,255,255,.5);font-weight:400;}
+.price-desc{font-size:13.5px;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:22px;min-height:48px;}
+.video-wrap{position:relative;aspect-ratio:16/9;overflow:hidden;background:#0a0a0a;border-radius:14px;margin-bottom:22px;border:1px solid rgba(255,255,255,.06);}
+.price-list{list-style:none;padding:0;margin:0 0 30px;display:flex;flex-direction:column;gap:14px;}
+.price-list li{font-size:13.5px;color:rgba(255,255,255,.82);line-height:1.5;display:flex;gap:12px;align-items:flex-start;}
+.price-list li::before{content:'';flex-shrink:0;width:18px;height:18px;border-radius:50%;background-color:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='2.5 6.5 5 9 9.5 3.5'/></svg>");background-repeat:no-repeat;background-position:center;background-size:11px;margin-top:1px;}
+.price-cta{margin-top:auto;width:100%;display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:999px;font-size:13.5px;font-weight:600;text-decoration:none;background:#fff;color:#0a0a0a;border:1px solid #fff;transition:transform .2s ease,background .2s ease,color .2s ease;}
+.price-cta:hover{transform:translateY(-1px);background:rgba(255,255,255,.92);}
+.price-cta.primary{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 10px 30px rgba(0,113,227,.45);}
+.price-cta.primary:hover{background:#0058b8;border-color:#0058b8;}
+.billing-row{position:relative;max-width:1120px;margin:48px auto 0;z-index:4;display:flex;justify-content:flex-start;align-items:center;gap:14px;}
+.billing-toggle{display:inline-flex;align-items:center;gap:12px;color:rgba(255,255,255,.82);font-size:13.5px;background:none;border:none;cursor:pointer;padding:0;font-family:inherit;}
+.billing-toggle-track{position:relative;width:44px;height:24px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);transition:background .25s,border-color .25s;}
+.billing-toggle-track::after{content:'';position:absolute;left:2px;top:1px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.4);transition:transform .25s ease;}
+.billing-toggle[data-active="true"] .billing-toggle-track{background:var(--blue);border-color:var(--blue);}
+.billing-toggle[data-active="true"] .billing-toggle-track::after{transform:translateX(20px);}
+.billing-discount{font-size:12px;color:rgba(255,255,255,.45);}
+@media(max-width:880px){.pricing-grid{grid-template-columns:1fr;max-width:420px;}.price-card.featured{transform:none;}.price-card.featured:hover{transform:translateY(-6px);}.pricing-bg-word{margin:24px 0 -80px;font-size:clamp(90px,22vw,160px);}.billing-row{justify-content:center;}}
+
+
+/* ── TESTIMONIALS ── */
+.testi-section{background:#0a0a0a;padding:96px 24px;}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:56px;}
+.testi-card{background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:32px;transition:background .25s,transform .25s;}
+.testi-card:hover{background:rgba(255,255,255,.07);transform:translateY(-4px);}
+.testi-stars{color:var(--amber);font-size:13px;margin-bottom:14px;letter-spacing:2px;}
+.testi-text{font-size:15px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:20px;font-style:italic;}
+.testi-text::before{content:'"';font-family:var(--font-d);font-size:48px;color:var(--blue);line-height:.4;vertical-align:-.4em;margin-right:4px;}
+.testi-author{font-size:14px;font-weight:600;color:#fff;}
+.testi-meta{display:flex;align-items:center;gap:6px;margin-top:4px;}
+.testi-flag{font-size:14px;}
+.testi-country{font-size:12px;color:rgba(255,255,255,.3);}
+
+/* ── PROCESS ── */
+.process-section{background:#f5f5f7;padding:96px 24px;}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px;position:relative;}
+.process-steps::before{content:'';position:absolute;top:32px;left:12.5%;right:12.5%;height:1px;background:linear-gradient(90deg,transparent,#d2d2d7 20%,#d2d2d7 80%,transparent);}
+.step-item{text-align:center;padding:0 16px;position:relative;}
+.step-num-wrap{width:64px;height:64px;border-radius:50%;background:#fff;border:1px solid #e0e0e5;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:22px;color:var(--blue);transition:background .25s,border-color .25s,box-shadow .25s;position:relative;z-index:2;}
+.step-item:hover .step-num-wrap{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 8px 28px rgba(0,113,227,.35);}
+.step-title{font-size:15px;font-weight:600;color:#1d1d1f;margin-bottom:8px;}
+.step-desc{font-size:13px;color:var(--gray);line-height:1.6;}
+
+/* ── CTA BANNER ── */
+.cta-section{background:var(--near-black);padding:100px 24px;text-align:center;position:relative;overflow:hidden;}
+.cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(0,113,227,.12) 0%,transparent 70%);pointer-events:none;}
+.cta-title{font-family:var(--font-d);font-size:clamp(36px,5vw,68px);color:#fff;margin-bottom:18px;letter-spacing:-.02em;position:relative;}
+.cta-sub{font-size:17px;color:rgba(255,255,255,.45);margin-bottom:40px;position:relative;}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;}
+
+/* ── FOOTER ── */
+footer{background:#1d1d1f;padding:64px 24px 40px;border-top:.5px solid rgba(255,255,255,.07);}
+.footer-w{max-width:1120px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:.5px solid rgba(255,255,255,.07);}
+.footer-brand{font-family:var(--font-d);font-size:22px;color:#fff;margin-bottom:10px;}
+.footer-tagline{font-size:13px;color:rgba(255,255,255,.35);line-height:1.7;max-width:280px;}
+.footer-flags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;font-size:15px;}
+.footer-social{display:flex;gap:10px;margin-top:18px;}
+.footer-soc-link{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.06);border:.5px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:13px;color:rgba(255,255,255,.4);transition:background .2s,color .2s,border-color .2s;text-decoration:none;}
+.footer-soc-link:hover{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.15);}
+.footer-col h4{font-size:12px;font-weight:600;color:#fff;margin-bottom:16px;letter-spacing:.04em;}
+.footer-link{display:block;font-size:12px;color:rgba(255,255,255,.38);margin-bottom:9px;cursor:pointer;transition:color .2s;}
+.footer-link:hover{color:rgba(255,255,255,.75);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25);}
+.footer-copy a{color:var(--blue);text-decoration:none;}
+
+/* ── REVEAL ON SCROLL ── */
+.reveal{opacity:1;transform:none;transition:opacity .75s var(--ease),transform .75s var(--ease);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:.1s;}.reveal-delay-2{transition-delay:.2s;}.reveal-delay-3{transition-delay:.3s;}.reveal-delay-4{transition-delay:.4s;}.reveal-delay-5{transition-delay:.5s;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .services-grid{grid-template-columns:1fr 1fr;}
+  .feature-block{grid-template-columns:1fr;gap:40px;}
+  .feature-block.reverse{direction:ltr;}
+  .why-grid,.testi-grid,.footer-top{grid-template-columns:1fr 1fr;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .process-steps{grid-template-columns:1fr 1fr;}
+  .process-steps::before{display:none;}
+  .clients-grid{grid-template-columns:repeat(3,1fr);}
+  .industry-row{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:600px){
+  .services-grid,.why-grid,.testi-grid,.process-steps,.footer-top{grid-template-columns:1fr;}
+  .nav-links{display:none;}
+  .hero-title{font-size:clamp(40px,10vw,64px);}
   
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  
-  <style>
-    /* ========================================
-       Global Styles & Resets
-       ======================================== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    :root {
-      --bg-dark: #0a0c10;
-      --bg-light: #ffffff;
-      --bg-light-alt: #f8f9fa;
-      --primary: #0066ff;
-      --primary-hover: #0052cc;
-      --text-white: #ffffff;
-      --text-gray: rgba(255, 255, 255, 0.7);
-      --text-dark: #111827;
-      --text-dark-gray: #4b5563;
-      --border-dark: rgba(255, 255, 255, 0.08);
-      --border-light: #e5e7eb;
-    }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-white);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    
-    h1, h2, h3, h4, .serif-text {
-      font-family: 'Playfair Display', serif;
-    }
-    
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: color 0.2s ease;
-    }
-    
-    /* ========================================
-       Navigation
-       ======================================== */
-    .navbar {
-      padding: 24px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-    }
-    
-    .nav-logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      align-items: center;
-    }
-    
-    .nav-links a {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-white);
-    }
-    
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-    
-    /* ========================================
-       Buttons
-       ======================================== */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 32px;
-      border-radius: 50px;
-      font-weight: 500;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-family: 'Inter', sans-serif;
-    }
-    
-    .btn-primary {
-      background-color: var(--primary);
-      color: #fff;
-      border: none;
-    }
-    
-    .btn-primary:hover {
-      background-color: var(--primary-hover);
-      transform: translateY(-2px);
-    }
-    
-    .btn-outline {
-      background-color: transparent;
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-    
-    .btn-outline:hover {
-      border-color: #fff;
-      background: rgba(255, 255, 255, 0.05);
-    }
-    
-    /* ========================================
-       Hero Section (Dark)
-       ======================================== */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-      padding: 120px 20px 60px;
-    }
-    
-    .hero::before {
-      content: '';
-      position: absolute;
-      width: 800px;
-      height: 800px;
-      background: radial-gradient(circle, rgba(0,255,128,0.1) 0%, rgba(0,102,255,0.15) 30%, rgba(0,0,0,0) 70%);
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: -1;
-      filter: blur(80px);
-    }
-    
-    .hero-label {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: rgba(255, 255, 255, 0.6);
-      margin-bottom: 24px;
-    }
-    
-    .hero h1 {
-      font-size: clamp(3rem, 6vw, 5.5rem);
-      line-height: 1.1;
-      max-width: 900px;
-      margin-bottom: 24px;
-      font-weight: 600;
-    }
-    
-    .hero p {
-      font-size: 1.15rem;
-      color: var(--text-gray);
-      max-width: 600px;
-      margin-bottom: 40px;
-    }
-    
-    .hero-buttons {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    
-    /* ========================================
-       Stats Section (Light)
-       ======================================== */
-    .stats {
-      background-color: var(--bg-light);
-      color: var(--text-dark);
-      padding: 80px 5%;
-    }
-    
-    .stats-grid {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-      gap: 40px;
-    }
-    
-    .stat-item {
-      text-align: center;
-      flex: 1;
-      min-width: 150px;
-      position: relative;
-    }
-    
-    .stat-item:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 15%;
-      height: 70%;
-      width: 1px;
-      background: var(--border-light);
-    }
-    
-    .stat-number {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-      line-height: 1;
-    }
-    
-    .stat-label {
-      font-size: 0.9rem;
-      color: var(--text-dark-gray);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 500;
-    }
-    
-    /* ========================================
-       Services Section (Dark)
-       ======================================== */
-    .services {
-      padding: 120px 5%;
-      background: var(--bg-dark);
-      text-align: center;
-      position: relative;
-    }
-    
-    .section-tag {
-      color: var(--primary);
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-      display: inline-block;
-      font-weight: 600;
-    }
-    
-    .services h2 {
-      font-size: clamp(2.5rem, 4vw, 3.5rem);
-      margin-bottom: 80px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.2;
-    }
-    
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .service-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-dark);
-      border-radius: 24px;
-      padding: 40px;
-      text-align: left;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-    
-    .service-card:hover {
-      transform: translateY(-5px);
-    }
-    
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 150px;
-      opacity: 0.15;
-      filter: blur(40px);
-      z-index: 0;
-    }
-    
-    .service-card.blue::before { background: #0066ff; }
-    .service-card.green::before { background: #00ff88; }
-    .service-card.orange::before { background: #ff7700; }
-    
-    .service-card > * {
-      position: relative;
-      z-index: 1;
-    }
-    
-    .service-icon-box {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
-      font-size: 1.2rem;
-    }
-    
-    .service-card.blue .service-icon-box { background: rgba(0, 102, 255, 0.2); color: #66a3ff; }
-    .service-card.green .service-icon-box { background: rgba(0, 255, 136, 0.2); color: #33ff99; }
-    .service-card.orange .service-icon-box { background: rgba(255, 119, 0, 0.2); color: #ff9933; }
-    
-    .service-card h3 {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.4rem;
-      margin-bottom: 16px;
-      font-weight: 600;
-    }
-    
-    .service-card p {
-      color: var(--text-gray);
-      font-size: 0.95rem;
-      margin-bottom: 30px;
-    }
-    
-    /* CSS Graphics for Cards */
-    .chart-graphic {
-      height: 120px;
-      display: flex;
-      align-items: flex-end;
-      gap: 10px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-    
-    .chart-bar {
-      flex: 1;
-      background: rgba(255,255,255,0.1);
-      border-radius: 4px 4px 0 0;
-      transition: height 0.5s ease;
-    }
-    
-    .service-card.blue .chart-bar { background: linear-gradient(to top, rgba(0,102,255,0.2), rgba(0,102,255,0.8)); }
-    .service-card.green .chart-bar { background: linear-gradient(to top, rgba(0,255,136,0.2), rgba(0,255,136,0.8)); }
-    .service-card.orange .chart-bar { background: linear-gradient(to top, rgba(255,119,0,0.2), rgba(255,119,0,0.8)); }
-    
-    /* ========================================
-       Features Sections (Alternating Dark)
-       ======================================== */
-    .feature-row {
-      display: flex;
-      align-items: center;
-      gap: 80px;
-      padding: 100px 5%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .feature-row:nth-child(even) {
-      flex-direction: row-reverse;
-    }
-    
-    .feature-content {
-      flex: 1;
-    }
-    
-    .feature-content h2 {
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      margin-bottom: 24px;
-      line-height: 1.2;
-    }
-    
-    .feature-content p {
-      color: var(--text-gray);
-      margin-bottom: 30px;
-      font-size: 1.1rem;
-    }
-    
-    .feature-list {
-      list-style: none;
-    }
-    
-    .feature-list li {
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: rgba(255, 255, 255, 0.9);
-      font-size: 1rem;
-    }
-    
-    .feature-list li::before {
-      content: '✓';
-      color: #00ff88;
-      font-weight: bold;
-      background: rgba(0, 255, 136, 0.1);
-      width: 24px;
-      height: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      font-size: 0.8rem;
-    }
-    
-    .feature-visual {
-      flex: 1;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--border-dark);
-      border-radius: 24px;
-      aspect-ratio: 4/3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      padding: 40px;
-    }
-    
-    /* Feature Graphics */
-    .graph-visual {
-      display: flex;
-      align-items: flex-end;
-      gap: 15px;
-      width: 100%;
-      height: 70%;
-    }
-    .graph-bar {
-      flex: 1;
-      background: linear-gradient(to top, #0033cc, #0066ff);
-      border-radius: 8px 8px 0 0;
-      box-shadow: 0 0 20px rgba(0,102,255,0.4);
-    }
-    
-    .social-visual {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    .social-icon-lg {
-      width: 80px;
-      height: 80px;
-      background: rgba(255,255,255,0.05);
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-    .social-icon-lg.meta { color: #1877f2; }
-    .social-icon-lg.ig { color: #e1306c; }
-    .social-icon-lg.tt { color: #fff; }
-    .social-icon-lg.yt { color: #ff0000; }
-    .social-icon-lg.ln { color: #0077b5; }
-    .social-icon-lg.x { color: #fff; }
-    
-    .browser-visual {
-      width: 100%;
-      height: 100%;
-      background: #1e1e1e;
-      border-radius: 12px;
-      border: 1px solid #333;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-    .browser-top {
-      height: 30px;
-      background: #2d2d2d;
-      display: flex;
-      align-items: center;
-      padding: 0 15px;
-      gap: 8px;
-    }
-    .dot { width: 10px; height: 10px; border-radius: 50%; }
-    .dot.r { background: #ff5f56; }
-    .dot.y { background: #ffbd2e; }
-    .dot.g { background: #27c93f; }
-    .browser-content {
-      padding: 20px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    .wire-hero { height: 40%; background: rgba(0,255,136,0.1); border-radius: 8px; }
-    .wire-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; flex: 1; }
-    .wire-box { background: rgba(255,255,255,0.05); border-radius: 8px; }
-    
-    /* ========================================
-       Trusted By (Dark)
-       ======================================== */
-    .trusted {
-      padding: 100px 5%;
-      text-align: center;
-      background: var(--bg-dark);
-      border-top: 1px solid var(--border-dark);
-      border-bottom: 1px solid var(--border-dark);
-    }
-    
-    .trusted h3 {
-      font-size: 2rem;
-      margin-bottom: 60px;
-    }
-    
-    .trusted h3 span {
-      color: #00ccff;
-    }
-    
-    .flags-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 40px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    
-    .flag-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      opacity: 0.7;
-      transition: opacity 0.3s;
-    }
-    
-    .flag-item:hover {
-      opacity: 1;
-    }
-    
-    .flag-icon {
-      width: 48px;
-      height: 32px;
-      background: #333;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-    }
-    
-    .flag-label {
-      font-size: 0.85rem;
-      color: var(--text-gray);
-    }
-    
-    /* ========================================
-       Process Section (Light)
-       ======================================== */
-    .process {
-      background: var(--bg-light-alt);
-      color: var(--text-dark);
-      padding: 120px 5%;
-      text-align: center;
-    }
-    
-    .process h2 {
-      font-size: clamp(2.5rem, 4vw, 3.5rem);
-      margin-bottom: 80px;
-    }
-    
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-    }
-    
-    .process-step {
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .process-icon {
-      width: 70px;
-      height: 70px;
-      background: white;
-      color: var(--primary);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 24px;
-      font-size: 1.5rem;
-      font-weight: 700;
-      box-shadow: 0 10px 30px rgba(0,102,255,0.1);
-      border: 1px solid rgba(0,102,255,0.1);
-    }
-    
-    .process-step h4 {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.2rem;
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
-    
-    .process-step p {
-      color: var(--text-dark-gray);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    
-    /* ========================================
-       Packages Section (Light)
-       ======================================== */
-    .packages {
-      background: var(--bg-light);
-      color: var(--text-dark);
-      padding: 120px 5%;
-      text-align: center;
-    }
-    
-    .packages h2 {
-      font-size: clamp(2.5rem, 4vw, 3.5rem);
-      margin-bottom: 80px;
-    }
-    
-    .packages-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .package-card {
-      background: #fff;
-      padding: 32px;
-      border-radius: 20px;
-      border: 1px solid var(--border-light);
-      text-align: left;
-      transition: box-shadow 0.3s;
-    }
-    
-    .package-card:hover {
-      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-    }
-    
-    .package-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-    }
-    
-    .pkg-1 { background: rgba(0, 102, 255, 0.1); color: #0066ff; }
-    .pkg-2 { background: rgba(0, 204, 255, 0.1); color: #00ccff; }
-    .pkg-3 { background: rgba(0, 255, 136, 0.1); color: #00ff88; }
-    .pkg-4 { background: rgba(255, 153, 0, 0.1); color: #ff9900; }
-    .pkg-5 { background: rgba(255, 68, 68, 0.1); color: #ff4444; }
-    .pkg-6 { background: rgba(153, 0, 255, 0.1); color: #9900ff; }
-    
-    .package-card h4 {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.2rem;
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
-    
-    .package-card p {
-      color: var(--text-dark-gray);
-      font-size: 0.95rem;
-    }
-    
-    /* ========================================
-       Pricing Section (Dark)
-       ======================================== */
-    .pricing {
-      padding: 120px 5%;
-      text-align: center;
-      background: var(--bg-dark);
-      position: relative;
-    }
-    
-    .pricing h2 {
-      font-size: clamp(2.5rem, 4vw, 3.5rem);
-      margin-bottom: 20px;
-    }
-    
-    .pricing-desc {
-      color: var(--text-gray);
-      margin-bottom: 80px;
-      font-size: 1.1rem;
-    }
-    
-    .pricing-grid {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      max-width: 1100px;
-      margin: 0 auto;
-      align-items: stretch;
-      flex-wrap: wrap;
-    }
-    
-    .price-card {
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--border-dark);
-      border-radius: 24px;
-      padding: 48px 40px;
-      flex: 1;
-      min-width: 300px;
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-    
-    .price-card.featured {
-      background: rgba(255, 255, 255, 0.04);
-      border-color: rgba(0, 102, 255, 0.4);
-      transform: scale(1.05);
-      z-index: 10;
-      box-shadow: 0 20px 60px rgba(0, 102, 255, 0.1);
-    }
-    
-    .featured-badge {
-      position: absolute;
-      top: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--primary);
-      color: white;
-      padding: 6px 16px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-    
-    .price-card h3 {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.4rem;
-      margin-bottom: 24px;
-      font-weight: 600;
-    }
-    
-    .price-amount {
-      font-family: 'Playfair Display', serif;
-      font-size: 4rem;
-      margin-bottom: 16px;
-      line-height: 1;
-      font-weight: 600;
-    }
-    
-    .price-amount span {
-      font-size: 1.1rem;
-      color: var(--text-gray);
-      font-family: 'Inter', sans-serif;
-      font-weight: 400;
-    }
-    
-    .price-card > p {
-      color: var(--text-gray);
-      font-size: 0.95rem;
-      margin-bottom: 40px;
-      min-height: 45px;
-    }
-    
-    .price-features {
-      list-style: none;
-      margin-bottom: 40px;
-      flex: 1;
-    }
-    
-    .price-features li {
-      margin-bottom: 16px;
-      font-size: 0.95rem;
-      color: rgba(255, 255, 255, 0.8);
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
-    
-    .price-features li::before {
-      content: '✓';
-      color: var(--primary);
-      font-weight: bold;
-    }
-    
-    .btn-full {
-      width: 100%;
-      justify-content: center;
-    }
-    
-    /* Footer */
-    footer { background: #1a1a1a; color: var(--text-light); padding: 80px 5% 40px; font-size: 0.9rem; text-align: left; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto 60px; }
-    .f-logo { font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 16px; font-family: 'Playfair Display', serif; }
-    .f-links { list-style: none; padding: 0; }
-    .f-links li { margin-bottom: 12px; }
-    .f-links a { color: var(--text-light); text-decoration: none; }
-    .f-links a:hover { color: #fff; }
-    .f-socials { display: flex; gap: 12px; margin-top: 24px; justify-content: flex-start; }
-    .f-social { width: 36px; height: 36px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-light); text-decoration: none; }
-    .f-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; text-align: left; }
-    
-    /* Responsive */
-    @media (max-width: 992px) {
-      .hero h1 { font-size: 3.5rem; }
-      .feature-row, .feature-row:nth-child(even) { flex-direction: column; gap: 40px; }
-      .price-card.featured { transform: scale(1); }
-      .stat-item:not(:last-child)::after { display: none; }
-    }
-  </style>
-</head>
-<body>
+  .clients-grid{grid-template-columns:repeat(2,1fr);}
+  .industry-row{grid-template-columns:1fr 1fr;}
+}
 
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-logo">KJ Digital</div>
-        <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="services.html">Services</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="about.html">About</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
-      <a href="contact.html" class="btn btn-primary" style="padding: 10px 24px; font-size:0.9rem; color:#fff">Get Started</a>
-    </div>
-  </nav>
+/* CANON-NAV-FOOTER-START */
+:root{--blue:#0071e3;--blue-h:#0077ed;--font-d:'DM Serif Display',serif;--font-b:'DM Sans',sans-serif;--ease:cubic-bezier(.4,0,.2,1);--nav-h:64px;}
+html{scroll-padding-top:80px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);background:rgba(29,29,31,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:.5px solid rgba(255,255,255,.06);transition:background .3s;}
+nav .nav-wrap{max-width:1160px;margin:0 auto;height:100%;padding:0 24px;display:flex;align-items:center;justify-content:space-between;}
+nav .nav-logo{font-family:var(--font-d);font-size:17px;color:#fff;cursor:pointer;letter-spacing:-.3px;display:flex;align-items:center;gap:8px;user-select:none;text-decoration:none;}
+nav .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 12px var(--blue);}
+nav .nav-links{display:flex;align-items:center;gap:2px;}
+nav .nav-link{position:relative;color:rgba(255,255,255,.78);font-size:12px;font-weight:400;padding:8px 12px;border-radius:8px;cursor:pointer;transition:color .2s,background .2s;letter-spacing:.01em;text-decoration:none;display:inline-block;}
+nav .nav-link:hover{color:#fff;background:rgba(255,255,255,.08);}
+nav .nav-link.has-drop:after{content:'';display:inline-block;width:4px;height:4px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin-left:5px;vertical-align:middle;transition:transform .2s;}
+nav .nav-link.has-drop:hover:after{transform:rotate(-135deg);}
+nav .nav-link.has-drop{padding-bottom:18px;margin-bottom:-10px;}nav .mega-drop{position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(18,18,20,.97);backdrop-filter:blur(30px);border-bottom:.5px solid rgba(255,255,255,.08);padding:32px 0 36px;opacity:0;pointer-events:none;transition:opacity .25s var(--ease) .35s,transform .25s var(--ease) .35s,visibility 0s linear .6s;transform:translateY(-8px);visibility:hidden;z-index:999;}nav .nav-link.has-drop:hover .mega-drop,nav .mega-drop:hover{opacity:1!important;pointer-events:all!important;transform:translateY(0)!important;visibility:visible!important;transition:opacity .2s var(--ease),transform .2s var(--ease),visibility 0s linear 0s;}
+nav .nav-link.has-drop:hover .mega-drop{opacity:1;pointer-events:all;transform:translateY(0);}
+nav .mega-inner{max-width:1160px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
+nav .mega-col h4{font-size:10px;font-weight:600;color:rgba(255,255,255,.45);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;padding-bottom:8px;border-bottom:.5px solid rgba(255,255,255,.07);}
+nav .mega-col a{display:block;font-size:12px;color:rgba(255,255,255,.62);padding:5px 0;transition:color .15s;cursor:pointer;text-decoration:none;}
+nav .mega-col a:hover{color:#fff;}
+nav .nav-cta{background:var(--blue);color:#fff;font-size:12px;font-weight:500;padding:8px 16px;border-radius:980px;cursor:pointer;border:none;font-family:var(--font-b);transition:background .2s,transform .15s;}
+nav .nav-cta:hover{background:var(--blue-h);transform:scale(1.03);}
+@media(max-width:900px){nav .nav-links{display:none;}}
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-label">KJ Digital World</div>
-    <h1>Grow your business beyond borders</h1>
-    <p>We help businesses dominate their market through data-driven SEO, high-ROI paid advertising, stunning web design, and engaging content.</p>
-    <div class="hero-buttons">
-      <a href="#pricing" class="btn btn-primary">Start Building</a>
-      <a href="#contact" class="btn btn-outline">Book a call</a>
-    </div>
-  </section>
+footer{background:#1d1d1f;padding:64px 24px 40px;border-top:.5px solid rgba(255,255,255,.07);}
+footer .footer-w{max-width:1120px;margin:0 auto;}
+footer .footer-top{display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:.5px solid rgba(255,255,255,.07);}
+footer .footer-brand{font-family:var(--font-d);font-size:22px;color:#fff;margin-bottom:10px;}
+footer .footer-tagline{font-size:13px;color:rgba(255,255,255,.55);line-height:1.7;max-width:320px;}
+footer .footer-flags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;font-size:15px;}
+footer .footer-social{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;}
+footer .footer-soc-link{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.06);border:.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:13px;color:rgba(255,255,255,.7);transition:background .2s,color .2s,border-color .2s;text-decoration:none;font-weight:600;}
+footer .footer-soc-link:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+footer .footer-col h4{font-size:12px;font-weight:600;color:#fff;margin-bottom:16px;letter-spacing:.04em;}
+footer .footer-link{display:block;font-size:12px;color:rgba(255,255,255,.55);margin-bottom:9px;cursor:pointer;transition:color .2s;text-decoration:none;}
+footer .footer-link:hover{color:#fff;}
+footer .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px;}
+footer .footer-copy{font-size:12px;color:rgba(255,255,255,.4);}
+@media(max-width:900px){footer .footer-top{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){footer .footer-top{grid-template-columns:1fr;}}
 
-  <!-- Stats Section -->
-  <section class="stats">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <div class="stat-number">150<span style="color:var(--primary)">+</span></div>
-        <div class="stat-label">Clients Served</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">120<span style="color:var(--primary)">+</span></div>
-        <div class="stat-label">Projects Completed</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">5</div>
-        <div class="stat-label">Industry Awards</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">11</div>
-        <div class="stat-label">Years Experience</div>
-      </div>
-    </div>
-  </section>
+/* === RESPONSIVE & MOBILE MENU PATCH === */
+.mobile-toggle{display:none;position:absolute;top:50%;right:20px;transform:translateY(-50%);background:none;border:none;width:40px;height:40px;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0;z-index:1001;}
+.mobile-toggle span{display:block;width:22px;height:2px;background:#fff;transition:transform .3s,opacity .2s;}
+.mobile-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.mobile-toggle.open span:nth-child(2){opacity:0;}
+.mobile-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-drawer{position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:rgba(18,18,20,.98);-webkit-backdrop-filter:blur(30px);backdrop-filter:blur(30px);z-index:998;padding:24px 20px 80px;overflow-y:auto;transform:translateX(100%);transition:transform .3s ease;display:none;}
+.mobile-drawer.open{transform:translateX(0);}
+.mobile-drawer a{display:block;padding:14px 4px;color:rgba(255,255,255,.85);font-size:16px;border-bottom:.5px solid rgba(255,255,255,.06);text-decoration:none;}
+.mobile-drawer a:hover{color:#fff;}
+.mobile-drawer .ms-section{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#0071e3;padding:18px 4px 6px;border:none;}
+.mobile-drawer .ms-sub{padding-left:16px;font-size:14px;color:rgba(255,255,255,.65);}
+.mobile-drawer .mobile-cta{display:block;background:#0071e3;color:#fff;text-align:center;padding:14px;border-radius:980px;margin-top:24px;font-weight:500;border:none;}
+@media(max-width:900px){
+  .mobile-toggle{display:flex;}
+  .mobile-drawer{display:block;}
+  nav .nav-links{display:none!important;}
+  nav .nav-cta{display:none!important;}
+  .section,.services-section,.feature-section{padding-left:20px!important;padding-right:20px!important;}
+  .feature-block{padding:64px 20px!important;}
+  .hero-content{padding:32px 20px!important;}
+  .stats-section{padding-left:20px!important;padding-right:20px!important;}
+  footer{padding:48px 20px 32px!important;}
+}
+@media(max-width:900px){
+  .flags-strip{position:static!important;transform:none!important;left:auto!important;bottom:auto!important;margin:28px auto 0!important;max-width:100%!important;gap:6px!important;justify-content:center!important;}
+  .hero{min-height:auto!important;padding-bottom:48px!important;}
+  .scroll-hint{display:none!important;}
+}
+@media(max-width:600px){
+  :root{--nav-h:56px;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+  .hero-ctas{flex-direction:column;align-items:stretch;width:100%;max-width:320px;margin:0 auto;}
+  .hero-ctas button,.hero-ctas .btn-fill,.hero-ctas .btn-ghost{width:100%;}
+}
+@media(hover:none),(pointer:coarse){
+  body{cursor:auto!important;}
+  #cursor,#cursor-ring{display:none!important;}
+}
+img,video{max-width:100%;height:auto;}
+/* === END RESPONSIVE PATCH === */
 
-  <!-- Services Section -->
-  <section class="services" id="services">
-    <span class="section-tag">Services</span>
-    <h2>Every service your brand needs — In one place.</h2>
-    <div class="services-grid">
-      <!-- Card 1 -->
-      <div class="service-card blue">
-        <div class="service-icon-box">📈</div>
-        <h3>Paid Advertising</h3>
-        <p>Maximize your ROI with targeted Google and Meta campaigns that put your brand in front of the right audience.</p>
-        <div class="chart-graphic">
-          <div class="chart-bar" style="height: 30%"></div>
-          <div class="chart-bar" style="height: 50%"></div>
-          <div class="chart-bar" style="height: 70%"></div>
-          <div class="chart-bar" style="height: 90%"></div>
-          <div class="chart-bar" style="height: 100%"></div>
-        </div>
-      </div>
-      <!-- Card 2 -->
-      <div class="service-card green">
-        <div class="service-icon-box">🔍</div>
-        <h3>Search Engine Optimization</h3>
-        <p>Dominate search results with data-driven SEO strategies to drive organic traffic and outperform competitors.</p>
-        <div class="chart-graphic">
-          <div class="chart-bar" style="height: 40%"></div>
-          <div class="chart-bar" style="height: 60%"></div>
-          <div class="chart-bar" style="height: 85%"></div>
-          <div class="chart-bar" style="height: 95%"></div>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="service-card orange">
-        <div class="service-icon-box">✍️</div>
-        <h3>Content Marketing</h3>
-        <p>Engaging content that tells your brand story, builds authority, and drives engagement across all platforms.</p>
-        <div class="chart-graphic">
-          <div class="chart-bar" style="height: 50%"></div>
-          <div class="chart-bar" style="height: 60%"></div>
-          <div class="chart-bar" style="height: 70%"></div>
-          <div class="chart-bar" style="height: 100%"></div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Feature 1 -->
-  <section class="feature-row">
-    <div class="feature-content">
-      <span class="section-tag" style="color: #00ff88;">Organic Growth</span>
-      <h2>SEO that puts you on page one.</h2>
-      <p>Stop hiding on page two. Our technical and content-driven SEO strategies ensure your customers find you exactly when they're looking for your services.</p>
-      <ul class="feature-list">
-        <li>Comprehensive site audits</li>
-        <li>On-page & Off-page optimization</li>
-        <li>Keyword research & strategy</li>
-        <li>Monthly performance reporting</li>
-      </ul>
-      <br>
-      <a href="services.html" class="btn btn-primary" style="background:#0066ff">Learn More</a>
-    </div>
-    <div class="feature-visual">
-      <div class="graph-visual">
-        <div class="graph-bar" style="height: 20%"></div>
-        <div class="graph-bar" style="height: 35%"></div>
-        <div class="graph-bar" style="height: 50%"></div>
-        <div class="graph-bar" style="height: 75%"></div>
-        <div class="graph-bar" style="height: 100%"></div>
-      </div>
-    </div>
-  </section>
+/* === FLAG EMOJI === */
+.flag-emoji{display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;line-height:1;filter:saturate(1.08);}
+.client-flag .flag-emoji{font-size:34px;min-width:44px;min-height:34px;margin-bottom:0;}
+.client-flag-img{display:block!important;width:48px;height:36px;object-fit:contain;margin:0 auto 10px;filter:saturate(1.08);flex-shrink:0;}
+@media(max-width:900px){.client-flag-img{width:44px;height:33px;}.client-box{padding:24px 12px;min-height:130px;}}
+@media(max-width:600px){.client-flag-img{width:40px;height:30px;}.client-box{padding:20px 10px;min-height:120px;}.client-country{font-size:12px;}.client-sub{font-size:10px;}}
+.flag-pill .flag-emoji{font-size:16px;min-width:18px;}
+.testi-flag .flag-emoji,.testi-meta .flag-emoji{font-size:18px;min-width:20px;}
+.footer-flags .flag-emoji{font-size:20px;margin-right:3px;}
 
-  <!-- Feature 2 -->
-  <section class="feature-row">
-    <div class="feature-content">
-      <span class="section-tag" style="color: #0066ff;">Paid Media</span>
-      <h2>Every platform.<br>Maximum reach.</h2>
-      <p>We leverage industry-leading platforms to put your brand in front of high-intent audiences, driving conversions and reducing your cost-per-acquisition.</p>
-      <br>
-      <a href="contact.html" class="btn btn-primary">Start a Campaign</a>
-    </div>
-    <div class="feature-visual">
-      <div class="social-visual">
-        <div class="social-icon-lg meta">f</div>
-        <div class="social-icon-lg ig">📸</div>
-        <div class="social-icon-lg x">𝕏</div>
-        <div class="social-icon-lg tt">♪</div>
-        <div class="social-icon-lg yt">▶</div>
-        <div class="social-icon-lg ln">in</div>
-      </div>
-    </div>
-  </section>
+/* === MOBILE COLLAPSIBLE === */
+.mobile-drawer .ms-section{cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none;}
+.mobile-drawer .ms-section::after{content:'+';font-size:18px;color:#0071e3;font-weight:300;transition:transform .25s;}
+.mobile-drawer .ms-section.open::after{content:'\2212';}
+.mobile-drawer .ms-group{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.mobile-drawer .ms-group.open{max-height:600px;}
+/* === END === */
 
-  <!-- Feature 3 -->
-  <section class="feature-row">
-    <div class="feature-content">
-      <span class="section-tag" style="color: #00ff88;">Web Design</span>
-      <h2>Websites that work as hard as you.</h2>
-      <p>Your website is your best salesperson. We build blazing-fast, conversion-optimized websites that look stunning and turn visitors into loyal customers.</p>
-      <ul class="feature-list">
-        <li>Custom UI/UX Design</li>
-        <li>Mobile-first development</li>
-        <li>E-commerce solutions</li>
-        <li>Performance optimization</li>
-      </ul>
-      <br>
-      <a href="portfolio.html" class="btn btn-primary" style="background:#0066ff">View Portfolio</a>
-    </div>
-    <div class="feature-visual">
-      <div class="browser-visual">
-        <div class="browser-top">
-          <div class="dot r"></div>
-          <div class="dot y"></div>
-          <div class="dot g"></div>
-        </div>
-        <div class="browser-content">
-          <div class="wire-hero"></div>
-          <div class="wire-grid">
-            <div class="wire-box"></div>
-            <div class="wire-box"></div>
+/* CANON-NAV-FOOTER-END */
+</style><div>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- ══════════════ NAV ══════════════ -->
+<nav>
+  <div class="nav-wrap">
+    <a href="https://kjdigitalworld.lovable.app/" class="nav-logo">
+      <div class="logo-dot"></div>
+      Digital World
+    </a>
+    <div class="nav-links">
+      <a href="https://kjdigitalworld.lovable.app/" class="nav-link">Home</a>
+
+      <div class="nav-link has-drop has-mega">Services
+        <div class="mega-drop">
+          <div class="mega-inner">
+            <div class="mega-col">
+              <h4>🔍 SEO</h4>
+              <a href="https://kjdigitalworld.lovable.app/services/seo#svc-local">Local SEO</a>
+              <a href="https://kjdigitalworld.lovable.app/services/seo#svc-ecom">Ecommerce SEO</a>
+              <a href="https://kjdigitalworld.lovable.app/services/seo#svc-intl">International SEO</a>
+              <a href="https://kjdigitalworld.lovable.app/services/seo#svc-yt">Youtube / Video SEO</a>
+              <a href="https://kjdigitalworld.lovable.app/services/seo#svc-saas">SaaS SEO</a>
+              <a href="https://kjdigitalworld.lovable.app/services/seo#svc-semantic">Semantic SEO</a>
+              <a href="https://kjdigitalworld.lovable.app/services/seo#svc-ai">AI SEO</a>
+            </div>
+            <div class="mega-col">
+              <h4>🎯 PPC / Paid Ads</h4>
+              <a href="https://kjdigitalworld.lovable.app/services/ppc#svc-search">Google Search Ads</a>
+              <a href="https://kjdigitalworld.lovable.app/services/ppc#svc-shopping">Google Shopping Ads</a>
+              <a href="https://kjdigitalworld.lovable.app/services/ppc#svc-pmax">Performance Max</a>
+              <a href="https://kjdigitalworld.lovable.app/services/ppc#svc-youtube">YouTube Ads</a>
+              <a href="https://kjdigitalworld.lovable.app/services/ppc#svc-remarketing">Remarketing</a>
+              <a href="https://kjdigitalworld.lovable.app/services/ppc#svc-facebook">Facebook Ads</a>
+              <a href="https://kjdigitalworld.lovable.app/services/ppc#svc-instagram">Instagram Ads</a>
+              <a href="https://kjdigitalworld.lovable.app/services/ppc#svc-tiktok">TikTok / LinkedIn Ads</a>
+            </div>
+            <div class="mega-col">
+              <h4>🌐 Web Design &amp; Dev</h4>
+              <a href="https://kjdigitalworld.lovable.app/services/web#svc-uiux">Website Design (UI/UX)</a>
+              <a href="https://kjdigitalworld.lovable.app/services/web#svc-wordpress">WordPress Development</a>
+              <a href="https://kjdigitalworld.lovable.app/services/web#svc-shopify">Shopify Development</a>
+              <a href="https://kjdigitalworld.lovable.app/services/web#svc-landing">Landing Page Design</a>
+              <a href="https://kjdigitalworld.lovable.app/services/web#svc-speed">Website Speed Optimization</a>
+              <a href="https://kjdigitalworld.lovable.app/services/web#svc-maintenance">Website Maintenance</a>
+              <a href="https://kjdigitalworld.lovable.app/services/web#svc-migration">Website Migration</a>
+              <a href="https://kjdigitalworld.lovable.app/services/web#svc-cms">CMS Setup</a>
+            </div>
+            <div class="mega-col">
+              <h4>✍️ Content &amp; More</h4>
+              <a href="https://kjdigitalworld.lovable.app/services/content#svc-blog">Blog Writing &amp; Management</a>
+              <a href="https://kjdigitalworld.lovable.app/services/content#svc-email">Email Marketing</a>
+              <a href="https://kjdigitalworld.lovable.app/services/content#svc-content">Content Marketing</a>
+              <a href="https://kjdigitalworld.lovable.app/services/content#svc-cro">CRO Audit &amp; Testing</a>
+              <a href="https://kjdigitalworld.lovable.app/services/content#svc-backlink">Backlink Building</a>
+              <a href="https://kjdigitalworld.lovable.app/services/content#svc-pr">Digital PR &amp; HARO</a>
+              <a href="https://kjdigitalworld.lovable.app/services/content#svc-social">Social Media Content</a>
+              <a href="https://kjdigitalworld.lovable.app/services/content#svc-press">Press Releases &amp; PR</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Trusted By -->
-  <section class="trusted">
-    <h3>Trusted by businesses across <span>40 countries.</span></h3>
-    <div class="flags-grid">
-      <div class="flag-item"><div class="flag-icon">🇺🇸</div><div class="flag-label">USA</div></div>
-      <div class="flag-item"><div class="flag-icon">🇬🇧</div><div class="flag-label">UK</div></div>
-      <div class="flag-item"><div class="flag-icon">🇨🇦</div><div class="flag-label">Canada</div></div>
-      <div class="flag-item"><div class="flag-icon">🇦🇺</div><div class="flag-label">Australia</div></div>
-      <div class="flag-item"><div class="flag-icon">🇮🇪</div><div class="flag-label">Ireland</div></div>
-      <div class="flag-item"><div class="flag-icon">🇦🇪</div><div class="flag-label">UAE</div></div>
-      <div class="flag-item"><div class="flag-icon">🇮🇳</div><div class="flag-label">India</div></div>
-      <div class="flag-item"><div class="flag-icon">🇩🇪</div><div class="flag-label">Germany</div></div>
-      <div class="flag-item"><div class="flag-icon">🇳🇱</div><div class="flag-label">Netherlands</div></div>
-      <div class="flag-item"><div class="flag-icon">🇳🇿</div><div class="flag-label">New Zealand</div></div>
-      <div class="flag-item"><div class="flag-icon">🇧🇩</div><div class="flag-label">Bangladesh</div></div>
+      <a href="https://kjdigitalworld.lovable.app/portfolio" class="nav-link">Portfolio</a>
+      <a href="https://kjdigitalworld.lovable.app/about" class="nav-link">About</a>
+      <a href="https://kjdigitalworld.lovable.app/blog" class="nav-link">Blog</a>
+      <a href="https://kjdigitalworld.lovable.app/contact" class="nav-link">Contact</a>
     </div>
-  </section>
+    <a href="https://kjdigitalworld.lovable.app/contact"><button class="nav-cta">Get Started</button></a>
+  </div>
 
-  <!-- Process Section -->
-  <section class="process" id="process">
-    <span class="section-tag" style="margin-bottom: 20px;">Workflow</span>
-    <h2>A simple process.<br>Exceptional results.</h2>
-    <div class="process-grid">
-      <div class="process-step">
-        <div class="process-icon">1</div>
-        <h4>Discovery</h4>
-        <p>We analyze your business, market, and competitors to find the best growth opportunities.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-icon">2</div>
-        <h4>Strategy</h4>
-        <p>We develop a custom digital marketing roadmap tailored specifically to your goals.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-icon">3</div>
-        <h4>Execution</h4>
-        <p>Our team implements the strategy, optimizing campaigns and content for maximum impact.</p>
-      </div>
-      <div class="process-step">
-        <div class="process-icon">4</div>
-        <h4>Scaling</h4>
-        <p>We analyze the data, refine our approach, and scale what works to drive massive growth.</p>
-      </div>
+<button class="mobile-toggle" id="mobToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+<div class="mobile-drawer" id="mobDrawer">
+  <a href="https://kjdigitalworld.lovable.app/">Home</a>
+  <div class="ms-section">SEO Services</div>
+  <a class="ms-sub" href="https://kjdigitalworld.lovable.app/services/seo">All SEO Services</a>
+  <a class="ms-sub" href="https://kjdigitalworld.lovable.app/services/seo#svc-local">Local SEO</a>
+  <a class="ms-sub" href="https://kjdigitalworld.lovable.app/services/seo#svc-ecom">Ecommerce SEO</a>
+  <a class="ms-sub" href="https://kjdigitalworld.lovable.app/services/seo#svc-intl">International SEO</a>
+  <div class="ms-section">PPC / Paid Ads</div>
+  <a class="ms-sub" href="https://kjdigitalworld.lovable.app/services/ppc">All Paid Ads</a>
+  <a class="ms-sub" href="https://kjdigitalworld.lovable.app/services/ppc#svc-search">Google Ads</a>
+  <a class="ms-sub" href="https://kjdigitalworld.lovable.app/services/ppc#svc-facebook">Facebook Ads</a>
+  <div class="ms-section">Web Design &amp; Dev</div>
+  <a class="ms-sub" href="https://kjdigitalworld.lovable.app/services/web">All Web Services</a>
+  <a class="ms-sub" href="https://kjdigitalworld.lovable.app/services/web#svc-wordpress">WordPress</a>
+  <a class="ms-sub" href="https://kjdigitalworld.lovable.app/services/web#svc-shopify">Shopify</a>
+  <div class="ms-section">Content &amp; More</div>
+  <a class="ms-sub" href="https://kjdigitalworld.lovable.app/services/content">All Content Services</a>
+  <a class="ms-sub" href="https://kjdigitalworld.lovable.app/services/content#svc-email">Email Marketing</a>
+  <a class="ms-sub" href="https://kjdigitalworld.lovable.app/services/content#svc-content">Content Marketing</a>
+  <a href="https://kjdigitalworld.lovable.app/portfolio" style="margin-top:14px;">Portfolio</a>
+  <a href="https://kjdigitalworld.lovable.app/about">About</a>
+  <a href="https://kjdigitalworld.lovable.app/blog">Blog</a>
+  <a href="https://kjdigitalworld.lovable.app/contact">Contact</a>
+  <a href="https://kjdigitalworld.lovable.app/contact" class="mobile-cta">Get Started</a>
+</div>
+</nav>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero">
+  <div class="hero-mesh">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+    <div class="grain"></div>
+    <div class="hero-grid"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="eyebrow-dot"></div>
+      Available for new projects · Based in Dhaka, Bangladesh
     </div>
-  </section>
 
-  <!-- Packages -->
-  <section class="packages">
-    <span class="section-tag">Solutions</span>
-    <h2>Packages.<br>All services. Real results.</h2>
-    <div class="packages-grid">
-      <div class="package-card">
-        <div class="package-icon pkg-1">🔍</div>
-        <h4>SEO Audit & Fixes</h4>
-        <p>Complete technical audit, on-page optimization, and quick wins to boost rankings immediately.</p>
-      </div>
-      <div class="package-card">
-        <div class="package-icon pkg-2">📈</div>
-        <h4>PPC Campaign Setup</h4>
-        <p>From keyword research to ad copy and landing pages, we build campaigns that convert.</p>
-      </div>
-      <div class="package-card">
-        <div class="package-icon pkg-3">💻</div>
-        <h4>Website Redesign</h4>
-        <p>A complete overhaul of your digital storefront to improve aesthetics and user experience.</p>
-      </div>
-      <div class="package-card">
-        <div class="package-icon pkg-4">✍️</div>
-        <h4>Content Strategy</h4>
-        <p>Monthly blog posts, social media content, and email newsletters to engage your audience.</p>
-      </div>
-      <div class="package-card">
-        <div class="package-icon pkg-5">🎯</div>
-        <h4>Conversion Optimization</h4>
-        <p>A/B testing and funnel optimization to get more value from your existing traffic.</p>
-      </div>
-      <div class="package-card">
-        <div class="package-icon pkg-6">🚀</div>
-        <h4>Full-Stack Growth</h4>
-        <p>Our ultimate package combining SEO, Ads, and Content for aggressive market expansion.</p>
-      </div>
+    <h1 class="hero-title">Grow your business<br/>beyond borders.</h1>
+
+    <p class="hero-sub"><strong>Digital World</strong> is a full-service digital marketing agency helping businesses in the <strong>USA, UK, Canada, UAE, Australia</strong> & beyond dominate search, ads, and the web — led by <strong>Kamrujjaman Mufti</strong>.</p>
+
+    <div class="hero-ctas">
+      <a href="https://kjdigitalworld.lovable.app/contact"><button class="btn-fill">Start a Project &nbsp;→</button></a>
+      <a href="#services"><button class="btn-ghost">Explore Services</button></a>
     </div>
-  </section>
+  </div>
 
-  <!-- Pricing -->
-  <section class="pricing" id="pricing">
-    <span class="section-tag">Plans</span>
-    <h2>Simple, transparent pricing for every stage.</h2>
-    <p class="pricing-desc">Choose the plan that fits your current business needs.</p>
-    
-    <div class="pricing-grid">
-      <!-- Tier 1 -->
-      <div class="price-card">
-        <h3>Starter</h3>
-        <div class="price-amount">$299<span>/mo</span></div>
-        <p>Perfect for small businesses looking to establish their online presence.</p>
-        <ul class="price-features">
-          <li>Basic SEO Optimization</li>
-          <li>1 Ad Campaign Management</li>
-          <li>Monthly Performance Report</li>
-          <li>Email Support</li>
-        </ul>
-        <a href="contact.html" class="btn btn-outline btn-full">Get Started</a>
-      </div>
-      
-      <!-- Tier 2 -->
-      <div class="price-card featured">
-        <div class="featured-badge">Most Popular</div>
-        <h3>Growth</h3>
-        <div class="price-amount">$499<span>/mo</span></div>
-        <p>Ideal for growing businesses ready to scale their lead generation.</p>
-        <ul class="price-features">
-          <li>Advanced SEO & Link Building</li>
-          <li>Up to 3 Ad Campaigns</li>
-          <li>Content Marketing (2 posts/mo)</li>
-          <li>Bi-weekly Strategy Calls</li>
-          <li>Priority Support</li>
-        </ul>
-        <a href="contact.html" class="btn btn-primary btn-full">Get Started</a>
-      </div>
-      
-      <!-- Tier 3 -->
-      <div class="price-card">
-        <h3>Enterprise</h3>
-        <div class="price-amount">Custom</div>
-        <p>For established brands needing full-scale digital dominance.</p>
-        <ul class="price-features">
-          <li>Enterprise-level SEO Strategy</li>
-          <li>Unlimited Ad Campaigns</li>
-          <li>Full Content & PR Strategy</li>
-          <li>Custom Web Development</li>
-          <li>Dedicated Account Manager</li>
-        </ul>
-        <a href="contact.html" class="btn btn-outline btn-full">Contact Us</a>
-      </div>
+  <div class="flags-strip"><div class="flag-pill">USA</div><div class="flag-pill">UK</div><div class="flag-pill">Canada</div><div class="flag-pill">Australia</div><div class="flag-pill">UAE</div><div class="flag-pill">Ireland</div><div class="flag-pill">Bangladesh</div></div>
+
+  <div class="scroll-hint">
+    <div class="scroll-txt">Scroll</div>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ══════════════ MARQUEE ══════════════ -->
+<div class="marquee-section">
+  <div class="marquee-track" id="mtrack"></div>
+</div>
+
+<!-- ══════════════ STATS ══════════════ -->
+<section class="stats-section">
+  <div class="stats-wrap">
+    <p class="stats-label">Proven track record</p>
+    <div class="stats-grid"><div class="stat-box reveal">
+        <div class="stat-num"><span class="cnt" data-target="150">0</span><span class="stat-suffix">+</span></div>
+        <div class="stat-lbl">Projects Delivered</div>
+      </div><div class="stat-box reveal reveal-delay-1">
+        <div class="stat-num"><span class="cnt" data-target="120">0</span><span class="stat-suffix">+</span></div>
+        <div class="stat-lbl">Happy Clients</div>
+      </div><div class="stat-box reveal reveal-delay-2">
+        <div class="stat-num"><span class="cnt" data-target="5">0</span></div>
+        <div class="stat-lbl">Years Experience</div>
+      </div><div class="stat-box reveal reveal-delay-3">
+        <div class="stat-num"><span class="cnt" data-target="11">0</span></div>
+        <div class="stat-lbl">Countries Served</div>
+      </div></div>
+  </div>
+</section>
+
+<!-- ══════════════ SERVICES ══════════════ -->
+<section class="services-section">
+  <div class="section-w">
+    <div class="services-intro">
+      <span class="eyebrow-sm reveal">What We Do</span>
+      <h2 class="section-title reveal">Every service your<br/>brand needs — in one place.</h2>
+      <p class="section-sub reveal" style="margin:0 auto;">From ranking on page one to building your complete online presence. 8 service categories. Dozens of specialisms. Zero excuses.</p>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <div class="f-logo">KJ Digital World</div>
-        <p>Full-Service Digital Marketing Agency. 5 Years Experience. Serving 11 countries worldwide.</p>
-        <div class="f-socials">
-          <a href="https://facebook.com/digitalworld000" class="f-social" target="_blank">f</a>
-          <a href="https://instagram.com" class="f-social" target="_blank">ig</a>
-          <a href="https://linkedin.com/in/kamrujjaman-mufti" class="f-social" target="_blank">in</a>
-          <a href="https://x.com" class="f-social" target="_blank">x</a>
+    <div class="services-grid">
+
+      <!-- SEO -->
+      <div class="svc-card seo-card reveal" style="display:flex;flex-direction:column;padding:0;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:0 10px 30px rgba(20,104,134,.25);transition:transform .35s ease, box-shadow .35s ease;">
+        <div style="background:linear-gradient(135deg,#146886 0%,#0a4969 100%);padding:28px 28px 0;position:relative;">
+          <div style="position:absolute;inset:0;background:radial-gradient(circle at 80% 0%,rgba(255,255,255,.25),transparent 60%);pointer-events:none;"></div>
+          <div class="svc-icon" style="background:rgba(255,255,255,.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.25);color:#fff;position:relative;">🔍</div>
+          <div class="svc-name" style="color:#fff;position:relative;">Search Engine Optimisation</div>
+          <div class="svc-desc" style="margin-bottom:16px;color:rgba(255,255,255,.88);position:relative;">Long-term search visibility that compounds. Rank higher, get found, grow without paid ads.</div>
+          <div style="display:flex;align-items:flex-end;gap:7px;height:72px;position:relative;">
+            <div style="flex:1;border-radius:4px 4px 0 0;background:rgba(255,255,255,.35);animation:barRise 2s ease-in-out infinite alternate;height:40%;box-shadow:0 0 12px rgba(255,255,255,.2);"></div>
+            <div style="flex:1;border-radius:4px 4px 0 0;background:rgba(255,255,255,.5);animation:barRise 2s .12s ease-in-out infinite alternate;height:58%;box-shadow:0 0 12px rgba(255,255,255,.25);"></div>
+            <div style="flex:1;border-radius:4px 4px 0 0;background:rgba(255,255,255,.65);animation:barRise 2s .24s ease-in-out infinite alternate;height:50%;box-shadow:0 0 12px rgba(255,255,255,.3);"></div>
+            <div style="flex:1;border-radius:4px 4px 0 0;background:rgba(255,255,255,.8);animation:barRise 2s .36s ease-in-out infinite alternate;height:75%;box-shadow:0 0 14px rgba(255,255,255,.35);"></div>
+            <div style="flex:1;border-radius:4px 4px 0 0;background:rgba(255,255,255,.92);animation:barRise 2s .48s ease-in-out infinite alternate;height:68%;box-shadow:0 0 16px rgba(255,255,255,.4);"></div>
+            <div style="flex:1;border-radius:4px 4px 0 0;background:#fff;animation:barRise 2s .60s ease-in-out infinite alternate;height:95%;box-shadow:0 0 18px rgba(255,255,255,.55);"></div>
+          </div>
         </div>
-        <div style="margin-top:20px;">
-          <a href="contact.html" class="btn btn-primary" style="font-size:0.85rem">Book Free Consultation</a>
+        <div style="background:linear-gradient(180deg,#0d3d52 0%,#072a3d 100%);padding:4px 28px 20px;display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:.5px solid rgba(255,255,255,.1);font-size:14px;color:#fff;cursor:pointer;transition:color .18s;" onmouseenter="this.style.color='#4fc3f7'" onmouseleave="this.style.color='#fff'">Local SEO <span style="font-size:16px;">›</span></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:.5px solid rgba(255,255,255,.1);font-size:14px;color:#fff;cursor:pointer;transition:color .18s;" onmouseenter="this.style.color='#4fc3f7'" onmouseleave="this.style.color='#fff'">Ecommerce SEO <span style="display:flex;align-items:center;gap:6px;"><span style="font-size:10px;background:rgba(255,255,255,.18);color:#fff;padding:2px 7px;border-radius:980px;font-weight:500;">Popular</span><span style="font-size:16px;">›</span></span></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:.5px solid rgba(255,255,255,.1);font-size:14px;color:#fff;cursor:pointer;transition:color .18s;" onmouseenter="this.style.color='#4fc3f7'" onmouseleave="this.style.color='#fff'">SaaS SEO <span style="font-size:16px;">›</span></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 0;font-size:14px;color:#fff;cursor:pointer;transition:color .18s;" onmouseenter="this.style.color='#4fc3f7'" onmouseleave="this.style.color='#fff'">Semantic &amp; AI SEO <span style="font-size:16px;">›</span></div>
+        </div>
+        <div class="svc-arrow" style="top:20px;right:20px;color:#fff;">→</div>
+      </div>
+
+      <!-- Web Design & Dev -->
+      <div class="svc-card reveal reveal-delay-1" style="display:flex;flex-direction:column;padding:0;overflow:hidden;background:rgba(255,255,255,.06);">
+        <div style="background:linear-gradient(135deg,#0d1f0d 0%,#0a180a 100%);padding:28px 28px 0;">
+          <div class="svc-icon" style="background:rgba(52,199,89,.15);">🌐</div>
+          <div class="svc-name">Web Design & Development</div>
+          <div class="svc-desc" style="margin-bottom:16px;">Fast, modern websites built to convert — from WordPress blogs to custom-built Shopify stores.</div>
+          <div style="background:rgba(0,0,0,.4);border-radius:8px 8px 0 0;overflow:hidden;">
+            <div style="background:rgba(255,255,255,.08);padding:7px 10px;display:flex;align-items:center;gap:5px;">
+              <div style="width:7px;height:7px;border-radius:50%;background:#ff5f57;"></div>
+              <div style="width:7px;height:7px;border-radius:50%;background:#febc2e;"></div>
+              <div style="width:7px;height:7px;border-radius:50%;background:#28c840;"></div>
+              <div style="flex:1;height:12px;background:rgba(255,255,255,.07);border-radius:3px;margin:0 6px;"></div>
+            </div>
+            <div style="padding:10px;display:flex;flex-direction:column;gap:5px;">
+              <div style="height:7px;width:80%;border-radius:3px;background:rgba(52,199,89,.25);animation:barRise 1.8s ease-in-out infinite alternate;"></div>
+              <div style="height:7px;width:60%;border-radius:3px;background:rgba(52,199,89,.18);animation:barRise 1.8s .2s ease-in-out infinite alternate;"></div>
+              <div style="height:7px;width:90%;border-radius:3px;background:rgba(52,199,89,.22);animation:barRise 1.8s .4s ease-in-out infinite alternate;"></div>
+            </div>
+          </div>
+        </div>
+        <div style="padding:4px 28px 20px;display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:.5px solid rgba(255,255,255,.08);font-size:14px;color:rgba(255,255,255,.75);cursor:pointer;transition:color .18s;" onmouseenter="this.style.color='#34c759'" onmouseleave="this.style.color='rgba(255,255,255,.75)'">WordPress Development <span style="font-size:16px;">›</span></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:.5px solid rgba(255,255,255,.08);font-size:14px;color:rgba(255,255,255,.75);cursor:pointer;transition:color .18s;" onmouseenter="this.style.color='#34c759'" onmouseleave="this.style.color='rgba(255,255,255,.75)'">Shopify Development <span style="display:flex;align-items:center;gap:6px;"><span style="font-size:10px;background:rgba(52,199,89,.25);color:#34c759;padding:2px 7px;border-radius:980px;font-weight:500;">Popular</span><span style="font-size:16px;">›</span></span></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:.5px solid rgba(255,255,255,.08);font-size:14px;color:rgba(255,255,255,.75);cursor:pointer;transition:color .18s;" onmouseenter="this.style.color='#34c759'" onmouseleave="this.style.color='rgba(255,255,255,.75)'">Landing Page Design <span style="font-size:16px;">›</span></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 0;font-size:14px;color:rgba(255,255,255,.75);cursor:pointer;transition:color .18s;" onmouseenter="this.style.color='#34c759'" onmouseleave="this.style.color='rgba(255,255,255,.75)'">Website Speed Optimization <span style="font-size:16px;">›</span></div>
+        </div>
+        <div class="svc-arrow" style="top:20px;right:20px;">→</div>
+      </div>
+
+      <!-- Performance Ads -->
+      <div class="svc-card reveal reveal-delay-2" style="display:flex;flex-direction:column;padding:0;overflow:hidden;background:rgba(255,255,255,.04);">
+        <div style="background:linear-gradient(135deg,#1a0800 0%,#120600 100%);padding:28px 28px 0;">
+          <div class="svc-icon" style="background:rgba(255,100,30,.12);">🎯</div>
+          <div class="svc-name">Pay-Per-Click Advertising</div>
+          <div class="svc-desc" style="margin-bottom:16px;">Paid campaigns that return real revenue — Google Search, Shopping, Display & Meta Ads.</div>
+          <div style="display:flex;gap:16px;align-items:flex-end;height:72px;padding:0 10px;">
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+              <div style="width:100%;border-radius:4px 4px 0 0;background:linear-gradient(180deg,#1877f2,rgba(24,119,242,.4));animation:barRise 2s ease-in-out infinite alternate;height:70%;"></div>
+              <span style="font-size:10px;color:rgba(255,255,255,.35);font-weight:500;">Meta</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+              <div style="width:100%;border-radius:4px 4px 0 0;background:linear-gradient(180deg,#ea4335,rgba(234,67,53,.4));animation:barRise 2s .5s ease-in-out infinite alternate;height:90%;"></div>
+              <span style="font-size:10px;color:rgba(255,255,255,.35);font-weight:500;">Google</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+              <div style="width:100%;border-radius:4px 4px 0 0;background:linear-gradient(180deg,#00b2ff,rgba(0,178,255,.4));animation:barRise 2s .25s ease-in-out infinite alternate;height:60%;"></div>
+              <span style="font-size:10px;color:rgba(255,255,255,.35);font-weight:500;">TikTok</span>
+            </div>
+          </div>
+        </div>
+        <div style="padding:4px 28px 20px;display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:.5px solid rgba(255,255,255,.08);font-size:14px;color:rgba(255,255,255,.75);cursor:pointer;transition:color .18s;" onmouseenter="this.style.color='#ff9f0a'" onmouseleave="this.style.color='rgba(255,255,255,.75)'">Google Search &amp; Shopping Ads <span style="font-size:16px;">›</span></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:.5px solid rgba(255,255,255,.08);font-size:14px;color:rgba(255,255,255,.75);cursor:pointer;transition:color .18s;" onmouseenter="this.style.color='#ff9f0a'" onmouseleave="this.style.color='rgba(255,255,255,.75)'">Facebook &amp; Instagram Ads <span style="font-size:16px;">›</span></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 0;font-size:14px;color:rgba(255,255,255,.75);cursor:pointer;transition:color .18s;" onmouseenter="this.style.color='#ff9f0a'" onmouseleave="this.style.color='rgba(255,255,255,.75)'">Remarketing &amp; Retargeting <span style="font-size:16px;">›</span></div>
+        </div>
+        <div class="svc-arrow" style="top:20px;right:20px;">→</div>
+      </div>
+
+    </div>
+
+    <!-- Additional service pills row -->
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;justify-content:center;">
+      <div style="font-size:13px;color:rgba(255,255,255,.5);background:rgba(255,255,255,.05);border:.5px solid rgba(255,255,255,.08);padding:8px 18px;border-radius:980px;cursor:pointer;transition:color .2s,background .2s;" onmouseenter="this.style.color='#fff';this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.color='rgba(255,255,255,.5)';this.style.background='rgba(255,255,255,.05)'">Social Media Advertising</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.5);background:rgba(255,255,255,.05);border:.5px solid rgba(255,255,255,.08);padding:8px 18px;border-radius:980px;cursor:pointer;transition:color .2s,background .2s;" onmouseenter="this.style.color='#fff';this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.color='rgba(255,255,255,.5)';this.style.background='rgba(255,255,255,.05)'">Content Marketing</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.5);background:rgba(255,255,255,.05);border:.5px solid rgba(255,255,255,.08);padding:8px 18px;border-radius:980px;cursor:pointer;transition:color .2s,background .2s;" onmouseenter="this.style.color='#fff';this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.color='rgba(255,255,255,.5)';this.style.background='rgba(255,255,255,.05)'">Email Marketing</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.5);background:rgba(255,255,255,.05);border:.5px solid rgba(255,255,255,.08);padding:8px 18px;border-radius:980px;cursor:pointer;transition:color .2s,background .2s;" onmouseenter="this.style.color='#fff';this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.color='rgba(255,255,255,.5)';this.style.background='rgba(255,255,255,.05)'">Conversion Rate Optimisation</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.5);background:rgba(255,255,255,.05);border:.5px solid rgba(255,255,255,.08);padding:8px 18px;border-radius:980px;cursor:pointer;transition:color .2s,background .2s;" onmouseenter="this.style.color='#fff';this.style.background='rgba(255,255,255,.08)'" onmouseleave="this.style.color='rgba(255,255,255,.5)';this.style.background='rgba(255,255,255,.05)'">Backlink Building</div>
+      <div style="font-size:13px;color:var(--blue);background:rgba(0,113,227,.08);border:.5px solid rgba(0,113,227,.2);padding:8px 18px;border-radius:980px;cursor:pointer;">View All Services →</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FEATURE: SEO ══════════════ -->
+<section class="feature-section">
+  <div class="feature-block">
+    <div class="reveal">
+      <span class="eyebrow-sm green">SEO & Organic Growth</span>
+      <h2 class="section-title" style="font-size:clamp(30px,4vw,52px);">SEO that puts<br/>you on page one.</h2>
+      <p class="section-sub" style="margin-bottom:32px;">Proven SEO strategies tailored to your industry — e-commerce, SaaS, local businesses, and international brands. Real rankings. Real traffic. Zero paid ads required.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:36px;">
+        <div style="display:flex;align-items:center;gap:12px;"><div style="width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);flex-shrink:0;"></div><span style="font-size:14px;color:rgba(255,255,255,.55);">Full on-page, off-page & technical SEO</span></div>
+        <div style="display:flex;align-items:center;gap:12px;"><div style="width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);flex-shrink:0;"></div><span style="font-size:14px;color:rgba(255,255,255,.55);">International targeting: USA, UK, Canada, Australia, UAE & more</span></div>
+        <div style="display:flex;align-items:center;gap:12px;"><div style="width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);flex-shrink:0;"></div><span style="font-size:14px;color:rgba(255,255,255,.55);">Monthly ranking reports & transparent results</span></div>
+        <div style="display:flex;align-items:center;gap:12px;"><div style="width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);flex-shrink:0;"></div><span style="font-size:14px;color:rgba(255,255,255,.55);">Semantic SEO, AI SEO, International & Video SEO</span></div>
+      </div>
+      <a href="https://kjdigitalworld.lovable.app/services/seo"><button class="btn-fill">Explore SEO Services &nbsp;→</button></a>
+    </div>
+    <div class="anim-seo-wrap reveal reveal-delay-2">
+      <div class="seo-chart">
+        <div class="seo-bar" style="height:42%;"></div>
+        <div class="seo-bar" style="height:58%;"></div>
+        <div class="seo-bar" style="height:50%;"></div>
+        <div class="seo-bar" style="height:76%;"></div>
+        <div class="seo-bar" style="height:68%;"></div>
+        <div class="seo-bar" style="height:88%;"></div>
+        <div class="seo-bar" style="height:95%;"></div>
+      </div>
+      <div class="seo-line-wrap"><div class="seo-line"></div></div>
+      <div class="seo-kpis">
+        <div class="kpi"><div class="kpi-val" style="color:var(--green);">↑312%</div><div class="kpi-lbl">Traffic Growth</div></div>
+        <div class="kpi"><div class="kpi-val">#1</div><div class="kpi-lbl">Page Rank</div></div>
+        <div class="kpi"><div class="kpi-val" style="color:var(--amber);">6mo</div><div class="kpi-lbl">Avg Timeline</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FEATURE: SOCIAL ══════════════ -->
+<section class="feature-section">
+  <div class="feature-block reverse" style="background:rgba(255,255,255,.015);">
+    <div class="anim-social-wrap reveal">
+      <div class="social-orbs-bg">
+        <div class="soc-orb"></div><div class="soc-orb"></div><div class="soc-orb"></div>
+      </div>
+      <div class="social-grid">
+        <div class="soc-icon">f</div>
+        <div class="soc-icon">◆</div>
+        <div class="soc-icon" style="font-size:15px;">in</div>
+        <div class="soc-icon">✕</div>
+        <div class="soc-icon">▶</div>
+        <div class="soc-icon" style="font-size:14px;">TT</div>
+      </div>
+      <div class="soc-stats">
+        <div class="soc-stat"><div class="soc-stat-val" style="color:var(--blue);">6+</div><div class="soc-stat-lbl">Platforms</div></div>
+        <div class="soc-stat"><div class="soc-stat-val" style="color:var(--green);">100K+</div><div class="soc-stat-lbl">Reach / mo</div></div>
+        <div class="soc-stat"><div class="soc-stat-val" style="color:var(--amber);">4.8×</div><div class="soc-stat-lbl">Avg ROAS</div></div>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <span class="eyebrow-sm">Social Media Advertising</span>
+      <h2 class="section-title" style="font-size:clamp(30px,4vw,52px);">Every platform.<br/>Maximum reach.</h2>
+      <p class="section-sub" style="margin-bottom:32px;">From Facebook & Instagram to TikTok, LinkedIn, Pinterest & YouTube — paid social campaigns and organic content strategies that turn audiences into loyal customers across 11 countries.</p>
+      <a href="https://kjdigitalworld.lovable.app/services/ppc"><button class="btn-fill">Explore Social Ads &nbsp;→</button></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FEATURE: WEB ══════════════ -->
+<section class="feature-section">
+  <div class="feature-block">
+    <div class="reveal">
+      <span class="eyebrow-sm green">Web Design & Development</span>
+      <h2 class="section-title" style="font-size:clamp(30px,4vw,52px);">Websites that<br/>work as hard as you.</h2>
+      <p class="section-sub" style="margin-bottom:32px;">WordPress, Shopify, landing pages, and fully custom web applications — mobile-first, lightning-fast, and built to convert visitors into real revenue.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:32px;">
+        <div style="padding:16px;background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.07);border-radius:14px;"><div style="font-size:20px;margin-bottom:6px;">🔵</div><div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:2px;">WordPress</div><div style="font-size:12px;color:rgba(255,255,255,.35);">Custom themes & SEO-ready</div></div>
+        <div style="padding:16px;background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.07);border-radius:14px;"><div style="font-size:20px;margin-bottom:6px;">🟢</div><div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:2px;">Shopify</div><div style="font-size:12px;color:rgba(255,255,255,.35);">Stores that convert</div></div>
+        <div style="padding:16px;background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.07);border-radius:14px;"><div style="font-size:20px;margin-bottom:6px;">⚙️</div><div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:2px;">Custom Dev</div><div style="font-size:12px;color:rgba(255,255,255,.35);">Built to spec</div></div>
+        <div style="padding:16px;background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.07);border-radius:14px;"><div style="font-size:20px;margin-bottom:6px;">🚀</div><div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:2px;">Speed & Migration</div><div style="font-size:12px;color:rgba(255,255,255,.35);">Optimised & modernised</div></div>
+      </div>
+      <a href="https://kjdigitalworld.lovable.app/services/web"><button class="btn-fill">Explore Web Services &nbsp;→</button></a>
+    </div>
+    <div class="anim-web-wrap reveal reveal-delay-2">
+      <div class="browser">
+        <div class="browser-top">
+          <div class="btn-r"></div><div class="btn-y"></div><div class="btn-g"></div>
+          <div class="addr-bar"></div>
+        </div>
+        <div class="browser-body">
+          <div class="brow-hero-img"></div>
+          <div class="brow-row w80"></div>
+          <div class="brow-row w60"></div>
+          <div class="brow-row w90"></div>
+          <div class="brow-cards"><div class="brow-card"></div><div class="brow-card"></div><div class="brow-card"></div></div>
+          <div class="brow-row w45"></div>
         </div>
       </div>
-      <div>
-        <h4 style="color:#fff; margin-bottom:16px; font-family:'Inter', sans-serif">SEO Services</h4>
-        <ul class="f-links">
-          <li><a href="services.html">Local SEO</a></li>
-          <li><a href="services.html">Ecommerce SEO</a></li>
-          <li><a href="services.html">International SEO</a></li>
-          <li><a href="services.html">SaaS SEO</a></li>
-          <li><a href="services.html">Semantic SEO</a></li>
-        </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ OUR CLIENTS ══════════════ -->
+<section class="clients-section">
+  <div class="section-w">
+    <div class="clients-intro">
+      <span class="eyebrow-sm reveal">Our Clients</span>
+      <h2 class="section-title reveal" style="font-size:clamp(32px,4vw,52px);">Trusted by businesses<br/>across <em style="font-style:italic;background:linear-gradient(135deg,#0071e3,#34c759);-webkit-background-clip:text;background-clip:text;color:transparent;">11 countries.</em></h2>
+      <p class="section-sub reveal" style="margin:0 auto;text-align:center;">From solo e-commerce brands to growing agencies — our clients span 4 continents and the most competitive digital markets in the world.</p>
+    </div>
+
+    <!-- Country grid -->
+    <div class="clients-grid reveal">
+      <div class="client-box">
+        <div class="client-flag"><img class="client-flag-img" src="https://kjdigitalworld.lovable.app/flags/1f1fa-1f1f8.svg" alt="🇺🇸" loading="lazy" /></div>
+        <div class="client-country">United States</div>
+        <div class="client-sub">SEO · PPC · Web</div>
       </div>
-      <div>
-        <h4 style="color:#fff; margin-bottom:16px; font-family:'Inter', sans-serif">Web & Ads</h4>
-        <ul class="f-links">
-          <li><a href="services.html">WordPress Development</a></li>
-          <li><a href="services.html">Shopify Development</a></li>
-          <li><a href="services.html">Google Ads (PPC)</a></li>
-          <li><a href="services.html">Facebook & Instagram Ads</a></li>
-          <li><a href="services.html">Content Marketing</a></li>
-        </ul>
+      <div class="client-box">
+        <div class="client-flag"><img class="client-flag-img" src="https://kjdigitalworld.lovable.app/flags/1f1ec-1f1e7.svg" alt="🇬🇧" loading="lazy" /></div>
+        <div class="client-country">United Kingdom</div>
+        <div class="client-sub">SEO · Shopify · Ads</div>
       </div>
-      <div>
-        <h4 style="color:#fff; margin-bottom:16px; font-family:'Inter', sans-serif">Company</h4>
-        <ul class="f-links">
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li style="margin-top:16px"><a href="mailto:rj.jamon205@gmail.com">rj.jamon205@gmail.com</a></li>
-          <li><a href="tel:+8801780607820">+880 1780-607820</a></li>
-        </ul>
+      <div class="client-box">
+        <div class="client-flag"><img class="client-flag-img" src="https://kjdigitalworld.lovable.app/flags/1f1e8-1f1e6.svg" alt="🇨🇦" loading="lazy" /></div>
+        <div class="client-country">Canada</div>
+        <div class="client-sub">Local SEO · PPC</div>
+      </div>
+      <div class="client-box">
+        <div class="client-flag"><img class="client-flag-img" src="https://kjdigitalworld.lovable.app/flags/1f1e6-1f1fa.svg" alt="🇦🇺" loading="lazy" /></div>
+        <div class="client-country">Australia</div>
+        <div class="client-sub">SEO · Web · Ads</div>
+      </div>
+      <div class="client-box">
+        <div class="client-flag"><img class="client-flag-img" src="https://kjdigitalworld.lovable.app/flags/1f1ee-1f1ea.svg" alt="🇮🇪" loading="lazy" /></div>
+        <div class="client-country">Ireland</div>
+        <div class="client-sub">SEO · Content</div>
+      </div>
+      <div class="client-box">
+        <div class="client-flag"><img class="client-flag-img" src="https://kjdigitalworld.lovable.app/flags/1f1e6-1f1ea.svg" alt="🇦🇪" loading="lazy" /></div>
+        <div class="client-country">UAE</div>
+        <div class="client-sub">Web · PPC · SEO</div>
+      </div>
+      <div class="client-box">
+        <div class="client-flag"><img class="client-flag-img" src="https://kjdigitalworld.lovable.app/flags/1f1ff-1f1e6.svg" alt="🇿🇦" loading="lazy" /></div>
+        <div class="client-country">South Africa</div>
+        <div class="client-sub">SEO · Web Design</div>
+      </div>
+      <div class="client-box">
+        <div class="client-flag"><img class="client-flag-img" src="https://kjdigitalworld.lovable.app/flags/1f1e9-1f1ea.svg" alt="🇩🇪" loading="lazy" /></div>
+        <div class="client-country">Germany</div>
+        <div class="client-sub">International SEO</div>
+      </div>
+      <div class="client-box">
+        <div class="client-flag"><img class="client-flag-img" src="https://kjdigitalworld.lovable.app/flags/1f1f3-1f1f1.svg" alt="🇳🇱" loading="lazy" /></div>
+        <div class="client-country">Netherlands</div>
+        <div class="client-sub">PPC · Content</div>
+      </div>
+      <div class="client-box">
+        <div class="client-flag"><img class="client-flag-img" src="https://kjdigitalworld.lovable.app/flags/1f1f3-1f1ff.svg" alt="🇳🇿" loading="lazy" /></div>
+        <div class="client-country">New Zealand</div>
+        <div class="client-sub">SEO · Shopify</div>
+      </div>
+      <div class="client-box">
+        <div class="client-flag"><img class="client-flag-img" src="https://kjdigitalworld.lovable.app/flags/1f1e7-1f1e9.svg" alt="🇧🇩" loading="lazy" /></div>
+        <div class="client-country">Bangladesh</div>
+        <div class="client-sub">All Services</div>
+      </div>
+      <!-- Placeholder "+" box -->
+      <div class="client-box" style="background:rgba(0,113,227,.06);border:.5px solid rgba(0,113,227,.15);">
+        <div style="font-size:28px;margin-bottom:8px;color:var(--blue);">+</div>
+        <div class="client-country" style="color:var(--blue);">Growing</div>
+        <div class="client-sub">More markets soon</div>
+      </div>
+      <!-- Extra hidden on mobile via colspan trick, show 5+5+2 -->
+    </div>
+
+    <!-- Industry verticals -->
+    <div style="margin-top:48px;">
+      <p style="text-align:center;font-size:12px;font-weight:500;color:rgba(255,255,255,.25);letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px;">Industries we serve</p>
+      <div class="industry-row reveal">
+        <div class="ind-card">
+          <div class="ind-icon">🛒</div>
+          <div><div class="ind-name">E-Commerce</div><div class="ind-sub">Shopify & WooCommerce</div></div>
+        </div>
+        <div class="ind-card">
+          <div class="ind-icon">💻</div>
+          <div><div class="ind-name">SaaS & Tech</div><div class="ind-sub">B2B & B2C Software</div></div>
+        </div>
+        <div class="ind-card">
+          <div class="ind-icon">✈️</div>
+          <div><div class="ind-name">Travel & Hospitality</div><div class="ind-sub">Hotels, Agencies</div></div>
+        </div>
+        <div class="ind-card">
+          <div class="ind-icon">👗</div>
+          <div><div class="ind-name">Fashion & Garments</div><div class="ind-sub">Retail & Wholesale</div></div>
+        </div>
+        <div class="ind-card">
+          <div class="ind-icon">🏠</div>
+          <div><div class="ind-name">Real Estate</div><div class="ind-sub">Agents & Developers</div></div>
+        </div>
+        <div class="ind-card">
+          <div class="ind-icon">🏥</div>
+          <div><div class="ind-name">Health & Wellness</div><div class="ind-sub">Clinics & Brands</div></div>
+        </div>
+        <div class="ind-card">
+          <div class="ind-icon">⚖️</div>
+          <div><div class="ind-name">Legal & Finance</div><div class="ind-sub">Firms & Advisors</div></div>
+        </div>
+        <div class="ind-card">
+          <div class="ind-icon">🏭</div>
+          <div><div class="ind-name">Industrial & B2B</div><div class="ind-sub">Manufacturing, Sauna & more</div></div>
+        </div>
       </div>
     </div>
-    <div class="f-bottom">
-      <p>&copy; 2026 Digital World - Kamrujjaman Mufti. All rights reserved.</p>
-      <p>Based in Dhaka, Bangladesh - Available worldwide</p>
+  </div>
+</section>
+
+<!-- ══════════════ PROCESS ══════════════ -->
+<section class="process-section">
+  <div class="section-w">
+    <div style="text-align:center;max-width:600px;margin:0 auto;">
+      <span class="eyebrow-sm reveal">How It Works</span>
+      <h2 class="section-title dark reveal" style="font-size:clamp(32px,4vw,52px);">A simple process.<br/>Exceptional results.</h2>
     </div>
-  </footer>
+    <div class="process-steps">
+      <div class="step-item reveal">
+        <div class="step-num-wrap">01</div>
+        <div class="step-title">Discovery Call</div>
+        <div class="step-desc">We discuss your goals, target market, and current challenges in a free 30-minute strategy session.</div>
+      </div>
+      <div class="step-item reveal reveal-delay-1">
+        <div class="step-num-wrap">02</div>
+        <div class="step-title">Strategy Build</div>
+        <div class="step-desc">A custom roadmap tailored to your business — specific goals, timelines, and measurable KPIs.</div>
+      </div>
+      <div class="step-item reveal reveal-delay-2">
+        <div class="step-num-wrap">03</div>
+        <div class="step-title">Execution</div>
+        <div class="step-desc">We get to work — every deliverable completed on time with full transparency and weekly updates.</div>
+      </div>
+      <div class="step-item reveal reveal-delay-3">
+        <div class="step-num-wrap">04</div>
+        <div class="step-title">Grow & Scale</div>
+        <div class="step-desc">Monitor, optimise, and scale — turning early results into a long-term growth engine.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-</body>
-</html>
+<!-- ══════════════ WHY US ══════════════ -->
+<section class="why-section">
+  <div class="section-w">
+    <div style="max-width:600px;">
+      <span class="eyebrow-sm reveal">Why Choose Digital World</span>
+      <h2 class="section-title dark reveal" style="font-size:clamp(32px,4vw,52px);">One agency.<br/>All services.<br/>Real results.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <span class="why-emoji">🏆</span>
+        <div class="why-title">5 Years of Real Experience</div>
+        <div class="why-desc">Half a decade of hands-on work across every digital discipline — SEO, paid ads, web development, content marketing, email, CRO, and backlink building.</div>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <span class="why-emoji">🌏</span>
+        <div class="why-title">Global Reach, Competitive Rates</div>
+        <div class="why-desc">Serving clients across 11 countries — USA, UK, Canada, Australia, UAE, Ireland, Germany & more — with international-standard work at highly competitive pricing.</div>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <span class="why-emoji">📊</span>
+        <div class="why-title">Data-Driven Only</div>
+        <div class="why-desc">Every strategy is built on real analytics, competitor data, and performance tracking. No guesswork — just measurable ROI and transparent monthly reporting.</div>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <span class="why-emoji">⚡</span>
+        <div class="why-title">Fast Turnaround</div>
+        <div class="why-desc">Agile working style with clear project timelines. Deliverables on time, every time — and direct communication with the expert, not a junior account manager.</div>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <span class="why-emoji">🤝</span>
+        <div class="why-title">Full-Service Solution</div>
+        <div class="why-desc">From web design to SEO to paid ads to email — everything under one roof. No agency handoffs, no coordination overhead, no surprise invoices.</div>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <span class="why-emoji">💬</span>
+        <div class="why-title">Always Available</div>
+        <div class="why-desc">Time-zone-friendly communication for all 11 markets we serve. Reach us via Email, WhatsApp, or LinkedIn — responses within hours, every time.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PRICING (rendered by React below) ══════════════ -->
+</div><section class="pricing-section" id="pricing"><div class="section-w" style="position:relative"><div class="pricing-head"><span class="eyebrow-sm reveal">Pricing</span><h2 class="section-title reveal">Simple, transparent pricing for every stage.</h2><p class="reveal">Choose a plan that fits your goals. No hidden fees, no long-term contracts — cancel anytime.</p></div><div class="pricing-bg-word reveal">Pricing</div><div class="pricing-grid"><div class="price-card reveal"><div class="price-tier">Launch</div><div class="price-amount"><span class="price-num">$499</span><span class="price-per">/m</span></div><p class="price-desc">For small businesses ready to establish a strong online presence.</p><ul class="price-list"><li>5-page responsive website</li><li>On-page SEO setup</li><li>Monthly performance report</li><li>Email &amp; WhatsApp support</li></ul><a href="https://kjdigitalworld.lovable.app/contact" class="price-cta">Choose Plan</a></div><div class="price-card reveal featured reveal-delay-1"><span class="price-badge">Most Popular</span><div class="price-tier">Accelerate</div><div class="price-amount"><span class="price-num">$1,299</span><span class="price-per">/m</span></div><p class="price-desc">For growing brands that need a full-funnel digital strategy and bigger reach.</p><ul class="price-list"><li>Everything in Launch</li><li>Advanced SEO &amp; content strategy</li><li>Paid ads (Google &amp; Meta)</li><li>Social media + email campaigns</li><li>Bi-weekly strategy calls</li></ul><a href="https://kjdigitalworld.lovable.app/contact" class="price-cta primary">Choose Plan</a></div><div class="price-card reveal reveal-delay-2"><div class="price-tier">Enterprise</div><div class="price-amount"><span class="price-num">Custom</span></div><p class="price-desc">For established brands targeting international markets with serious ROI goals.</p><ul class="price-list"><li>Everything in Accelerate</li><li>Custom web &amp; e-commerce builds</li><li>Dedicated account strategist</li><li>Multi-market localization</li><li>Priority 24/7 support</li></ul><a href="https://kjdigitalworld.lovable.app/contact" class="price-cta">Choose Plan</a></div></div><div class="billing-row"><button type="button" class="billing-toggle" data-active="false" aria-pressed="false"><span class="billing-toggle-track" aria-hidden="true"></span><span>Yearly</span></button></div></div></section><div>
 
 
 
+<!-- ══════════════ TESTIMONIALS ══════════════ -->
 
+<section class="testi-section">
+  <div class="section-w">
+    <div style="text-align:center;max-width:620px;margin:0 auto;">
+      <span class="eyebrow-sm reveal">Client Stories</span>
+      <h2 class="section-title reveal" style="font-size:clamp(32px,4vw,52px);">Trusted by businesses<br/>around the world.</h2>
+    </div>
+    <div class="testi-grid"><div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Digital World doubled our organic traffic in just 4 months. The SEO strategy was precisely tailored to our e-commerce niche — best investment we&#39;ve made.</p>
+        <div class="testi-author">Sarah M.</div>
+        <div class="testi-meta"><span class="testi-flag"><span class="flag-emoji" aria-hidden="true">🇺🇸</span></span><span class="testi-country">New York, USA · E-Commerce Store</span></div>
+      </div><div class="testi-card reveal reveal-delay-1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Our Shopify store was completely rebuilt. The design is stunning, loads in under 2 seconds, and conversions went up 180% within 60 days. Incredible work.</p>
+        <div class="testi-author">James T.</div>
+        <div class="testi-meta"><span class="testi-flag"><span class="flag-emoji" aria-hidden="true">🇬🇧</span></span><span class="testi-country">London, UK · Retail Brand</span></div>
+      </div><div class="testi-card reveal reveal-delay-2">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">From branding to social media advertising — everything was handled professionally and on time. We feel like a true global brand now. Highly recommended.</p>
+        <div class="testi-author">Rafi K.</div>
+        <div class="testi-meta"><span class="testi-flag"><span class="flag-emoji" aria-hidden="true">🇧🇩</span></span><span class="testi-country">Dhaka, Bangladesh · Travel Agency</span></div>
+      </div></div>
+  </div>
+</section>
+
+<!-- ══════════════ CTA ══════════════ -->
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <h2 class="cta-title reveal">Ready to grow<br/>your business?</h2>
+  <p class="cta-sub reveal">Book a free 30-minute strategy call. No obligation, no sales pitch — just honest advice on how to dominate your market.</p>
+  <div class="cta-btns reveal">
+    <a href="https://kjdigitalworld.lovable.app/contact"><button class="btn-fill" style="font-size:16px;padding:16px 36px;">Book Free Consultation &nbsp;→</button></a>
+    <a href="#services"><button class="btn-ghost" style="font-size:16px;padding:16px 36px;">View All Services</button></a>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="footer-w">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Digital World</div>
+        <p class="footer-tagline">Full-Service Digital Marketing Agency · 5 Years Experience · Serving 11 countries worldwide.</p>
+        <div class="footer-flags"><span class="flag-emoji" aria-hidden="true">🇺🇸</span> <span class="flag-emoji" aria-hidden="true">🇬🇧</span> <span class="flag-emoji" aria-hidden="true">🇨🇦</span> <span class="flag-emoji" aria-hidden="true">🇦🇺</span> <span class="flag-emoji" aria-hidden="true">🇮🇪</span> <span class="flag-emoji" aria-hidden="true">🇦🇪</span> <span class="flag-emoji" aria-hidden="true">🇿🇦</span> <span class="flag-emoji" aria-hidden="true">🇩🇪</span> <span class="flag-emoji" aria-hidden="true">🇳🇱</span> <span class="flag-emoji" aria-hidden="true">🇳🇿</span> <span class="flag-emoji" aria-hidden="true">🇧🇩</span></div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/digitalworld1988" class="footer-soc-link" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/" class="footer-soc-link" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">ig</a>
+          <a href="https://x.com/" class="footer-soc-link" target="_blank" rel="noopener" title="X (Twitter)" aria-label="X">𝕏</a>
+          <a href="https://www.pinterest.com/" class="footer-soc-link" target="_blank" rel="noopener" title="Pinterest" aria-label="Pinterest">P</a>
+          <a href="https://www.youtube.com/" class="footer-soc-link" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube">▶</a>
+          <a href="https://www.indeed.com/" class="footer-soc-link" target="_blank" rel="noopener" title="Indeed" aria-label="Indeed">in</a>
+          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" class="footer-soc-link" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">Li</a>
+        </div>
+        <a href="https://kjdigitalworld.lovable.app/contact" style="display:inline-block;margin-top:18px;background:var(--blue,#0071e3);color:#fff;font-size:12px;font-weight:500;padding:10px 18px;border-radius:980px;text-decoration:none;">📅 Book Free Consultation</a>
+      </div>
+      <div class="footer-col">
+        <h4>SEO Services</h4>
+        <a class="footer-link" href="https://kjdigitalworld.lovable.app/services/seo#svc-local">Local SEO</a>
+        <a class="footer-link" href="https://kjdigitalworld.lovable.app/services/seo#svc-ecom">Ecommerce SEO</a>
+        <a class="footer-link" href="https://kjdigitalworld.lovable.app/services/seo#svc-intl">International SEO</a>
+        <a class="footer-link" href="https://kjdigitalworld.lovable.app/services/seo#svc-saas">SaaS SEO</a>
+        <a class="footer-link" href="https://kjdigitalworld.lovable.app/services/seo#svc-semantic">Semantic SEO</a>
+      </div>
+      <div class="footer-col">
+        <h4>Web &amp; Ads</h4>
+        <a class="footer-link" href="https://kjdigitalworld.lovable.app/services/web#svc-wordpress">WordPress Development</a>
+        <a class="footer-link" href="https://kjdigitalworld.lovable.app/services/web#svc-shopify">Shopify Development</a>
+        <a class="footer-link" href="https://kjdigitalworld.lovable.app/services/ppc#svc-search">Google Ads / PPC</a>
+        <a class="footer-link" href="https://kjdigitalworld.lovable.app/services/ppc#svc-facebook">Facebook &amp; Instagram Ads</a>
+        <a class="footer-link" href="https://kjdigitalworld.lovable.app/services/content#svc-content">Content Marketing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="https://kjdigitalworld.lovable.app/about" class="footer-link">About Us</a>
+        <a href="https://kjdigitalworld.lovable.app/portfolio" class="footer-link">Portfolio</a>
+        <a href="https://kjdigitalworld.lovable.app/blog" class="footer-link">Blog</a>
+        <a class="footer-link" href="https://kjdigitalworld.lovable.app/contact">Contact</a>
+        <a class="footer-link" href="mailto:kj.jaman369@gmail.com">kj.jaman369@gmail.com</a>
+        <a class="footer-link" href="tel:+8801798667820">+880 1798-667820</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">Copyright © 2025 Digital World · Kamrujjaman Mufti. All rights reserved.</p>
+      <p class="footer-copy">Based in Dhaka, Bangladesh · Available worldwide</p>
+    </div>
+  </div>
+</footer>
+
+</div><!--/$--><a href="https://wa.me/8801798667820?text=Hi%20KJ%20Digital%20World%2C%20I%20am%20interested%20in%20your%20services" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="wa-icon"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.585.69 5.003 1.895 7.1L2 30l7.1-1.895A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm7.397 9.865l-1.265 5.975c-.095.425-.488.725-.923.725-.085 0-.17-.01-.252-.03l-2.42-.63a9.87 9.87 0 01-4.21 1.045c-5.465 0-9.9-4.435-9.9-9.9 0-.48.034-.955.102-1.42.13-.93.914-1.6 1.854-1.6h.08c.46.02.89.23 1.17.57l1.59 1.98c.37.46.33 1.12-.09 1.53l-.79.77c-.27.26-.34.66-.17 1 .47.94 1.15 1.76 1.99 2.41.35.27.83.27 1.17.03l1.02-.78c.44-.34 1.06-.32 1.48.04l2.01 1.73c.37.32.5.82.33 1.27z" fill="currentColor"></path></svg></a><script class="$tsr" id="$tsr-stream-barrier">(self.$R=self.$R||{})["tsr"]=[];self.$_TSR={h(){this.hydrated=!0,this.c()},e(){this.streamEnded=!0,this.c()},c(){this.hydrated&&this.streamEnded&&(delete self.$_TSR,delete self.$R.tsr)},p(e){this.initialized?e():this.buffer.push(e)},buffer:[]};$_TSR.router=($R=>$R[0]={manifest:$R[1]={routes:$R[2]={__root__:$R[3]={preloads:$R[4]=["/assets/index-elsVIIk3.js"],assets:$R[5]=[$R[6]={tag:"script",attrs:$R[7]={type:"module",async:!0},children:"import(\"/assets/index-elsVIIk3.js\")"}]},"/":$R[8]={preloads:$R[9]=["/assets/index-DoY3LYWr.js","/assets/useQuery-DiZmGRUo.js","/assets/useServerFn-mps-Pylf.js","/assets/pricing-data-dPSam-IC.js"]}}},matches:$R[10]=[$R[11]={i:"__root__ ",u:1781672436598,s:"success",l:$R[12]={seo:$R[13]={ga4_id:null,gtm_id:null,gsc_verification:null,bing_verification:null,fb_pixel_id:null,default_og_image:null,twitter_handle:null,robots_txt:"User-agent: *\nAllow: /\n",sitemap_base_url:"https://kjdigitalworld.lovable.app",sitemap_extra_urls:$R[14]=[],custom_head_code:null,custom_body_code:null,custom_head_enabled:!0,custom_body_enabled:!0}},ssr:!0},$R[15]={i:"  ",u:1781672436175,s:"success",ssr:!0}],lastMatchId:"  "})($R["tsr"]);$_TSR.e();document.currentScript.remove()</script><script type="module" async="">import("/assets/index-elsVIIk3.js")</script>
+<aside
+	id="lovable-badge"
+	role="complementary"
+	dir="ltr"
+	lang="en"
+	aria-label="Edit with Lovable">
+	<a
+		id="lovable-badge-cta" 
+		target="_blank" 
+		href="https://lovable.dev/projects/6fd393e4-4739-4840-98c1-9b140071a58f?utm_source=lovable-badge"
+		rel="noopener nofollow"
+		aria-label="Edit with Lovable">
+		<span id="lovable-badge-text">Edit with</span>
+		<svg xmlns="http://www.w3.org/2000/svg" width="52" height="16" fill="none" viewBox="0 0 52 16">
+  <path fill="#FCFBF8" fill-rule="evenodd" d="M20.318 5.25c.643 0 1.206.14 1.69.418a2.81 2.81 0 0 1 1.118 1.191c.266.513.4 1.115.4 1.807s-.134 1.296-.4 1.812a2.81 2.81 0 0 1-1.118 1.193c-.484.278-1.047.418-1.69.418s-1.208-.14-1.695-.418a2.85 2.85 0 0 1-1.125-1.193c-.262-.516-.393-1.12-.393-1.812s.131-1.294.393-1.807a2.848 2.848 0 0 1 1.125-1.191c.487-.279 1.052-.418 1.695-.418Zm0 1.425c-.27 0-.504.076-.7.228-.193.147-.34.37-.443.67-.102.295-.153.66-.153 1.093 0 .435.05.801.153 1.1.102.3.25.524.443.676.196.147.43.22.7.22.27 0 .502-.073.694-.22.193-.152.341-.375.443-.67.103-.299.153-.667.153-1.106 0-.65-.112-1.145-.337-1.481a1.08 1.08 0 0 0-.953-.51ZM32.7 5.25c.61 0 1.127.1 1.549.3.422.197.74.48.953.849.217.368.325.809.325 1.32v2.704c0 .29.02.562.062.812.044.245.108.4.19.466V12h-1.935a5.895 5.895 0 0 1-.105-.684 7.745 7.745 0 0 1-.02-.228 2.293 2.293 0 0 1-.151.203c-.205.242-.47.437-.793.584-.32.143-.685.215-1.094.215-.406 0-.77-.08-1.094-.24a1.845 1.845 0 0 1-.756-.682 1.984 1.984 0 0 1-.27-1.045c0-.606.178-1.069.535-1.388.356-.324.87-.534 1.542-.633l1.125-.16c.225-.032.403-.074.534-.123a.622.622 0 0 0 .288-.196.549.549 0 0 0 .093-.327.65.65 0 0 0-.11-.367.702.702 0 0 0-.32-.27c-.14-.07-.31-.105-.51-.105-.32 0-.576.083-.768.251-.193.164-.298.39-.314.676h-1.923c.016-.434.147-.82.393-1.155.25-.34.596-.604 1.039-.792.442-.189.954-.283 1.535-.283Zm.99 3.498a.98.98 0 0 1-.215.14 2.49 2.49 0 0 1-.584.178l-.473.092c-.315.061-.553.156-.713.283-.155.127-.233.305-.233.534 0 .23.084.412.252.547.168.135.383.203.645.203s.494-.058.694-.173c.201-.118.355-.282.461-.49.11-.21.166-.448.166-.714v-.6Zm4.526-2.375c.065-.125.138-.243.221-.349.197-.25.437-.44.719-.571.282-.135.6-.203.952-.203.528 0 .988.138 1.377.412.389.275.688.67.896 1.186.21.512.314 1.12.314 1.824 0 .7-.107 1.309-.32 1.825-.213.512-.518.906-.915 1.18-.393.275-.854.412-1.383.412-.352 0-.667-.062-.946-.184a1.832 1.832 0 0 1-.7-.554 2.2 2.2 0 0 1-.234-.383V12h-1.843V3h1.862v3.373Zm1.284.296c-.274 0-.51.085-.707.253-.192.163-.338.397-.436.7a3.376 3.376 0 0 0-.148 1.05c0 .406.05.759.148 1.058.098.299.243.53.436.694.197.164.433.246.707.246.279 0 .512-.082.7-.246.193-.164.336-.395.43-.694.099-.3.148-.652.148-1.058 0-.405-.05-.757-.147-1.056-.095-.299-.238-.53-.43-.694a1.015 1.015 0 0 0-.7-.253Zm9.416-1.419c.602 0 1.136.131 1.604.393.466.262.829.643 1.086 1.143.263.5.394 1.097.394 1.794 0 .25-.002.449-.006.596H47.51c.018.288.071.538.164.75a1.3 1.3 0 0 0 .491.596c.214.13.465.196.757.196.319 0 .583-.082.792-.246.209-.167.34-.403.393-.706h1.862a2.48 2.48 0 0 1-.485 1.235 2.54 2.54 0 0 1-1.051.805c-.439.188-.949.283-1.53.283-.655 0-1.225-.125-1.708-.375a2.672 2.672 0 0 1-1.13-1.143c-.267-.508-.4-1.137-.4-1.887 0-.712.14-1.327.418-1.843a2.86 2.86 0 0 1 1.155-1.186c.491-.27 1.051-.405 1.678-.405Zm-.044 1.345c-.274 0-.516.068-.725.203a1.29 1.29 0 0 0-.479.59 2.045 2.045 0 0 0-.132.498h2.562a1.873 1.873 0 0 0-.138-.602 1.061 1.061 0 0 0-.418-.516 1.243 1.243 0 0 0-.67-.173Z" clip-rule="evenodd"/>
+  <path fill="#FCFBF8" d="m26.605 9.995 1.342-4.566h1.924L27.628 12h-2.07l-2.33-6.57h1.98l1.397 4.565Zm-13.013.143h2.256c1.632 0 1.421 1.837 1.418 1.861h-5.603V3h1.93v7.138Zm31.516 1.861h-1.862V3h1.862v8.999Z"/>
+  <path fill="url(#a)" fill-rule="evenodd" d="M2.7 3c1.492 0 2.7 1.192 2.7 2.663v1.012h.9c1.49 0 2.7 1.192 2.7 2.662S7.791 12 6.3 12H0V5.663C0 4.193 1.209 3 2.7 3Z" clip-rule="evenodd"/>
+  <defs>
+    <radialGradient id="a" cx="0" cy="0" r="1" gradientTransform="matrix(-1.54236 7.07838 -10.231 -2.15602 4.627 5.022)" gradientUnits="userSpaceOnUse">
+      <stop offset=".106" stop-color="#FE7B02"/>
+      <stop offset=".394" stop-color="#FE3F21"/>
+      <stop offset=".608" stop-color="#F858BC"/>
+      <stop offset=".929" stop-color="#575ECF"/>
+    </radialGradient>
+  </defs>
+</svg>
+
+
+	</a>
+	
+	<span id="lovable-badge-divider" aria-hidden="true"></span>
+	
+	<button 
+		id="lovable-badge-close"
+		aria-label="Dismiss"
+		title="Dismiss"
+		type="button">
+		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+			<path d="M10.646 4.646a.5.5 0 1 1 .707.708L8.707 8l2.646 2.646a.5.5 0 1 1-.707.707L8 8.707l-2.646 2.646a.5.5 0 1 1-.708-.707L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708L8 7.293l2.646-2.647Z"/>
+		</svg>
+	</button>
+</aside>
+<script>
+	// Don't show the lovable-badge if the page is in an iframe or if it's being rendered by puppeteer (screenshot service)
+	if (window.self !== window.top || navigator.userAgent.includes('puppeteer')) {
+		var badge = document.getElementById('lovable-badge');
+		if (badge) {
+			badge.style.display = 'none';
+		}
+	}
+
+	// Add click event listener to close button with animation
+	var closeButton = document.getElementById('lovable-badge-close');
+	if (closeButton) {
+		closeButton.addEventListener('click', function(event) {
+			event.preventDefault();
+			event.stopPropagation();
+			var badge = document.getElementById('lovable-badge');
+			if (badge) {
+				badge.classList.add('closing');
+				setTimeout(function() {
+					if (badge) {
+						badge.style.display = 'none';
+					}
+				}, 240);
+			}
+		});
+	}
+</script>
+</body></html>
