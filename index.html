@@ -806,17 +806,17 @@
       justify-content: center;
     }
     
-    /* ========================================
-       Footer
-       ======================================== */
-    footer {
-      padding: 60px 5% 40px;
-      background: var(--bg-dark);
-      border-top: 1px solid var(--border-dark);
-      text-align: center;
-      color: var(--text-gray);
-      font-size: 0.95rem;
-    }
+    /* Footer */
+    footer { background: #1a1a1a; color: var(--text-light); padding: 80px 5% 40px; font-size: 0.9rem; text-align: left; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto 60px; }
+    .f-logo { font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 16px; font-family: 'Playfair Display', serif; }
+    .f-links { list-style: none; padding: 0; }
+    .f-links li { margin-bottom: 12px; }
+    .f-links a { color: var(--text-light); text-decoration: none; }
+    .f-links a:hover { color: #fff; }
+    .f-socials { display: flex; gap: 12px; margin-top: 24px; justify-content: flex-start; }
+    .f-social { width: 36px; height: 36px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-light); text-decoration: none; }
+    .f-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; text-align: left; }
     
     /* Responsive */
     @media (max-width: 992px) {
@@ -832,11 +832,14 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-logo">KJ Digital</div>
-    <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#process">Process</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#" class="btn btn-outline" style="padding: 10px 24px; font-size:0.9rem;">Contact us</a>
+        <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn-primary" style="padding: 10px 24px; font-size:0.9rem; color:#fff">Get Started</a>
     </div>
   </nav>
 
@@ -1138,9 +1141,60 @@
 
   <!-- Footer -->
   <footer>
-    <div style="font-size: 1.5rem; font-family: 'Playfair Display', serif; font-weight: 700; color: white; margin-bottom: 20px;">KJ Digital</div>
-    <p>&copy; 2026 KJ Digital World. All Rights Reserved.</p>
+    <div class="footer-grid">
+      <div>
+        <div class="f-logo">KJ Digital World</div>
+        <p>Full-Service Digital Marketing Agency. 5 Years Experience. Serving 11 countries worldwide.</p>
+        <div class="f-socials">
+          <a href="#" class="f-social">f</a>
+          <a href="#" class="f-social">ig</a>
+          <a href="#" class="f-social">in</a>
+          <a href="#" class="f-social">x</a>
+        </div>
+        <div style="margin-top:20px;">
+          <a href="contact.html" class="btn btn-primary" style="font-size:0.85rem">Book Free Consultation</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="color:#fff; margin-bottom:16px; font-family:'Inter', sans-serif">SEO Services</h4>
+        <ul class="f-links">
+          <li><a href="#">Local SEO</a></li>
+          <li><a href="#">Ecommerce SEO</a></li>
+          <li><a href="#">International SEO</a></li>
+          <li><a href="#">SaaS SEO</a></li>
+          <li><a href="#">Semantic SEO</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:#fff; margin-bottom:16px; font-family:'Inter', sans-serif">Web & Ads</h4>
+        <ul class="f-links">
+          <li><a href="#">WordPress Development</a></li>
+          <li><a href="#">Shopify Development</a></li>
+          <li><a href="#">Google Ads (PPC)</a></li>
+          <li><a href="#">Facebook & Instagram Ads</a></li>
+          <li><a href="#">Content Marketing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:#fff; margin-bottom:16px; font-family:'Inter', sans-serif">Company</h4>
+        <ul class="f-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li style="margin-top:16px"><a href="mailto:rj.jamon205@gmail.com">rj.jamon205@gmail.com</a></li>
+          <li><a href="tel:+8801780607820">+880 1780-607820</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>&copy; 2026 Digital World - Kamrujjaman Mufti. All rights reserved.</p>
+      <p>Based in Dhaka, Bangladesh - Available worldwide</p>
+    </div>
   </footer>
 
 </body>
 </html>
+
+
+

@@ -1296,10 +1296,17 @@ button {
 }
 
 /* ---------- FOOTER ---------- */
-.footer {
-  padding: 60px 0 30px;
-  border-top: 1px solid var(--border-glass);
-}
+    /* Footer */
+    footer { background: #1a1a1a; color: var(--text-light); padding: 80px 5% 40px; font-size: 0.9rem; text-align: left; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto 60px; }
+    .f-logo { font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 16px; font-family: 'Playfair Display', serif; }
+    .f-links { list-style: none; padding: 0; }
+    .f-links li { margin-bottom: 12px; }
+    .f-links a { color: var(--text-light); text-decoration: none; }
+    .f-links a:hover { color: #fff; }
+    .f-socials { display: flex; gap: 12px; margin-top: 24px; justify-content: flex-start; }
+    .f-social { width: 36px; height: 36px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-light); text-decoration: none; }
+    .f-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; text-align: left; }
 
 .footer-grid {
   display: grid;
@@ -1923,12 +1930,14 @@ button {
       <a href="index.html" class="nav-logo">
         <span class="logo-accent">KJ</span>&nbsp;Digital
       </a>
-      <div class="nav-links" id="navLinks">
+            <div class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
         <a href="services.html" class="active">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
-        <a href="contact.html" class="nav-cta">Let's Talk</a>
+        <a href="contact.html" class="nav-cta">Get Started</a>
       </div>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
         <span></span>
@@ -2245,55 +2254,57 @@ button {
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="nav-logo">
-            <span class="logo-accent">KJ</span>&nbsp;Digital
-          </a>
-          <p>Helping businesses grow online through strategic digital marketing, stunning web design, and data-driven campaigns that deliver measurable results.</p>
-          <div class="social-links" style="border:none; padding:0; margin-top:20px;">
-            <a href="#" class="social-link" aria-label="LinkedIn">in</a>
-            <a href="#" class="social-link" aria-label="Instagram">📷</a>
-            <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
-            <a href="#" class="social-link" aria-label="Facebook">f</a>
-          </div>
+    <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="f-logo">KJ Digital World</div>
+        <p>Full-Service Digital Marketing Agency. 5 Years Experience. Serving 11 countries worldwide.</p>
+        <div class="f-socials">
+          <a href="#" class="f-social">f</a>
+          <a href="#" class="f-social">ig</a>
+          <a href="#" class="f-social">in</a>
+          <a href="#" class="f-social">x</a>
         </div>
-        <div class="footer-col">
-          <p class="footer-heading">Quick Links</p>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <p class="footer-heading">Services</p>
-          <ul>
-            <li><a href="services.html#seo">SEO</a></li>
-            <li><a href="services.html#ads">Paid Ads</a></li>
-            <li><a href="services.html#webdesign">Web Design</a></li>
-            <li><a href="services.html#content">Content</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <p class="footer-heading">Contact</p>
-          <ul>
-            <li><a href="mailto:hello@kjdigital.com">hello@kjdigital.com</a></li>
-            <li><a href="tel:+910000000000">+91 00000 00000</a></li>
-            <li><a href="contact.html">Get a Quote</a></li>
-          </ul>
+        <div style="margin-top:20px;">
+          <a href="contact.html" class="btn btn-primary" style="font-size:0.85rem">Book Free Consultation</a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 KJ Digital World. All Rights Reserved.</p>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-        </div>
+      <div>
+        <h4 style="color:#fff; margin-bottom:16px; font-family:'Inter', sans-serif">SEO Services</h4>
+        <ul class="f-links">
+          <li><a href="#">Local SEO</a></li>
+          <li><a href="#">Ecommerce SEO</a></li>
+          <li><a href="#">International SEO</a></li>
+          <li><a href="#">SaaS SEO</a></li>
+          <li><a href="#">Semantic SEO</a></li>
+        </ul>
       </div>
+      <div>
+        <h4 style="color:#fff; margin-bottom:16px; font-family:'Inter', sans-serif">Web & Ads</h4>
+        <ul class="f-links">
+          <li><a href="#">WordPress Development</a></li>
+          <li><a href="#">Shopify Development</a></li>
+          <li><a href="#">Google Ads (PPC)</a></li>
+          <li><a href="#">Facebook & Instagram Ads</a></li>
+          <li><a href="#">Content Marketing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:#fff; margin-bottom:16px; font-family:'Inter', sans-serif">Company</h4>
+        <ul class="f-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li style="margin-top:16px"><a href="mailto:rj.jamon205@gmail.com">rj.jamon205@gmail.com</a></li>
+          <li><a href="tel:+8801780607820">+880 1780-607820</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>&copy; 2026 Digital World - Kamrujjaman Mufti. All rights reserved.</p>
+      <p>Based in Dhaka, Bangladesh - Available worldwide</p>
     </div>
   </footer>
 
@@ -2303,3 +2314,6 @@ button {
   <script src="script.js" defer></script>
 </body>
 </html>
+
+
+
