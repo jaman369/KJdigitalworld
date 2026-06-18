@@ -1,0 +1,1165 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/assets/styles-CTiEy21t.css" data-precedence="default"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital,wght@0,400;1,400&amp;family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&amp;display=swap" data-precedence="default"/><title>Blog â€” Digital World Â· Kamrujjaman Mufti</title><meta name="author" content="Lovable"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Lovable App"/><meta name="twitter:description" content="My Creative Space is a personal website builder for showcasing creative work and professional information."/><meta name="description" content=""/><meta property="og:title" content="Blog â€” Digital World Â· Kamrujjaman Mufti"/><meta property="og:description" content=""/><link rel="modulepreload" href="/assets/index-elsVIIk3.js"/><link rel="modulepreload" href="/assets/blog-CVYTKy-4.js"/><link rel="modulepreload" href="/assets/useQuery-DiZmGRUo.js"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+<style>
+	@font-face {
+		font-family: 'CameraPlainVariable';
+		src: url('https://cdn.gpteng.co/mcp-widgets/v1/fonts/CameraPlainVariable.woff2') format('woff2');
+		font-weight: 100 900;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	#lovable-badge {
+		--badge-bg: #1b1b1b;
+		--badge-text: #c5c1b9;
+		--badge-text-hover: #dcdad5;
+		--badge-radius: 6px;
+		--badge-padding: 8px;
+		--badge-gap: 6px;
+		--badge-shadow: 
+			0 0 0 1px rgba(0, 0, 0, 0.88),
+			0 1px 0 0 rgba(0, 0, 0, 0.04),
+			0 2px 2px -1px rgba(0, 0, 0, 0.08),
+			0 4px 4px -2px rgba(0, 0, 0, 0.08),
+			0 8px 8px -4px rgba(0, 0, 0, 0.08),
+			0 16px 16px -8px rgba(0, 0, 0, 0.08);
+		--badge-transition-duration: 0.2s;
+		--badge-transition-easing: cubic-bezier(0.16, 1, 0.32, 1);
+		--focus-color: #575ECF;
+		--focus-offset: 2px;
+		--focus-width: 2px;
+		
+		position: fixed;
+		bottom: 12px;
+		right: 12px;
+		height: 24px;
+		display: flex;
+		align-items: center;
+		z-index: 1000000;
+		background-color: var(--badge-bg) !important;
+		color: var(--badge-text) !important;
+		border-radius: var(--badge-radius);
+		box-shadow: var(--badge-shadow) !important;
+		font-size: 12px;
+		font-family: CameraPlainVariable, "CameraPlainVariable Fallback", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+		font-weight: 400 !important;
+		text-transform: none !important;
+		font-feature-settings: normal !important;
+		transform: translateZ(0);
+		will-change: transform, opacity;
+	}
+
+	#lovable-badge-cta {
+		display: flex;
+		align-items: center;
+		gap: var(--badge-gap);
+		padding: 0 var(--badge-padding);
+		height: 100%;
+		color: inherit;
+		text-decoration: none;
+		white-space: nowrap;
+		border-radius: var(--badge-radius) 0 0 var(--badge-radius);
+		transition: 
+			background-color var(--badge-transition-duration) ease,
+			color var(--badge-transition-duration) ease,
+			transform 0.1s ease;
+	}
+
+	#lovable-badge-cta:hover {
+		background: rgba(255, 255, 255, 0.04);
+		color: var(--badge-text-hover);
+	}
+
+	#lovable-badge-cta:active {
+		transform: scale(0.98);
+	}
+
+	#lovable-badge-cta:focus {
+		outline: none;
+	}
+
+	#lovable-badge-cta:focus-visible {
+		outline: var(--focus-width) solid var(--focus-color);
+		outline-offset: var(--focus-offset);
+		z-index: 1;
+	}
+
+	#lovable-badge-text {
+		line-height: 1;
+	}
+
+	#lovable-badge-divider {
+		width: 1px;
+		height: 24px;
+		background-color: rgba(255, 255, 255, 0.04);
+		flex-shrink: 0;
+	}
+
+	#lovable-badge-close {
+		width: 24px;
+		height: 24px;
+		min-width: 24px;
+		min-height: 24px;
+		cursor: pointer;
+		background: none;
+		border: none;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 0 var(--badge-radius) var(--badge-radius) 0;
+		flex-shrink: 0;
+		transition: 
+			background-color var(--badge-transition-duration) ease,
+			transform 0.1s ease;
+	}
+
+	#lovable-badge-close:hover {
+		background: rgba(255, 255, 255, 0.04);
+	}
+
+	#lovable-badge-close:active {
+		transform: scale(0.92);
+	}
+
+	#lovable-badge-close:focus {
+		outline: none;
+	}
+
+	#lovable-badge-close:focus-visible {
+		outline: var(--focus-width) solid var(--focus-color);
+		outline-offset: calc(var(--focus-offset) * -1);
+		z-index: 1;
+	}
+
+	#lovable-badge-close svg path {
+		fill: var(--badge-text);
+		transition: fill var(--badge-transition-duration) ease;
+	}
+
+	#lovable-badge-close:hover svg path {
+		fill: var(--badge-text-hover);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		#lovable-badge-cta,
+		#lovable-badge-close,
+		#lovable-badge-close svg path {
+			transition: none;
+		}
+		
+		#lovable-badge-cta:active,
+		#lovable-badge-close:active {
+			transform: none;
+		}
+	}
+
+	@media (prefers-contrast: high) {
+		#lovable-badge {
+			--badge-bg: #000;
+			--badge-text: #fff;
+			--badge-text-hover: #fff;
+			border: 2px solid currentColor;
+		}
+		
+		#lovable-badge-cta:focus-visible,
+		#lovable-badge-close:focus-visible {
+			outline-width: 3px;
+		}
+	}
+</style>
+<meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f5a6a46a-971b-46cc-99a5-6d4096c83b4e/id-preview-b2641176--6fd393e4-4739-4840-98c1-9b140071a58f.lovable.app-1778659816330.png"><meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f5a6a46a-971b-46cc-99a5-6d4096c83b4e/id-preview-b2641176--6fd393e4-4739-4840-98c1-9b140071a58f.lovable.app-1778659816330.png"></head><body><!--$--><style>
+/* â”€â”€ RESET & BASE â”€â”€ */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:#f5f5f7;
+  color:#1d1d1f;
+  overflow-x:hidden;
+  cursor:auto;
+}
+
+/* â”€â”€ CUSTOM CURSOR â”€â”€ */
+#cur{
+  position:fixed;width:9px;height:9px;
+  background:#1d1d1f;border-radius:50%;
+  pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%);
+  transition:width .22s,height .22s,background .22s;
+}
+#cur-ring{
+  position:fixed;width:34px;height:34px;
+  border:1.5px solid rgba(29,29,31,.25);
+  border-radius:50%;pointer-events:none;z-index:9998;
+  transform:translate(-50%,-50%);
+  transition:width .28s,height .28s,border-color .28s;
+}
+body.hov #cur{width:14px;height:14px;background:#0071e3;}
+body.hov #cur-ring{width:50px;height:50px;border-color:rgba(0,113,227,.3);}
+
+/* â”€â”€ CSS VARIABLES â”€â”€ */
+:root{
+  --black:#000000;
+  --near-black:#1d1d1f;
+  --gray:#6e6e73;
+  --light-gray:#86868b;
+  --bg-light:#f5f5f7;
+  --white:#ffffff;
+  --blue:#0071e3;
+  --blue-h:#0077ed;
+  --blue-lt:#e8f2ff;
+  --green:#34c759;
+  --amber:#ff9f0a;
+  --nav-h:52px;
+  --radius:20px;
+  --font-d:'DM Serif Display',Georgia,serif;
+  --font-b:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+  --soft:#e8e8ed;
+  --mid:#d2d2d7;
+}
+
+/* â”€â”€ NAVBAR â”€â”€ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  height:var(--nav-h);
+  background:rgba(255,255,255,.88);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:.5px solid rgba(0,0,0,.07);
+  transition:background .3s;
+}
+a{text-decoration:none;color:inherit;}
+.nav-w{
+  max-width:1180px;margin:0 auto;height:100%;
+  padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{
+  font-family:var(--font-d);
+  font-size:17px;color:var(--near-black);cursor:pointer;
+  display:flex;align-items:center;gap:8px;
+  font-weight:400;user-select:none;
+}
+.logo-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--blue);
+  animation:lpulse 2.4s ease-in-out infinite;
+  box-shadow:0 0 0 0 rgba(0,113,227,.4);
+}
+@keyframes lpulse{
+  0%{box-shadow:0 0 0 0 rgba(0,113,227,.4);}
+  60%{box-shadow:0 0 0 8px rgba(0,113,227,0);}
+  100%{box-shadow:0 0 0 0 rgba(0,113,227,0);}
+}
+.nav-links{display:flex;align-items:center;gap:2px;}
+.nav-item{
+  font-size:13px;color:#6e6e73;
+  padding:6px 13px;border-radius:8px;
+  cursor:pointer;
+  transition:color .18s,background .18s;
+}
+.nav-item:hover{color:var(--near-black);background:rgba(0,0,0,.04);}
+.nav-item.active{color:var(--blue);}
+.nav-cta{
+  background:var(--blue);color:#fff;
+  font-size:13px;font-weight:500;
+  padding:8px 18px;border-radius:980px;
+  cursor:pointer;border:none;
+  font-family:var(--font-b);
+  transition:background .2s,transform .15s;
+}
+.nav-cta:hover{background:var(--blue-h);transform:scale(1.03);}
+
+/* â”€â”€ PAGE HERO â”€â”€ */
+.page-hero{
+  background:#fff;
+  padding:120px 24px 72px;
+  position:relative;overflow:hidden;
+  border-bottom:.5px solid var(--soft);
+}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;}
+.ho1{width:600px;height:600px;background:radial-gradient(circle,rgba(0,113,227,.07),transparent);top:-200px;right:-100px;animation:oFloat 14s ease-in-out infinite;}
+.ho2{width:500px;height:500px;background:radial-gradient(circle,rgba(52,199,89,.06),transparent);bottom:-150px;left:-100px;animation:oFloat 11s 3s ease-in-out infinite reverse;}
+@keyframes oFloat{0%,100%{transform:translate(0,0);}50%{transform:translate(30px,-20px);}}
+.dot-grid{
+  position:absolute;inset:0;
+  background-image:radial-gradient(rgba(0,0,0,.06) 1px,transparent 1px);
+  background-size:30px 30px;
+  pointer-events:none;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 0%,transparent 100%);
+}
+.hero-inner{max-width:1180px;margin:0 auto;position:relative;z-index:2;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:600;color:var(--blue);
+  letter-spacing:.1em;text-transform:uppercase;
+  margin-bottom:20px;padding:6px 14px;
+  border-radius:980px;background:var(--blue-lt);
+  border:.5px solid rgba(0,113,227,.2);
+}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);box-shadow:0 0 8px var(--blue);}
+.hero-title{
+  font-family:var(--font-d);
+  font-size:clamp(44px,6vw,80px);
+  color:var(--near-black);
+  line-height:1.04;
+  margin-bottom:20px;
+  letter-spacing:-.02em;
+}
+.hero-title em{font-style:italic;color:var(--blue);}
+.hero-sub{
+  font-size:18px;font-weight:300;
+  color:var(--gray);line-height:1.7;
+  max-width:520px;
+  margin-bottom:40px;
+}
+.hero-meta-row{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+.hero-stat{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--gray);}
+.hero-stat-icon{font-size:16px;}
+.hero-stat strong{color:var(--near-black);font-weight:600;}
+
+/* â”€â”€ FILTER BAR â”€â”€ */
+.filter-bar{
+  background:#fff;
+  border-bottom:.5px solid var(--soft);
+  position:sticky;top:var(--nav-h);z-index:800;
+}
+.filter-inner{
+  max-width:1180px;margin:0 auto;
+  padding:0 24px;
+  display:flex;align-items:center;gap:8px;
+  height:52px;overflow-x:auto;
+  scrollbar-width:none;
+}
+.filter-inner::-webkit-scrollbar{display:none;}
+.filter-chip{
+  flex-shrink:0;
+  font-size:12px;font-weight:500;
+  padding:6px 14px;border-radius:980px;
+  border:1px solid var(--mid);
+  background:#fff;color:var(--gray);
+  cursor:pointer;
+  transition:all .18s;white-space:nowrap;
+}
+.filter-chip:hover{border-color:#aaa;color:var(--near-black);}
+.filter-chip.active{background:var(--near-black);color:#fff;border-color:var(--near-black);}
+
+/* â”€â”€ MAIN LAYOUT â”€â”€ */
+.blog-layout{
+  max-width:1180px;margin:0 auto;
+  padding:56px 24px 96px;
+  display:grid;
+  grid-template-columns:1fr 340px;
+  gap:48px;
+  align-items:start;
+}
+
+/* â”€â”€ FEATURED POST â”€â”€ */
+.featured-label{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:600;color:var(--blue);
+  letter-spacing:.1em;text-transform:uppercase;
+  margin-bottom:20px;
+}
+.featured-label::before{content:'';width:20px;height:1.5px;background:var(--blue);}
+.featured-card{
+  background:#fff;border-radius:var(--radius);
+  border:.5px solid var(--soft);
+  overflow:hidden;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:0;
+  margin-bottom:40px;
+  transition:box-shadow .3s,transform .3s;
+  cursor:pointer;
+}
+.featured-card:hover{box-shadow:0 20px 60px rgba(0,0,0,.08);transform:translateY(-3px);}
+.featured-visual{
+  background:linear-gradient(135deg,#020610 0%,#04091a 100%);
+  min-height:320px;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.featured-vis-orb{position:absolute;border-radius:50%;filter:blur(60px);}
+.fvo1{width:280px;height:280px;background:radial-gradient(circle,rgba(0,113,227,.5),transparent);top:-60px;left:-60px;animation:drift1 8s ease-in-out infinite;}
+.fvo2{width:220px;height:220px;background:radial-gradient(circle,rgba(52,199,89,.35),transparent);bottom:-40px;right:-40px;animation:drift2 6s ease-in-out infinite;}
+@keyframes drift1{0%,100%{transform:translate(0,0);}50%{transform:translate(20px,-20px);}}
+@keyframes drift2{0%,100%{transform:translate(0,0);}50%{transform:translate(-20px,20px);}}
+.featured-vis-icon{font-size:64px;position:relative;z-index:2;}
+.featured-body{padding:40px 36px;display:flex;flex-direction:column;justify-content:center;}
+.post-category{
+  display:inline-block;font-size:10px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--blue);background:var(--blue-lt);
+  padding:4px 10px;border-radius:980px;
+  margin-bottom:16px;width:fit-content;
+}
+.post-category.green{color:#1c7c42;background:#edfbf3;}
+.post-category.amber{color:#b06800;background:#fff3e6;}
+.post-category.purple{color:#5e5ce6;background:#f0ebff;}
+.featured-title{
+  font-family:var(--font-d);
+  font-size:clamp(22px,2.5vw,32px);
+  color:var(--near-black);
+  line-height:1.18;
+  margin-bottom:14px;
+  letter-spacing:-.01em;
+}
+.featured-excerpt{font-size:14px;color:var(--gray);line-height:1.7;margin-bottom:24px;}
+.post-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.post-date{font-size:12px;color:var(--light-gray);}
+.post-read{font-size:12px;color:var(--light-gray);}
+.post-read::before{content:'Â·';margin-right:4px;}
+.read-more{
+  font-size:13px;font-weight:500;color:var(--blue);
+  display:inline-flex;align-items:center;gap:6px;
+  transition:gap .2s;
+}
+.featured-card:hover .read-more{gap:10px;}
+
+/* â”€â”€ POST GRID â”€â”€ */
+.posts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.post-card{
+  background:#fff;border-radius:16px;
+  border:.5px solid var(--soft);
+  overflow:hidden;
+  cursor:pointer;
+  transition:box-shadow .25s,transform .25s;
+}
+.post-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.07);transform:translateY(-4px);}
+.post-thumb{
+  height:160px;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  font-size:44px;
+}
+.thumb-seo{background:linear-gradient(135deg,#020610,#04091a);}
+.thumb-ppc{background:linear-gradient(135deg,#0a0315,#120a28);}
+.thumb-web{background:linear-gradient(135deg,#001a08,#003318);}
+.thumb-content{background:linear-gradient(135deg,#1a0a00,#331800);}
+.thumb-email{background:linear-gradient(135deg,#00001a,#000033);}
+.thumb-social{background:linear-gradient(135deg,#0a001a,#150033);}
+.post-card-body{padding:22px 22px 20px;}
+.post-card-title{
+  font-family:var(--font-d);
+  font-size:18px;line-height:1.3;
+  color:var(--near-black);
+  margin-bottom:10px;
+  letter-spacing:-.01em;
+}
+.post-card-excerpt{font-size:13px;color:var(--gray);line-height:1.65;margin-bottom:16px;}
+.post-card-footer{display:flex;align-items:center;justify-content:space-between;}
+.post-date-sm{font-size:11px;color:var(--light-gray);}
+.post-arrow{
+  width:28px;height:28px;border-radius:50%;
+  background:var(--blue-lt);
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;color:var(--blue);
+  transition:background .2s,transform .2s;
+}
+.post-card:hover .post-arrow{background:var(--blue);color:#fff;transform:scale(1.1);}
+
+/* â”€â”€ LOAD MORE â”€â”€ */
+.load-more-wrap{text-align:center;margin-top:36px;}
+.load-more-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:14px;font-weight:500;color:var(--near-black);
+  padding:12px 28px;border-radius:980px;
+  border:1.5px solid var(--mid);
+  background:#fff;cursor:pointer;
+  font-family:var(--font-b);
+  transition:border-color .2s,box-shadow .2s,transform .15s;
+}
+.load-more-btn:hover{border-color:#aaa;box-shadow:0 4px 16px rgba(0,0,0,.06);transform:scale(1.02);}
+
+/* â”€â”€ SIDEBAR â”€â”€ */
+.sidebar{}
+.sidebar-card{
+  background:#fff;border-radius:var(--radius);
+  border:.5px solid var(--soft);
+  padding:28px;
+  margin-bottom:20px;
+}
+.sidebar-h{
+  font-size:12px;font-weight:600;
+  color:var(--near-black);
+  letter-spacing:.06em;text-transform:uppercase;
+  margin-bottom:18px;
+  padding-bottom:12px;
+  border-bottom:.5px solid var(--soft);
+}
+
+/* Author card */
+.author-avatar{
+  width:64px;height:64px;border-radius:50%;
+  background:linear-gradient(135deg,#0071e3,#34c759);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-d);font-size:26px;color:#fff;
+  margin-bottom:14px;
+  box-shadow:0 4px 16px rgba(0,113,227,.3);
+}
+.author-name{font-size:16px;font-weight:600;color:var(--near-black);margin-bottom:4px;}
+.author-role{font-size:12px;color:var(--blue);margin-bottom:10px;}
+.author-bio{font-size:13px;color:var(--gray);line-height:1.65;margin-bottom:16px;}
+.author-socials{display:flex;gap:8px;}
+.a-soc{
+  width:30px;height:30px;border-radius:8px;
+  background:rgba(0,0,0,.04);border:.5px solid var(--soft);
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;color:var(--gray);
+  transition:background .2s,color .2s;text-decoration:none;
+}
+.a-soc:hover{background:var(--blue-lt);color:var(--blue);}
+
+/* Newsletter */
+.newsletter-form{margin-top:4px;}
+.nl-input{
+  width:100%;padding:10px 14px;
+  border:1px solid var(--mid);border-radius:10px;
+  font-size:13px;font-family:var(--font-b);
+  color:var(--near-black);background:#fff;
+  outline:none;
+  transition:border-color .2s,box-shadow .2s;
+  margin-bottom:10px;
+}
+.nl-input:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(0,113,227,.1);}
+.nl-btn{
+  width:100%;padding:10px 14px;
+  background:var(--near-black);color:#fff;
+  border:none;border-radius:10px;
+  font-size:13px;font-weight:500;font-family:var(--font-b);
+  cursor:pointer;
+  transition:background .2s,transform .15s;
+}
+.nl-btn:hover{background:var(--blue);transform:scale(1.01);}
+.nl-note{font-size:11px;color:var(--light-gray);margin-top:8px;text-align:center;}
+
+/* Topics */
+.topics-list{display:flex;flex-wrap:wrap;gap:8px;}
+.topic-chip{
+  font-size:12px;color:var(--gray);
+  padding:6px 12px;border-radius:980px;
+  border:1px solid var(--mid);background:#fff;
+  cursor:pointer;transition:all .18s;
+  display:flex;align-items:center;gap:5px;
+}
+.topic-chip:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-lt);}
+.topic-count{
+  font-size:10px;color:var(--light-gray);
+  background:#f0f0f2;padding:1px 6px;border-radius:980px;
+  transition:background .18s,color .18s;
+}
+.topic-chip:hover .topic-count{background:rgba(0,113,227,.1);color:var(--blue);}
+
+/* Recent posts sidebar */
+.recent-item{
+  display:flex;gap:14px;align-items:flex-start;
+  padding:12px 0;
+  border-bottom:.5px solid var(--soft);
+  cursor:pointer;
+}
+.recent-item:last-child{border-bottom:none;padding-bottom:0;}
+.recent-thumb{
+  width:48px;height:48px;border-radius:10px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:22px;
+}
+.recent-title{font-size:13px;font-weight:500;color:var(--near-black);line-height:1.4;margin-bottom:4px;}
+.recent-date{font-size:11px;color:var(--light-gray);}
+.recent-item:hover .recent-title{color:var(--blue);}
+
+/* Contact card */
+.contact-cta-card{
+  background:linear-gradient(135deg,var(--near-black) 0%,#2a2a2e 100%);
+  border-radius:var(--radius);padding:28px;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-card-orb{position:absolute;width:200px;height:200px;border-radius:50%;filter:blur(60px);background:radial-gradient(circle,rgba(0,113,227,.35),transparent);top:-60px;right:-60px;pointer-events:none;}
+.cta-card-h{font-family:var(--font-d);font-size:22px;color:#fff;margin-bottom:10px;position:relative;}
+.cta-card-p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;margin-bottom:20px;position:relative;}
+.cta-card-btn{
+  display:inline-block;
+  background:var(--blue);color:#fff;
+  font-size:13px;font-weight:500;
+  padding:10px 22px;border-radius:980px;
+  cursor:pointer;border:none;font-family:var(--font-b);
+  transition:background .2s,transform .15s;
+  position:relative;text-decoration:none;
+}
+.cta-card-btn:hover{background:var(--blue-h);transform:scale(1.03);}
+
+/* â”€â”€ REVEAL â”€â”€ */
+.r{opacity:1;transform:none;transition:opacity .65s var(--ease),transform .65s var(--ease);}
+.r.in{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}
+
+/* â”€â”€ FOOTER â”€â”€ */
+footer{background:#1d1d1f;padding:64px 24px 40px;border-top:.5px solid rgba(255,255,255,.07);}
+.footer-w{max-width:1160px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:.5px solid rgba(255,255,255,.07);}
+.footer-brand{font-family:var(--font-d);font-size:22px;color:#fff;margin-bottom:10px;}
+.footer-tagline{font-size:13px;color:rgba(255,255,255,.35);line-height:1.7;max-width:280px;}
+.footer-flags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;font-size:15px;}
+.footer-social{display:flex;gap:10px;margin-top:18px;}
+.footer-soc-link{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.06);border:.5px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:13px;color:rgba(255,255,255,.4);transition:background .2s,color .2s,border-color .2s;text-decoration:none;}
+.footer-soc-link:hover{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.15);}
+.footer-col h4{font-size:12px;font-weight:600;color:#fff;margin-bottom:16px;letter-spacing:.04em;}
+.footer-link{display:block;font-size:12px;color:rgba(255,255,255,.38);margin-bottom:9px;cursor:pointer;transition:color .2s;}
+.footer-link:hover{color:rgba(255,255,255,.75);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25);}
+
+/* â”€â”€ RESPONSIVE â”€â”€ */
+@media(max-width:1024px){
+  .blog-layout{grid-template-columns:1fr;}
+  .sidebar{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .contact-cta-card{grid-column:1/-1;}
+}
+@media(max-width:768px){
+  .featured-card{grid-template-columns:1fr;}
+  .featured-visual{min-height:200px;}
+  .posts-grid{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .sidebar{grid-template-columns:1fr;}
+}
+@media(max-width:560px){
+  .footer-top{grid-template-columns:1fr;}
+}
+
+/* CANON-NAV-FOOTER-START */
+:root{--blue:#0071e3;--blue-h:#0077ed;--font-d:'DM Serif Display',serif;--font-b:'DM Sans',sans-serif;--ease:cubic-bezier(.4,0,.2,1);--nav-h:64px;}
+html{scroll-padding-top:80px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);background:rgba(29,29,31,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:.5px solid rgba(255,255,255,.06);transition:background .3s;}
+nav .nav-wrap{max-width:1160px;margin:0 auto;height:100%;padding:0 24px;display:flex;align-items:center;justify-content:space-between;}
+nav .nav-logo{font-family:var(--font-d);font-size:17px;color:#fff;cursor:pointer;letter-spacing:-.3px;display:flex;align-items:center;gap:8px;user-select:none;text-decoration:none;}
+nav .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 12px var(--blue);}
+nav .nav-links{display:flex;align-items:center;gap:2px;}
+nav .nav-link{position:relative;color:rgba(255,255,255,.78);font-size:12px;font-weight:400;padding:8px 12px;border-radius:8px;cursor:pointer;transition:color .2s,background .2s;letter-spacing:.01em;text-decoration:none;display:inline-block;}
+nav .nav-link:hover{color:#fff;background:rgba(255,255,255,.08);}
+nav .nav-link.has-drop:after{content:'';display:inline-block;width:4px;height:4px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin-left:5px;vertical-align:middle;transition:transform .2s;}
+nav .nav-link.has-drop:hover:after{transform:rotate(-135deg);}
+nav .nav-link.has-drop{padding-bottom:18px;margin-bottom:-10px;}nav .mega-drop{position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(18,18,20,.97);backdrop-filter:blur(30px);border-bottom:.5px solid rgba(255,255,255,.08);padding:32px 0 36px;opacity:0;pointer-events:none;transition:opacity .25s var(--ease) .35s,transform .25s var(--ease) .35s,visibility 0s linear .6s;transform:translateY(-8px);visibility:hidden;z-index:999;}nav .nav-link.has-drop:hover .mega-drop,nav .mega-drop:hover{opacity:1!important;pointer-events:all!important;transform:translateY(0)!important;visibility:visible!important;transition:opacity .2s var(--ease),transform .2s var(--ease),visibility 0s linear 0s;}
+nav .nav-link.has-drop:hover .mega-drop{opacity:1;pointer-events:all;transform:translateY(0);}
+nav .mega-inner{max-width:1160px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
+nav .mega-col h4{font-size:10px;font-weight:600;color:rgba(255,255,255,.45);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;padding-bottom:8px;border-bottom:.5px solid rgba(255,255,255,.07);}
+nav .mega-col a{display:block;font-size:12px;color:rgba(255,255,255,.62);padding:5px 0;transition:color .15s;cursor:pointer;text-decoration:none;}
+nav .mega-col a:hover{color:#fff;}
+nav .nav-cta{background:var(--blue);color:#fff;font-size:12px;font-weight:500;padding:8px 16px;border-radius:980px;cursor:pointer;border:none;font-family:var(--font-b);transition:background .2s,transform .15s;}
+nav .nav-cta:hover{background:var(--blue-h);transform:scale(1.03);}
+@media(max-width:900px){nav .nav-links{display:none;}}
+
+footer{background:#1d1d1f;padding:64px 24px 40px;border-top:.5px solid rgba(255,255,255,.07);}
+footer .footer-w{max-width:1120px;margin:0 auto;}
+footer .footer-top{display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:.5px solid rgba(255,255,255,.07);}
+footer .footer-brand{font-family:var(--font-d);font-size:22px;color:#fff;margin-bottom:10px;}
+footer .footer-tagline{font-size:13px;color:rgba(255,255,255,.55);line-height:1.7;max-width:320px;}
+footer .footer-flags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;font-size:15px;}
+footer .footer-social{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;}
+footer .footer-soc-link{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.06);border:.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:13px;color:rgba(255,255,255,.7);transition:background .2s,color .2s,border-color .2s;text-decoration:none;font-weight:600;}
+footer .footer-soc-link:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+footer .footer-col h4{font-size:12px;font-weight:600;color:#fff;margin-bottom:16px;letter-spacing:.04em;}
+footer .footer-link{display:block;font-size:12px;color:rgba(255,255,255,.55);margin-bottom:9px;cursor:pointer;transition:color .2s;text-decoration:none;}
+footer .footer-link:hover{color:#fff;}
+footer .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px;}
+footer .footer-copy{font-size:12px;color:rgba(255,255,255,.4);}
+@media(max-width:900px){footer .footer-top{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){footer .footer-top{grid-template-columns:1fr;}}
+
+/* === RESPONSIVE & MOBILE MENU PATCH === */
+.mobile-toggle{display:none;position:absolute;top:50%;right:20px;transform:translateY(-50%);background:none;border:none;width:40px;height:40px;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0;z-index:1001;}
+.mobile-toggle span{display:block;width:22px;height:2px;background:#fff;transition:transform .3s,opacity .2s;}
+.mobile-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.mobile-toggle.open span:nth-child(2){opacity:0;}
+.mobile-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-drawer{position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:rgba(18,18,20,.98);-webkit-backdrop-filter:blur(30px);backdrop-filter:blur(30px);z-index:998;padding:24px 20px 80px;overflow-y:auto;transform:translateX(100%);transition:transform .3s ease;display:none;}
+.mobile-drawer.open{transform:translateX(0);}
+.mobile-drawer a{display:block;padding:14px 4px;color:rgba(255,255,255,.85);font-size:16px;border-bottom:.5px solid rgba(255,255,255,.06);text-decoration:none;}
+.mobile-drawer a:hover{color:#fff;}
+.mobile-drawer .ms-section{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#0071e3;padding:18px 4px 6px;border:none;}
+.mobile-drawer .ms-sub{padding-left:16px;font-size:14px;color:rgba(255,255,255,.65);}
+.mobile-drawer .mobile-cta{display:block;background:#0071e3;color:#fff;text-align:center;padding:14px;border-radius:980px;margin-top:24px;font-weight:500;border:none;}
+@media(max-width:900px){
+  .mobile-toggle{display:flex;}
+  .mobile-drawer{display:block;}
+  nav .nav-links{display:none!important;}
+  nav .nav-cta{display:none!important;}
+  .section,.services-section,.feature-section{padding-left:20px!important;padding-right:20px!important;}
+  .feature-block{padding:64px 20px!important;}
+  .hero-content{padding:32px 20px!important;}
+  .stats-section{padding-left:20px!important;padding-right:20px!important;}
+  footer{padding:48px 20px 32px!important;}
+}
+@media(max-width:600px){
+  :root{--nav-h:56px;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+  .hero-ctas{flex-direction:column;align-items:stretch;width:100%;max-width:320px;margin:0 auto;}
+  .hero-ctas button,.hero-ctas .btn-fill,.hero-ctas .btn-ghost{width:100%;}
+  
+}
+@media(hover:none),(pointer:coarse){
+  body{cursor:auto!important;}
+  #cursor,#cursor-ring{display:none!important;}
+}
+img,video{max-width:100%;height:auto;}
+/* === END RESPONSIVE PATCH === */
+
+
+/* === FLAG EMOJI === */
+.flag-emoji{display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;line-height:1;filter:saturate(1.08);}
+.client-flag .flag-emoji{font-size:34px;min-width:44px;min-height:34px;margin-bottom:0;}
+.flag-pill .flag-emoji{font-size:16px;min-width:18px;}
+.testi-flag .flag-emoji,.testi-meta .flag-emoji{font-size:18px;min-width:20px;}
+.footer-flags .flag-emoji{font-size:20px;margin-right:3px;}
+/* === MOBILE COLLAPSIBLE === */
+.mobile-drawer .ms-section{cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none;}
+.mobile-drawer .ms-section::after{content:'+';font-size:18px;color:#0071e3;font-weight:300;transition:transform .25s;}
+.mobile-drawer .ms-section.open::after{content:'\2212';}
+.mobile-drawer .ms-group{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.mobile-drawer .ms-group.open{max-height:600px;}
+/* === END === */
+
+/* CANON-NAV-FOOTER-END */
+</style><div>
+
+<!-- Custom Cursor -->
+<div id="cur"></div>
+<div id="cur-ring"></div>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â• NAV â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<nav>
+  <div class="nav-wrap">
+    <a href="/" class="nav-logo">
+      <div class="logo-dot"></div>
+      Digital World
+    </a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
+
+      <div class="nav-link has-drop has-mega">Services
+        <div class="mega-drop">
+          <div class="mega-inner">
+            <div class="mega-col">
+              <h4>ðŸ” SEO</h4>
+              <a href="/services/seo#svc-local">Local SEO</a>
+              <a href="/services/seo#svc-ecom">Ecommerce SEO</a>
+              <a href="/services/seo#svc-intl">International SEO</a>
+              <a href="/services/seo#svc-yt">Youtube / Video SEO</a>
+              <a href="/services/seo#svc-saas">SaaS SEO</a>
+              <a href="/services/seo#svc-semantic">Semantic SEO</a>
+              <a href="/services/seo#svc-ai">AI SEO</a>
+            </div>
+            <div class="mega-col">
+              <h4>ðŸŽ¯ PPC / Paid Ads</h4>
+              <a href="/services/ppc#svc-search">Google Search Ads</a>
+              <a href="/services/ppc#svc-shopping">Google Shopping Ads</a>
+              <a href="/services/ppc#svc-pmax">Performance Max</a>
+              <a href="/services/ppc#svc-youtube">YouTube Ads</a>
+              <a href="/services/ppc#svc-remarketing">Remarketing</a>
+              <a href="/services/ppc#svc-facebook">Facebook Ads</a>
+              <a href="/services/ppc#svc-instagram">Instagram Ads</a>
+              <a href="/services/ppc#svc-tiktok">TikTok / LinkedIn Ads</a>
+            </div>
+            <div class="mega-col">
+              <h4>ðŸŒ Web Design &amp; Dev</h4>
+              <a href="/services/web#svc-uiux">Website Design (UI/UX)</a>
+              <a href="/services/web#svc-wordpress">WordPress Development</a>
+              <a href="/services/web#svc-shopify">Shopify Development</a>
+              <a href="/services/web#svc-landing">Landing Page Design</a>
+              <a href="/services/web#svc-speed">Website Speed Optimization</a>
+              <a href="/services/web#svc-maintenance">Website Maintenance</a>
+              <a href="/services/web#svc-migration">Website Migration</a>
+              <a href="/services/web#svc-cms">CMS Setup</a>
+            </div>
+            <div class="mega-col">
+              <h4>âœï¸ Content &amp; More</h4>
+              <a href="/services/content#svc-blog">Blog Writing &amp; Management</a>
+              <a href="/services/content#svc-email">Email Marketing</a>
+              <a href="/services/content#svc-content">Content Marketing</a>
+              <a href="/services/content#svc-cro">CRO Audit &amp; Testing</a>
+              <a href="/services/content#svc-backlink">Backlink Building</a>
+              <a href="/services/content#svc-pr">Digital PR &amp; HARO</a>
+              <a href="/services/content#svc-social">Social Media Content</a>
+              <a href="/services/content#svc-press">Press Releases &amp; PR</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/portfolio" class="nav-link">Portfolio</a>
+      <a href="/about" class="nav-link">About</a>
+      <a href="/blog" class="nav-link">Blog</a>
+      <a href="/contact" class="nav-link">Contact</a>
+    </div>
+    <a href="/contact"><button class="nav-cta">Get Started</button></a>
+  </div>
+
+<button class="mobile-toggle" id="mobToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+<div class="mobile-drawer" id="mobDrawer">
+  <a href="/">Home</a>
+  <div class="ms-section">SEO Services</div>
+  <a class="ms-sub" href="/services/seo">All SEO Services</a>
+  <a class="ms-sub" href="/services/seo#svc-local">Local SEO</a>
+  <a class="ms-sub" href="/services/seo#svc-ecom">Ecommerce SEO</a>
+  <a class="ms-sub" href="/services/seo#svc-intl">International SEO</a>
+  <div class="ms-section">PPC / Paid Ads</div>
+  <a class="ms-sub" href="/services/ppc">All Paid Ads</a>
+  <a class="ms-sub" href="/services/ppc#svc-search">Google Ads</a>
+  <a class="ms-sub" href="/services/ppc#svc-facebook">Facebook Ads</a>
+  <div class="ms-section">Web Design &amp; Dev</div>
+  <a class="ms-sub" href="/services/web">All Web Services</a>
+  <a class="ms-sub" href="/services/web#svc-wordpress">WordPress</a>
+  <a class="ms-sub" href="/services/web#svc-shopify">Shopify</a>
+  <div class="ms-section">Content &amp; More</div>
+  <a class="ms-sub" href="/services/content">All Content Services</a>
+  <a class="ms-sub" href="/services/content#svc-email">Email Marketing</a>
+  <a class="ms-sub" href="/services/content#svc-content">Content Marketing</a>
+  <a href="/portfolio" style="margin-top:14px;">Portfolio</a>
+  <a href="/about">About</a>
+  <a href="/blog">Blog</a>
+  <a href="/contact">Contact</a>
+  <a href="/contact" class="mobile-cta">Get Started</a>
+</div>
+</nav>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â• PAGE HERO â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<section class="page-hero">
+  <div class="hero-orb ho1"></div>
+  <div class="hero-orb ho2"></div>
+  <div class="dot-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-badge r">
+      <div class="hero-badge-dot"></div>
+      Digital Marketing Insights
+    </div>
+    <h1 class="hero-title r">Expert tips to<br/><em>grow your business</em></h1>
+    <p class="hero-sub r d1">Actionable strategies, real-world case studies, and data-backed guides from 5 years of hands-on experience across SEO, web development, paid ads, and more.</p>
+    <div class="hero-meta-row r d2">
+      <div class="hero-stat"><span class="hero-stat-icon">ðŸ“</span><strong>32</strong>&nbsp;Articles</div>
+      <div class="hero-stat"><span class="hero-stat-icon">ðŸŒ</span>Read in&nbsp;<strong>11 countries</strong></div>
+      <div class="hero-stat"><span class="hero-stat-icon">ðŸ”„</span>Updated&nbsp;<strong>weekly</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â• FILTER BAR â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <button class="filter-chip active" data-cat="all">All Posts</button>
+    <button class="filter-chip" data-cat="seo">SEO</button>
+    <button class="filter-chip" data-cat="ppc">Google Ads</button>
+    <button class="filter-chip" data-cat="web">Web Dev</button>
+    <button class="filter-chip" data-cat="content">Content Marketing</button>
+    <button class="filter-chip" data-cat="email">Email Marketing</button>
+    <button class="filter-chip" data-cat="social">Social Media</button>
+    <button class="filter-chip" data-cat="ecommerce">E-commerce</button>
+  </div>
+</div>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â• MAIN CONTENT â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<div class="blog-layout">
+
+  <!-- â”€â”€ LEFT: Posts â”€â”€ -->
+  <main>
+    <div class="featured-label r">Featured Post</div>
+
+    <!-- Featured Card -->
+    <article class="featured-card r d1" data-cat="seo">
+      <div class="featured-visual">
+        <div class="featured-vis-orb fvo1"></div>
+        <div class="featured-vis-orb fvo2"></div>
+        <div class="featured-vis-icon">ðŸ”</div>
+      </div>
+      <div class="featured-body">
+        <span class="post-category">SEO</span>
+        <h2 class="featured-title">How We Doubled Organic Traffic in 4 Months: A Step-by-Step SEO Case Study</h2>
+        <p class="featured-excerpt">A real client, a real strategy, and real results. We break down exactly how we took an e-commerce store from 3,200 monthly visitors to 7,800 â€” without a single paid ad. Includes the full keyword map, content plan, and backlink strategy we used.</p>
+        <div class="post-meta">
+          <span class="post-date">May 5, 2025</span>
+          <span class="post-read">9 min read</span>
+        </div>
+        <br/>
+        <span class="read-more">Read Case Study â†’</span>
+      </div>
+    </article>
+
+    <!-- Post Grid -->
+    <div class="posts-grid" id="postsGrid">
+
+      <article class="post-card r d1" data-cat="seo">
+        <div class="post-thumb thumb-seo">ðŸŽ¯</div>
+        <div class="post-card-body">
+          <span class="post-category">SEO</span>
+          <h3 class="post-card-title">Semantic SEO in 2025: How Topical Authority Beats Keyword Density</h3>
+          <p class="post-card-excerpt">Google's algorithms have fundamentally shifted. Here's how to build topical authority and stop chasing individual keywords.</p>
+          <div class="post-card-footer">
+            <span class="post-date-sm">Apr 28, 2025 Â· 7 min</span>
+            <div class="post-arrow">â†’</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card r d2" data-cat="ppc">
+        <div class="post-thumb thumb-ppc">ðŸŽ¯</div>
+        <div class="post-card-body">
+          <span class="post-category amber">Google Ads</span>
+          <h3 class="post-card-title">Why Your Google Ads ROAS Is Low (And How to Fix It Fast)</h3>
+          <p class="post-card-excerpt">Most ad accounts waste 40â€“60% of budget. We diagnose the 7 most common reasons and show you exactly how to plug the leaks.</p>
+          <div class="post-card-footer">
+            <span class="post-date-sm">Apr 18, 2025 Â· 6 min</span>
+            <div class="post-arrow">â†’</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card r d1" data-cat="web">
+        <div class="post-thumb thumb-web">âš¡</div>
+        <div class="post-card-body">
+          <span class="post-category green">Web Dev</span>
+          <h3 class="post-card-title">Shopify vs WordPress in 2025: Which Platform Actually Converts Better?</h3>
+          <p class="post-card-excerpt">We ran the same store on both platforms for 90 days. The results surprised us. A data-driven comparison with real conversion numbers.</p>
+          <div class="post-card-footer">
+            <span class="post-date-sm">Apr 10, 2025 Â· 8 min</span>
+            <div class="post-arrow">â†’</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card r d2" data-cat="content">
+        <div class="post-thumb thumb-content">âœï¸</div>
+        <div class="post-card-body">
+          <span class="post-category amber">Content Marketing</span>
+          <h3 class="post-card-title">The Content Cluster Strategy That Ranks for 500+ Keywords</h3>
+          <p class="post-card-excerpt">Forget posting and praying. This pillar-cluster content model is how we consistently rank for high-intent keywords in competitive niches.</p>
+          <div class="post-card-footer">
+            <span class="post-date-sm">Mar 30, 2025 Â· 5 min</span>
+            <div class="post-arrow">â†’</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card r d1" data-cat="ecommerce">
+        <div class="post-thumb thumb-web">ðŸ›’</div>
+        <div class="post-card-body">
+          <span class="post-category purple">E-Commerce</span>
+          <h3 class="post-card-title">How We Improved a Shopify Store's Conversion Rate by 180% in 60 Days</h3>
+          <p class="post-card-excerpt">A deep-dive into the CRO techniques â€” from hero section redesign to checkout flow optimisation â€” that tripled revenue for a UK retail brand.</p>
+          <div class="post-card-footer">
+            <span class="post-date-sm">Mar 20, 2025 Â· 7 min</span>
+            <div class="post-arrow">â†’</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card r d2" data-cat="email">
+        <div class="post-thumb thumb-email">ðŸ“§</div>
+        <div class="post-card-body">
+          <span class="post-category purple">Email Marketing</span>
+          <h3 class="post-card-title">The 5-Email Sequence That Generates 30% of Our Clients' Revenue</h3>
+          <p class="post-card-excerpt">Most businesses email too rarely or too much. This welcome sequence framework nurtures leads on autopilot and converts like clockwork.</p>
+          <div class="post-card-footer">
+            <span class="post-date-sm">Mar 12, 2025 Â· 6 min</span>
+            <div class="post-arrow">â†’</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card r d1" data-cat="seo">
+        <div class="post-thumb thumb-seo">ðŸ”—</div>
+        <div class="post-card-body">
+          <span class="post-category">SEO</span>
+          <h3 class="post-card-title">Local SEO in 2025: The Complete Checklist for Small Businesses</h3>
+          <p class="post-card-excerpt">From Google Business Profile optimisation to local citations and review strategy â€” everything you need to dominate local search results.</p>
+          <div class="post-card-footer">
+            <span class="post-date-sm">Mar 3, 2025 Â· 10 min</span>
+            <div class="post-arrow">â†’</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card r d2" data-cat="social">
+        <div class="post-thumb thumb-social">ðŸ“±</div>
+        <div class="post-card-body">
+          <span class="post-category amber">Social Media Ads</span>
+          <h3 class="post-card-title">Facebook Ads in 2025: What's Working Right Now (With Examples)</h3>
+          <p class="post-card-excerpt">The algorithm has changed. Static images are back. Broad targeting wins. Here's our up-to-date playbook for Meta ad campaigns that actually convert.</p>
+          <div class="post-card-footer">
+            <span class="post-date-sm">Feb 22, 2025 Â· 6 min</span>
+            <div class="post-arrow">â†’</div>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /posts-grid -->
+
+    <div class="load-more-wrap r">
+      <button class="load-more-btn" id="loadMoreBtn">Load More Articles &nbsp;â†“</button>
+    </div>
+
+  </main>
+
+  <!-- â”€â”€ RIGHT: Sidebar â”€â”€ -->
+  <aside class="sidebar">
+
+    <!-- Author -->
+    <div class="sidebar-card r">
+      <div class="sidebar-h">About the Author</div>
+      <div class="author-avatar">K</div>
+      <div class="author-name">Kamrujjaman Mufti</div>
+      <div class="author-role">Founder Â· Digital World</div>
+      <p class="author-bio">Full-service digital marketing expert with 5 years of hands-on experience helping businesses in 11 countries grow through SEO, web development, paid ads, and content marketing.</p>
+      <div class="author-socials">
+        <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank" class="a-soc" title="LinkedIn">in</a>
+        <a href="https://www.facebook.com/digitalworld1988" target="_blank" class="a-soc" title="Facebook">f</a>
+        <a href="mailto:kj.jaman369@gmail.com" class="a-soc" title="Email">@</a>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="sidebar-card r d1">
+      <div class="sidebar-h">Weekly Newsletter</div>
+      <p style="font-size:13px;color:var(--gray);line-height:1.65;margin-bottom:16px;">Get one actionable digital marketing tip every week. No fluff, no spam â€” just insights that move the needle.</p>
+      <div class="newsletter-form">
+        <input type="email" class="nl-input" placeholder="your@email.com" id="nlEmail"/>
+        <button class="nl-btn" id="nlBtn">Subscribe â€” It's Free</button>
+        <p class="nl-note">Join 800+ marketers. Unsubscribe anytime.</p>
+      </div>
+    </div>
+
+    <!-- Topics -->
+    <div class="sidebar-card r d2">
+      <div class="sidebar-h">Browse Topics</div>
+      <div class="topics-list">
+        <div class="topic-chip">ðŸ” SEO <span class="topic-count">12</span></div>
+        <div class="topic-chip">ðŸŽ¯ Google Ads <span class="topic-count">6</span></div>
+        <div class="topic-chip">ðŸ’» Web Dev <span class="topic-count">5</span></div>
+        <div class="topic-chip">âœï¸ Content <span class="topic-count">4</span></div>
+        <div class="topic-chip">ðŸ“§ Email <span class="topic-count">3</span></div>
+        <div class="topic-chip">ðŸ“± Social Ads <span class="topic-count">2</span></div>
+      </div>
+    </div>
+
+    <!-- Recent Posts -->
+    <div class="sidebar-card r d1">
+      <div class="sidebar-h">Recent Posts</div>
+      <div class="recent-item">
+        <div class="recent-thumb thumb-seo" style="border-radius:10px;">ðŸ”</div>
+        <div>
+          <div class="recent-title">How We Doubled Organic Traffic in 4 Months</div>
+          <div class="recent-date">May 5, 2025</div>
+        </div>
+      </div>
+      <div class="recent-item">
+        <div class="recent-thumb thumb-ppc" style="border-radius:10px;">ðŸŽ¯</div>
+        <div>
+          <div class="recent-title">Why Your Google Ads ROAS Is Low</div>
+          <div class="recent-date">Apr 18, 2025</div>
+        </div>
+      </div>
+      <div class="recent-item">
+        <div class="recent-thumb thumb-web" style="border-radius:10px;">âš¡</div>
+        <div>
+          <div class="recent-title">Shopify vs WordPress in 2025</div>
+          <div class="recent-date">Apr 10, 2025</div>
+        </div>
+      </div>
+      <div class="recent-item">
+        <div class="recent-thumb thumb-content" style="border-radius:10px;">âœï¸</div>
+        <div>
+          <div class="recent-title">The Content Cluster Strategy</div>
+          <div class="recent-date">Mar 30, 2025</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Card -->
+    <div class="contact-cta-card r d2">
+      <div class="cta-card-orb"></div>
+      <div class="cta-card-h">Ready to grow?</div>
+      <p class="cta-card-p">Book a free 30-minute strategy call. No obligation â€” just honest advice on how to dominate your market.</p>
+      <a href="/contact" class="cta-card-btn">Book Free Call â†’</a>
+    </div>
+
+  </aside>
+
+</div><!-- /blog-layout -->
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â• FOOTER â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<footer>
+  <div class="footer-w">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Digital World</div>
+        <p class="footer-tagline">Full-Service Digital Marketing Agency Â· 5 Years Experience Â· Serving 11 countries worldwide.</p>
+        <div class="footer-flags"><span class="flag-emoji" aria-hidden="true">ðŸ‡ºðŸ‡¸</span> <span class="flag-emoji" aria-hidden="true">ðŸ‡¬ðŸ‡§</span> <span class="flag-emoji" aria-hidden="true">ðŸ‡¨ðŸ‡¦</span> <span class="flag-emoji" aria-hidden="true">ðŸ‡¦ðŸ‡º</span> <span class="flag-emoji" aria-hidden="true">ðŸ‡®ðŸ‡ª</span> <span class="flag-emoji" aria-hidden="true">ðŸ‡¦ðŸ‡ª</span> <span class="flag-emoji" aria-hidden="true">ðŸ‡¿ðŸ‡¦</span> <span class="flag-emoji" aria-hidden="true">ðŸ‡©ðŸ‡ª</span> <span class="flag-emoji" aria-hidden="true">ðŸ‡³ðŸ‡±</span> <span class="flag-emoji" aria-hidden="true">ðŸ‡³ðŸ‡¿</span> <span class="flag-emoji" aria-hidden="true">ðŸ‡§ðŸ‡©</span></div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/digitalworld1988" class="footer-soc-link" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/" class="footer-soc-link" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">ig</a>
+          <a href="https://x.com/" class="footer-soc-link" target="_blank" rel="noopener" title="X (Twitter)" aria-label="X">ð•</a>
+          <a href="https://www.pinterest.com/" class="footer-soc-link" target="_blank" rel="noopener" title="Pinterest" aria-label="Pinterest">P</a>
+          <a href="https://www.youtube.com/" class="footer-soc-link" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube">â–¶</a>
+          <a href="https://www.indeed.com/" class="footer-soc-link" target="_blank" rel="noopener" title="Indeed" aria-label="Indeed">in</a>
+          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" class="footer-soc-link" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">Li</a>
+        </div>
+        <a href="/contact" style="display:inline-block;margin-top:18px;background:var(--blue,#0071e3);color:#fff;font-size:12px;font-weight:500;padding:10px 18px;border-radius:980px;text-decoration:none;">ðŸ“… Book Free Consultation</a>
+      </div>
+      <div class="footer-col">
+        <h4>SEO Services</h4>
+        <a class="footer-link" href="/services/seo#svc-local">Local SEO</a>
+        <a class="footer-link" href="/services/seo#svc-ecom">Ecommerce SEO</a>
+        <a class="footer-link" href="/services/seo#svc-intl">International SEO</a>
+        <a class="footer-link" href="/services/seo#svc-saas">SaaS SEO</a>
+        <a class="footer-link" href="/services/seo#svc-semantic">Semantic SEO</a>
+      </div>
+      <div class="footer-col">
+        <h4>Web &amp; Ads</h4>
+        <a class="footer-link" href="/services/web#svc-wordpress">WordPress Development</a>
+        <a class="footer-link" href="/services/web#svc-shopify">Shopify Development</a>
+        <a class="footer-link" href="/services/ppc#svc-search">Google Ads / PPC</a>
+        <a class="footer-link" href="/services/ppc#svc-facebook">Facebook &amp; Instagram Ads</a>
+        <a class="footer-link" href="/services/content#svc-content">Content Marketing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about" class="footer-link">About Us</a>
+        <a href="/portfolio" class="footer-link">Portfolio</a>
+        <a href="/blog" class="footer-link">Blog</a>
+        <a class="footer-link" href="/contact">Contact</a>
+        <a class="footer-link" href="mailto:kj.jaman369@gmail.com">kj.jaman369@gmail.com</a>
+        <a class="footer-link" href="tel:+8801798667820">+880 1798-667820</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">Copyright Â© 2025 Digital World Â· Kamrujjaman Mufti. All rights reserved.</p>
+      <p class="footer-copy">Based in Dhaka, Bangladesh Â· Available worldwide</p>
+    </div>
+  </div>
+</footer>
+
+
+</div><!--/$--><a href="https://wa.me/8801798667820?text=Hi%20KJ%20Digital%20World%2C%20I%20am%20interested%20in%20your%20services" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="wa-icon"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.585.69 5.003 1.895 7.1L2 30l7.1-1.895A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm7.397 9.865l-1.265 5.975c-.095.425-.488.725-.923.725-.085 0-.17-.01-.252-.03l-2.42-.63a9.87 9.87 0 01-4.21 1.045c-5.465 0-9.9-4.435-9.9-9.9 0-.48.034-.955.102-1.42.13-.93.914-1.6 1.854-1.6h.08c.46.02.89.23 1.17.57l1.59 1.98c.37.46.33 1.12-.09 1.53l-.79.77c-.27.26-.34.66-.17 1 .47.94 1.15 1.76 1.99 2.41.35.27.83.27 1.17.03l1.02-.78c.44-.34 1.06-.32 1.48.04l2.01 1.73c.37.32.5.82.33 1.27z" fill="currentColor"></path></svg></a>
+
+<script>
+  // Category Filtering Logic
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterChips = document.querySelectorAll('.filter-chip');
+    const posts = document.querySelectorAll('.post-card, .featured-card');
+
+    filterChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        // Remove active class from all chips
+        filterChips.forEach(c => c.classList.remove('active'));
+        // Add active class to clicked chip
+        chip.classList.add('active');
+
+        const category = chip.getAttribute('data-cat');
+
+        posts.forEach(post => {
+          if (category === 'all' || post.getAttribute('data-cat') === category) {
+            post.style.display = '';
+          } else {
+            post.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
+</body></html>

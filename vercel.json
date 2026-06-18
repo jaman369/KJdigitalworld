@@ -17,6 +17,10 @@
       "destination": "https://kjdigitalworld.lovable.app/flags/$1"
     },
     {
+      "source": "/blog",
+      "destination": "/blog.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
