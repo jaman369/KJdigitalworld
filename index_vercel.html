@@ -1467,7 +1467,7 @@ img,video{max-width:100%;height:auto;}
 	}
 </script>
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+(function() {
   const counters = document.querySelectorAll('.cnt');
   const speed = 200; // The lower the slower
   
@@ -1487,7 +1487,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       };
       
-      // Use IntersectionObserver to start animation when visible
       const observer = new IntersectionObserver((entries) => {
         if(entries[0].isIntersecting) {
           updateCount();
@@ -1500,7 +1499,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   
   animate();
-});
+})();
 </script>
 <script>
 (function() {
