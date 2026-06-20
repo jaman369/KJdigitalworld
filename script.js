@@ -298,7 +298,7 @@ if (heroVisual && window.matchMedia('(min-width: 768px)').matches) {
 
 // ---- Brand Marquee Duplication ----
 requestAnimationFrame(() => {
-  const brandsTrack = document.querySelector('.brands-track');
+  const brandsTrack = document.querySelector('.marquee-track');
   if (brandsTrack) {
     brandsTrack.innerHTML += brandsTrack.innerHTML;
   }
