@@ -17,8 +17,40 @@
       "destination": "https://kjdigitalworld.lovable.app/flags/$1"
     },
     {
+      "source": "/contact",
+      "destination": "/Portfolio-kj/contact.html"
+    },
+    {
       "source": "/blog",
       "destination": "/blog.html"
+    },
+    {
+      "source": "/portfolio",
+      "destination": "/portfolio.html"
+    },
+    {
+      "source": "/portfolio-seo",
+      "destination": "/portfolio-seo.html"
+    },
+    {
+      "source": "/portfolio-web",
+      "destination": "/portfolio-web.html"
+    },
+    {
+      "source": "/portfolio-ppc",
+      "destination": "/portfolio-ppc.html"
+    },
+    {
+      "source": "/portfolio-social",
+      "destination": "/portfolio-social.html"
+    },
+    {
+      "source": "/portfolio-content",
+      "destination": "/portfolio-content.html"
+    },
+    {
+      "source": "/portfolio-cro",
+      "destination": "/portfolio-cro.html"
     },
     {
       "source": "/(.*)",

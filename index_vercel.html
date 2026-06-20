@@ -389,7 +389,53 @@ a{text-decoration:none;color:white;font-family:'DM Sans',sans-serif;font-size:0.
 .section-sub.dark{color:var(--gray);}
 
 /* ── SERVICES SECTION ── */
-.services-section{background:#000;padding:96px 24px;}
+.services-section{position:relative;overflow:hidden;background:#000;padding:96px 24px;}
+/* ── GLOWING EMBERS ── */
+.embers-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.ember {
+  position: absolute;
+  bottom: -20px;
+  width: 6px;
+  height: 6px;
+  background: #ff5f00;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff5f00, 0 0 20px #ff2a00;
+  opacity: 0;
+  animation: floatUp 8s infinite ease-in;
+}
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1) translateX(0); opacity: 0; }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.8; }
+  100% { transform: translateY(-800px) scale(0.5) translateX(30px); opacity: 0; }
+}
+@keyframes floatUpAlt {
+  0% { transform: translateY(0) scale(1) translateX(0); opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.7; }
+  100% { transform: translateY(-900px) scale(0.3) translateX(-40px); opacity: 0; }
+}
+.ember:nth-child(1) { left: 10%; animation-duration: 7s; animation-delay: 0s; }
+.ember:nth-child(2) { left: 20%; animation-duration: 9s; animation-delay: 2s; width: 4px; height: 4px; animation-name: floatUpAlt; }
+.ember:nth-child(3) { left: 30%; animation-duration: 6s; animation-delay: 1s; width: 8px; height: 8px; }
+.ember:nth-child(4) { left: 40%; animation-duration: 8s; animation-delay: 4s; animation-name: floatUpAlt; }
+.ember:nth-child(5) { left: 50%; animation-duration: 10s; animation-delay: 0.5s; width: 5px; height: 5px; }
+.ember:nth-child(6) { left: 60%; animation-duration: 7.5s; animation-delay: 3s; animation-name: floatUpAlt; }
+.ember:nth-child(7) { left: 70%; animation-duration: 8.5s; animation-delay: 1.5s; width: 7px; height: 7px; }
+.ember:nth-child(8) { left: 80%; animation-duration: 6.5s; animation-delay: 4.5s; animation-name: floatUpAlt; }
+.ember:nth-child(9) { left: 90%; animation-duration: 9.5s; animation-delay: 2.5s; width: 4px; height: 4px; }
+.ember:nth-child(10) { left: 15%; animation-duration: 8.2s; animation-delay: 5s; width: 6px; height: 6px; animation-name: floatUpAlt; }
+.ember:nth-child(11) { left: 35%; animation-duration: 7.8s; animation-delay: 3.5s; }
+.ember:nth-child(12) { left: 55%; animation-duration: 9.2s; animation-delay: 1.2s; animation-name: floatUpAlt; }
+.ember:nth-child(13) { left: 75%; animation-duration: 6.8s; animation-delay: 2.8s; width: 8px; height: 8px; }
+.ember:nth-child(14) { left: 85%; animation-duration: 8.8s; animation-delay: 0.8s; animation-name: floatUpAlt; }
+.ember:nth-child(15) { left: 5%; animation-duration: 7.2s; animation-delay: 3.2s; width: 5px; height: 5px; }
 .services-intro{text-align:center;max-width:700px;margin:0 auto 64px;}
 .services-intro .section-sub{margin:0 auto;}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
@@ -906,7 +952,12 @@ img,video{max-width:100%;height:auto;}
 
 <!-- ══════════════ SERVICES ══════════════ -->
 <section class="services-section">
-  <div class="section-w">
+  <div class="embers-container">
+    <div class="ember"></div><div class="ember"></div><div class="ember"></div><div class="ember"></div><div class="ember"></div>
+    <div class="ember"></div><div class="ember"></div><div class="ember"></div><div class="ember"></div><div class="ember"></div>
+    <div class="ember"></div><div class="ember"></div><div class="ember"></div><div class="ember"></div><div class="ember"></div>
+  </div>
+  <div class="section-w" style="position:relative; z-index:1;">
     <div class="services-intro">
       <span class="eyebrow-sm reveal">What We Do</span>
       <h2 class="section-title reveal">Every service your<br/>brand needs — in one place.</h2>

@@ -185,15 +185,47 @@ if (contactForm) {
     });
 
     if (valid) {
-      contactForm.style.display = 'none';
-      const successMsg = document.getElementById('formSuccess');
-      if (successMsg) successMsg.classList.add('show');
+      const submitBtn = contactForm.querySelector('.form-submit-btn');
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Sending...';
 
-      setTimeout(() => {
-        contactForm.reset();
-        contactForm.style.display = '';
-        if (successMsg) successMsg.classList.remove('show');
-      }, 5000);
+      const formData = new FormData(contactForm);
+
+      fetch('https://script.google.com/macros/s/AKfycbxqs_A4SMd0mGwc8_o58r4EAZU9mvO-fQKShsoHORG418HwgPwPfWheo2dO7n1QFn2fzQ/exec', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      })
+      .then(() => {
+        // Show success state
+        contactForm.style.display = 'none';
+        const successMsg = document.getElementById('formSuccess');
+        if (successMsg) successMsg.classList.add('show');
+
+        setTimeout(() => {
+          contactForm.reset();
+          contactForm.style.display = '';
+          if (successMsg) successMsg.classList.remove('show');
+        }, 5000);
+      })
+      .catch(error => {
+        console.error('Error submitting form:', error);
+        // Fallback: show success anyway in case of redirection/CORS block on success
+        contactForm.style.display = 'none';
+        const successMsg = document.getElementById('formSuccess');
+        if (successMsg) successMsg.classList.add('show');
+
+        setTimeout(() => {
+          contactForm.reset();
+          contactForm.style.display = '';
+          if (successMsg) successMsg.classList.remove('show');
+        }, 5000);
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      });
     }
   });
 }

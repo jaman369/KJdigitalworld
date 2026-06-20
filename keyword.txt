@@ -1,0 +1,32 @@
+1	digital marketing agency	Commercial	74000	99
+2	seo agency	Commercial	60500	54
+3	seo services	Commercial	60500	38
+4	digital marketing services	Informational	40500	59
+5	marketing agency	Commercial	40500	48
+6	digital marketing company	Informational, Commercial	33100	57
+7	seo marketing	Informational	27100	81
+8	social media management	Informational	27100	59
+9	web design agency	Commercial	27100	58
+10	web design company	Commercial	27100	59
+11	enterprise resource planning	Informational	22200	59
+12	local seo services	Informational	22200	46
+13	social media marketing agency	Commercial	22200	33
+14	personal branding	Informational	18100	71
+15	ppc agency	Commercial	18100	60
+16	seo consultant	Informational	18100	63
+17	web design services	Commercial	18100	75
+18	website design company	Commercial	18100	65
+19	online marketing agency	Commercial	14800	69
+20	ecommerce seo	Informational	14800	67
+21	local seo agency	Commercial	14800	40
+22	technical seo	Informational	14800	40
+23	google ads agency	Informational, Commercial	12100	35
+24	email marketing services	Commercial	9900	74
+25	professional seo services	Informational, Commercial	9900	51
+26	content marketing services	Informational	12100	47
+27	seo marketing agency	Commercial	9900	43
+28	ai seo	Informational, Commercial	8100	51
+29	ppc management services	Informational	8100	29
+30	ppc services	Informational	8100	43
+31	search engine optimization company	Informational	8100	50
+32	sms marketing	Informational	8100	63
