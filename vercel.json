@@ -54,7 +54,7 @@
     },
     {
       "source": "/about",
-      "destination": "/Portfolio-kj/about.html"
+      "destination": "/about.html"
     },
     {
       "source": "/posts/(.*)",

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - KJ Digital World</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    /* RESET & BASE */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', sans-serif; background: #ffffff; color: #111; overflow-x: hidden; }
+    h1, h2, h3, .serif { font-family: 'DM Serif Display', serif; font-weight: 400; }
+    a { text-decoration: none; }
+    
+    /* UTILS */
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 96px 0; }
+    .badge { display: inline-block; font-size: 11px; font-weight: 600; color: #0071e3; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+    .badge-icon { display: inline-flex; align-items: center; gap: 8px; background: #f0f7ff; color: #0071e3; padding: 6px 14px; border-radius: 99px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 24px; }
+    .badge-icon span { width: 6px; height: 6px; border-radius: 50%; background: #0071e3; }
+    
+    /* HERO */
+    .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 85vh; align-items: center; background: linear-gradient(to right, #ffffff 50%, #eef6fc 100%); padding-top: 80px; }
+    .hero-content { padding-right: 40px; padding-left: max(24px, calc((100vw - 1120px) / 2)); }
+    .hero h1 { font-size: clamp(48px, 6vw, 72px); line-height: 1.1; margin-bottom: 24px; letter-spacing: -0.02em; }
+    .hero h1 span { color: #0071e3; font-style: italic; }
+    .hero p { font-size: 16px; color: #555; line-height: 1.6; margin-bottom: 32px; max-width: 480px; }
+    .hero-btns { display: flex; gap: 16px; margin-bottom: 32px; }
+    .btn-blue { background: #0071e3; color: #fff; padding: 14px 28px; border-radius: 99px; font-weight: 500; font-size: 14px; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-blue:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,113,227,0.3); }
+    .btn-outline { background: transparent; color: #111; border: 1px solid #ddd; padding: 14px 28px; border-radius: 99px; font-weight: 500; font-size: 14px; display: flex; align-items: center; gap: 8px; transition: border-color 0.2s; }
+    .btn-outline:hover { border-color: #aaa; }
+    .lang-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+    .lang-pill { background: #f5f5f7; color: #666; font-size: 11px; padding: 6px 12px; border-radius: 99px; border: 1px solid #eee; }
+    .hero-image { height: 100%; min-height: 600px; background: radial-gradient(circle at center, #cde6fa 0%, transparent 70%); }
+    
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; background: #ffffff; padding-bottom: 40px; }
+      .hero-image { display: none; }
+      .hero-content { padding-right: 24px; }
+    }
+
+    /* TIMELINE */
+    .timeline-sec { background: #fdfdfd; border-top: 1px solid #f0f0f0; }
+    .timeline-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+    .tl-left h2 { font-size: clamp(36px, 4vw, 48px); line-height: 1.1; margin-bottom: 24px; }
+    .tl-left p { color: #555; line-height: 1.7; margin-bottom: 16px; }
+    .tl-right { position: relative; padding-left: 24px; }
+    .tl-right::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 0; width: 1px; background: #e5e5e5; }
+    .tl-item { position: relative; margin-bottom: 32px; }
+    .tl-item::before { content: ''; position: absolute; left: -28.5px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: #0071e3; border: 2px solid #fff; box-shadow: 0 0 0 1px #0071e3; }
+    .tl-date { display: inline-block; font-size: 11px; font-weight: 600; color: #0071e3; background: #f0f7ff; padding: 4px 10px; border-radius: 4px; margin-bottom: 8px; }
+    .tl-title { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .tl-desc { font-size: 14px; color: #666; }
+
+    @media (max-width: 800px) {
+      .timeline-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    /* STATS */
+    .stats-sec { background: #fafafa; text-align: center; border-top: 1px solid #f0f0f0; }
+    .stats-sec h2 { font-size: clamp(32px, 4vw, 42px); line-height: 1.1; margin-bottom: 48px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .stat-card { background: #fff; padding: 40px 20px; border-radius: 16px; border: 1px solid #eee; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
+    .stat-num { font-family: 'DM Serif Display', serif; font-size: 48px; color: #111; margin-bottom: 8px; line-height: 1; }
+    .stat-num span { color: #0071e3; font-size: 32px; vertical-align: super; }
+    .stat-label { font-size: 13px; color: #666; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+    
+    @media (max-width: 768px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* SERVICES GRID (Light theme equivalent of dark services) */
+    .svc-sec { background: #fff; text-align: left; }
+    .svc-header { max-width: 600px; margin-bottom: 48px; }
+    .svc-header h2 { font-size: clamp(36px, 4vw, 48px); margin-bottom: 16px; }
+    .svc-header p { color: #555; line-height: 1.6; }
+    .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .svc-card { background: #fff; padding: 32px; border-radius: 16px; border: 1px solid #eaeaea; box-shadow: 0 4px 24px rgba(0,0,0,0.02); transition: transform 0.2s, box-shadow 0.2s; }
+    .svc-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.06); }
+    .svc-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px; }
+    .icon-blue { background: #f0f7ff; color: #0071e3; }
+    .icon-green { background: #f0fdf4; color: #16a34a; }
+    .icon-orange { background: #fff7ed; color: #ea580c; }
+    .icon-purple { background: #faf5ff; color: #9333ea; }
+    .svc-card h3 { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 18px; margin-bottom: 12px; color: #111; }
+    .svc-card p { font-size: 14px; color: #666; line-height: 1.6; }
+
+    @media (max-width: 900px) {
+      .svc-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .svc-grid { grid-template-columns: 1fr; }
+    }
+
+    /* VALUES */
+    .val-sec { background: #fafafa; text-align: center; }
+    .val-sec h2 { font-size: clamp(36px, 4vw, 48px); margin-bottom: 48px; }
+    .val-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .val-card { display: flex; align-items: flex-start; gap: 20px; padding: 32px; border-radius: 16px; text-align: left; }
+    .bg-blue { background: #eff6ff; }
+    .bg-green { background: #f0fdf4; }
+    .bg-yellow { background: #fefce8; }
+    .bg-purple { background: #faf5ff; }
+    .val-card h3 { font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+    .val-card p { font-size: 14px; color: #555; line-height: 1.6; }
+
+    @media (max-width: 768px) {
+      .val-grid { grid-template-columns: 1fr; }
+    }
+
+    /* COUNTRIES */
+    .countries-sec { background: #fff; text-align: center; }
+    .countries-sec h2 { font-size: clamp(36px, 4vw, 48px); margin-bottom: 16px; }
+    .countries-sec p { color: #666; margin-bottom: 48px; }
+    .c-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .c-card { border: 1px solid #eaeaea; border-radius: 12px; padding: 24px; transition: border-color 0.2s; }
+    .c-card:hover { border-color: #0071e3; }
+    .c-code { font-size: 24px; font-weight: 600; color: #111; margin-bottom: 4px; }
+    .c-name { font-size: 12px; color: #666; margin-bottom: 12px; }
+    .c-stat { font-size: 11px; color: #0071e3; font-weight: 600; background: #f0f7ff; padding: 4px 8px; border-radius: 4px; display: inline-block; }
+
+    @media (max-width: 768px) {
+      .c-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 500px) {
+      .c-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* TOOLS */
+    .tools-sec { background: #fafafa; text-align: center; border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 64px 0; }
+    .tools-sec h2 { font-size: clamp(28px, 3vw, 36px); margin-bottom: 40px; }
+    .tools-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 800px; margin: 0 auto; }
+    .tool-pill { display: flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #eaeaea; padding: 10px 20px; border-radius: 99px; font-size: 13px; font-weight: 500; color: #333; box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
+
+    /* FOOTER IS INJECTED */
+    /* CANON-NAV-FOOTER-START */
+:root{--blue:#0071e3;--blue-h:#0077ed;--font-d:'DM Serif Display',serif;--font-b:'DM Sans',sans-serif;--ease:cubic-bezier(.4,0,.2,1);--nav-h:64px;}
+html{scroll-padding-top:80px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);background:rgba(29,29,31,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:.5px solid rgba(255,255,255,.06);transition:background .3s;}
+nav .nav-wrap{max-width:1160px;margin:0 auto;height:100%;padding:0 24px;display:flex;align-items:center;justify-content:space-between;}
+nav .nav-logo{font-family:var(--font-d);font-size:17px;color:#fff;cursor:pointer;letter-spacing:-.3px;display:flex;align-items:center;gap:8px;user-select:none;text-decoration:none;}
+nav .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 12px var(--blue);}
+nav .nav-links{display:flex;align-items:center;gap:2px;}
+nav .nav-link{position:relative;color:rgba(255,255,255,.78);font-size:12px;font-weight:400;padding:8px 12px;border-radius:8px;cursor:pointer;transition:color .2s,background .2s;letter-spacing:.01em;text-decoration:none;display:inline-block;}
+nav .nav-link:hover{color:#fff;background:rgba(255,255,255,.08);}
+nav .nav-link.has-drop:after{content:'';display:inline-block;width:4px;height:4px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin-left:5px;vertical-align:middle;transition:transform .2s;}
+nav .nav-link.has-drop:hover:after{transform:rotate(-135deg);}
+nav .nav-link.has-drop{padding-bottom:18px;margin-bottom:-10px;}nav .mega-drop{position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(18,18,20,.97);backdrop-filter:blur(30px);border-bottom:.5px solid rgba(255,255,255,.08);padding:32px 0 36px;opacity:0;pointer-events:none;transition:opacity .25s var(--ease) .35s,transform .25s var(--ease) .35s,visibility 0s linear .6s;transform:translateY(-8px);visibility:hidden;z-index:999;}nav .nav-link.has-drop:hover .mega-drop,nav .mega-drop:hover{opacity:1!important;pointer-events:all!important;transform:translateY(0)!important;visibility:visible!important;transition:opacity .2s var(--ease),transform .2s var(--ease),visibility 0s linear 0s;}
+nav .nav-link.has-drop:hover .mega-drop{opacity:1;pointer-events:all;transform:translateY(0);}
+nav .mega-inner{max-width:1160px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
+nav .mega-col h4{font-size:10px;font-weight:600;color:rgba(255,255,255,.45);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;padding-bottom:8px;border-bottom:.5px solid rgba(255,255,255,.07);}
+nav .mega-col a{display:block;font-size:12px;color:rgba(255,255,255,.62);padding:5px 0;transition:color .15s;cursor:pointer;text-decoration:none;}
+nav .mega-col a:hover{color:#fff;}
+nav .nav-cta{background:var(--blue);color:#fff;font-size:12px;font-weight:500;padding:8px 16px;border-radius:980px;cursor:pointer;border:none;font-family:var(--font-b);transition:background .2s,transform .15s;}
+nav .nav-cta:hover{background:var(--blue-h);transform:scale(1.03);}
+@media(max-width:900px){nav .nav-links{display:none;}}
+
+footer{background:#1d1d1f;padding:64px 24px 40px;border-top:.5px solid rgba(255,255,255,.07);}
+footer .footer-w{max-width:1120px;margin:0 auto;}
+footer .footer-top{display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:.5px solid rgba(255,255,255,.07);}
+footer .footer-brand{font-family:var(--font-d);font-size:22px;color:#fff;margin-bottom:10px;}
+footer .footer-tagline{font-size:13px;color:rgba(255,255,255,.55);line-height:1.7;max-width:320px;}
+footer .footer-flags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;font-size:15px;}
+footer .footer-social{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;}
+footer .footer-soc-link{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.06);border:.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:13px;color:rgba(255,255,255,.7);transition:background .2s,color .2s,border-color .2s;text-decoration:none;font-weight:600;}
+footer .footer-soc-link:hover{background:var(--blue);color:#fff;border-color:#3399ff;}
+footer .footer-col h4{font-size:12px;font-weight:600;color:#fff;margin-bottom:16px;letter-spacing:.04em;}
+footer .footer-link{display:block;font-size:12px;color:rgba(255,255,255,.55);margin-bottom:9px;cursor:pointer;transition:color .2s;text-decoration:none;}
+footer .footer-link:hover{color:#fff;}
+footer .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px;}
+footer .footer-copy{font-size:12px;color:rgba(255,255,255,.4);}
+@media(max-width:900px){footer .footer-top{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){footer .footer-top{grid-template-columns:1fr;}}
+
+/* === RESPONSIVE & MOBILE MENU PATCH === */
+.mobile-toggle{display:none;position:absolute;top:50%;right:20px;transform:translateY(-50%);background:none;border:none;width:40px;height:40px;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0;z-index:1001;}
+.mobile-toggle span{display:block;width:22px;height:2px;background:#fff;transition:transform .3s,opacity .2s;}
+.mobile-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.mobile-toggle.open span:nth-child(2){opacity:0;}
+.mobile-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-drawer{position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:rgba(18,18,20,.98);-webkit-backdrop-filter:blur(30px);backdrop-filter:blur(30px);z-index:998;padding:24px 20px 80px;overflow-y:auto;transform:translateX(100%);transition:transform .3s ease;display:none;}
+.mobile-drawer.open{transform:translateX(0);}
+.mobile-drawer a{display:block;padding:14px 4px;color:rgba(255,255,255,.85);font-size:16px;border-bottom:.5px solid rgba(255,255,255,.06);text-decoration:none;}
+.mobile-drawer a:hover{color:#fff;}
+.mobile-drawer .ms-section{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#0071e3;padding:18px 4px 6px;border:none;}
+.mobile-drawer .ms-sub{padding-left:16px;font-size:14px;color:rgba(255,255,255,.65);}
+.mobile-drawer .mobile-cta{display:block;background:#0071e3;color:#fff;text-align:center;padding:14px;border-radius:980px;margin-top:24px;font-weight:500;border:none;}
+@media(max-width:900px){
+  .mobile-toggle{display:flex;}
+  .mobile-drawer{display:block;}
+  nav .nav-links{display:none!important;}
+  nav .nav-cta{display:none!important;}
+  .section,.services-section,.feature-section{padding-left:20px!important;padding-right:20px!important;}
+  .feature-block{padding:64px 20px!important;}
+  .hero-content{padding:32px 20px!important;}
+  .stats-section{padding-left:20px!important;padding-right:20px!important;}
+  footer{padding:48px 20px 32px!important;}
+}
+@media(max-width:900px){
+  .flags-strip{position:static!important;transform:none!important;left:auto!important;bottom:auto!important;margin:28px auto 0!important;max-width:100%!important;gap:6px!important;justify-content:center!important;}
+  .hero{min-height:auto!important;padding-bottom:48px!important;}
+  .scroll-hint{display:none!important;}
+}
+@media(max-width:600px){
+  :root{--nav-h:56px;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+  .hero-ctas{flex-direction:column;align-items:stretch;width:100%;max-width:320px;margin:0 auto;}
+  .hero-ctas button,.hero-ctas .btn-fill,.hero-ctas .btn-ghost{width:100%;}
+}
+@media(hover:none),(pointer:coarse){
+  body{cursor:auto!important;}
+  #cursor,#cursor-ring{display:none!important;}
+}
+img,video{max-width:100%;height:auto;}
+/* === END RESPONSIVE PATCH === */
+
+
+/* === FLAG EMOJI === */
+.flag-emoji{display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;line-height:1;filter:saturate(1.08);}
+.client-flag .flag-emoji{font-size:34px;min-width:44px;min-height:34px;margin-bottom:0;}
+.client-flag-img{display:block!important;width:48px;height:36px;object-fit:contain;margin:0 auto 10px;filter:saturate(1.08);flex-shrink:0;}
+@media(max-width:900px){.client-flag-img{width:44px;height:33px;}.client-box{padding:24px 12px;min-height:130px;}}
+@media(max-width:600px){.client-flag-img{width:40px;height:30px;}.client-box{padding:20px 10px;min-height:120px;}.client-country{font-size:12px;}.client-sub{font-size:10px;}}
+.flag-pill .flag-emoji{font-size:16px;min-width:18px;}
+.testi-flag .flag-emoji,.testi-meta .flag-emoji{font-size:18px;min-width:20px;}
+.footer-flags .flag-emoji{font-size:20px;margin-right:3px;}
+
+/* === MOBILE COLLAPSIBLE === */
+.mobile-drawer .ms-section{cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none;}
+.mobile-drawer .ms-section::after{content:'+';font-size:18px;color:#0071e3;font-weight:300;transition:transform .25s;}
+.mobile-drawer .ms-section.open::after{content:'\2212';}
+.mobile-drawer .ms-group{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.mobile-drawer .ms-group.open{max-height:600px;}
+/* === END === */
+
+/* CANON-NAV-FOOTER-END */
+
+  </style>
+</head>
+<body>
+  <nav>
+  <div class="nav-wrap">
+    <a href="/" class="nav-logo">
+      <div class="logo-dot"></div>
+      Digital World
+    </a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
+
+      <div class="nav-link has-drop has-mega">Services
+        <div class="mega-drop">
+          <div class="mega-inner">
+            <div class="mega-col">
+              <h3>ðŸ” SEO</h3>
+              <a href="/services/seo#svc-local">Local SEO</a>
+              <a href="/services/seo#svc-ecom">Ecommerce SEO</a>
+              <a href="/services/seo#svc-intl">International SEO</a>
+              <a href="/services/seo#svc-yt">Youtube / Video SEO</a>
+              <a href="/services/seo#svc-saas">SaaS SEO</a>
+              <a href="/services/seo#svc-semantic">Semantic SEO</a>
+              <a href="/services/seo#svc-ai">AI SEO</a>
+            </div>
+            <div class="mega-col">
+              <h3>ðŸŽ¯ PPC / Paid Ads</h3>
+              <a href="/services/ppc#svc-search">Google Search Ads</a>
+              <a href="/services/ppc#svc-shopping">Google Shopping Ads</a>
+              <a href="/services/ppc#svc-pmax">Performance Max</a>
+              <a href="/services/ppc#svc-youtube">YouTube Ads</a>
+              <a href="/services/ppc#svc-remarketing">Remarketing</a>
+              <a href="/services/ppc#svc-facebook">Facebook Ads</a>
+              <a href="/services/ppc#svc-instagram">Instagram Ads</a>
+              <a href="/services/ppc#svc-tiktok">TikTok / LinkedIn Ads</a>
+            </div>
+            <div class="mega-col">
+              <h3>ðŸŒ Web Design &amp; Dev</h3>
+              <a href="/services/web#svc-uiux">Website Design (UI/UX)</a>
+              <a href="/services/web#svc-wordpress">WordPress Development</a>
+              <a href="/services/web#svc-shopify">Shopify Development</a>
+              <a href="/services/web#svc-landing">Landing Page Design</a>
+              <a href="/services/web#svc-speed">Website Speed Optimization</a>
+              <a href="/services/web#svc-maintenance">Website Maintenance</a>
+              <a href="/services/web#svc-migration">Website Migration</a>
+              <a href="/services/web#svc-cms">CMS Setup</a>
+            </div>
+            <div class="mega-col">
+              <h3>âœï¸ Content &amp; More</h3>
+              <a href="/services/content#svc-blog">Blog Writing &amp; Management</a>
+              <a href="/services/content#svc-email">Email Marketing</a>
+              <a href="/services/content#svc-content">Content Marketing</a>
+              <a href="/services/content#svc-cro">CRO Audit &amp; Testing</a>
+              <a href="/services/content#svc-backlink">Backlink Building</a>
+              <a href="/services/content#svc-pr">Digital PR &amp; HARO</a>
+              <a href="/services/content#svc-social">Social Media Content</a>
+              <a href="/services/content#svc-press">Press Releases &amp; PR</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/portfolio" class="nav-link">Portfolio</a>
+      <a href="/about" class="nav-link">About</a>
+      <a href="/blog" class="nav-link">Blog</a>
+      <a href="/contact" class="nav-link">Contact</a>
+    </div>
+    <a href="/contact" aria-label="Contact Us"><button class="nav-cta">Get Started</button></a>
+  </div>
+
+<button class="mobile-toggle" id="mobToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+<div class="mobile-drawer" id="mobDrawer">
+  <a href="/">Home</a>
+  <div class="ms-section">SEO Services</div>
+  <a class="ms-sub" href="/services/seo">All SEO Services</a>
+  <a class="ms-sub" href="/services/seo#svc-local">Local SEO</a>
+  <a class="ms-sub" href="/services/seo#svc-ecom">Ecommerce SEO</a>
+  <a class="ms-sub" href="/services/seo#svc-intl">International SEO</a>
+  <div class="ms-section">PPC / Paid Ads</div>
+  <a class="ms-sub" href="/services/ppc">All Paid Ads</a>
+  <a class="ms-sub" href="/services/ppc#svc-search">Google Ads</a>
+  <a class="ms-sub" href="/services/ppc#svc-facebook">Facebook Ads</a>
+  <div class="ms-section">Web Design &amp; Dev</div>
+  <a class="ms-sub" href="/services/web">All Web Services</a>
+  <a class="ms-sub" href="/services/web#svc-wordpress">WordPress</a>
+  <a class="ms-sub" href="/services/web#svc-shopify">Shopify</a>
+  <div class="ms-section">Content &amp; More</div>
+  <a class="ms-sub" href="/services/content">All Content Services</a>
+  <a class="ms-sub" href="/services/content#svc-email">Email Marketing</a>
+  <a class="ms-sub" href="/services/content#svc-content">Content Marketing</a>
+  <a href="/portfolio" style="margin-top:14px;">Portfolio</a>
+  <a href="/about">About</a>
+  <a href="/blog">Blog</a>
+  <a href="/contact" aria-label="Contact Us">Contact</a>
+  <a href="/contact" class="mobile-cta">Get Started</a>
+</div>
+</nav>
+
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="badge-icon"><span></span> about me</div>
+        <h1>Hi, I'm <br>Kamrujjaman <br><span>Mufti.</span></h1>
+        <p>I am a digital marketing expert with a focus on SEO, Paid Ads, Web Design, and Content Marketing. I help businesses achieve measurable growth through data-driven strategies and creative execution.</p>
+        <div class="hero-btns">
+          <a href="/portfolio" class="btn-blue">View Work</a>
+          <a href="/contact" class="btn-outline">Contact Me &rarr;</a>
+        </div>
+        <div class="lang-pills">
+          <span class="lang-pill">English</span>
+          <span class="lang-pill">Hindi</span>
+          <span class="lang-pill">Urdu</span>
+          <span class="lang-pill">Bengali</span>
+          <span class="lang-pill">Arabic</span>
+        </div>
+      </div>
+      <div class="hero-image"></div>
+    </section>
+
+    <section class="section timeline-sec">
+      <div class="container timeline-grid">
+        <div class="tl-left">
+          <span class="badge">my journey</span>
+          <h2>From curiosity to <br>5 years of results.</h2>
+          <p>It all started with a simple question: How do websites rank on Google? That curiosity turned into a passion for digital marketing.</p>
+          <p>Over the past 5 years, I've had the privilege of working with amazing teams and clients, helping them build their online presence, increase visibility, and achieve sustainable growth.</p>
+          <p>Every project I take on is treated as a partnership, where your success is my success.</p>
+        </div>
+        <div class="tl-right">
+          <div class="tl-item">
+            <span class="tl-date">2024 - Present</span>
+            <div class="tl-title">Digital Marketing Expert</div>
+            <div class="tl-desc">KJ Digital World</div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date">2022 - 2024</span>
+            <div class="tl-title">SEO & Paid Ads Specialist</div>
+            <div class="tl-desc">Freelance / Agency Partner</div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date">2021 - 2022</span>
+            <div class="tl-title">Web Developer</div>
+            <div class="tl-desc">Building fast, optimized websites</div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date">2020 - 2021</span>
+            <div class="tl-title">The Beginning</div>
+            <div class="tl-desc">Mastering the fundamentals of digital marketing</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stats-sec">
+      <div class="container">
+        <span class="badge">my impact</span>
+        <h2>5 years of work, <br>in 4 numbers.</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-num">150<span>+</span></div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">120<span>+</span></div>
+            <div class="stat-label">Happy Clients</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">5</div>
+            <div class="stat-label">Years Exp.</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">11</div>
+            <div class="stat-label">Countries</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section svc-sec">
+      <div class="container">
+        <div class="svc-header">
+          <span class="badge">services</span>
+          <h2>What I do best.</h2>
+          <p>A comprehensive toolkit of digital marketing skills honed through years of practice and continuous learning.</p>
+        </div>
+        <div class="svc-grid">
+          <div class="svc-card">
+            <div class="svc-icon icon-blue">ðŸ”</div>
+            <h3>Search Engine Optimization</h3>
+            <p>Climbing the ranks of Google isn't magic, it's strategy. I implement robust on-page and off-page SEO.</p>
+          </div>
+          <div class="svc-card">
+            <div class="svc-icon icon-green">ðŸ’°</div>
+            <h3>Pay-Per-Click Advertising</h3>
+            <p>Driving high-intent traffic to your site through optimized Google Ads campaigns that maximize ROI.</p>
+          </div>
+          <div class="svc-card">
+            <div class="svc-icon icon-orange">ðŸ“±</div>
+            <h3>Social Media Advertising</h3>
+            <p>Targeted Meta (Facebook/Instagram) ads that reach your ideal audience and convert them into customers.</p>
+          </div>
+          <div class="svc-card">
+            <div class="svc-icon icon-purple">ðŸ’»</div>
+            <h3>Web Development</h3>
+            <p>Building lightning-fast, high-converting websites on WordPress and Shopify tailored for growth.</p>
+          </div>
+          <div class="svc-card">
+            <div class="svc-icon icon-blue">âœ‰ï¸</div>
+            <h3>Email Marketing</h3>
+            <p>Nurturing leads and driving repeat sales through automated, personalized email sequences.</p>
+          </div>
+          <div class="svc-card">
+            <div class="svc-icon icon-green">âœï¸</div>
+            <h3>Content Marketing</h3>
+            <p>Creating valuable, relevant content that attracts, engages, and retains your target audience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section val-sec">
+      <div class="container">
+        <span class="badge">core values</span>
+        <h2>The values behind <br>every project.</h2>
+        <div class="val-grid">
+          <div class="val-card bg-blue">
+            <div class="svc-icon" style="background:#fff; color:#0071e3; font-size:20px; width:40px; height:40px;">ðŸŽ¯</div>
+            <div>
+              <h3>Data-Driven Strategy</h3>
+              <p>Every decision is backed by analytics and deep market research, not guesswork. I rely on data to scale what works.</p>
+            </div>
+          </div>
+          <div class="val-card bg-green">
+            <div class="svc-icon" style="background:#fff; color:#16a34a; font-size:20px; width:40px; height:40px;">ðŸ“ˆ</div>
+            <div>
+              <h3>Results Oriented</h3>
+              <p>Vanity metrics don't pay the bills. I focus entirely on metrics that drive tangible revenue and growth for your business.</p>
+            </div>
+          </div>
+          <div class="val-card bg-yellow">
+            <div class="svc-icon" style="background:#fff; color:#ea580c; font-size:20px; width:40px; height:40px;">ðŸ’¡</div>
+            <div>
+              <h3>Creative Solutions</h3>
+              <p>Standing out requires thinking differently. I combine analytical rigor with creative problem-solving to beat the competition.</p>
+            </div>
+          </div>
+          <div class="val-card bg-purple">
+            <div class="svc-icon" style="background:#fff; color:#9333ea; font-size:20px; width:40px; height:40px;">ðŸ¤</div>
+            <div>
+              <h3>Client Focused</h3>
+              <p>Complete transparency, clear communication, and treating your business budget as carefully as if it were my own.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section countries-sec">
+      <div class="container">
+        <span class="badge">global reach</span>
+        <h2>Based in Bangladesh. <br>Serving the world.</h2>
+        <p>I've had the privilege of working with clients from all over the globe.</p>
+        <div class="c-grid">
+          <div class="c-card"><div class="c-code">US</div><div class="c-name">United States</div><div class="c-stat">45+ Projects</div></div>
+          <div class="c-card"><div class="c-code">UK</div><div class="c-name">United Kingdom</div><div class="c-stat">25+ Projects</div></div>
+          <div class="c-card"><div class="c-code">CA</div><div class="c-name">Canada</div><div class="c-stat">15+ Projects</div></div>
+          <div class="c-card"><div class="c-code">AU</div><div class="c-name">Australia</div><div class="c-stat">12+ Projects</div></div>
+          <div class="c-card"><div class="c-code">IE</div><div class="c-name">Ireland</div><div class="c-stat">8+ Projects</div></div>
+          <div class="c-card"><div class="c-code">ZA</div><div class="c-name">South Africa</div><div class="c-stat">5+ Projects</div></div>
+          <div class="c-card"><div class="c-code">IN</div><div class="c-name">India</div><div class="c-stat">10+ Projects</div></div>
+          <div class="c-card"><div class="c-code">BD</div><div class="c-name">Bangladesh</div><div class="c-stat">15+ Projects</div></div>
+          <div class="c-card"><div class="c-code">MY</div><div class="c-name">Malaysia</div><div class="c-stat">4+ Projects</div></div>
+          <div class="c-card"><div class="c-code">AE</div><div class="c-name">UAE</div><div class="c-stat">6+ Projects</div></div>
+          <div class="c-card"><div class="c-code">NZ</div><div class="c-name">New Zealand</div><div class="c-stat">3+ Projects</div></div>
+          <div class="c-card"><div class="c-code">SG</div><div class="c-name">Singapore</div><div class="c-stat">2+ Projects</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools-sec">
+      <div class="container">
+        <span class="badge">tech stack</span>
+        <h2>Tools I use every day.</h2>
+        <div class="tools-grid">
+          <div class="tool-pill">ðŸ” Google Search Console</div>
+          <div class="tool-pill">ðŸ“Š Google Analytics</div>
+          <div class="tool-pill">ðŸ“ˆ SEMrush</div>
+          <div class="tool-pill">ðŸ”— Ahrefs</div>
+          <div class="tool-pill">ðŸ’° Google Ads</div>
+          <div class="tool-pill">ðŸ“± Meta Business</div>
+          <div class="tool-pill">ðŸŽ¨ Figma</div>
+          <div class="tool-pill">ðŸ“ WordPress</div>
+          <div class="tool-pill">ðŸ›’ Shopify</div>
+          <div class="tool-pill">ðŸ“§ Mailchimp</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section svc-sec">
+      <div class="container">
+        <div class="svc-header">
+          <span class="badge">expertise</span>
+          <h2>One expert.<br>All services.<br>Real results.</h2>
+        </div>
+        <div class="svc-grid">
+          <div class="svc-card">
+            <div class="svc-icon icon-blue">ðŸ†</div>
+            <h3>SEO Mastery</h3>
+            <p>From local SEO to enterprise e-commerce, I build campaigns that generate organic, sustainable traffic.</p>
+          </div>
+          <div class="svc-card">
+            <div class="svc-icon icon-green">ðŸŽ¯</div>
+            <h3>PPC & Meta Ads</h3>
+            <p>Laser-targeted campaigns designed for one thing: getting the lowest Cost Per Acquisition possible.</p>
+          </div>
+          <div class="svc-card">
+            <div class="svc-icon icon-purple">âš¡</div>
+            <h3>Web Design (CRO)</h3>
+            <p>Beautiful websites that are scientifically structured to turn casual visitors into paying customers.</p>
+          </div>
+          <div class="svc-card">
+            <div class="svc-icon icon-orange">ðŸ“</div>
+            <h3>Content Strategy</h3>
+            <p>SEO-optimized blogs, engaging copy, and compelling landing pages that speak directly to your audience.</p>
+          </div>
+          <div class="svc-card">
+            <div class="svc-icon icon-blue">ðŸ¤</div>
+            <h3>Social Media</h3>
+            <p>Building brand loyalty and engaging communities across LinkedIn, Instagram, and Facebook.</p>
+          </div>
+          <div class="svc-card">
+            <div class="svc-icon icon-green">âœ‰ï¸</div>
+            <h3>Email Sequences</h3>
+            <p>Automated funnels that recover abandoned carts and keep your brand top-of-mind effortlessly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+  <div class="footer-w">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Digital World</div>
+        <p class="footer-tagline">Full-Service Digital Marketing Agency Â· 5 Years Experience Â· Serving 11 countries worldwide.</p>
+        <div class="footer-flags"><span class="flag-emoji" aria-hidden="true">ðŸ‡ºðŸ‡¸</span> <span class="flag-emoji" aria-hidden="true">ðŸ‡¬ðŸ‡§</span> <span class="flag-emoji" aria-hidden="true">ðŸ‡¨ðŸ‡¦</span> <span class="flag-emoji" aria-hidden="true">ðŸ‡¦ðŸ‡º</span> <span class="flag-emoji" aria-hidden="true">ðŸ‡®ðŸ‡ª</span> <span class="flag-emoji" aria-hidden="true">ðŸ‡¦ðŸ‡ª</span> <span class="flag-emoji" aria-hidden="true">ðŸ‡¿ðŸ‡¦</span> <span class="flag-emoji" aria-hidden="true">ðŸ‡©ðŸ‡ª</span> <span class="flag-emoji" aria-hidden="true">ðŸ‡³ðŸ‡±</span> <span class="flag-emoji" aria-hidden="true">ðŸ‡³ðŸ‡¿</span> <span class="flag-emoji" aria-hidden="true">ðŸ‡§ðŸ‡©</span></div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/digitalworld1988" class="footer-soc-link" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/" class="footer-soc-link" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">ig</a>
+          <a href="https://x.com/" class="footer-soc-link" target="_blank" rel="noopener" title="X (Twitter)" aria-label="X">ð•</a>
+          <a href="https://www.pinterest.com/" class="footer-soc-link" target="_blank" rel="noopener" title="Pinterest" aria-label="Pinterest">P</a>
+          <a href="https://www.youtube.com/" class="footer-soc-link" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube">â–¶</a>
+          <a href="https://www.indeed.com/" class="footer-soc-link" target="_blank" rel="noopener" title="Indeed" aria-label="Indeed">in</a>
+          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" class="footer-soc-link" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">Li</a>
+        </div>
+        <a href="/contact" style="display:inline-block;margin-top:18px;background:var(--blue,#0071e3);color:#fff;font-size:12px;font-weight:500;padding:10px 18px;border-radius:980px;text-decoration:none;">ðŸ“… Book Free Consultation</a>
+      </div>
+      <div class="footer-col">
+        <h3>SEO Services</h3>
+        <a class="footer-link" href="/services/seo#svc-local">Local SEO</a>
+        <a class="footer-link" href="/services/seo#svc-ecom">Ecommerce SEO</a>
+        <a class="footer-link" href="/services/seo#svc-intl">International SEO</a>
+        <a class="footer-link" href="/services/seo#svc-saas">SaaS SEO</a>
+        <a class="footer-link" href="/services/seo#svc-semantic">Semantic SEO</a>
+      </div>
+      <div class="footer-col">
+        <h3>Web &amp; Ads</h3>
+        <a class="footer-link" href="/services/web#svc-wordpress">WordPress Development</a>
+        <a class="footer-link" href="/services/web#svc-shopify">Shopify Development</a>
+        <a class="footer-link" href="/services/ppc#svc-search">Google Ads / PPC</a>
+        <a class="footer-link" href="/services/ppc#svc-facebook">Facebook &amp; Instagram Ads</a>
+        <a class="footer-link" href="/services/content#svc-content">Content Marketing</a>
+      </div>
+      <div class="footer-col">
+        <h3>Company</h3>
+        <a href="/about" class="footer-link">About Us</a>
+        <a href="/portfolio" class="footer-link">Portfolio</a>
+        <a href="/blog" class="footer-link">Blog</a>
+        <a class="footer-link" href="/contact">Contact</a>
+        <a class="footer-link" href="mailto:kj.jaman369@gmail.com">kj.jaman369@gmail.com</a>
+        <a class="footer-link" href="tel:+8801798667820">+880 1798-667820</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">Copyright Â© 2025 Digital World Â· Kamrujjaman Mufti. All rights reserved.</p>
+      <p class="footer-copy">Based in Dhaka, Bangladesh Â· Available worldwide</p>
+    </div>
+  </div>
+</footer>
+
+
+  <script>
+    // Mobile Menu Logic for canonical nav
+    const mobToggle = document.getElementById('mobToggle');
+    const mobDrawer = document.getElementById('mobDrawer');
+    if (mobToggle && mobDrawer) {
+      mobToggle.addEventListener('click', () => {
+        mobToggle.classList.toggle('open');
+        mobDrawer.classList.toggle('open');
+        document.body.style.overflow = mobDrawer.classList.contains('open') ? 'hidden' : '';
+      });
+    }
+
+    // Collapsible sections
+    document.querySelectorAll('.ms-section').forEach(sec => {
+      sec.addEventListener('click', () => {
+        sec.classList.toggle('open');
+        let next = sec.nextElementSibling;
+        while (next && next.classList.contains('ms-sub')) {
+          next.style.display = sec.classList.contains('open') ? 'block' : 'none';
+          next = next.nextElementSibling;
+        }
+      });
+      // initialize collapsed
+      let next = sec.nextElementSibling;
+      while (next && next.classList.contains('ms-sub')) {
+        next.style.display = 'none';
+        next = next.nextElementSibling;
+      }
+    });
+  </script>
+</body>
+</html>
