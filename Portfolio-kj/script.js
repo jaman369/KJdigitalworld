@@ -261,6 +261,20 @@ if (budgetChips.length > 0 && budgetInput) {
   });
 }
 
+// ---- FAQ Accordion Logic ----
+const faqQuestions = document.querySelectorAll('.faq-q');
+faqQuestions.forEach(question => {
+  question.addEventListener('click', () => {
+    const parent = question.closest('.faq-item');
+    // Toggle current
+    parent.classList.toggle('open');
+    // Close others
+    document.querySelectorAll('.faq-item').forEach(item => {
+      if (item !== parent) item.classList.remove('open');
+    });
+  });
+});
+
 // ---- Smooth scroll for anchor links ----
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
