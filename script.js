@@ -185,7 +185,7 @@ if (contactForm) {
     });
 
     if (valid) {
-      const submitBtn = contactForm.querySelector('.form-submit-btn');
+      const submitBtn = contactForm.querySelector('.form-submit-btn, .f-submit, .btn-submit, button[type="submit"]');
       const originalBtnText = submitBtn.innerHTML;
       submitBtn.disabled = true;
       submitBtn.innerHTML = 'Sending...';
@@ -201,12 +201,12 @@ if (contactForm) {
         // Show success state
         contactForm.style.display = 'none';
         const successMsg = document.getElementById('formSuccess');
-        if (successMsg) successMsg.classList.add('show');
+        if (successMsg) successMsg.style.display = 'block';
 
         setTimeout(() => {
           contactForm.reset();
           contactForm.style.display = '';
-          if (successMsg) successMsg.classList.remove('show');
+          if (successMsg) successMsg.style.display = 'none';
         }, 5000);
       })
       .catch(error => {
@@ -214,12 +214,12 @@ if (contactForm) {
         // Fallback: show success anyway in case of redirection/CORS block on success
         contactForm.style.display = 'none';
         const successMsg = document.getElementById('formSuccess');
-        if (successMsg) successMsg.classList.add('show');
+        if (successMsg) successMsg.style.display = 'block';
 
         setTimeout(() => {
           contactForm.reset();
           contactForm.style.display = '';
-          if (successMsg) successMsg.classList.remove('show');
+          if (successMsg) successMsg.style.display = 'none';
         }, 5000);
       })
       .finally(() => {
@@ -227,6 +227,29 @@ if (contactForm) {
         submitBtn.innerHTML = originalBtnText;
       });
     }
+  });
+}
+
+// ---- Budget Chips Logic ----
+const budgetChips = document.querySelectorAll('.budget-chips .b-chip, .budget-pills .b-pill');
+const budgetInput = document.getElementById('budgetInput');
+if (budgetChips.length > 0 && budgetInput) {
+  budgetChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      // Remove active styling from all chips
+      budgetChips.forEach(c => {
+        c.style.backgroundColor = '';
+        c.style.color = '';
+        c.style.borderColor = '';
+      });
+      // Add active styling to clicked chip
+      chip.style.backgroundColor = '#0066ff';
+      chip.style.color = '#fff';
+      chip.style.borderColor = '#0066ff';
+      
+      // Update hidden input value
+      budgetInput.value = chip.textContent.trim();
+    });
   });
 }
 
