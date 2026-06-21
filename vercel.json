@@ -53,6 +53,10 @@
       "destination": "/portfolio-cro.html"
     },
     {
+      "source": "/about",
+      "destination": "/Portfolio-kj/about.html"
+    },
+    {
       "source": "/posts/(.*)",
       "destination": "/posts/$1.html"
     },
