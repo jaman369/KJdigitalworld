@@ -187,7 +187,7 @@ if (contactForm) {
     });
 
     if (valid) {
-      const submitBtn = contactForm.querySelector('.form-submit-btn');
+      const submitBtn = contactForm.querySelector('.form-submit-btn, .f-submit, .btn-submit, button[type="submit"]');
       const originalBtnText = submitBtn.innerHTML;
       submitBtn.disabled = true;
       submitBtn.innerHTML = 'Sending...';
