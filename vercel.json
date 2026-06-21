@@ -57,6 +57,14 @@
       "destination": "/about.html"
     },
     {
+      "source": "/services",
+      "destination": "/Portfolio-kj/services.html"
+    },
+    {
+      "source": "/services/(.*)",
+      "destination": "/Portfolio-kj/services.html"
+    },
+    {
       "source": "/posts/(.*)",
       "destination": "/posts/$1.html"
     },
