@@ -234,18 +234,26 @@ if (contactForm) {
 const budgetChips = document.querySelectorAll('.budget-chips .b-chip, .budget-pills .b-pill');
 const budgetInput = document.getElementById('budgetInput');
 if (budgetChips.length > 0 && budgetInput) {
+  // Initialize selection
+  const initValue = budgetInput.value;
+  let found = false;
+  budgetChips.forEach(chip => {
+    if (chip.textContent.trim() === initValue) {
+      chip.classList.add('sel');
+      found = true;
+    }
+  });
+  if (!found) {
+    budgetChips[0].classList.add('sel');
+    budgetInput.value = budgetChips[0].textContent.trim();
+  }
+
   budgetChips.forEach(chip => {
     chip.addEventListener('click', () => {
       // Remove active styling from all chips
-      budgetChips.forEach(c => {
-        c.style.backgroundColor = '';
-        c.style.color = '';
-        c.style.borderColor = '';
-      });
+      budgetChips.forEach(c => c.classList.remove('sel'));
       // Add active styling to clicked chip
-      chip.style.backgroundColor = '#0066ff';
-      chip.style.color = '#fff';
-      chip.style.borderColor = '#0066ff';
+      chip.classList.add('sel');
       
       // Update hidden input value
       budgetInput.value = chip.textContent.trim();
