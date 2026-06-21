@@ -24,10 +24,12 @@ let lastScrollY = 0;
 let ticking = false;
 
 function updateNavbar() {
-  if (lastScrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
+  if (navbar) {
+    if (lastScrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
   }
   ticking = false;
 }
