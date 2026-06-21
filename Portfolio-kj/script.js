@@ -230,6 +230,37 @@ if (contactForm) {
   });
 }
 
+// ---- Budget Chips Logic ----
+const budgetChips = document.querySelectorAll('.budget-chips .b-chip, .budget-pills .b-pill');
+const budgetInput = document.getElementById('budgetInput');
+if (budgetChips.length > 0 && budgetInput) {
+  // Initialize selection
+  const initValue = budgetInput.value;
+  let found = false;
+  budgetChips.forEach(chip => {
+    if (chip.textContent.trim() === initValue) {
+      chip.classList.add('sel');
+      found = true;
+    }
+  });
+  if (!found) {
+    budgetChips[0].classList.add('sel');
+    budgetInput.value = budgetChips[0].textContent.trim();
+  }
+
+  budgetChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      // Remove active styling from all chips
+      budgetChips.forEach(c => c.classList.remove('sel'));
+      // Add active styling to clicked chip
+      chip.classList.add('sel');
+      
+      // Update hidden input value
+      budgetInput.value = chip.textContent.trim();
+    });
+  });
+}
+
 // ---- Smooth scroll for anchor links ----
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
