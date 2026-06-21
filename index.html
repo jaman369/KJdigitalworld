@@ -348,12 +348,12 @@ a{text-decoration:none;color:white;font-family:'DM Sans',sans-serif;font-size:0.
 .btn-fill:hover{background:var(--blue-h);transform:scale(1.03);box-shadow:0 8px 30px rgba(0,113,227,.4);}
 .btn-ghost{background:transparent;color:#fff;font-size:15px;font-weight:400;padding:15px 30px;border-radius:980px;border:1px solid rgba(255,255,255,.22);cursor:pointer;font-family:var(--font-b);transition:border-color .2s,transform .2s,background .2s;}
 .btn-ghost:hover{border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.05);transform:scale(1.03);}
-.scroll-hint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeIn 1s 1.4s forwards;}
+.scroll-hint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeIn 1s 1.4s forwards;}
 .scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,rgba(255,255,255,.5),transparent);animation:scrollLine 2s ease-in-out infinite;}
 @keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform:scaleY(1);transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
 .scroll-txt{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);}
 .flags-strip{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:center;opacity:0;animation:fadeIn 1s 1.2s forwards;margin:32px auto 0;max-width:920px;padding:0 24px;width:100%;}
-@media(min-width:901px){.hero{display:flex;}.flags-strip{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);margin:0;padding:0;width:auto;}}
+@media(min-width:901px){.hero{display:flex;}.flags-strip{position:absolute;bottom:130px;left:50%;transform:translateX(-50%);margin:0;padding:0;width:auto;}}
 @media(max-width:900px){.hero{display:flex;flex-direction:column;justify-content:flex-start;padding-top:calc(var(--nav-h) + 24px);padding-bottom:48px;min-height:auto;}}
 .flag-pill{display:flex;align-items:center;gap:5px;font-size:11px;color:rgba(255,255,255,.4);padding:4px 10px;border-radius:980px;background:rgba(255,255,255,.05);border:.5px solid rgba(255,255,255,.08);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
