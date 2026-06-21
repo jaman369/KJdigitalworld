@@ -918,6 +918,12 @@ img,video{max-width:100%;height:auto;}
 <div class="marquee-item"><span>✉️</span>Email Marketing</div>
 </div>
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mtrack = document.getElementById('mtrack');
+    if (mtrack) mtrack.innerHTML += mtrack.innerHTML;
+  });
+</script>
 
 <!-- ══════════════ STATS ══════════════ -->
 <section class="stats-section">
