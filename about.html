@@ -241,23 +241,6 @@ img,video{max-width:100%;height:auto;}
 
   </style>
 
-<style>
-.stats-grid-minimal { display: grid; grid-template-columns: repeat(4, 1fr); max-width: 1000px; margin: 40px auto; align-items: center; }
-.stat-item { text-align: center; padding: 20px; position: relative; }
-.stat-item:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 15%; height: 70%; width: 1px; background-color: #e5e5e5; }
-.stat-num-m { font-family: var(--font-d, 'DM Serif Display', serif); font-size: 56px; color: #111; line-height: 1; margin-bottom: 8px; }
-.stat-num-m span { color: #0071e3; font-size: 32px; vertical-align: super; }
-.stat-lbl-m { font-size: 13px; color: #777; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
-@media (max-width: 900px) {
-  .stats-grid-minimal { grid-template-columns: repeat(2, 1fr); gap: 30px 0; }
-  .stat-item:not(:last-child)::after { display: none; }
-  .stat-item:nth-child(odd)::after { content: ''; display: block; position: absolute; right: 0; top: 15%; height: 70%; width: 1px; background-color: #e5e5e5; }
-}
-@media (max-width: 600px) {
-  .stats-grid-minimal { grid-template-columns: 1fr; }
-  .stat-item::after { display: none !important; }
-}
-</style>
 </head>
 <body>
   <nav>
@@ -415,24 +398,103 @@ img,video{max-width:100%;height:auto;}
       <div class="container">
         <span class="badge">my impact</span>
         <h2>5 years of work, <br>in 4 numbers.</h2>
-                    <div class="stats-grid-minimal">
-      <div class="stat-item">
-        <div class="stat-num-m"><span class="cnt" data-target="150">0</span><span>+</span></div>
-        <div class="stat-lbl-m">Projects Completed</div>
+                <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num"><span class="cnt" data-target="150">0</span><span>+</span></div>
+        <div class="stat-label">Projects Completed</div>
       </div>
-      <div class="stat-item">
-        <div class="stat-num-m"><span class="cnt" data-target="120">0</span><span>+</span></div>
-        <div class="stat-lbl-m">Happy Clients</div>
+      <div class="stat-card">
+        <div class="stat-num"><span class="cnt" data-target="120">0</span><span>+</span></div>
+        <div class="stat-label">Happy Clients</div>
       </div>
-      <div class="stat-item">
-        <div class="stat-num-m"><span class="cnt" data-target="5">0</span></div>
-        <div class="stat-lbl-m">Years Experience</div>
+      <div class="stat-card">
+        <div class="stat-num"><span class="cnt" data-target="5">0</span></div>
+        <div class="stat-label">Years Experience</div>
       </div>
-      <div class="stat-item">
-        <div class="stat-num-m"><span class="cnt" data-target="11">0</span></div>
-        <div class="stat-lbl-m">Countries Served</div>
+      <div class="stat-card">
+        <div class="stat-num"><span class="cnt" data-target="11">0</span></div>
+        <div class="stat-label">Countries Served</div>
       </div>
     </div>
+    </section>
+
+    <section class="section svc-sec">
+      <div class="container">
+        <div class="svc-header">
+          <span class="badge">services</span>
+          <h2>What I do best.</h2>
+          <p>A comprehensive toolkit of digital marketing skills honed through years of practice and continuous learning.</p>
+        </div>
+        <div class="svc-grid">
+          <div class="svc-card">
+            <div class="svc-icon icon-blue">🔍</div>
+            <h3>Search Engine Optimization</h3>
+            <p>Climbing the ranks of Google isn't magic, it's strategy. I implement robust on-page and off-page SEO.</p>
+          </div>
+          <div class="svc-card">
+            <div class="svc-icon icon-green">💰</div>
+            <h3>Pay-Per-Click Advertising</h3>
+            <p>Driving high-intent traffic to your site through optimized Google Ads campaigns that maximize ROI.</p>
+          </div>
+          <div class="svc-card">
+            <div class="svc-icon icon-orange">📱</div>
+            <h3>Social Media Advertising</h3>
+            <p>Targeted Meta (Facebook/Instagram) ads that reach your ideal audience and convert them into customers.</p>
+          </div>
+          <div class="svc-card">
+            <div class="svc-icon icon-purple">💻</div>
+            <h3>Web Development</h3>
+            <p>Building lightning-fast, high-converting websites on WordPress and Shopify tailored for growth.</p>
+          </div>
+          <div class="svc-card">
+            <div class="svc-icon icon-blue">✉️</div>
+            <h3>Email Marketing</h3>
+            <p>Nurturing leads and driving repeat sales through automated, personalized email sequences.</p>
+          </div>
+          <div class="svc-card">
+            <div class="svc-icon icon-green">✍️</div>
+            <h3>Content Marketing</h3>
+            <p>Creating valuable, relevant content that attracts, engages, and retains your target audience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section val-sec">
+      <div class="container">
+        <span class="badge">core values</span>
+        <h2>The values behind <br>every project.</h2>
+        <div class="val-grid">
+          <div class="val-card bg-blue">
+            <div class="svc-icon" style="background:#fff; color:#0071e3; font-size:20px; width:40px; height:40px;">🎯</div>
+            <div>
+              <h3>Data-Driven Strategy</h3>
+              <p>Every decision is backed by analytics and deep market research, not guesswork. I rely on data to scale what works.</p>
+            </div>
+          </div>
+          <div class="val-card bg-green">
+            <div class="svc-icon" style="background:#fff; color:#16a34a; font-size:20px; width:40px; height:40px;">📈</div>
+            <div>
+              <h3>Results Oriented</h3>
+              <p>Vanity metrics don't pay the bills. I focus entirely on metrics that drive tangible revenue and growth for your business.</p>
+            </div>
+          </div>
+          <div class="val-card bg-yellow">
+            <div class="svc-icon" style="background:#fff; color:#ea580c; font-size:20px; width:40px; height:40px;">💡</div>
+            <div>
+              <h3>Creative Solutions</h3>
+              <p>Standing out requires thinking differently. I combine analytical rigor with creative problem-solving to beat the competition.</p>
+            </div>
+          </div>
+          <div class="val-card bg-purple">
+            <div class="svc-icon" style="background:#fff; color:#9333ea; font-size:20px; width:40px; height:40px;">🤝</div>
+            <div>
+              <h3>Client Focused</h3>
+              <p>Complete transparency, clear communication, and treating your business budget as carefully as if it were my own.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section countries-sec">

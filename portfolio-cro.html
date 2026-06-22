@@ -168,23 +168,14 @@
 	}
 </style>
 <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f5a6a46a-971b-46cc-99a5-6d4096c83b4e/id-preview-b2641176--6fd393e4-4739-4840-98c1-9b140071a58f.lovable.app-1778659816330.png"><meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f5a6a46a-971b-46cc-99a5-6d4096c83b4e/id-preview-b2641176--6fd393e4-4739-4840-98c1-9b140071a58f.lovable.app-1778659816330.png">
-
 <style>
-.stats-grid-minimal { display: grid; grid-template-columns: repeat(4, 1fr); max-width: 1000px; margin: 40px auto; align-items: center; }
-.stat-item { text-align: center; padding: 20px; position: relative; }
-.stat-item:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 15%; height: 70%; width: 1px; background-color: #e5e5e5; }
-.stat-num-m { font-family: var(--font-d, 'DM Serif Display', serif); font-size: 56px; color: #111; line-height: 1; margin-bottom: 8px; }
-.stat-num-m span { color: #0071e3; font-size: 32px; vertical-align: super; }
-.stat-lbl-m { font-size: 13px; color: #777; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
-@media (max-width: 900px) {
-  .stats-grid-minimal { grid-template-columns: repeat(2, 1fr); gap: 30px 0; }
-  .stat-item:not(:last-child)::after { display: none; }
-  .stat-item:nth-child(odd)::after { content: ''; display: block; position: absolute; right: 0; top: 15%; height: 70%; width: 1px; background-color: #e5e5e5; }
-}
-@media (max-width: 600px) {
-  .stats-grid-minimal { grid-template-columns: 1fr; }
-  .stat-item::after { display: none !important; }
-}
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 20px 0; }
+.stat-card { background: #fff; padding: 40px 20px; border-radius: 16px; border: 1px solid #eee; box-shadow: 0 4px 20px rgba(0,0,0,0.02); text-align: center; }
+.stat-num { font-family: var(--font-d, 'DM Serif Display', serif); font-size: 48px; color: #111; margin-bottom: 8px; line-height: 1; }
+.stat-num span { color: #0071e3; font-size: 32px; vertical-align: super; }
+.stat-label { font-size: 13px; color: #666; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+@media (max-width: 900px) { .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
+@media (max-width: 600px) { .stats-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body><!--$--><style>
