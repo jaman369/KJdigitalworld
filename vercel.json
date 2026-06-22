@@ -61,6 +61,22 @@
       "destination": "/Portfolio-kj/services.html"
     },
     {
+      "source": "/services/seo",
+      "destination": "/services-seo.html"
+    },
+    {
+      "source": "/services/web",
+      "destination": "/services-web.html"
+    },
+    {
+      "source": "/services/ppc",
+      "destination": "/services-ppc.html"
+    },
+    {
+      "source": "/services/content",
+      "destination": "/services-content.html"
+    },
+    {
       "source": "/services/(.*)",
       "destination": "/Portfolio-kj/services.html"
     },
