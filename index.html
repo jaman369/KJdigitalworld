@@ -179,23 +179,27 @@ body{
   cursor:auto;
 }
 
-/* ── CUSTOM CURSOR ── */
-#cursor{
-  position:fixed;width:10px;height:10px;
-  background:#fff;border-radius:50%;
-  pointer-events:none;z-index:9999;
-  transform:translate(-50%,-50%);
-  transition:transform .1s ease,width .25s ease,height .25s ease,background .25s ease;
-  mix-blend-mode:difference;
+/* ── MOUSE LIGHT CURSOR ── */
+.cursor-light{
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:9999;
+
+    background:radial-gradient(
+        circle,
+        rgba(255,255,255,0.08) 0%,
+        rgba(255,255,255,0.04) 30%,
+        rgba(255,255,255,0.02) 50%,
+        rgba(255,255,255,0.01) 70%,
+        transparent 100%
+    );
+
+    transform:translate(-50%, -50%);
+    filter:blur(30px);
 }
-#cursor-ring{
-  position:fixed;width:36px;height:36px;
-  border:1.5px solid rgba(255,255,255,.5);
-  border-radius:50%;pointer-events:none;z-index:9998;
-  transform:translate(-50%,-50%);
-  transition:transform .18s ease,width .3s ease,height .3s ease,opacity .3s ease;
-}
-body:hover #cursor-ring{opacity:1;}
 
 /* ── CSS VARIABLES ── */
 :root{
@@ -742,7 +746,7 @@ footer .footer-copy{font-size:12px;color:rgba(255,255,255,.4);}
 }
 @media(hover:none),(pointer:coarse){
   body{cursor:auto!important;}
-  #cursor,#cursor-ring{display:none!important;}
+  .cursor-light{display:none!important;}
 }
 img,video{max-width:100%;height:auto;}
 /* === END RESPONSIVE PATCH === */
@@ -774,8 +778,7 @@ img,video{max-width:100%;height:auto;}
 .stats-grid .stat-box:nth-child(4) .stat-num::before { content: "11"; display: inline-block; }
 </style><div>
 
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
+<div class="cursor-light"></div>
 
 <!-- ══════════════ NAV ══════════════ -->
 <nav>
@@ -1664,6 +1667,34 @@ img,video{max-width:100%;height:auto;}
     observer.observe(document.body, { childList: true, subtree: true, characterData: true });
   });
 })();
+</script>
+<script>
+const light = document.querySelector('.cursor-light');
+
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
+
+let currentX = mouseX;
+let currentY = mouseY;
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+function animate() {
+    currentX += (mouseX - currentX) * 0.08;
+    currentY += (mouseY - currentY) * 0.08;
+
+    if (light) {
+        light.style.left = currentX + 'px';
+        light.style.top = currentY + 'px';
+    }
+
+    requestAnimationFrame(animate);
+}
+
+animate();
 </script>
 </body></html>
 
