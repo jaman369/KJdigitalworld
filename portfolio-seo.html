@@ -167,7 +167,17 @@
 		}
 	}
 </style>
-<meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f5a6a46a-971b-46cc-99a5-6d4096c83b4e/id-preview-b2641176--6fd393e4-4739-4840-98c1-9b140071a58f.lovable.app-1778659816330.png"><meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f5a6a46a-971b-46cc-99a5-6d4096c83b4e/id-preview-b2641176--6fd393e4-4739-4840-98c1-9b140071a58f.lovable.app-1778659816330.png"></head>
+<meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f5a6a46a-971b-46cc-99a5-6d4096c83b4e/id-preview-b2641176--6fd393e4-4739-4840-98c1-9b140071a58f.lovable.app-1778659816330.png"><meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f5a6a46a-971b-46cc-99a5-6d4096c83b4e/id-preview-b2641176--6fd393e4-4739-4840-98c1-9b140071a58f.lovable.app-1778659816330.png"><style>
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e0e0e5;border-radius:20px;overflow:hidden;margin:20px 0;}
+.stat-box{background:#f5f5f7;padding:40px 24px;text-align:center;transition:background .25s;}
+.stat-box:hover{background:#ebebef;}
+.stat-num{font-family:var(--font-d);font-size:clamp(44px,5vw,68px);color:#1d1d1f;line-height:1;margin-bottom:6px;}
+.stat-suffix{font-size:.6em;vertical-align:super;color:#3399ff;}
+.stat-lbl{font-size:13px;color:var(--gray);}
+@media(max-width:900px){ .stats-grid{grid-template-columns:repeat(2,1fr);} }
+@media(max-width:600px){ .stats-grid{grid-template-columns:1fr;} }
+</style>
+</head>
 <body><!--$--><style>
 /* â”€â”€ RESET & BASE â”€â”€ */
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -970,24 +980,19 @@ img,video{max-width:100%;height:auto;}
       <div class="portfolio-hero-inner">
         <h1 class="portfolio-title">Work that speaks for itself.</h1>
         <p class="portfolio-sub">Explore a selection of projects across SEO, web design, paid advertising, and content marketing.</p>
-                <div class="portfolio-stats">
-          <div class="portfolio-stat">
-            <div class="p-stat-num"><span class="cnt" data-target="50">0</span>+</div>
-            <div class="p-stat-label">Projects Delivered</div>
-          </div>
-          <div class="portfolio-stat">
-            <div class="p-stat-num"><span class="cnt" data-target="35">0</span>+</div>
-            <div class="p-stat-label">Happy Clients</div>
-          </div>
-          <div class="portfolio-stat">
-            <div class="p-stat-num"><span class="cnt" data-target="11">0</span>+</div>
-            <div class="p-stat-label">Countries</div>
-          </div>
-          <div class="portfolio-stat">
-            <div class="p-stat-num"><span class="cnt" data-target="5">0</span>+</div>
-            <div class="p-stat-label">Years Experience</div>
-          </div>
-        </div>
+                    <div class="stats-grid"><div class="stat-box reveal">
+        <div class="stat-num"><span class="cnt" data-target="150">0</span><span class="stat-suffix">+</span></div>
+        <div class="stat-lbl">Projects Delivered</div>
+      </div><div class="stat-box reveal reveal-delay-1">
+        <div class="stat-num"><span class="cnt" data-target="120">0</span><span class="stat-suffix">+</span></div>
+        <div class="stat-lbl">Happy Clients</div>
+      </div><div class="stat-box reveal reveal-delay-2">
+        <div class="stat-num"><span class="cnt" data-target="5">0</span><span class="stat-suffix">+</span></div>
+        <div class="stat-lbl">Years Experience</div>
+      </div><div class="stat-box reveal reveal-delay-3">
+        <div class="stat-num"><span class="cnt" data-target="11">0</span><span class="stat-suffix">+</span></div>
+        <div class="stat-lbl">Countries Served</div>
+      </div></div>
       </div>
     </section>
     
