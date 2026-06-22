@@ -171,8 +171,8 @@
 .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 20px 0; }
 .stat-card { background: #fff; padding: 40px 20px; border-radius: 16px; border: 1px solid #eee; box-shadow: 0 4px 20px rgba(0,0,0,0.02); text-align: center; }
 .stat-num { font-family: var(--font-d, 'DM Serif Display', serif); font-size: 64px; color: #000; margin-bottom: 8px; line-height: 1; }
-.stat-num span { color: #0071e3; font-size: 32px; vertical-align: super; }
-.stat-label { font-size: 13px; color: #666; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+.stat-num span { color: #000; font-size: 32px; vertical-align: super; }
+.stat-label { font-size: 13px; color: #000; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
 @media (max-width: 900px) { .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
 @media (max-width: 600px) { .stats-grid { grid-template-columns: 1fr; } }
 .home-stats-wrapper { background: #ffffff; border-radius: 32px; padding: 60px 0; display: grid; grid-template-columns: repeat(4, 1fr); box-shadow: 0 8px 40px rgba(0,0,0,0.02); }
@@ -960,7 +960,10 @@ img,video{max-width:100%;height:auto;}
         <div class="stat-num"><span class="cnt" data-target="5">0</span></div>
         <div class="stat-label">Years Experience</div>
       </div>
-      <div class="home-stat-item">`n        <div class="stat-num"><span class="cnt" data-target="11">0</span></div>`n        <div class="stat-label">Countries Served</div>`n      </div>
+      <div class="home-stat-item">
+        <div class="stat-num"><span class="cnt" data-target="11">0</span></div>
+        <div class="stat-label">Countries Served</div>
+      </div>
     </div>
 </section>
 
