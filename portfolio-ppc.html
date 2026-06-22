@@ -1191,5 +1191,24 @@ img,video{max-width:100%;height:auto;}
   animate();
 })();
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const mobToggle = document.getElementById('mobToggle');
+  const mobDrawer = document.getElementById('mobDrawer');
+  if (mobToggle && mobDrawer) {
+    mobToggle.addEventListener('click', () => {
+      mobToggle.classList.toggle('open');
+      mobDrawer.classList.toggle('open');
+    });
+    const drawerLinks = mobDrawer.querySelectorAll('a');
+    drawerLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobToggle.classList.remove('open');
+        mobDrawer.classList.remove('open');
+      });
+    });
+  }
+});
+</script>
 </body>
 </html>
