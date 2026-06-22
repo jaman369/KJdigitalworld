@@ -6,26 +6,26 @@ $footerHtml = @"
     <div class="footer-top">
       <div>
         <div class="footer-brand">Digital World</div>
-        <p class="footer-tagline">Full-Service Digital Marketing Agency · 5 Years Experience · Serving 11 countries worldwide.</p>
+        <p class="footer-tagline">Full-Service Digital Marketing Agency - 5 Years Experience · Serving 11 countries worldwide.</p>
         <div class="footer-flags">
-  <img src="https://flagcdn.com/w20/us.png" srcset="https://flagcdn.com/w40/us.png 2x" alt="US" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-  <img src="https://flagcdn.com/w20/gb.png" srcset="https://flagcdn.com/w40/gb.png 2x" alt="UK" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-  <img src="https://flagcdn.com/w20/ca.png" srcset="https://flagcdn.com/w40/ca.png 2x" alt="CA" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-  <img src="https://flagcdn.com/w20/au.png" srcset="https://flagcdn.com/w40/au.png 2x" alt="AU" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-  <img src="https://flagcdn.com/w20/ie.png" srcset="https://flagcdn.com/w40/ie.png 2x" alt="IE" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-  <img src="https://flagcdn.com/w20/ae.png" srcset="https://flagcdn.com/w40/ae.png 2x" alt="AE" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-  <img src="https://flagcdn.com/w20/za.png" srcset="https://flagcdn.com/w40/za.png 2x" alt="ZA" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-  <img src="https://flagcdn.com/w20/de.png" srcset="https://flagcdn.com/w40/de.png 2x" alt="DE" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-  <img src="https://flagcdn.com/w20/nl.png" srcset="https://flagcdn.com/w40/nl.png 2x" alt="NL" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-  <img src="https://flagcdn.com/w20/nz.png" srcset="https://flagcdn.com/w40/nz.png 2x" alt="NZ" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-  <img src="https://flagcdn.com/w20/bd.png" srcset="https://flagcdn.com/w40/bd.png 2x" alt="BD" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-</div>
+          <img src="https://flagcdn.com/w20/us.png" srcset="https://flagcdn.com/w40/us.png 2x" alt="US" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+          <img src="https://flagcdn.com/w20/gb.png" srcset="https://flagcdn.com/w40/gb.png 2x" alt="UK" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+          <img src="https://flagcdn.com/w20/ca.png" srcset="https://flagcdn.com/w40/ca.png 2x" alt="CA" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+          <img src="https://flagcdn.com/w20/au.png" srcset="https://flagcdn.com/w40/au.png 2x" alt="AU" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+          <img src="https://flagcdn.com/w20/ie.png" srcset="https://flagcdn.com/w40/ie.png 2x" alt="IE" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+          <img src="https://flagcdn.com/w20/ae.png" srcset="https://flagcdn.com/w40/ae.png 2x" alt="AE" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+          <img src="https://flagcdn.com/w20/za.png" srcset="https://flagcdn.com/w40/za.png 2x" alt="ZA" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+          <img src="https://flagcdn.com/w20/de.png" srcset="https://flagcdn.com/w40/de.png 2x" alt="DE" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+          <img src="https://flagcdn.com/w20/nl.png" srcset="https://flagcdn.com/w40/nl.png 2x" alt="NL" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+          <img src="https://flagcdn.com/w20/nz.png" srcset="https://flagcdn.com/w40/nz.png 2x" alt="NZ" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+          <img src="https://flagcdn.com/w20/bd.png" srcset="https://flagcdn.com/w40/bd.png 2x" alt="BD" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+        </div>
         <div class="footer-social">
           <a href="https://www.facebook.com/digitalworld1988" class="footer-soc-link" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">f</a>
           <a href="https://www.instagram.com/" class="footer-soc-link" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">ig</a>
-          <a href="https://x.com/" class="footer-soc-link" target="_blank" rel="noopener" title="X (Twitter)" aria-label="X">𝕏</a>
+          <a href="https://x.com/" class="footer-soc-link" target="_blank" rel="noopener" title="X (Twitter)" aria-label="X">&#120143;</a>
           <a href="https://www.pinterest.com/" class="footer-soc-link" target="_blank" rel="noopener" title="Pinterest" aria-label="Pinterest">P</a>
-          <a href="https://www.youtube.com/" class="footer-soc-link" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube">▶</a>
+          <a href="https://www.youtube.com/" class="footer-soc-link" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube">&#9654;</a>
           <a href="https://www.indeed.com/" class="footer-soc-link" target="_blank" rel="noopener" title="Indeed" aria-label="Indeed">in</a>
           <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" class="footer-soc-link" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">Li</a>
         </div>
@@ -55,7 +55,7 @@ $footerHtml = @"
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copy">Copyright © 2025 Digital World · Kamrujjaman Mufti. All rights reserved.</p>
+      <p class="footer-copy">Copyright © 2025 Digital World - Kamrujjaman Mufti. All rights reserved.</p>
       <p class="footer-copy">Based in Dhaka, Bangladesh · Available worldwide</p>
     </div>
   </div>
@@ -92,7 +92,7 @@ $footerHtml = @"
 
 $files = Get-ChildItem -Filter *.html
 foreach ($file in $files) {
-    if ($file.Name -eq "temp.html" -or $file.Name -eq "tmp.html") { continue }
+    if ($file.Name -eq "temp.html" -or $file.Name -eq "tmp.html" -or $file.Name -eq "lovable_contact.html") { continue }
     
     $content = Get-Content $file.FullName -Raw -Encoding UTF8
     
