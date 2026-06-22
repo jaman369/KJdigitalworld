@@ -1743,6 +1743,30 @@ function animate() {
 
 animate();
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.billing-toggle');
+  const price1 = document.querySelector('.pricing-grid .price-card:nth-child(1) .price-num');
+  const price2 = document.querySelector('.pricing-grid .price-card:nth-child(2) .price-num');
+
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const isYearly = toggle.getAttribute('data-active') === 'true';
+      if (isYearly) {
+        toggle.setAttribute('data-active', 'false');
+        toggle.setAttribute('aria-pressed', 'false');
+        if (price1) price1.textContent = '$499';
+        if (price2) price2.textContent = '$1,299';
+      } else {
+        toggle.setAttribute('data-active', 'true');
+        toggle.setAttribute('aria-pressed', 'true');
+        if (price1) price1.textContent = '$399';
+        if (price2) price2.textContent = '$999';
+      }
+    });
+  }
+});
+</script>
 </body></html>
 
 
