@@ -970,21 +970,21 @@ img,video{max-width:100%;height:auto;}
       <div class="portfolio-hero-inner">
         <h1 class="portfolio-title">Work that speaks for itself.</h1>
         <p class="portfolio-sub">Explore a selection of projects across SEO, web design, paid advertising, and content marketing.</p>
-        <div class="portfolio-stats">
+                <div class="portfolio-stats">
           <div class="portfolio-stat">
-            <div class="p-stat-num">50+</div>
+            <div class="p-stat-num"><span class="cnt" data-target="50">0</span>+</div>
             <div class="p-stat-label">Projects Delivered</div>
           </div>
           <div class="portfolio-stat">
-            <div class="p-stat-num">35+</div>
+            <div class="p-stat-num"><span class="cnt" data-target="35">0</span>+</div>
             <div class="p-stat-label">Happy Clients</div>
           </div>
           <div class="portfolio-stat">
-            <div class="p-stat-num">11+</div>
+            <div class="p-stat-num"><span class="cnt" data-target="11">0</span>+</div>
             <div class="p-stat-label">Countries</div>
           </div>
           <div class="portfolio-stat">
-            <div class="p-stat-num">5+</div>
+            <div class="p-stat-num"><span class="cnt" data-target="5">0</span>+</div>
             <div class="p-stat-label">Years Experience</div>
           </div>
         </div>
@@ -1151,6 +1151,36 @@ img,video{max-width:100%;height:auto;}
       });
     });
   });
+</script>
+<script>
+(function() {
+  const counters = document.querySelectorAll('.cnt');
+  const speed = 200;
+  const animate = () => {
+    counters.forEach(counter => {
+      counter.innerText = '0';
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const inc = target / speed;
+        if (count < target) {
+          counter.innerText = Math.ceil(count + inc);
+          setTimeout(updateCount, 15);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      const observer = new IntersectionObserver((entries) => {
+        if(entries[0].isIntersecting) {
+          updateCount();
+          observer.unobserve(counter);
+        }
+      }, { threshold: 0.5 });
+      observer.observe(counter);
+    });
+  };
+  animate();
+})();
 </script>
 </body>
 </html>
