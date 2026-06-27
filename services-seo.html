@@ -69,7 +69,8 @@ nav .nav-cta:hover{background:var(--blue-h);transform:scale(1.03);}
 
 /* ── ICON ROW ── */
 .svc-icons{display:flex;justify-content:center;gap:40px;padding:40px 24px;background:#0a0a0a;border-bottom:1px solid rgba(255,255,255,.06);}
-.svc-icon-item{text-align:center;color:rgba(255,255,255,.4);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;}
+.svc-icon-item{text-align:center;color:rgba(255,255,255,.85)!important;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;transition:color .2s var(--ease),transform .2s var(--ease);text-decoration:none;display:inline-block;}
+.svc-icon-item:hover{color:#fff!important;transform:translateY(-2px);}
 .svc-icon-item span{display:block;font-size:28px;margin-bottom:6px;}
 @media(max-width:600px){.svc-icons{gap:20px;flex-wrap:wrap;}.svc-icon-item{font-size:10px;}.svc-icon-item span{font-size:22px;}}
 
