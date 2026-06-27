@@ -35,8 +35,10 @@ $footerHtml = @"
         <a class="footer-link" href="/services/seo#svc-local">Local SEO</a>
         <a class="footer-link" href="/services/seo#svc-ecom">Ecommerce SEO</a>
         <a class="footer-link" href="/services/seo#svc-intl">International SEO</a>
+        <a class="footer-link" href="/services/seo#svc-yt">Youtube / Video SEO</a>
         <a class="footer-link" href="/services/seo#svc-saas">SaaS SEO</a>
         <a class="footer-link" href="/services/seo#svc-semantic">Semantic SEO</a>
+        <a class="footer-link" href="/services/seo#svc-ai">AI SEO</a>
       </div>
       <div class="footer-col" style="padding-top: 10px;">
         <a class="footer-link" href="/services/web#svc-wordpress">WordPress Development</a>

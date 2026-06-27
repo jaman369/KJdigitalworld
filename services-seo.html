@@ -122,6 +122,124 @@ footer .footer-copy{font-size:12px;color:rgba(255,255,255,.4);}footer .footer-co
 @media(max-width:900px){footer .footer-top{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){footer .footer-top{grid-template-columns:1fr;}.footer-bottom{flex-direction:column;text-align:center;}}
 
+/* ── SECTION INLINE CTAS ── */
+.svc-section-ctas {
+  margin-top: 28px;
+  display: flex;
+  gap: 12px;
+}
+.svc-section.light .svc-section-ctas .btn-ghost {
+  color: #1d1d1f;
+  border-color: rgba(29,29,31,.25);
+}
+.svc-section.light .svc-section-ctas .btn-ghost:hover {
+  background: rgba(29,29,31,.05);
+}
+.svc-section.dark .svc-section-ctas .btn-ghost {
+  color: #fff;
+  border-color: rgba(255,255,255,.25);
+}
+.svc-section.dark .svc-section-ctas .btn-ghost:hover {
+  background: rgba(255,255,255,.08);
+}
+.svc-section-ctas .btn-fill, .svc-section-ctas .btn-ghost {
+  padding: 10px 22px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ── PROMO CARD ── */
+.svc-promo-card {
+  grid-column: span 2;
+  margin-top: 56px;
+  border-radius: 20px;
+  padding: 32px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.svc-section.light .svc-promo-card {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.01);
+}
+.svc-section.dark .svc-promo-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.svc-promo-card:hover {
+  transform: translateY(-2px);
+}
+.svc-section.light .svc-promo-card:hover {
+  box-shadow: 0 16px 40px rgba(0,0,0,0.04);
+}
+.svc-section.dark .svc-promo-card:hover {
+  border-color: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.05);
+}
+.promo-text h3 {
+  font-family: var(--font-b);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  letter-spacing: -.01em;
+}
+.svc-section.light .promo-text h3 {
+  color: #1d1d1f;
+}
+.svc-section.dark .promo-text h3 {
+  color: #fff;
+}
+.promo-text p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--gray);
+  margin: 0;
+}
+.promo-ctas {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.btn-green {
+  display: inline-block;
+  background: #00b87a;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: 980px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background .2s, transform .15s;
+}
+.btn-green:hover {
+  background: #009e66;
+  transform: scale(1.03);
+}
+@media(max-width:900px) {
+  .svc-promo-card {
+    grid-column: span 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 28px;
+    margin-top: 40px;
+    gap: 20px;
+  }
+  .promo-ctas {
+    width: 100%;
+  }
+  .promo-ctas a, .promo-ctas button {
+    flex: 1;
+    text-align: center;
+  }
+}
+
 /* ── WA FLOAT ── */
 .wa-float{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background-color:#25d366;color:#fff;border-radius:50px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.15);z-index:9999;display:flex;align-items:center;justify-content:center;transition:transform .3s ease,box-shadow .3s ease;text-decoration:none;}
 .wa-float:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(0,0,0,.2);}
@@ -201,7 +319,10 @@ footer .footer-copy{font-size:12px;color:rgba(255,255,255,.4);}footer .footer-co
       <a class="ms-sub" href="/services/seo#svc-local">Local SEO</a>
       <a class="ms-sub" href="/services/seo#svc-ecom">Ecommerce SEO</a>
       <a class="ms-sub" href="/services/seo#svc-intl">International SEO</a>
+      <a class="ms-sub" href="/services/seo#svc-yt">Youtube / Video SEO</a>
+      <a class="ms-sub" href="/services/seo#svc-saas">SaaS SEO</a>
       <a class="ms-sub" href="/services/seo#svc-semantic">Semantic SEO</a>
+      <a class="ms-sub" href="/services/seo#svc-ai">AI SEO</a>
     </div>
     <div class="ms-section">PPC / Paid Ads</div>
     <div class="ms-group">
@@ -245,27 +366,46 @@ footer .footer-copy{font-size:12px;color:rgba(255,255,255,.4);}footer .footer-co
 
 <!-- ── ICON ROW ── -->
 <div class="svc-icons">
-  <div class="svc-icon-item"><span>🔍</span>Local SEO</div>
-  <div class="svc-icon-item"><span>🛒</span>Ecommerce</div>
-  <div class="svc-icon-item"><span>🌍</span>International</div>
-  <div class="svc-icon-item"><span>📊</span>Technical</div>
+  <a href="#svc-local" class="svc-icon-item" style="text-decoration:none; color:inherit;"><span>📍</span>Local SEO</a>
+  <a href="#svc-ecom" class="svc-icon-item" style="text-decoration:none; color:inherit;"><span>🛒</span>Ecommerce SEO</a>
+  <a href="#svc-intl" class="svc-icon-item" style="text-decoration:none; color:inherit;"><span>🌍</span>Int'l SEO</a>
+  <a href="#svc-yt" class="svc-icon-item" style="text-decoration:none; color:inherit;"><span>🎥</span>Video SEO</a>
+  <a href="#svc-saas" class="svc-icon-item" style="text-decoration:none; color:inherit;"><span>🚀</span>SaaS SEO</a>
+  <a href="#svc-semantic" class="svc-icon-item" style="text-decoration:none; color:inherit;"><span>🧠</span>Semantic SEO</a>
+  <a href="#svc-ai" class="svc-icon-item" style="text-decoration:none; color:inherit;"><span>✨</span>AI SEO</a>
 </div>
 
-<!-- ── SECTION 1: Data-driven & optimized ── -->
+<!-- ── SECTION 1: Local SEO ── -->
 <section class="svc-section light" id="svc-local">
   <div class="svc-inner">
     <div class="svc-text">
       <p class="svc-text-eyebrow">Local SEO</p>
-      <h2>Dominate local search results in your market.</h2>
+      <h2>Dominate your local market or niche.</h2>
       <p>We optimize your Google Business Profile, build local citations, and create location-specific content that ensures your business appears exactly when and where local customers are searching.</p>
       <ul>
         <li>Google Business Profile optimization</li>
         <li>Local citation building & management</li>
-        <li>Location-specific content strategy</li>
+        <li>Localized content strategy & optimization</li>
         <li>Review management & reputation building</li>
       </ul>
+      <div class="svc-section-ctas">
+        <a href="/contact" class="btn-fill">Free Local Audit</a>
+        <a href="/portfolio-seo" class="btn-ghost">Case Study</a>
+      </div>
     </div>
-    <div class="svc-visual grad-1"><img src="/All%20Service%20Images/Local%20SEO.jpg" alt="Local SEO" style="width: 100%; height: 100%; object-fit: cover;"></div>
+    <div class="svc-visual grad-1">
+      <img src="/All%20Service%20Images/Local%20SEO.jpg" alt="Local SEO" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="svc-promo-card">
+      <div class="promo-text">
+        <h3>Audit your local SEO setup today.</h3>
+        <p>Get a comprehensive review of your GBP, citations, and rank opportunities.</p>
+      </div>
+      <div class="promo-ctas">
+        <a href="/contact" class="btn-fill">Free Local Audit</a>
+        <a href="/contact" class="btn-green">Contact Us</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -274,7 +414,7 @@ footer .footer-copy{font-size:12px;color:rgba(255,255,255,.4);}footer .footer-co
   <div class="svc-inner reverse">
     <div class="svc-text">
       <p class="svc-text-eyebrow">Ecommerce SEO</p>
-      <h2>Turn searches into sales, profitably and at scale.</h2>
+      <h2>Turn search traffic into product sales.</h2>
       <p>Product page optimization, category architecture, schema markup, and conversion-focused content that drives qualified traffic directly to your product pages.</p>
       <ul>
         <li>Product page optimization at scale</li>
@@ -282,71 +422,33 @@ footer .footer-copy{font-size:12px;color:rgba(255,255,255,.4);}footer .footer-co
         <li>Rich snippets & product schema markup</li>
         <li>Shopping feed optimization</li>
       </ul>
+      <div class="svc-section-ctas">
+        <a href="/contact" class="btn-fill">Free SEO Audit</a>
+        <a href="/portfolio-seo" class="btn-ghost">Case Study</a>
+      </div>
     </div>
-    <div class="svc-visual grad-2"><img src="/All%20Service%20Images/Ecommerce%20SEO.png" alt="Ecommerce SEO" style="width: 100%; height: 100%; object-fit: cover;"></div>
+    <div class="svc-visual grad-2">
+      <img src="/All%20Service%20Images/Ecommerce%20SEO.png" alt="Ecommerce SEO" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="svc-promo-card">
+      <div class="promo-text">
+        <h3>Not sure where to start?</h3>
+        <p>Let's check your store's SEO potential with a deep-dive audit.</p>
+      </div>
+      <div class="promo-ctas">
+        <a href="/contact" class="btn-fill">Free Store Audit</a>
+        <a href="/contact" class="btn-green">Contact Us</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ── SECTION 3: Technical SEO ── -->
-<section class="svc-section light" id="svc-technical">
+<!-- ── SECTION 3: International SEO ── -->
+<section class="svc-section light" id="svc-intl">
   <div class="svc-inner">
-    <div class="svc-text">
-      <p class="svc-text-eyebrow">Technical SEO</p>
-      <h2>Rank smarter with a solid technical foundation.</h2>
-      <p>We audit your site's architecture, fix crawl errors, improve Core Web Vitals, and ensure search engines can efficiently discover and index every valuable page.</p>
-      <ul>
-        <li>Full technical site audit</li>
-        <li>Core Web Vitals optimization</li>
-        <li>Crawlability & indexation fixes</li>
-        <li>Schema markup implementation</li>
-      </ul>
-    </div>
-    <div class="svc-visual grad-3"><img src="/All%20Service%20Images/Technical%20SEO.png" alt="Technical SEO" style="width: 100%; height: 100%; object-fit: cover;"></div>
-  </div>
-</section>
-
-<!-- ── SECTION 4: Link Building ── -->
-<section class="svc-section dark" id="svc-backlink">
-  <div class="svc-inner reverse">
-    <div class="svc-text">
-      <p class="svc-text-eyebrow">Link Building</p>
-      <h2>Build your authority, earn your rankings.</h2>
-      <p>Ethical, white-hat link building through guest posting, digital PR, HARO, and strategic outreach that builds your domain authority and drives referral traffic.</p>
-      <ul>
-        <li>Manual outreach & guest posting</li>
-        <li>Digital PR & HARO link building</li>
-        <li>Competitor backlink analysis</li>
-        <li>Toxic link cleanup & disavow</li>
-      </ul>
-    </div>
-    <div class="svc-visual grad-4"><img src="/All%20Service%20Images/Link%20Building%20SEO.png" alt="Link Building" style="width: 100%; height: 100%; object-fit: cover;"></div>
-  </div>
-</section>
-
-<!-- ── SECTION 5: Semantic SEO ── -->
-<section class="svc-section light" id="svc-semantic">
-  <div class="svc-inner">
-    <div class="svc-text">
-      <p class="svc-text-eyebrow">Semantic SEO</p>
-      <h2>Tailor-fit content with entity-rich depth.</h2>
-      <p>We go beyond keywords to build topical authority through entity optimization, content clusters, and semantic relationships that Google's algorithms reward.</p>
-      <ul>
-        <li>Topic cluster & pillar page strategy</li>
-        <li>Entity-based optimization</li>
-        <li>NLP & semantic content analysis</li>
-        <li>Internal linking architecture</li>
-      </ul>
-    </div>
-    <div class="svc-visual grad-5"><img src="/All%20Service%20Images/Semantic%20SEO.png" alt="Semantic SEO" style="width: 100%; height: 100%; object-fit: cover;"></div>
-  </div>
-</section>
-
-<!-- ── SECTION 6: International SEO ── -->
-<section class="svc-section dark" id="svc-intl">
-  <div class="svc-inner reverse">
     <div class="svc-text">
       <p class="svc-text-eyebrow">International SEO</p>
-      <h2>Reach the world, speak every market.</h2>
+      <h2>Rank in any country, with native authority.</h2>
       <p>Hreflang implementation, geo-targeting, multilingual content strategy, and international keyword research to help your brand rank in markets across the globe.</p>
       <ul>
         <li>Hreflang & geo-targeting setup</li>
@@ -354,8 +456,160 @@ footer .footer-copy{font-size:12px;color:rgba(255,255,255,.4);}footer .footer-co
         <li>International content localization</li>
         <li>Multi-region site architecture</li>
       </ul>
+      <div class="svc-section-ctas">
+        <a href="/contact" class="btn-fill">Free Consultation</a>
+        <a href="/portfolio-seo" class="btn-ghost">Case Study</a>
+      </div>
     </div>
-    <div class="svc-visual grad-6"><img src="/All%20Service%20Images/International%20SEO.png" alt="International SEO" style="width: 100%; height: 100%; object-fit: cover;"></div>
+    <div class="svc-visual grad-6">
+      <img src="/All%20Service%20Images/International%20SEO.png" alt="International SEO" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="svc-promo-card">
+      <div class="promo-text">
+        <h3>Need a custom strategy?</h3>
+        <p>Connect with our international team to explore cross-border growth.</p>
+      </div>
+      <div class="promo-ctas">
+        <a href="/contact" class="btn-fill">Free Consultation</a>
+        <a href="/contact" class="btn-green">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 4: Youtube / Video SEO ── -->
+<section class="svc-section dark" id="svc-yt">
+  <div class="svc-inner reverse">
+    <div class="svc-text">
+      <p class="svc-text-eyebrow">Video SEO</p>
+      <h2>Rank your videos, boost your views.</h2>
+      <p>Optimize your video titles, descriptions, tags, and thumbnails to rank higher on YouTube and Google Search, driving more organic traffic to your brand.</p>
+      <ul>
+        <li>Video keyword research & optimization</li>
+        <li>Playlist & channel authority design</li>
+        <li>Custom YouTube CTR & thumbnails optimization</li>
+        <li>Video schema markup & Google Search integration</li>
+      </ul>
+      <div class="svc-section-ctas">
+        <a href="/contact" class="btn-fill">Optimize Now</a>
+        <a href="/portfolio-seo" class="btn-ghost">Case Study</a>
+      </div>
+    </div>
+    <div class="svc-visual grad-3">
+      <img src="/All%20Service%20Images/Video%20SEO.png" alt="Youtube / Video SEO" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="svc-promo-card">
+      <div class="promo-text">
+        <h3>Start optimizing today.</h3>
+        <p>Get a customized Video SEO roadmap to grow your channel.</p>
+      </div>
+      <div class="promo-ctas">
+        <a href="/contact" class="btn-fill">Optimize Now</a>
+        <a href="/contact" class="btn-green">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 5: SaaS SEO ── -->
+<section class="svc-section light" id="svc-saas">
+  <div class="svc-inner">
+    <div class="svc-text">
+      <p class="svc-text-eyebrow">SaaS SEO</p>
+      <h2>Drive growth with acquisition-led SEO.</h2>
+      <p>We help software companies scale MRR and demo sign-ups through intent-driven keyword targeting, technical audits, and content designed for the buyer's journey.</p>
+      <ul>
+        <li>Product-led content strategies</li>
+        <li>Conversion rate optimization (CRO)</li>
+        <li>High-intent keyword mapping</li>
+        <li>Enterprise-grade technical SEO</li>
+      </ul>
+      <div class="svc-section-ctas">
+        <a href="/contact" class="btn-fill">Get SaaS Audit</a>
+        <a href="/portfolio-seo" class="btn-ghost">Case Study</a>
+      </div>
+    </div>
+    <div class="svc-visual grad-5">
+      <img src="/All%20Service%20Images/SaaS%20SEO.png" alt="SaaS SEO" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="svc-promo-card">
+      <div class="promo-text">
+        <h3>Scale your traffic today.</h3>
+        <p>Get a customized growth audit to acquire high-value customers.</p>
+      </div>
+      <div class="promo-ctas">
+        <a href="/contact" class="btn-fill">Get SaaS Audit</a>
+        <a href="/contact" class="btn-green">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 6: Semantic SEO ── -->
+<section class="svc-section dark" id="svc-semantic">
+  <div class="svc-inner reverse">
+    <div class="svc-text">
+      <p class="svc-text-eyebrow">Semantic SEO</p>
+      <h2>Build topical authority, outrank everyone.</h2>
+      <p>We go beyond keywords to build topical authority through entity optimization, content clusters, and semantic relationships that Google's algorithms reward.</p>
+      <ul>
+        <li>Topic cluster & pillar page strategy</li>
+        <li>Entity-based optimization</li>
+        <li>NLP & semantic content analysis</li>
+        <li>Internal linking architecture</li>
+      </ul>
+      <div class="svc-section-ctas">
+        <a href="/contact" class="btn-fill">Build Topical Map</a>
+        <a href="/portfolio-seo" class="btn-ghost">Case Study</a>
+      </div>
+    </div>
+    <div class="svc-visual grad-4">
+      <img src="/All%20Service%20Images/Semantic%20SEO.png" alt="Semantic SEO" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="svc-promo-card">
+      <div class="promo-text">
+        <h3>Not sure what to write?</h3>
+        <p>We build complete topical maps to guide your content strategy.</p>
+      </div>
+      <div class="promo-ctas">
+        <a href="/contact" class="btn-fill">Build Topical Map</a>
+        <a href="/contact" class="btn-green">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 7: AI SEO ── -->
+<section class="svc-section light" id="svc-ai">
+  <div class="svc-inner">
+    <div class="svc-text">
+      <p class="svc-text-eyebrow">AI SEO</p>
+      <h2>Rank in AI answers, stay at the forefront of search.</h2>
+      <p>Optimize your brand for AI search engines like ChatGPT, Google Gemini, and Perplexity. Ensure your products and services are recommended in generative search results.</p>
+      <ul>
+        <li>Brand mention & recommendation tracking</li>
+        <li>Conversational search optimization</li>
+        <li>Schema & structured data for LLMs</li>
+        <li>Generative engine optimization (GEO)</li>
+      </ul>
+      <div class="svc-section-ctas">
+        <a href="/contact" class="btn-fill">Run AI Audit</a>
+        <a href="/portfolio-seo" class="btn-ghost">Case Study</a>
+      </div>
+    </div>
+    <div class="svc-visual grad-1">
+      <img src="/All%20Service%20Images/AI%20SEO.png" alt="AI SEO" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="svc-promo-card">
+      <div class="promo-text">
+        <h3>Is your brand ready for AI?</h3>
+        <p>Run an AI visibility audit today to see how generative search engines rank you.</p>
+      </div>
+      <div class="promo-ctas">
+        <a href="/contact" class="btn-fill">Run AI Audit</a>
+        <a href="/contact" class="btn-green">Contact Us</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -372,7 +626,7 @@ footer .footer-copy{font-size:12px;color:rgba(255,255,255,.4);}footer .footer-co
     <div class="footer-top">
       <div>
         <div class="footer-brand">Digital World</div>
-        <p class="footer-tagline">Full-Service Digital Marketing Agency &middot; 5 Years Experience &middot; Serving 11 countries worldwide.</p>
+        <p class="footer-tagline">Full-Service Digital Marketing Agency - 5 Years Experience Â· Serving 11 countries worldwide.</p>
         <div class="footer-flags">
           <img src="https://flagcdn.com/w20/us.png" srcset="https://flagcdn.com/w40/us.png 2x" alt="US" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
           <img src="https://flagcdn.com/w20/gb.png" srcset="https://flagcdn.com/w40/gb.png 2x" alt="UK" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
@@ -395,14 +649,16 @@ footer .footer-copy{font-size:12px;color:rgba(255,255,255,.4);}footer .footer-co
           <a href="https://www.indeed.com/" class="footer-soc-link" target="_blank" rel="noopener" title="Indeed" aria-label="Indeed">in</a>
           <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" class="footer-soc-link" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">Li</a>
         </div>
-        <a href="/contact" style="display:inline-block;margin-top:18px;background:var(--blue,#0071e3);color:#fff;font-size:12px;font-weight:500;padding:10px 18px;border-radius:980px;text-decoration:none;">&#128197; Book Free Consultation</a>
+        <a href="/contact" style="display:inline-block;margin-top:18px;background:var(--blue,#0071e3);color:#fff;font-size:12px;font-weight:500;padding:10px 18px;border-radius:980px;text-decoration:none;">ðŸ“… Book Free Consultation</a>
       </div>
       <div class="footer-col" style="padding-top: 10px;">
         <a class="footer-link" href="/services/seo#svc-local">Local SEO</a>
         <a class="footer-link" href="/services/seo#svc-ecom">Ecommerce SEO</a>
         <a class="footer-link" href="/services/seo#svc-intl">International SEO</a>
+        <a class="footer-link" href="/services/seo#svc-yt">Youtube / Video SEO</a>
         <a class="footer-link" href="/services/seo#svc-saas">SaaS SEO</a>
         <a class="footer-link" href="/services/seo#svc-semantic">Semantic SEO</a>
+        <a class="footer-link" href="/services/seo#svc-ai">AI SEO</a>
       </div>
       <div class="footer-col" style="padding-top: 10px;">
         <a class="footer-link" href="/services/web#svc-wordpress">WordPress Development</a>
@@ -421,8 +677,8 @@ footer .footer-copy{font-size:12px;color:rgba(255,255,255,.4);}footer .footer-co
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copy">Copyright &copy; 2025 Digital World - Kamrujjaman Mufti. All rights reserved.</p>
-      <p class="footer-copy">Based in Dhaka, Bangladesh &middot; Available worldwide</p>
+      <p class="footer-copy">Copyright Â© 2025 Digital World - Kamrujjaman Mufti. All rights reserved.</p>
+      <p class="footer-copy">Based in Dhaka, Bangladesh Â· Available worldwide</p>
     </div>
   </div>
 </footer>
@@ -454,6 +710,8 @@ footer .footer-copy{font-size:12px;color:rgba(255,255,255,.4);}footer .footer-co
 }
 </style>
 <a href="https://wa.me/8801798667820?text=Hi%20KJ%20Digital%20World%2C%20I%20am%20interested%20in%20your%20services" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="wa-icon"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.585.69 5.003 1.895 7.1L2 30l7.1-1.895A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm7.397 9.865l-1.265 5.975c-.095.425-.488.725-.923.725-.085 0-.17-.01-.252-.03l-2.42-.63a9.87 9.87 0 01-4.21 1.045c-5.465 0-9.9-4.435-9.9-9.9 0-.48.034-.955.102-1.42.13-.93.914-1.6 1.854-1.6h.08c.46.02.89.23 1.17.57l1.59 1.98c.37.46.33 1.12-.09 1.53l-.79.77c-.27.26-.34.66-.17 1 .47.94 1.15 1.76 1.99 2.41.35.27.83.27 1.17.03l1.02-.78c.44-.34 1.06-.32 1.48.04l2.01 1.73c.37.32.5.82.33 1.27z" fill="currentColor"></path></svg></a>
+
+
 
 <!-- ── WA FLOAT ── -->
 
