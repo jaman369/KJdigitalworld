@@ -129,7 +129,6 @@
     .svc-nav-inner{max-width:1160px;margin:0 auto;padding:0 24px;display:flex;gap:0;overflow-x:auto;scrollbar-width:none;height:50px;align-items:center;}
     .svc-nav-inner::-webkit-scrollbar{display:none;}
     .svc-nav-link{flex-shrink:0;font-size:12px;font-weight:500;color:var(--gray);padding:6px 16px;border-radius:980px;cursor:pointer;transition:color .18s,background .18s;white-space:nowrap;border:none;background:transparent;font-family:var(--font-b);display:flex;align-items:center;gap:6px;}
-    .svc-nav-link img{width:14px;height:14px;object-fit:contain;}
     .svc-nav-link:hover{color:var(--near-black);background:rgba(0,0,0,.04);}
     .svc-nav-link.active{color:var(--blue);background:rgba(0,113,227,.08);}
 
@@ -157,13 +156,14 @@
     .svc-text ul li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--gray);padding:6px 0;}
     .svc-text ul li::before{content:'✓';color:var(--green);font-weight:700;font-size:14px;}
     
-    .svc-visual{width:100%;aspect-ratio:4/3;border-radius:20px;overflow:hidden;position:relative;}
-    .svc-visual.grad-1{background:linear-gradient(135deg,rgba(0,113,227,.15),rgba(0,180,120,.1));}
-    .svc-visual.grad-2{background:linear-gradient(135deg,rgba(60,60,60,.3),rgba(0,113,227,.12));}
-    .svc-visual.grad-3{background:linear-gradient(135deg,rgba(0,180,120,.15),rgba(0,113,227,.08));}
-    .svc-visual.grad-4{background:linear-gradient(135deg,rgba(100,0,200,.12),rgba(0,113,227,.1));}
-    .svc-visual.grad-5{background:linear-gradient(135deg,rgba(0,113,227,.12),rgba(60,60,60,.2));}
-    .svc-visual.grad-6{background:linear-gradient(135deg,rgba(245,166,35,.12),rgba(0,113,227,.08));}
+    /* Premium Visual Gradients (Deep and Rich Dark profiles matching screen) */
+    .svc-visual{width:100%;aspect-ratio:4/3;border-radius:20px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;}
+    .svc-visual.grad-1{background:linear-gradient(135deg,#020817 0%,#05183a 100%);border:1px solid rgba(0,113,227,.12);}
+    .svc-visual.grad-2{background:linear-gradient(135deg,#030303 0%,#091326 100%);border:1px solid rgba(255,255,255,.06);}
+    .svc-visual.grad-3{background:linear-gradient(135deg,#001206 0%,#002410 100%);border:1px solid rgba(52,199,89,.15);}
+    .svc-visual.grad-4{background:linear-gradient(135deg,#120500 0%,#261000 100%);border:1px solid rgba(255,159,10,.15);}
+    .svc-visual.grad-5{background:linear-gradient(135deg,#000d1a 0%,#001c3a 100%);border:1px solid rgba(0,180,220,.15);}
+    .svc-visual.grad-6{background:linear-gradient(135deg,#080214 0%,#150630 100%);border:1px solid rgba(94,92,230,.15);}
     .svc-visual img{width:100%;height:100%;object-fit:contain;display:block;position:relative;z-index:1;transition:transform .4s ease;}
     .svc-visual:hover img{transform:scale(1.04);}
 
@@ -306,7 +306,7 @@
     .qcard-sub{font-size:14px;color:var(--gray);}
     .qcard-sub-w{color:rgba(255,255,255,.38);}
     .qcard-actions{display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0;}
-    .qcard-btn-primary{background:var(--blue);color:#white;font-size:13px;font-weight:600;padding:12px 24px;border-radius:980px;border:none;cursor:pointer;font-family:var(--font-b);transition:background .2s,transform .15s,box-shadow .2s;white-space:nowrap;color:#fff;}
+    .qcard-btn-primary{background:var(--blue);font-size:13px;font-weight:600;padding:12px 24px;border-radius:980px;border:none;cursor:pointer;font-family:var(--font-b);transition:background .2s,transform .15s,box-shadow .2s;white-space:nowrap;color:#fff;}
     .qcard-btn-primary:hover{background:var(--blue-h);transform:scale(1.03);box-shadow:0 6px 20px rgba(0,113,227,.4);}
     .qcard-btn-wa{background:#25D366;color:#fff;font-size:13px;font-weight:500;padding:12px 22px;border-radius:980px;border:none;cursor:pointer;font-family:var(--font-b);display:flex;align-items:center;gap:7px;transition:background .2s,transform .15s;white-space:nowrap;}
     .qcard-btn-wa:hover{background:#20b858;transform:scale(1.03);}
@@ -401,7 +401,7 @@
     .footer-flags img{width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.15);}
     .footer-social{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;}
     .footer-soc-link{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.06);border:.5px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:12px;font-weight:500;text-decoration:none;transition:background .2s,color .2s,border-color .2s;}
-    .footer-soc-link:hover{background:var(--blue);color:#white;border-color:#3399ff;color:#fff;}
+    .footer-soc-link:hover{background:var(--blue);border-color:#3399ff;color:#fff;}
     .footer-col h4{font-size:12px;font-weight:600;color:#fff;margin-bottom:16px;letter-spacing:.04em;}
     .footer-link{display:block;font-size:12px;color:rgba(255,255,255,.55);margin-bottom:9px;cursor:pointer;transition:color .2s;text-decoration:none;}
     .footer-link:hover{color:#fff;}
@@ -554,7 +554,7 @@
   <section class="svc-section light" id="svc-uiux">
     <div class="svc-inner">
       <div class="svc-text">
-        <p class="svc-text-eyebrow">UI/UX Design</p>
+        <p class="svc-text-eyebrow">Website Design (UI/UX)</p>
         <h2>Form follows function, but first it converts.</h2>
         <p>User-centered design that balances aesthetics with functionality. We create intuitive interfaces that guide visitors toward conversion while delivering a delightful experience.</p>
         <ul>
@@ -594,13 +594,13 @@
     <div class="qcontact-inner">
       <div class="qcard qcard-light rv">
         <div class="qcard-text">
-          <div class="qcard-label">🎨 UI/UX Design</div>
+          <div class="qcard-label">🎨 Website Design (UI/UX)</div>
           <div class="qcard-title">Ready to elevate your user experience?</div>
           <div class="qcard-sub">Let's discuss how we can design an interface that your users love and that drives conversions.</div>
         </div>
         <div class="qcard-actions">
           <a href="/contact"><button class="qcard-btn-primary">📩 Get Free Audit</button></a>
-          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20UI%2FUX%20Design%20services." target="_blank"><button class="qcard-btn-wa">💬 WhatsApp</button></a>
+          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20Website%20Design%20%28UI%2FUX%29%20services." target="_blank"><button class="qcard-btn-wa">💬 WhatsApp</button></a>
           <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank"><button class="qcard-btn-li">in LinkedIn</button></a>
         </div>
       </div>
@@ -822,7 +822,7 @@
     <div class="qcontact-inner">
       <div class="qcard qcard-light rv">
         <div class="qcard-text">
-          <div class="qcard-label">⚡ Speed Optimization</div>
+          <div class="qcard-label">⚡ Website Speed Optimization</div>
           <div class="qcard-title">Want a blazing fast website?</div>
           <div class="qcard-sub">Let us audit and optimize your site speed to improve user retention, search rankings, and conversions.</div>
         </div>
@@ -917,7 +917,7 @@
           <a href="/portfolio-web" class="btn-ghost">Case Study</a>
         </div>
       </div>
-      <div class="svc-visual grad-2">
+      <div class="svc-visual grad-1">
         <img src="/All%20Service%20Images/Technical%20SEO.png" alt="Website Migration" loading="lazy">
       </div>
       <div class="svc-promo-card">
@@ -974,7 +974,7 @@
           <a href="/portfolio-web" class="btn-ghost">Case Study</a>
         </div>
       </div>
-      <div class="svc-visual grad-3">
+      <div class="svc-visual grad-2">
         <img src="/All%20Service%20Images/SaaS%20SEO.png" alt="CMS Setup" loading="lazy">
       </div>
       <div class="svc-promo-card">
@@ -999,7 +999,7 @@
         </div>
         <div class="qcard-actions">
           <a href="/contact"><button class="qcard-btn-primary">📩 Setup CMS</button></a>
-          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20CMS%20Setup%20services." target="_blank"><button class="qcard-btn-wa">💬 WhatsApp</button></a>
+          <a href="https://wa.me/8801798667820?text=Hi%20KJ%20Digital%20World%2C%20I%20am%20interested%20in%20your%20services" target="_blank"><button class="qcard-btn-wa">💬 WhatsApp</button></a>
           <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank"><button class="qcard-btn-li qcard-btn-li-dark">in LinkedIn</button></a>
         </div>
       </div>
