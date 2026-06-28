@@ -1,265 +1,1482 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Web Design &amp; Development — Digital World · Kamrujjaman Mufti</title>
-<meta name="description" content="Websites that convert. Designs that impress. Modern, responsive, lightning-fast websites engineered to convert visitors into customers.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital,wght@0,400;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap">
-<style>
-:root{--font-d:'DM Serif Display',serif;--font-b:'DM Sans',sans-serif;--blue:#0071e3;--blue-h:#0058b8;--green:#00b87a;--amber:#f5a623;--gray:#86868b;--radius:18px;--nav-h:64px;--ease:cubic-bezier(.4,0,.2,1);}
-*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;font-size:16px;}body{font-family:var(--font-b);background:#000;color:#1d1d1f;overflow-x:hidden;}
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);background:rgba(29,29,31,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:.5px solid rgba(255,255,255,.06);transition:background .3s;}nav .nav-wrap{max-width:1160px;margin:0 auto;height:100%;padding:0 24px;display:flex;align-items:center;justify-content:space-between;}nav .nav-logo{font-family:var(--font-d);font-size:17px;color:#fff;cursor:pointer;letter-spacing:-.3px;display:flex;align-items:center;gap:8px;user-select:none;text-decoration:none;}nav .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 12px var(--blue);}nav .nav-links{display:flex;align-items:center;gap:2px;}nav .nav-link{position:relative;color:rgba(255,255,255,.78);font-size:12px;font-weight:400;padding:8px 12px;border-radius:8px;cursor:pointer;transition:color .2s,background .2s;text-decoration:none;display:inline-block;}nav .nav-link:hover{color:#fff;background:rgba(255,255,255,.08);}nav .nav-link.has-drop:after{content:'';display:inline-block;width:4px;height:4px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin-left:5px;vertical-align:middle;transition:transform .2s;}nav .nav-link.has-drop:hover:after{transform:rotate(-135deg);}nav .nav-link.has-drop{padding-bottom:18px;margin-bottom:-10px;}nav .mega-drop{position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(18,18,20,.97);backdrop-filter:blur(30px);border-bottom:.5px solid rgba(255,255,255,.08);padding:32px 0 36px;opacity:0;pointer-events:none;transition:opacity .25s var(--ease) .35s,transform .25s var(--ease) .35s,visibility 0s linear .6s;transform:translateY(-8px);visibility:hidden;z-index:999;}nav .nav-link.has-drop:hover .mega-drop,nav .mega-drop:hover{opacity:1!important;pointer-events:all!important;transform:translateY(0)!important;visibility:visible!important;transition:opacity .2s var(--ease),transform .2s var(--ease),visibility 0s linear 0s;}nav .mega-inner{max-width:1160px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}nav .mega-col h3{font-size:10px;font-weight:600;color:rgba(255,255,255,.45);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;padding-bottom:8px;border-bottom:.5px solid rgba(255,255,255,.07);}nav .mega-col a{display:block;font-size:12px;color:rgba(255,255,255,.62);padding:5px 0;transition:color .15s;cursor:pointer;text-decoration:none;}nav .mega-col a:hover{color:#fff;}nav .nav-cta{background:var(--blue);color:#fff;font-size:12px;font-weight:500;padding:8px 16px;border-radius:980px;cursor:pointer;border:none;font-family:var(--font-b);transition:background .2s,transform .15s;text-decoration:none;}nav .nav-cta:hover{background:var(--blue-h);transform:scale(1.03);}@media(max-width:900px){nav .nav-links{display:none!important;}nav .nav-cta{display:none!important;}}
-.mobile-toggle{display:none;position:absolute;top:50%;right:20px;transform:translateY(-50%);background:none;border:none;width:40px;height:40px;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0;z-index:1001;}.mobile-toggle span{display:block;width:22px;height:2px;background:#fff;transition:transform .3s,opacity .2s;}.mobile-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}.mobile-toggle.open span:nth-child(2){opacity:0;}.mobile-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}.mobile-drawer{position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:rgba(18,18,20,.98);backdrop-filter:blur(30px);z-index:998;padding:24px 20px 80px;overflow-y:auto;transform:translateX(100%);transition:transform .3s ease;display:none;}.mobile-drawer.open{transform:translateX(0);}.mobile-drawer a{display:block;padding:14px 4px;color:rgba(255,255,255,.85);font-size:16px;border-bottom:.5px solid rgba(255,255,255,.06);text-decoration:none;}.mobile-drawer .ms-section{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#0071e3;padding:18px 4px 6px;border:none;}.mobile-drawer .ms-sub{padding-left:16px;font-size:14px;color:rgba(255,255,255,.65);}.mobile-drawer .mobile-cta{display:block;background:#0071e3;color:#fff;text-align:center;padding:14px;border-radius:980px;margin-top:24px;font-weight:500;text-decoration:none;}@media(max-width:900px){.mobile-toggle{display:flex;}.mobile-drawer{display:block;}}
-.svc-hero{min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:calc(var(--nav-h) + 60px) 24px 80px;position:relative;overflow:hidden;background:#0a0a0a;}.svc-hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(0,113,227,.12) 0%,transparent 70%);pointer-events:none;}.svc-hero h1{font-family:var(--font-d);font-size:clamp(36px,5.5vw,64px);color:#fff;line-height:1.08;margin-bottom:20px;letter-spacing:-.02em;}.svc-hero h1 em{font-style:italic;color:var(--blue);}.svc-hero-eyebrow{font-size:11px;font-weight:600;color:var(--blue);letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;}.svc-hero-sub{font-size:17px;color:rgba(255,255,255,.5);max-width:600px;margin:0 auto 36px;line-height:1.7;font-weight:300;}.svc-hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}.svc-hero-ctas .btn-fill{display:inline-block;background:var(--blue);color:#fff;font-size:14px;font-weight:500;padding:14px 28px;border-radius:980px;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s;}.svc-hero-ctas .btn-fill:hover{background:var(--blue-h);transform:scale(1.03);}.svc-hero-ctas .btn-ghost{display:inline-block;color:#fff;font-size:14px;font-weight:500;padding:14px 28px;border-radius:980px;text-decoration:none;border:1px solid rgba(255,255,255,.18);cursor:pointer;transition:background .2s;}.svc-hero-ctas .btn-ghost:hover{background:rgba(255,255,255,.06);}
-.svc-icons{display:flex;justify-content:center;gap:40px;padding:40px 24px;background:#0a0a0a;border-bottom:1px solid rgba(255,255,255,.06);}.svc-icon-item{text-align:center;color:rgba(255,255,255,.85);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;transition:color .2s var(--ease),transform .2s var(--ease);}.svc-icon-item:hover{color:#fff;transform:translateY(-2px);}.svc-icon-item span{display:block;font-size:28px;margin-bottom:6px;}@media(max-width:600px){.svc-icons{gap:20px;flex-wrap:wrap;}.svc-icon-item{font-size:10px;}.svc-icon-item span{font-size:22px;}}
-.svc-section{padding:96px 24px;}.svc-section.dark{background:#0a0a0a;color:#fff;}.svc-section.light{background:#f5f5f7;color:#1d1d1f;}.svc-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}.svc-inner.reverse{direction:rtl;}.svc-inner.reverse>*{direction:ltr;}.svc-text-eyebrow{font-size:11px;font-weight:600;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;}.svc-section.dark .svc-text-eyebrow{color:var(--blue);}.svc-text h2{font-family:var(--font-d);font-size:clamp(28px,3.5vw,44px);line-height:1.12;margin-bottom:16px;}.svc-section.dark .svc-text h2{color:#fff;}.svc-section.light .svc-text h2{color:#1d1d1f;}.svc-text p{font-size:16px;line-height:1.8;color:var(--gray);margin-bottom:24px;}.svc-text ul{list-style:none;padding:0;}.svc-text ul li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--gray);padding:6px 0;}.svc-text ul li::before{content:'✓';color:var(--green);font-weight:700;font-size:14px;}.svc-visual{width:100%;aspect-ratio:4/3;border-radius:20px;overflow:hidden;position:relative;}.svc-visual.grad-1{background:linear-gradient(135deg,rgba(0,113,227,.15),rgba(0,180,120,.1));}.svc-visual.grad-2{background:linear-gradient(135deg,rgba(60,60,60,.3),rgba(0,113,227,.12));}.svc-visual.grad-3{background:linear-gradient(135deg,rgba(0,180,120,.15),rgba(0,113,227,.08));}.svc-visual.grad-4{background:linear-gradient(135deg,rgba(100,0,200,.12),rgba(0,113,227,.1));}.svc-visual.grad-5{background:linear-gradient(135deg,rgba(0,113,227,.12),rgba(60,60,60,.2));}.svc-visual.grad-6{background:linear-gradient(135deg,rgba(245,166,35,.12),rgba(0,113,227,.08));}.svc-visual img{width:100%;height:100%;object-fit:contain;display:block;position:relative;z-index:1;}.svc-visual-emoji{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:64px;opacity:.5;}@media(max-width:900px){.svc-inner{grid-template-columns:1fr;gap:32px;}.svc-inner.reverse{direction:ltr;}}
-.svc-cta{background:#0a0a0a;padding:96px 24px;text-align:center;}.svc-cta h2{font-family:var(--font-d);font-size:clamp(28px,4vw,48px);color:#fff;margin-bottom:16px;}.svc-cta p{font-size:16px;color:rgba(255,255,255,.5);max-width:560px;margin:0 auto 32px;line-height:1.7;}.svc-cta .btn-fill{display:inline-block;background:var(--blue);color:#fff;font-size:14px;font-weight:500;padding:14px 28px;border-radius:980px;text-decoration:none;transition:background .2s,transform .15s;}.svc-cta .btn-fill:hover{background:var(--blue-h);transform:scale(1.03);}
-footer{background:#1d1d1f;padding:64px 24px 40px;border-top:.5px solid rgba(255,255,255,.07);}footer .footer-w{max-width:1120px;margin:0 auto;}footer .footer-top{display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:.5px solid rgba(255,255,255,.07);}footer .footer-brand{font-family:var(--font-d);font-size:22px;color:#fff;margin-bottom:10px;}footer .footer-tagline{font-size:13px;color:rgba(255,255,255,.55);line-height:1.7;max-width:320px;}footer .footer-link{display:block;font-size:12px;color:rgba(255,255,255,.55);margin-bottom:9px;cursor:pointer;transition:color .2s;text-decoration:none;}footer .footer-link:hover{color:#fff;}footer .footer-flags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;font-size:15px;}footer .footer-social{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;}footer .footer-col h4{font-size:12px;font-weight:600;color:#fff;margin-bottom:16px;letter-spacing:.04em;}footer .footer-soc-link{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.06);border:.5px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:12px;font-weight:500;text-decoration:none;transition:background .2s,color .2s,border-color .2s;}footer .footer-soc-link:hover{background:var(--blue);color:#fff;border-color:#3399ff;}footer .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px;}footer .footer-copy{font-size:12px;color:rgba(255,255,255,.4);}footer .footer-copy a{color:#3399ff;text-decoration:none;}@media(max-width:900px){footer .footer-top{grid-template-columns:1fr 1fr;}}@media(max-width:600px){footer .footer-top{grid-template-columns:1fr;}.footer-bottom{flex-direction:column;text-align:center;}}
-.wa-float{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background-color:#25d366;color:#fff;border-radius:50px;box-shadow:0 4px 12px rgba(0,0,0,.15);z-index:9999;display:flex;align-items:center;justify-content:center;transition:transform .3s ease;text-decoration:none;}.wa-float:hover{transform:translateY(-4px);}.wa-icon{width:32px;height:32px;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web Design &amp; Development — Digital World · Kamrujjaman Mufti</title>
+  <meta name="description" content="Websites that convert. Designs that impress. Modern, responsive, lightning-fast websites engineered to convert visitors into customers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital,wght@0,400;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap">
+  <style>
+    /* === RESET & BASE === */
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;font-size:16px;scroll-padding-top:80px;}
+    body{font-family:'DM Sans',sans-serif;background:#000;color:#1d1d1f;overflow-x:hidden;cursor:auto;}
+    a{text-decoration:none;color:inherit;}
+
+    /* === CURSOR === */
+    #cursor{position:fixed;width:10px;height:10px;background:#fff;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s;mix-blend-mode:difference;}
+    #cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid rgba(255,255,255,.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,opacity .3s;}
+
+    /* === VARIABLES === */
+    :root{
+      --blue:#0071e3;--blue-h:#0077ed;--blue-lt:#e8f2ff;
+      --green:#34c759;--green-lt:#edfbf3;
+      --amber:#ff9f0a;--purple:#5e5ce6;--red:#ff3b30;
+      --near-black:#1d1d1f;--gray:#6e6e73;--light-gray:#86868b;
+      --bg:#f5f5f7;--white:#fff;--soft:#e8e8ed;--mid:#d2d2d7;
+      --fd:'DM Serif Display',Georgia,serif;
+      --fb:'DM Sans',sans-serif;
+      --ease:cubic-bezier(.25,.46,.45,.94);
+      --nav-h:52px;--r:20px;
+    }
+
+    /* === NAVBAR === */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:1000;
+      height:var(--nav-h);
+      background:rgba(29,29,31,.78);
+      backdrop-filter:saturate(180%) blur(20px);
+      -webkit-backdrop-filter:saturate(180%) blur(20px);
+      border-bottom:.5px solid rgba(255,255,255,.06);
+      transition:background .3s;
+    }
+    a{text-decoration:none;color:white;font-family:'DM Sans',sans-serif;font-size:0.8rem;}
+    .nav-wrap{max-width:1160px;margin:0 auto;height:100%;padding:0 24px;display:flex;align-items:center;justify-content:space-between;}
+    .nav-logo{font-family:var(--fd);font-size:17px;color:#fff;cursor:pointer;letter-spacing:-.3px;display:flex;align-items:center;gap:8px;user-select:none;}
+    .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 12px var(--blue);animation:dotPulse 2.5s ease-in-out infinite;}
+    @keyframes dotPulse{0%,100%{box-shadow:0 0 8px var(--blue);}50%{box-shadow:0 0 20px var(--blue),0 0 40px rgba(0,113,227,.3);}}
+    .nav-links{display:flex;align-items:center;gap:2px;}
+    .nav-link{position:relative;color:rgba(255,255,255,.72);font-size:12px;font-weight:400;padding:6px 12px;border-radius:8px;cursor:pointer;transition:color .2s,background .2s;letter-spacing:.01em;}
+    .nav-link:hover{color:#fff;background:rgba(255,255,255,.06);}
+    .nav-link.has-drop:after{content:'';display:inline-block;width:4px;height:4px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin-left:5px;vertical-align:middle;transition:transform .2s;}
+    .nav-link.has-drop:hover:after{transform:rotate(-135deg);}
+
+    /* === MEGA MENU === */
+    .mega-drop{position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(18,18,20,.97);backdrop-filter:blur(30px);border-bottom:.5px solid rgba(255,255,255,.08);padding:32px 0 36px;opacity:0;pointer-events:none;transition:opacity .22s ease,transform .22s ease;transform:translateY(-8px);z-index:999;}
+    .nav-link.has-drop:hover .mega-drop{opacity:1;pointer-events:all;transform:translateY(0);}
+    .mega-inner{max-width:1160px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
+    .mega-col h4{font-size:10px;font-weight:600;color:rgba(255,255,255,.28);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;padding-bottom:8px;border-bottom:.5px solid rgba(255,255,255,.07);}
+    .mega-col a{display:block;font-size:12px;color:rgba(255,255,255,.55);padding:5px 0;transition:color .15s;cursor:pointer;}
+    .mega-col a:hover{color:#fff;}
+
+    .nav-cta{background:var(--blue);color:#fff;font-size:12px;font-weight:500;padding:7px 16px;border-radius:980px;cursor:pointer;border:none;font-family:var(--fb);transition:background .2s,transform .15s;}
+    .nav-cta:hover{background:var(--blue-h);transform:scale(1.03);}
+
+    /* === MOBILE MENU === */
+    .mobile-toggle{display:none;position:absolute;top:50%;right:20px;transform:translateY(-50%);background:none;border:none;width:40px;height:40px;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0;z-index:1001;}
+    .mobile-toggle span{display:block;width:22px;height:2px;background:#fff;transition:transform .3s,opacity .2s;}
+    .mobile-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .mobile-toggle.open span:nth-child(2){opacity:0;}
+    .mobile-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mobile-drawer{position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:rgba(18,18,20,.98);-webkit-backdrop-filter:blur(30px);backdrop-filter:blur(30px);z-index:998;padding:24px 20px 80px;overflow-y:auto;transform:translateX(100%);transition:transform .3s ease;display:none;}
+    .mobile-drawer.open{transform:translateX(0);}
+    .mobile-drawer a{display:block;padding:14px 4px;color:rgba(255,255,255,.85);font-size:16px;border-bottom:.5px solid rgba(255,255,255,.06);text-decoration:none;}
+    .mobile-drawer a:hover{color:#fff;}
+    .mobile-drawer .ms-section{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);padding:18px 4px 6px;border:none;}
+    .mobile-drawer .ms-sub{padding-left:16px;font-size:14px;color:rgba(255,255,255,.65);}
+    .mobile-drawer .mobile-cta{display:block;background:var(--blue);color:#fff;text-align:center;padding:14px;border-radius:980px;margin-top:24px;font-weight:500;border:none;}
+    .mobile-drawer .ms-section{cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none;}
+    .mobile-drawer .ms-section::after{content:'+';font-size:18px;color:var(--blue);font-weight:300;transition:transform .25s;}
+    .mobile-drawer .ms-section.open::after{content:'\2212';}
+    .mobile-drawer .ms-group{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+    .mobile-drawer .ms-group.open{max-height:600px;}
+
+    @media(max-width:900px){
+      .mobile-toggle{display:flex;}
+      .mobile-drawer{display:block;}
+      nav .nav-links{display:none!important;}
+      nav .nav-cta{display:none!important;}
+      .section,.services-section,.feature-section{padding-left:20px!important;padding-right:20px!important;}
+      .hero-content{padding:32px 20px!important;}
+      footer{padding:48px 20px 32px!important;}
+    }
+    @media(max-width:600px){
+      :root{--nav-h:56px;}
+      .footer-bottom{flex-direction:column;text-align:center;}
+      .hero-ctas{flex-direction:column;align-items:stretch;width:100%;max-width:320px;margin:0 auto;}
+      .hero-ctas .btn-fill,.hero-ctas .btn-ghost{width:100%;}
+    }
+    @media(hover:none),(pointer:coarse){
+      body{cursor:auto!important;}
+      #cursor,#cursor-ring{display:none!important;}
+    }
+    img,video{max-width:100%;height:auto;}
+
+    /* === HERO === */
+    .hero{min-height:92vh;background:#000;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding-top:var(--nav-h);}
+    .hero-mesh{position:absolute;inset:0;overflow:hidden;}
+    .orb{position:absolute;border-radius:50%;filter:blur(90px);will-change:transform;}
+    .o1{width:700px;height:700px;background:radial-gradient(circle,rgba(0,113,227,.22),transparent 70%);top:-200px;left:-180px;animation:drift1 12s ease-in-out infinite;}
+    .o2{width:600px;height:600px;background:radial-gradient(circle,rgba(0,180,120,.15),transparent 70%);bottom:-150px;right:-80px;animation:drift2 10s ease-in-out infinite;}
+    .o3{width:500px;height:500px;background:radial-gradient(circle,rgba(94,92,230,.18),transparent 70%);top:35%;left:42%;animation:drift3 14s ease-in-out infinite;}
+    .o4{width:300px;height:300px;background:radial-gradient(circle,rgba(52,199,89,.12),transparent 70%);top:60%;left:8%;animation:drift1 8s ease-in-out infinite reverse;}
+    @keyframes drift1{0%,100%{transform:translate(0,0) scale(1);}33%{transform:translate(40px,-30px) scale(1.05);}66%{transform:translate(-20px,20px) scale(.95);}}
+    @keyframes drift2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-40px,-40px) scale(1.08);}}
+    @keyframes drift3{0%,100%{transform:translate(0,0) scale(1);}40%{transform:translate(30px,40px) scale(1.1);}80%{transform:translate(-30px,-10px) scale(.9);}}
+    .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;mask-image:radial-gradient(ellipse 60% 60% at 50% 50%,black 0%,transparent 100%);}
+    .hero-content{position:relative;z-index:2;max-width:960px;padding:40px 24px;}
+    .h-badge{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px;padding:6px 14px;border:.5px solid rgba(255,255,255,.12);border-radius:980px;background:rgba(255,255,255,.04);opacity:0;animation:fadeUp .9s .2s var(--ease) forwards;}
+    .h-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);box-shadow:0 0 8px var(--blue);}
+    .hero-title{font-family:var(--fd);font-size:clamp(48px,7.5vw,96px);line-height:1.02;color:#fff;margin-bottom:24px;letter-spacing:-.025em;opacity:0;animation:fadeUp .9s .38s var(--ease) forwards;}
+    .hero-title em{font-style:italic;color:transparent;background:linear-gradient(135deg,#0071e3 0%,#00c2ff 50%,#5e5ce6 100%);-webkit-background-clip:text;background-clip:text;background-size:200%;animation:gShift 5s ease-in-out infinite;}
+    @keyframes gShift{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}
+    .hero-sub{font-size:clamp(16px,2vw,21px);font-weight:300;color:rgba(255,255,255,.42);max-width:660px;margin:0 auto 44px;line-height:1.7;opacity:0;animation:fadeUp .9s .56s var(--ease) forwards;}
+    .hero-sub strong{color:rgba(255,255,255,.72);font-weight:400;}
+    .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp .9s .74s var(--ease) forwards;}
+    .btn-fill{background:var(--blue);color:#fff;font-size:15px;font-weight:600;padding:15px 32px;border-radius:980px;border:none;cursor:pointer;font-family:var(--fb);transition:background .2s,transform .2s,box-shadow .2s;}
+    .btn-fill:hover{background:var(--blue-h);transform:scale(1.03);box-shadow:0 8px 30px rgba(0,113,227,.45);}
+    .btn-ghost{background:transparent;color:#fff;font-size:15px;font-weight:400;padding:15px 32px;border-radius:980px;border:1px solid rgba(255,255,255,.22);cursor:pointer;font-family:var(--fb);transition:border-color .2s,transform .2s,background .2s;}
+    .btn-ghost:hover{border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.05);transform:scale(1.03);}
+    .hero-pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:48px;opacity:0;animation:fadeUp .9s .88s var(--ease) forwards;}
+    .h-pill{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.45);padding:6px 13px;border-radius:980px;border:.5px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);backdrop-filter:blur(8px);}
+    .h-pill img{width:16px;height:16px;object-fit:contain;}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+
+    /* === MARQUEE === */
+    .marquee-bar{background:#0a0a0a;border-top:.5px solid rgba(255,255,255,.06);border-bottom:.5px solid rgba(255,255,255,.06);overflow:hidden;padding:16px 0;}
+    .mtrack{display:flex;animation:mScroll 36s linear infinite;}
+    .mitem{display:flex;align-items:center;gap:8px;padding:0 28px;flex-shrink:0;font-size:12px;font-weight:400;color:rgba(255,255,255,.32);white-space:nowrap;}
+    .mitem b{color:rgba(255,255,255,.55);font-weight:500;}
+    .mitem span{color:rgba(255,255,255,.1);}
+    @keyframes mScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+    /* === STATS BAR === */
+    .stats-bar{background:#f5f5f7;padding:56px 24px;}
+    .stats-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e0e0e5;border-radius:20px;overflow:hidden;}
+    .stat-box{background:#f5f5f7;padding:36px 20px;text-align:center;transition:background .25s;}
+    .stat-box:hover{background:#ebebef;}
+    .stat-num{font-family:var(--fd);font-size:clamp(32px,4vw,52px);color:var(--near-black);line-height:1;}
+    .stat-num sup{font-size:.42em;vertical-align:super;font-family:var(--fb);color:var(--blue);}
+    .stat-lbl{font-size:12px;color:var(--light-gray);margin-top:6px;letter-spacing:.03em;}
+
+    /* === STICKY SERVICE NAV === */
+    .svc-nav{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-bottom:.5px solid var(--soft);position:sticky;top:var(--nav-h);z-index:700;}
+    .svc-nav-inner{max-width:1160px;margin:0 auto;padding:0 24px;display:flex;gap:0;overflow-x:auto;scrollbar-width:none;height:50px;align-items:center;}
+    .svc-nav-inner::-webkit-scrollbar{display:none;}
+    .svc-nav-link{flex-shrink:0;font-size:12px;font-weight:500;color:var(--gray);padding:6px 16px;border-radius:980px;cursor:pointer;transition:color .18s,background .18s;white-space:nowrap;border:none;background:transparent;font-family:var(--fb);display:flex;align-items:center;gap:6px;}
+    .svc-nav-link img{width:14px;height:14px;object-fit:contain;}
+    .svc-nav-link:hover{color:var(--near-black);background:rgba(0,0,0,.04);}
+    .svc-nav-link.active{color:var(--blue);background:rgba(0,113,227,.08);}
+
+    /* === ICONS ROW === */
+    .svc-icons{display:flex;justify-content:center;gap:40px;padding:40px 24px;background:#0a0a0a;border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap;}
+    .svc-icon-item{text-align:center;color:rgba(255,255,255,.85)!important;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;transition:color .2s var(--ease),transform .2s var(--ease);text-decoration:none;display:inline-block;}
+    .svc-icon-item:hover{color:#fff!important;transform:translateY(-2px);}
+    .svc-icon-item img{display:block;width:32px;height:32px;margin:0 auto 8px;object-fit:contain;}
+    @media(max-width:600px){.svc-icons{gap:20px;}.svc-icon-item{font-size:10px;}.svc-icon-item img{width:24px;height:24px;}}
+
+    /* === SERVICE SECTIONS === */
+    .svc-block{padding:100px 24px;position:relative;overflow:hidden;}
+    .svc-block-light{background:#f5f5f7;}
+    .svc-block-dark{background:#000;}
+    .svc-block-darker{background:#0a0a0a;}
+    .svc-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+    .svc-inner.rev{direction:rtl;}
+    .svc-inner.rev>*{direction:ltr;}
+
+    .svc-num{font-family:var(--fd);font-size:11px;color:var(--blue);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+    .svc-num::after{content:'';flex:1;height:.5px;background:var(--blue);opacity:.3;max-width:40px;}
+    .svc-title{font-family:var(--fd);font-size:clamp(28px,3.5vw,46px);line-height:1.1;letter-spacing:-.02em;margin-bottom:16px;}
+    .svc-title-light{color:var(--near-black);}
+    .svc-title-dark{color:#fff;}
+    .svc-desc{font-size:15px;line-height:1.75;margin-bottom:28px;}
+    .svc-desc-light{color:var(--gray);}
+    .svc-desc-dark{color:rgba(255,255,255,.45);}
+
+    .svc-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px;}
+    .svc-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;}
+    .svc-list-light li{color:var(--gray);}
+    .svc-list-dark li{color:rgba(255,255,255,.5);}
+    .svc-list li::before{content:'✓';flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(0,113,227,.12);color:var(--blue);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+
+    .svc-results{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;}
+    .svc-result{display:flex;flex-direction:column;padding:12px 16px;border-radius:14px;min-width:90px;}
+    .svc-result-light{background:#fff;border:.5px solid var(--soft);}
+    .svc-result-dark{background:rgba(255,255,255,.05);border:.5px solid rgba(255,255,255,.08);}
+    .svc-result-v{font-family:var(--fd);font-size:22px;color:var(--near-black);line-height:1;}
+    .svc-result-dark .svc-result-v{color:#fff;}
+    .svc-result-l{font-size:10px;color:var(--light-gray);margin-top:3px;text-transform:uppercase;letter-spacing:.06em;}
+
+    .svc-cta-strip{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+    .btn-blue{background:var(--blue);color:#fff;font-size:13px;font-weight:600;padding:11px 24px;border-radius:980px;border:none;cursor:pointer;font-family:var(--fb);transition:background .2s,transform .15s,box-shadow .2s;}
+    .btn-blue:hover{background:var(--blue-h);transform:scale(1.03);box-shadow:0 6px 20px rgba(0,113,227,.45);}
+    .btn-outline-light{background:transparent;color:var(--near-black);font-size:13px;font-weight:500;padding:11px 22px;border-radius:980px;border:1.5px solid var(--mid);cursor:pointer;font-family:var(--fb);display:flex;align-items:center;gap:7px;transition:border-color .2s,background .2s;}
+    .btn-outline-light:hover{border-color:#999;background:rgba(0,0,0,.03);}
+    .btn-outline-dark{background:transparent;color:#fff;font-size:13px;font-weight:500;padding:11px 22px;border-radius:980px;border:1px solid rgba(255,255,255,.2);cursor:pointer;font-family:var(--fb);display:flex;align-items:center;gap:7px;transition:border-color .2s,background .2s;}
+    .btn-outline-dark:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.05);}
+
+    /* Visual Side */
+    .svc-visual{border-radius:24px;overflow:hidden;position:relative;min-height:420px;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 40px rgba(0,0,0,.15);}
+    .vis-dark{background:linear-gradient(135deg,#020610 0%,#04091a 100%);border:.5px solid rgba(255,255,255,.06);}
+    .vis-amber{background:linear-gradient(135deg,#1a0800 0%,#2d1400 100%);border:.5px solid rgba(255,159,10,.12);}
+    .vis-blue{background:linear-gradient(135deg,#000d1a 0%,#001833 100%);border:.5px solid rgba(0,113,227,.12);}
+    .vis-red{background:linear-gradient(135deg,#1a0300 0%,#2d0600 100%);border:.5px solid rgba(255,59,48,.1);}
+    .vis-purple{background:linear-gradient(135deg,#0d0b1a 0%,#160d2a 100%);border:.5px solid rgba(94,92,230,.15);}
+    .vis-green{background:linear-gradient(135deg,#001a08 0%,#002e12 100%);border:.5px solid rgba(52,199,89,.1);}
+    .vis-teal{background:linear-gradient(135deg,#00101a 0%,#001c2e 100%);border:.5px solid rgba(0,180,220,.1);}
+    .vis-pink{background:linear-gradient(135deg,#1a0010 0%,#2d001c 100%);border:.5px solid rgba(255,45,85,.12);}
+    .svc-vis-main{width:90%;height:90%;object-fit:contain;z-index:2;position:relative;display:block;}
+    .svc-visual-emoji{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;width:120px;height:120px;object-fit:contain;opacity:0.15;pointer-events:none;}
+
+    /* PROMO CARD */
+    .svc-promo-card {
+      grid-column: span 2;
+      margin-top: 56px;
+      border-radius: 20px;
+      padding: 32px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .svc-block-light .svc-promo-card {
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    }
+    .svc-block-dark .svc-promo-card, .svc-block-darker .svc-promo-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .svc-promo-card:hover {
+      transform: translateY(-2px);
+    }
+    .svc-block-light .svc-promo-card:hover {
+      box-shadow: 0 16px 40px rgba(0,0,0,0.04);
+    }
+    .svc-block-dark .svc-promo-card:hover, .svc-block-darker .svc-promo-card:hover {
+      border-color: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+    }
+    .promo-text h3 {
+      font-family: var(--fb);
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      letter-spacing: -.01em;
+    }
+    .svc-block-light .promo-text h3 { color: #1d1d1f; }
+    .svc-block-dark .promo-text h3, .svc-block-darker .promo-text h3 { color: #fff; }
+    .promo-text p {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--gray);
+      margin: 0;
+    }
+    .promo-ctas {
+      display: flex;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .btn-green {
+      display: inline-block;
+      background: #00b87a;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 10px 22px;
+      border-radius: 980px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+    }
+    .btn-green:hover {
+      background: #009e66;
+      transform: scale(1.03);
+    }
+    .svc-promo-card .btn-fill {
+      padding: 10px 22px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    @media(max-width:900px) {
+      .svc-inner { grid-template-columns: 1fr; gap: 32px; }
+      .svc-inner.rev { direction: ltr; }
+      .svc-visual { min-height: 320px; }
+      .svc-promo-card {
+        grid-column: span 1;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px 28px;
+        margin-top: 40px;
+        gap: 20px;
+      }
+      .promo-ctas { width: 100%; }
+      .promo-ctas a { flex: 1; text-align: center; }
+    }
+
+    /* === QUICK CONTACT CARD === */
+    .qcontact{padding:0 24px 80px;}
+    .qcontact-inner{max-width:1160px;margin:0 auto;}
+    .qcard{border-radius:24px;padding:40px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+    .qcard-light{background:#fff;border:.5px solid var(--soft);box-shadow:0 8px 32px rgba(0,0,0,0.04);}
+    .qcard-dark{background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.07);}
+    .qcard-label{font-size:11px;font-weight:600;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;}
+    .qcard-title{font-family:var(--fd);font-size:clamp(20px,2.5vw,28px);color:var(--near-black);line-height:1.2;margin-bottom:6px;}
+    .qcard-title-w{color:#fff;}
+    .qcard-sub{font-size:14px;color:var(--gray);}
+    .qcard-sub-w{color:rgba(255,255,255,.38);}
+    .qcard-actions{display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0;}
+    .qcard-btn-primary{background:var(--blue);color:#fff;font-size:13px;font-weight:600;padding:12px 24px;border-radius:980px;border:none;cursor:pointer;font-family:var(--fb);transition:background .2s,transform .15s,box-shadow .2s;white-space:nowrap;}
+    .qcard-btn-primary:hover{background:var(--blue-h);transform:scale(1.03);box-shadow:0 6px 20px rgba(0,113,227,.4);}
+    .qcard-btn-wa{background:#25D366;color:#fff;font-size:13px;font-weight:500;padding:12px 22px;border-radius:980px;border:none;cursor:pointer;font-family:var(--fb);display:flex;align-items:center;gap:7px;transition:background .2s,transform .15s;white-space:nowrap;}
+    .qcard-btn-wa:hover{background:#20b858;transform:scale(1.03);}
+    .qcard-btn-li{background:transparent;color:var(--near-black);font-size:13px;font-weight:500;padding:12px 20px;border-radius:980px;border:1.5px solid var(--mid);cursor:pointer;font-family:var(--fb);display:flex;align-items:center;gap:7px;transition:border-color .2s;white-space:nowrap;}
+    .qcard-btn-li:hover{border-color:#888;}
+    .qcard-btn-li-dark{color:#fff;border-color:rgba(255,255,255,.2);}
+    .qcard-btn-li-dark:hover{border-color:rgba(255,255,255,.5);}
+
+    @media(max-width:900px){
+      .qcard{padding:24px 28px;gap:20px;}
+      .qcard-actions{width:100%;}
+      .qcard-actions a{flex:1;text-align:center;}
+      .qcard-actions button{width:100%;justify-content:center;}
+    }
+
+    /* === REVEAL === */
+    .rv{opacity:1;transform:none;transition:opacity .7s var(--ease),transform .7s var(--ease);}
+    .rv.in{opacity:1;transform:translateY(0);}
+    .d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}.d4{transition-delay:.32s;}.d5{transition-delay:.40s;}
+
+    /* === OTHER SECTIONS === */
+    .sec{padding:96px 24px;}
+    .sec-light{background:#f5f5f7;}
+    .sec-dark{background:#000;}
+    .sec-darkgray{background:#0a0a0a;}
+    .sw{max-width:1160px;margin:0 auto;padding:0 24px;}
+
+    .eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;padding:5px 13px;border-radius:980px;background:var(--blue-lt);border:.5px solid rgba(0,113,227,.2);}
+    .eyebrow-dot{width:5px;height:5px;border-radius:50%;background:var(--blue);box-shadow:0 0 6px var(--blue);}
+    .eyebrow-dark{background:rgba(0,113,227,.15);border:.5px solid rgba(0,113,227,.3);color:rgba(0,113,227,.9);}
+    .sec-title{font-family:var(--fd);font-size:clamp(32px,4.5vw,58px);line-height:1.08;letter-spacing:-.02em;color:var(--near-black);}
+    .sec-title-w{color:#fff;}
+    .sec-sub{font-size:17px;font-weight:300;color:var(--gray);line-height:1.7;max-width:560px;margin-top:14px;}
+    .sec-sub-w{color:rgba(255,255,255,.4);}
+
+    /* PROCESS SECTION */
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px;position:relative;}
+    .process-grid::before{content:'';position:absolute;top:31px;left:12.5%;right:12.5%;height:1px;background:linear-gradient(90deg,transparent,#d2d2d7 20%,#d2d2d7 80%,transparent);}
+    .step{text-align:center;padding:0 16px;position:relative;}
+    .step-circle{width:62px;height:62px;border-radius:50%;background:#fff;border:1px solid #e0e0e5;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:22px;color:var(--blue);transition:background .25s,border-color .25s,box-shadow .25s;position:relative;z-index:2;}
+    .step:hover .step-circle{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 8px 28px rgba(0,113,227,.35);}
+    .step-t{font-size:14px;font-weight:600;color:var(--near-black);margin-bottom:8px;}
+    .step-d{font-size:13px;color:var(--gray);line-height:1.6;}
+
+    /* WHY SECTION */
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:56px;}
+    .why-card{background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.07);border-radius:var(--r);padding:36px 28px;transition:background .25s,transform .25s;}
+    .why-card:hover{background:rgba(255,255,255,.07);transform:translateY(-5px);border-color:rgba(255,255,255,.14);}
+    .why-em-img{width:40px;height:40px;margin-bottom:18px;display:block;object-fit:contain;}
+    .why-t{font-size:16px;font-weight:600;color:#fff;margin-bottom:10px;}
+    .why-d{font-size:14px;color:rgba(255,255,255,.4);line-height:1.7;}
+
+    /* TESTIMONIALS SECTION */
+    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:56px;}
+    .testi-card{background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.07);border-radius:var(--r);padding:32px;transition:background .25s,transform .25s;}
+    .testi-card:hover{background:rgba(255,255,255,.07);transform:translateY(-4px);border-color:rgba(255,255,255,.14);}
+    .testi-stars{color:var(--amber);font-size:13px;margin-bottom:14px;letter-spacing:2px;}
+    .testi-text{font-size:15px;color:rgba(255,255,255,.62);line-height:1.7;margin-bottom:20px;font-style:italic;}
+    .testi-text::before{content:'"';font-family:var(--fd);font-size:44px;color:var(--blue);line-height:.4;vertical-align:-.4em;margin-right:4px;}
+    .testi-author{font-size:14px;font-weight:600;color:#fff;}
+    .testi-meta{display:flex;align-items:center;gap:6px;margin-top:4px;}
+    .testi-meta img.testi-flag-img{width:18px;height:auto;border-radius:2px;box-shadow:0 1px 2px rgba(0,0,0,0.1);}
+    .testi-country{font-size:12px;color:rgba(255,255,255,.28);}
+
+    @media(max-width:960px){
+      .why-grid,.testi-grid{grid-template-columns:1fr 1fr;}
+      .process-grid{grid-template-columns:1fr 1fr;}
+      .process-grid::before{display:none;}
+    }
+    @media(max-width:640px){
+      .why-grid,.testi-grid{grid-template-columns:1fr;}
+    }
+
+    /* FINAL CTA */
+    .cta-sec{background:var(--near-black);padding:100px 24px;text-align:center;position:relative;overflow:hidden;}
+    .cta-glow{position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(0,113,227,.12),transparent 70%);pointer-events:none;}
+    .cta-h{font-family:var(--fd);font-size:clamp(36px,5.5vw,72px);color:#fff;margin-bottom:18px;letter-spacing:-.025em;position:relative;}
+    .cta-p{font-size:17px;color:rgba(255,255,255,.4);margin-bottom:44px;position:relative;}
+    .cta-bs{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;}
+    .cta-contact-row{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:28px;position:relative;}
+    .cta-contact-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.35);}
+    .cta-contact-item a{color:rgba(255,255,255,.55);transition:color .2s;}
+    .cta-contact-item a:hover{color:#fff;}
+
+    /* FOOTER */
+    footer{background:#1d1d1f;padding:64px 24px 40px;border-top:.5px solid rgba(255,255,255,.07);}
+    .footer-w{max-width:1120px;margin:0 auto;}
+    .footer-top{display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:.5px solid rgba(255,255,255,.07);}
+    .footer-brand{font-family:var(--fd);font-size:22px;color:#fff;margin-bottom:10px;}
+    .footer-tagline{font-size:13px;color:rgba(255,255,255,.55);line-height:1.7;max-width:320px;}
+    .footer-flags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;}
+    .footer-flags img{width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.15);}
+    .footer-social{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;}
+    .footer-soc-link{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.06);border:.5px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:12px;font-weight:500;text-decoration:none;transition:background .2s,color .2s,border-color .2s;}
+    .footer-soc-link:hover{background:var(--blue);color:#fff;border-color:#3399ff;}
+    .footer-col h4{font-size:12px;font-weight:600;color:#fff;margin-bottom:16px;letter-spacing:.04em;}
+    .footer-link{display:block;font-size:12px;color:rgba(255,255,255,.55);margin-bottom:9px;cursor:pointer;transition:color .2s;text-decoration:none;}
+    .footer-link:hover{color:#fff;}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px;}
+    .footer-copy{font-size:12px;color:rgba(255,255,255,.4);}
+    .footer-copy a{color:#3399ff;text-decoration:none;}
+
+    /* WA FLOAT */
+    .wa-float{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background-color:#25d366;color:#fff;border-radius:50px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.15);z-index:9999;display:flex;align-items:center;justify-content:center;transition:transform .3s ease,box-shadow .3s ease;text-decoration:none;}
+    .wa-float:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(0,0,0,.2);}
+    .wa-icon{width:32px;height:32px;}
+  </style>
 </head>
 <body>
-<nav>
-  <div class="nav-wrap">
-    <a href="/" class="nav-logo"><div class="logo-dot"></div>Digital World</a>
-    <div class="nav-links">
-      <a href="/" class="nav-link">Home</a>
-      <div class="nav-link has-drop has-mega" style="color:#fff;">Services
-        <div class="mega-drop">
-          <div class="mega-inner">
-            <div class="mega-col">
-              <h3>🔍 SEO</h3>
-              <a href="/services/seo#svc-local">Local SEO</a>
-              <a href="/services/seo#svc-ecom">Ecommerce SEO</a>
-              <a href="/services/seo#svc-intl">International SEO</a>
-              <a href="/services/seo#svc-yt">Youtube / Video SEO</a>
-              <a href="/services/seo#svc-saas">SaaS SEO</a>
-              <a href="/services/seo#svc-semantic">Semantic SEO</a>
-              <a href="/services/seo#svc-ai">AI SEO</a>
-            </div>
-            <div class="mega-col">
-              <h3>🎯 PPC / Paid Ads</h3>
-              <a href="/services/ppc#svc-search">Google Search Ads</a>
-              <a href="/services/ppc#svc-shopping">Google Shopping Ads</a>
-              <a href="/services/ppc#svc-pmax">Performance Max</a>
-              <a href="/services/ppc#svc-youtube">YouTube Ads</a>
-              <a href="/services/ppc#svc-remarketing">Remarketing</a>
-              <a href="/services/ppc#svc-facebook">Facebook Ads</a>
-              <a href="/services/ppc#svc-instagram">Instagram Ads</a>
-              <a href="/services/ppc#svc-tiktok">TikTok / LinkedIn Ads</a>
-            </div>
-            <div class="mega-col">
-              <h3>🌐 Web Design &amp; Dev</h3>
-              <a href="/services/web#svc-uiux">Website Design (UI/UX)</a>
-              <a href="/services/web#svc-wordpress">WordPress Development</a>
-              <a href="/services/web#svc-shopify">Shopify Development</a>
-              <a href="/services/web#svc-landing">Landing Page Design</a>
-              <a href="/services/web#svc-speed">Website Speed Optimization</a>
-              <a href="/services/web#svc-maintenance">Website Maintenance</a>
-              <a href="/services/web#svc-migration">Website Migration</a>
-              <a href="/services/web#svc-cms">CMS Setup</a>
-            </div>
-            <div class="mega-col">
-              <h3>✍️ Content &amp; More</h3>
-              <a href="/services/content#svc-blog">Blog Writing &amp; Management</a>
-              <a href="/services/content#svc-email">Email Marketing</a>
-              <a href="/services/content#svc-content">Content Marketing</a>
-              <a href="/services/content#svc-cro">CRO Audit &amp; Testing</a>
-              <a href="/services/content#svc-backlink">Backlink Building</a>
-              <a href="/services/content#svc-pr">Digital PR &amp; HARO</a>
-              <a href="/services/content#svc-social">Social Media Content</a>
-              <a href="/services/content#svc-press">Press Releases &amp; PR</a>
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- === NAVBAR === -->
+  <nav>
+    <div class="nav-wrap">
+      <a href="/" class="nav-logo"><div class="logo-dot"></div>Digital World</a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <div class="nav-link has-drop has-mega" style="color:#fff;">Services
+          <div class="mega-drop">
+            <div class="mega-inner">
+              <div class="mega-col">
+                <h4>🔍 SEO</h4>
+                <a href="/services/seo#svc-local">Local SEO</a>
+                <a href="/services/seo#svc-ecom">Ecommerce SEO</a>
+                <a href="/services/seo#svc-intl">International SEO</a>
+                <a href="/services/seo#svc-yt">Youtube / Video SEO</a>
+                <a href="/services/seo#svc-saas">SaaS SEO</a>
+                <a href="/services/seo#svc-semantic">Semantic SEO</a>
+                <a href="/services/seo#svc-ai">AI SEO</a>
+              </div>
+              <div class="mega-col">
+                <h4>🎯 PPC / Paid Ads</h4>
+                <a href="/services/ppc#svc-search">Google Search Ads</a>
+                <a href="/services/ppc#svc-shopping">Google Shopping Ads</a>
+                <a href="/services/ppc#svc-pmax">Performance Max</a>
+                <a href="/services/ppc#svc-youtube">YouTube Ads</a>
+                <a href="/services/ppc#svc-remarketing">Remarketing</a>
+                <a href="/services/ppc#svc-facebook">Facebook Ads</a>
+                <a href="/services/ppc#svc-instagram">Instagram Ads</a>
+                <a href="/services/ppc#svc-tiktok">TikTok / LinkedIn Ads</a>
+              </div>
+              <div class="mega-col">
+                <h4>🌐 Web Design &amp; Dev</h4>
+                <a href="/services/web#svc-uiux">Website Design (UI/UX)</a>
+                <a href="/services/web#svc-wordpress">WordPress Development</a>
+                <a href="/services/web#svc-shopify">Shopify Development</a>
+                <a href="/services/web#svc-landing">Landing Page Design</a>
+                <a href="/services/web#svc-speed">Website Speed Optimization</a>
+                <a href="/services/web#svc-maintenance">Website Maintenance</a>
+                <a href="/services/web#svc-migration">Website Migration</a>
+                <a href="/services/web#svc-cms">CMS Setup</a>
+              </div>
+              <div class="mega-col">
+                <h4>✍️ Content &amp; More</h4>
+                <a href="/services/content#svc-blog">Blog Writing &amp; Management</a>
+                <a href="/services/content#svc-email">Email Marketing</a>
+                <a href="/services/content#svc-content">Content Marketing</a>
+                <a href="/services/content#svc-cro">CRO Audit &amp; Testing</a>
+                <a href="/services/content#svc-backlink">Backlink Building</a>
+                <a href="/services/content#svc-pr">Digital PR &amp; HARO</a>
+                <a href="/services/content#svc-social">Social Media Content</a>
+                <a href="/services/content#svc-press">Press Releases &amp; PR</a>
+              </div>
             </div>
           </div>
         </div>
+        <a href="/portfolio" class="nav-link">Portfolio</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/blog" class="nav-link">Blog</a>
+        <a href="/contact" class="nav-link">Contact</a>
       </div>
-      <a href="/portfolio" class="nav-link">Portfolio</a>
-      <a href="/about" class="nav-link">About</a>
-      <a href="/blog" class="nav-link">Blog</a>
-      <a href="/contact" class="nav-link">Contact</a>
+      <a href="/contact" class="nav-cta">Get Started</a>
     </div>
-    <a href="/contact" class="nav-cta">Get Started</a>
+    <button class="mobile-toggle" id="mobToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="mobile-drawer" id="mobDrawer">
+      <a href="/">Home</a>
+      <div class="ms-section">SEO Services</div>
+      <div class="ms-group">
+        <a class="ms-sub" href="/services/seo">All SEO Services</a>
+        <a class="ms-sub" href="/services/seo#svc-local">Local SEO</a>
+        <a class="ms-sub" href="/services/seo#svc-ecom">Ecommerce SEO</a>
+        <a class="ms-sub" href="/services/seo#svc-intl">International SEO</a>
+        <a class="ms-sub" href="/services/seo#svc-semantic">Semantic SEO</a>
+      </div>
+      <div class="ms-section">PPC / Paid Ads</div>
+      <div class="ms-group">
+        <a class="ms-sub" href="/services/ppc">All Paid Ads</a>
+        <a class="ms-sub" href="/services/ppc#svc-search">Google Ads</a>
+        <a class="ms-sub" href="/services/ppc#svc-facebook">Facebook Ads</a>
+        <a class="ms-sub" href="/services/ppc#svc-remarketing">Remarketing</a>
+      </div>
+      <div class="ms-section">Web Design &amp; Dev</div>
+      <div class="ms-group">
+        <a class="ms-sub" href="/services/web">All Web Services</a>
+        <a class="ms-sub" href="/services/web#svc-uiux">Website Design (UI/UX)</a>
+        <a class="ms-sub" href="/services/web#svc-wordpress">WordPress</a>
+        <a class="ms-sub" href="/services/web#svc-shopify">Shopify</a>
+        <a class="ms-sub" href="/services/web#svc-landing">Landing Pages</a>
+        <a class="ms-sub" href="/services/web#svc-speed">Speed Optimization</a>
+        <a class="ms-sub" href="/services/web#svc-maintenance">Maintenance</a>
+        <a class="ms-sub" href="/services/web#svc-migration">Migration</a>
+        <a class="ms-sub" href="/services/web#svc-cms">CMS Setup</a>
+      </div>
+      <div class="ms-section">Content &amp; More</div>
+      <div class="ms-group">
+        <a class="ms-sub" href="/services/content">All Content Services</a>
+        <a class="ms-sub" href="/services/content#svc-email">Email Marketing</a>
+        <a class="ms-sub" href="/services/content#svc-content">Content Marketing</a>
+      </div>
+      <a href="/portfolio" style="margin-top:14px;">Portfolio</a>
+      <a href="/about">About</a>
+      <a href="/blog">Blog</a>
+      <a href="/contact">Contact</a>
+      <a href="/contact" class="mobile-cta">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- === HERO === -->
+  <section class="hero">
+    <div class="hero-mesh">
+      <div class="orb o1"></div>
+      <div class="orb o2"></div>
+      <div class="orb o3"></div>
+      <div class="orb o4"></div>
+    </div>
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div class="h-badge"><div class="h-badge-dot"></div> Web Design &amp; Development</div>
+      <h1 class="hero-title">Websites that convert.<br/><em>Designs that impress.</em></h1>
+      <p class="hero-sub">We build <strong>modern, responsive, lightning-fast websites</strong> strategically engineered to convert visitors into customers and elevate your brand.</p>
+      <div class="hero-ctas">
+        <a href="/contact"><button class="btn-fill">Start Your Project  →</button></a>
+        <a href="https://wa.me/8801798667820?text=Hi%20Kamrujjaman!%20I'm%20interested%20in%20Web%20Design%20%26%20Development%20services." target="_blank"><button class="btn-ghost">💬 Chat on WhatsApp</button></a>
+      </div>
+      <div class="hero-pills">
+        <div class="h-pill"><img src="/Emoji/art.png" alt="UI/UX"> UI/UX Design</div>
+        <div class="h-pill"><img src="/Emoji/computer.png" alt="WordPress"> WordPress</div>
+        <div class="h-pill"><img src="/Emoji/shopping_trolley.png" alt="Shopify"> Shopify</div>
+        <div class="h-pill"><img src="/Emoji/rocket.png" alt="Landing Page"> Landing Pages</div>
+        <div class="h-pill"><img src="/Emoji/zap.png" alt="Speed"> Speed Optimization</div>
+        <div class="h-pill"><img src="/Emoji/shield.png" alt="Maintenance"> Maintenance</div>
+        <div class="h-pill"><img src="/Emoji/airplane.png" alt="Migration"> Migration</div>
+        <div class="h-pill"><img src="/Emoji/gear.png" alt="CMS"> CMS Setup</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === MARQUEE === -->
+  <div class="marquee-bar">
+    <div class="mtrack" id="mtrack"></div>
   </div>
-  <button class="mobile-toggle" id="mobToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-  <div class="mobile-drawer" id="mobDrawer">
-    <a href="/">Home</a>
-    <div class="ms-section">SEO Services</div>
-    <div class="ms-group">
-      <a class="ms-sub" href="/services/seo">All SEO Services</a>
-      <a class="ms-sub" href="/services/seo#svc-local">Local SEO</a>
-      <a class="ms-sub" href="/services/seo#svc-ecom">Ecommerce SEO</a>
-      <a class="ms-sub" href="/services/seo#svc-intl">International SEO</a>
-      <a class="ms-sub" href="/services/seo#svc-semantic">Semantic SEO</a>
+
+  <!-- === STATS === -->
+  <div class="stats-bar" id="statsBar">
+    <div class="stats-grid">
+      <div class="stat-box rv"><div class="stat-num"><span class="cnt" data-t="150">0</span><sup>+</sup></div><div class="stat-lbl">Websites Delivered</div></div>
+      <div class="stat-box rv d1"><div class="stat-num"><span class="cnt" data-t="100">0</span><sup>%</sup></div><div class="stat-lbl">Responsive Layouts</div></div>
+      <div class="stat-box rv d2"><div class="stat-num"><span class="cnt" data-t="90">0</span><sup>+</sup></div><div class="stat-lbl">Average PageSpeed score</div></div>
+      <div class="stat-box rv d3"><div class="stat-num"><span class="cnt" data-t="5">0</span><sup>+</sup></div><div class="stat-lbl">Years Experience</div></div>
     </div>
-    <div class="ms-section">PPC / Paid Ads</div>
-    <div class="ms-group">
-      <a class="ms-sub" href="/services/ppc">All Paid Ads</a>
-      <a class="ms-sub" href="/services/ppc#svc-search">Google Ads</a>
-      <a class="ms-sub" href="/services/ppc#svc-facebook">Facebook Ads</a>
-      <a class="ms-sub" href="/services/ppc#svc-remarketing">Remarketing</a>
-    </div>
-    <div class="ms-section">Web Design &amp; Dev</div>
-    <div class="ms-group">
-      <a class="ms-sub" href="/services/web">All Web Services</a>
-      <a class="ms-sub" href="/services/web#svc-wordpress">WordPress</a>
-      <a class="ms-sub" href="/services/web#svc-shopify">Shopify</a>
-    </div>
-    <div class="ms-section">Content &amp; More</div>
-    <div class="ms-group">
-      <a class="ms-sub" href="/services/content">All Content Services</a>
-      <a class="ms-sub" href="/services/content#svc-email">Email Marketing</a>
-      <a class="ms-sub" href="/services/content#svc-content">Content Marketing</a>
-    </div>
-    <a href="/portfolio" style="margin-top:14px;">Portfolio</a>
-    <a href="/about">About</a>
-    <a href="/blog">Blog</a>
-    <a href="/contact">Contact</a>
-    <a href="/contact" class="mobile-cta">Get Started</a>
   </div>
-</nav>
 
-<section class="svc-hero">
-  <div>
-    <p class="svc-hero-eyebrow">Web Design & Development</p>
-    <h1>Websites that convert.<br><em>Designs that impress.</em></h1>
-    <p class="svc-hero-sub">We create modern, responsive, lightning-fast websites strategically engineered to convert visitors into customers and elevate your brand.</p>
-    <div class="svc-hero-ctas"><a href="/contact" class="btn-fill">Start Your Project →</a><a href="#svc-uiux" class="btn-ghost">Explore Services</a></div>
+  <!-- === STICKY SERVICE NAV === -->
+  <div class="svc-nav">
+    <div class="svc-nav-inner">
+      <button class="svc-nav-link active" data-target="svc-uiux"><img src="/Emoji/art.png" alt="UI/UX"> Website Design (UI/UX)</button>
+      <button class="svc-nav-link" data-target="svc-wordpress"><img src="/Emoji/computer.png" alt="WordPress"> WordPress Development</button>
+      <button class="svc-nav-link" data-target="svc-shopify"><img src="/Emoji/shopping_trolley.png" alt="Shopify"> Shopify Development</button>
+      <button class="svc-nav-link" data-target="svc-landing"><img src="/Emoji/rocket.png" alt="Landing Page"> Landing Page Design</button>
+      <button class="svc-nav-link" data-target="svc-speed"><img src="/Emoji/zap.png" alt="Speed"> Speed Optimization</button>
+      <button class="svc-nav-link" data-target="svc-maintenance"><img src="/Emoji/shield.png" alt="Maintenance"> Website Maintenance</button>
+      <button class="svc-nav-link" data-target="svc-migration"><img src="/Emoji/airplane.png" alt="Migration"> Website Migration</button>
+      <button class="svc-nav-link" data-target="svc-cms"><img src="/Emoji/gear.png" alt="CMS"> CMS Setup</button>
+    </div>
   </div>
-</section>
-<div class="svc-icons">
-  <div class="svc-icon-item"><span>🎨</span>UI/UX</div>
-  <div class="svc-icon-item"><span>📱</span>Responsive</div>
-  <div class="svc-icon-item"><span>⚡</span>Fast</div>
-  <div class="svc-icon-item"><span>🛒</span>E-commerce</div>
-</div>
 
-<section class="svc-section light" id="svc-uiux"><div class="svc-inner"><div class="svc-text"><p class="svc-text-eyebrow">UI/UX Design</p><h2>Beautiful interfaces that users actually love to use.</h2><p>User-centered design that balances aesthetics with functionality. We create intuitive interfaces that guide visitors toward conversion while delivering a delightful experience.</p><ul><li>Custom responsive web design</li><li>Wireframing & prototyping</li><li>User journey mapping</li><li>Conversion-optimized layouts</li></ul></div><div class="svc-visual grad-1"><img src="/All%20Service%20Images/UIUX%20Design.png" alt="UI/UX Design - Beautiful user interfaces" loading="lazy"></div></div></section>
+  <!-- === ICONS ROW (NAVIGATION) === -->
+  <div class="svc-icons">
+    <a href="#svc-uiux" class="svc-icon-item"><img src="/Emoji/art.png" alt="UI/UX">UI/UX Design</a>
+    <a href="#svc-wordpress" class="svc-icon-item"><img src="/Emoji/computer.png" alt="WordPress">WordPress</a>
+    <a href="#svc-shopify" class="svc-icon-item"><img src="/Emoji/shopping_trolley.png" alt="Shopify">Shopify</a>
+    <a href="#svc-landing" class="svc-icon-item"><img src="/Emoji/rocket.png" alt="Landing Pages">Landing Pages</a>
+    <a href="#svc-speed" class="svc-icon-item"><img src="/Emoji/zap.png" alt="Speed">Speed Opt.</a>
+    <a href="#svc-maintenance" class="svc-icon-item"><img src="/Emoji/shield.png" alt="Maintenance">Maintenance</a>
+    <a href="#svc-migration" class="svc-icon-item"><img src="/Emoji/airplane.png" alt="Migration">Migration</a>
+    <a href="#svc-cms" class="svc-icon-item"><img src="/Emoji/gear.png" alt="CMS Setup">CMS Setup</a>
+  </div>
 
-<section class="svc-section dark" id="svc-wordpress"><div class="svc-inner reverse"><div class="svc-text"><p class="svc-text-eyebrow">WordPress Development</p><h2>Powerful WordPress sites built for scale.</h2><p>Custom WordPress themes and plugins, optimized for speed, security, and SEO. We build sites that are easy to manage and grow with your business.</p><ul><li>Custom theme development</li><li>Plugin development & customization</li><li>WooCommerce integration</li><li>Speed & security optimization</li></ul></div><div class="svc-visual grad-2"><img src="/All%20Service%20Images/WordPress%20Development.png" alt="WordPress Development - Custom themes and plugins" loading="lazy"></div></div></section>
-
-<section class="svc-section light" id="svc-shopify"><div class="svc-inner"><div class="svc-text"><p class="svc-text-eyebrow">Shopify Development</p><h2>E-commerce stores engineered to convert and sell.</h2><p>Custom Shopify stores designed for maximum conversion with optimized checkout flows, product pages, and seamless payment integration.</p><ul><li>Custom Shopify theme design</li><li>Product page optimization</li><li>Payment gateway integration</li><li>Inventory management setup</li></ul></div><div class="svc-visual grad-3"><img src="/All%20Service%20Images/Shopify%20Development.png" alt="Shopify Development - E-commerce store design" loading="lazy"></div></div></section>
-
-<section class="svc-section dark" id="svc-landing"><div class="svc-inner reverse"><div class="svc-text"><p class="svc-text-eyebrow">Landing Pages</p><h2>Landing pages engineered to maximize conversions.</h2><p>High-converting landing pages designed with psychological triggers, compelling copy, and clear CTAs that turn visitors into leads and customers.</p><ul><li>A/B tested page layouts</li><li>Conversion-focused copywriting</li><li>Lead capture form integration</li><li>Analytics & tracking setup</li></ul></div><div class="svc-visual grad-4"><img src="/All%20Service%20Images/Landing%20Pages.png" alt="Landing Pages - High-converting page design" loading="lazy"></div></div></section>
-
-<section class="svc-section light" id="svc-speed"><div class="svc-inner"><div class="svc-text"><p class="svc-text-eyebrow">Speed Optimization</p><h2>Every millisecond counts for your bottom line.</h2><p>Core Web Vitals optimization, image compression, code minification, and caching strategies that make your site blazing fast and Google-approved.</p><ul><li>Core Web Vitals optimization</li><li>Image & asset compression</li><li>CDN & caching setup</li><li>Code minification & lazy loading</li></ul></div><div class="svc-visual grad-5"><img src="/All%20Service%20Images/Speed%20Optimization.png" alt="Speed Optimization - Core Web Vitals" loading="lazy"></div></div></section>
-
-<section class="svc-section dark" id="svc-maintenance"><div class="svc-inner reverse"><div class="svc-text"><p class="svc-text-eyebrow">Website Maintenance</p><h2>Keep your site secure, updated & always running.</h2><p>Ongoing maintenance, security monitoring, plugin updates, and performance monitoring to ensure your website runs smoothly 24/7.</p><ul><li>Regular security updates</li><li>Plugin & theme updates</li><li>Daily backups & monitoring</li><li>Performance reporting</li></ul></div><div class="svc-visual grad-6"><img src="/All%20Service%20Images/Website%20Maintenance.png" alt="Website Maintenance - Security and updates" loading="lazy"></div></div></section>
-
-<section class="svc-cta"><h2>Ready to build something amazing?<br>Let's make it happen.</h2><p>Book a free consultation and get a custom proposal for your dream website — designed to convert and built to last.</p><a href="/contact" class="btn-fill">Start Your Project →</a></section>
-
-<footer>
-  <div class="footer-w">
-    <div class="footer-top">
+  <!-- === 1. WEBSITE DESIGN (UI/UX) === -->
+  <section class="svc-block svc-block-light" id="svc-uiux">
+    <div class="svc-inner">
       <div>
-        <div class="footer-brand">Digital World</div>
-        <p class="footer-tagline">Full-Service Digital Marketing Agency - 5 Years Experience Â· Serving 11 countries worldwide.</p>
-        <div class="footer-flags">
-          <img src="https://flagcdn.com/w20/us.png" srcset="https://flagcdn.com/w40/us.png 2x" alt="US" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-          <img src="https://flagcdn.com/w20/gb.png" srcset="https://flagcdn.com/w40/gb.png 2x" alt="UK" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-          <img src="https://flagcdn.com/w20/ca.png" srcset="https://flagcdn.com/w40/ca.png 2x" alt="CA" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-          <img src="https://flagcdn.com/w20/au.png" srcset="https://flagcdn.com/w40/au.png 2x" alt="AU" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-          <img src="https://flagcdn.com/w20/ie.png" srcset="https://flagcdn.com/w40/ie.png 2x" alt="IE" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-          <img src="https://flagcdn.com/w20/ae.png" srcset="https://flagcdn.com/w40/ae.png 2x" alt="AE" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-          <img src="https://flagcdn.com/w20/za.png" srcset="https://flagcdn.com/w40/za.png 2x" alt="ZA" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-          <img src="https://flagcdn.com/w20/de.png" srcset="https://flagcdn.com/w40/de.png 2x" alt="DE" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-          <img src="https://flagcdn.com/w20/nl.png" srcset="https://flagcdn.com/w40/nl.png 2x" alt="NL" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-          <img src="https://flagcdn.com/w20/nz.png" srcset="https://flagcdn.com/w40/nz.png 2x" alt="NZ" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-          <img src="https://flagcdn.com/w20/bd.png" srcset="https://flagcdn.com/w40/bd.png 2x" alt="BD" style="width:20px;height:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+        <div class="svc-num rv">01 — Website Design (UI/UX)</div>
+        <h2 class="svc-title svc-title-light rv">Form follows function,<br/>but first it converts.</h2>
+        <p class="svc-desc svc-desc-light rv">User-centered design that balances aesthetics with functionality. We create intuitive, gorgeous interfaces that guide visitors toward conversion while delivering a delightful user experience on any device.</p>
+        <ul class="svc-list svc-list-light rv">
+          <li>Custom responsive web design (Figma wireframes)</li>
+          <li>Interactive wireframing & prototyping</li>
+          <li>User journey mapping & usability audits</li>
+          <li>Conversion-optimized interface layouts</li>
+          <li>Modern design systems & component libraries</li>
+          <li>Vibrant gradients & high-quality visual aesthetics</li>
+        </ul>
+        <div class="svc-results rv">
+          <div class="svc-result svc-result-light"><div class="svc-result-v">95%</div><div class="svc-result-l">User Satisfaction</div></div>
+          <div class="svc-result svc-result-light"><div class="svc-result-v">-40%</div><div class="svc-result-l">Bounce Rate</div></div>
+          <div class="svc-result svc-result-light"><div class="svc-result-v">2.4x</div><div class="svc-result-l">Conversion Rate</div></div>
         </div>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/digitalworld1988" class="footer-soc-link" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">f</a>
-          <a href="https://www.instagram.com/" class="footer-soc-link" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">ig</a>
-          <a href="https://x.com/" class="footer-soc-link" target="_blank" rel="noopener" title="X (Twitter)" aria-label="X">&#120143;</a>
-          <a href="https://www.pinterest.com/" class="footer-soc-link" target="_blank" rel="noopener" title="Pinterest" aria-label="Pinterest">P</a>
-          <a href="https://www.youtube.com/" class="footer-soc-link" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube">&#9654;</a>
-          <a href="https://www.indeed.com/" class="footer-soc-link" target="_blank" rel="noopener" title="Indeed" aria-label="Indeed">in</a>
-          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" class="footer-soc-link" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">Li</a>
+        <div class="svc-cta-strip rv">
+          <a href="/contact"><button class="btn-blue">Get UI/UX Quote &nbsp;→</button></a>
+          <a href="/portfolio-web"><button class="btn-outline-light">📁 View Case Studies</button></a>
         </div>
-        <a href="/contact" style="display:inline-block;margin-top:18px;background:var(--blue,#0071e3);color:#fff;font-size:12px;font-weight:500;padding:10px 18px;border-radius:980px;text-decoration:none;">ðŸ“… Book Free Consultation</a>
       </div>
-      <div class="footer-col" style="padding-top: 10px;">
-        <a class="footer-link" href="/services/seo#svc-local">Local SEO</a>
-        <a class="footer-link" href="/services/seo#svc-ecom">Ecommerce SEO</a>
-        <a class="footer-link" href="/services/seo#svc-intl">International SEO</a>
-        <a class="footer-link" href="/services/seo#svc-yt">Youtube / Video SEO</a>
-        <a class="footer-link" href="/services/seo#svc-saas">SaaS SEO</a>
-        <a class="footer-link" href="/services/seo#svc-semantic">Semantic SEO</a>
-        <a class="footer-link" href="/services/seo#svc-ai">AI SEO</a>
+      <div class="svc-visual vis-blue rv d2">
+        <img src="/All%20Service%20Images/UIUX%20Design.png" alt="Website Design (UI/UX)" class="svc-vis-main">
+        <img src="/Emoji/art.png" class="svc-visual-emoji" alt="UI/UX Emoji">
       </div>
-      <div class="footer-col" style="padding-top: 10px;">
-        <a class="footer-link" href="/services/web#svc-wordpress">WordPress Development</a>
-        <a class="footer-link" href="/services/web#svc-shopify">Shopify Development</a>
-        <a class="footer-link" href="/services/ppc#svc-search">Google Ads / PPC</a>
-        <a class="footer-link" href="/services/ppc#svc-facebook">Facebook &amp; Instagram Ads</a>
-        <a class="footer-link" href="/services/content#svc-content">Content Marketing</a>
-      </div>
-      <div class="footer-col" style="padding-top: 10px;">
-        <a href="/about" class="footer-link">About Us</a>
-        <a href="/portfolio" class="footer-link">Portfolio</a>
-        <a href="/blog" class="footer-link">Blog</a>
-        <a class="footer-link" href="/contact">Contact</a>
-        <a class="footer-link" href="mailto:kj.jaman369@gmail.com">kj.jaman369@gmail.com</a>
-        <a class="footer-link" href="tel:+8801798667820">+880 1798-667820</a>
+      <div class="svc-promo-card">
+        <div class="promo-text">
+          <h3>Try our UI/UX auditing service today.</h3>
+          <p>Get a comprehensive review of your website's layout, user experience, and conversion bottlenecks.</p>
+        </div>
+        <div class="promo-ctas">
+          <a href="/contact" class="btn-fill">Free UX Audit</a>
+          <a href="/contact" class="btn-green">Contact Us</a>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">Copyright Â© 2025 Digital World - Kamrujjaman Mufti. All rights reserved.</p>
-      <p class="footer-copy">Based in Dhaka, Bangladesh Â· Available worldwide</p>
+  </section>
+  <div class="qcontact" style="background:#f5f5f7;padding-top:0;">
+    <div class="qcontact-inner">
+      <div class="qcard qcard-light rv">
+        <div class="qcard-text">
+          <div class="qcard-label">🎨 UI/UX Design</div>
+          <div class="qcard-title">Ready to elevate your user experience?</div>
+          <div class="qcard-sub">Let's discuss how we can design an interface that your users love and that drives conversions.</div>
+        </div>
+        <div class="qcard-actions">
+          <a href="/contact"><button class="qcard-btn-primary">📩 Get Free Audit</button></a>
+          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20UI%2FUX%20Design%20services." target="_blank"><button class="qcard-btn-wa">💬 WhatsApp</button></a>
+          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank"><button class="qcard-btn-li">in LinkedIn</button></a>
+        </div>
+      </div>
     </div>
   </div>
-</footer>
-<style>
-.wa-float {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  width: 56px;
-  height: 56px;
-  background-color: #25d366;
-  color: #fff;
-  border-radius: 50px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.wa-float:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-}
-.wa-icon {
-  width: 32px;
-  height: 32px;
-}
-</style>
-<a href="https://wa.me/8801798667820?text=Hi%20KJ%20Digital%20World%2C%20I%20am%20interested%20in%20your%20services" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="wa-icon"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.585.69 5.003 1.895 7.1L2 30l7.1-1.895A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm7.397 9.865l-1.265 5.975c-.095.425-.488.725-.923.725-.085 0-.17-.01-.252-.03l-2.42-.63a9.87 9.87 0 01-4.21 1.045c-5.465 0-9.9-4.435-9.9-9.9 0-.48.034-.955.102-1.42.13-.93.914-1.6 1.854-1.6h.08c.46.02.89.23 1.17.57l1.59 1.98c.37.46.33 1.12-.09 1.53l-.79.77c-.27.26-.34.66-.17 1 .47.94 1.15 1.76 1.99 2.41.35.27.83.27 1.17.03l1.02-.78c.44-.34 1.06-.32 1.48.04l2.01 1.73c.37.32.5.82.33 1.27z" fill="currentColor"></path></svg></a>
 
+  <!-- === 2. WORDPRESS DEVELOPMENT === -->
+  <section class="svc-block svc-block-dark" id="svc-wordpress">
+    <div class="svc-inner rev">
+      <div>
+        <div class="svc-num rv" style="color:var(--blue);">02 — WordPress Development</div>
+        <h2 class="svc-title svc-title-dark rv">Power of WordPress,<br/>without the bulk or bloat.</h2>
+        <p class="svc-desc svc-desc-dark rv">Custom WordPress themes and plugins built from scratch. Optimized for speed, security, and search engine optimization. We build sites that are easy to manage and grow with your business.</p>
+        <ul class="svc-list svc-list-dark rv">
+          <li>Custom theme development & child theme structures</li>
+          <li>Custom Gutenberg, Elementor or Divi setups</li>
+          <li>Plugin development & custom integrations</li>
+          <li>WooCommerce e-commerce store implementation</li>
+          <li>Headless WordPress setups using Next.js/Vite</li>
+          <li>Easy content editor configuration & administrator training</li>
+        </ul>
+        <div class="svc-results rv">
+          <div class="svc-result svc-result-dark"><div class="svc-result-v">99.9%</div><div class="svc-result-l">Uptime</div></div>
+          <div class="svc-result svc-result-dark"><div class="svc-result-v">0.8s</div><div class="svc-result-l">Load Time</div></div>
+          <div class="svc-result svc-result-dark"><div class="svc-result-v">5x</div><div class="svc-result-l">Ease of Use</div></div>
+        </div>
+        <div class="svc-cta-strip rv">
+          <a href="/contact"><button class="btn-blue">Create WordPress Site &nbsp;→</button></a>
+          <a href="/portfolio-web"><button class="btn-outline-dark">📁 View Case Studies</button></a>
+        </div>
+      </div>
+      <div class="svc-visual vis-dark rv d2">
+        <img src="/All%20Service%20Images/WordPress%20Development.png" alt="WordPress Development" class="svc-vis-main">
+        <img src="/Emoji/computer.png" class="svc-visual-emoji" alt="WordPress Emoji">
+      </div>
+      <div class="svc-promo-card">
+        <div class="promo-text">
+          <h3>Already have a WordPress site?</h3>
+          <p>Let's check your site's speed, security, and plugin setup with a deep-dive audit.</p>
+        </div>
+        <div class="promo-ctas">
+          <a href="/contact" class="btn-fill">Free WP Audit</a>
+          <a href="/contact" class="btn-green">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="qcontact" style="background:#000;padding-top:0;">
+    <div class="qcontact-inner">
+      <div class="qcard qcard-dark rv">
+        <div class="qcard-text">
+          <div class="qcard-label">💻 WordPress Development</div>
+          <div class="qcard-title qcard-title-w">Want a custom, fast WordPress site?</div>
+          <div class="qcard-sub">Tell us your requirements and we'll build a secure, lightweight, and scalable site.</div>
+        </div>
+        <div class="qcard-actions">
+          <a href="/contact"><button class="qcard-btn-primary">📩 Contact Us</button></a>
+          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20WordPress%20development." target="_blank"><button class="qcard-btn-wa">💬 WhatsApp</button></a>
+          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank"><button class="qcard-btn-li qcard-btn-li-dark">in LinkedIn</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- === 3. SHOPIFY DEVELOPMENT === -->
+  <section class="svc-block svc-block-light" id="svc-shopify">
+    <div class="svc-inner">
+      <div>
+        <div class="svc-num rv">03 — Shopify Development</div>
+        <h2 class="svc-title svc-title-light rv">E-commerce stores<br/>engineered to sell.</h2>
+        <p class="svc-desc svc-desc-light rv">Custom Shopify stores designed for maximum conversion. We optimize your product pages, shopping cart flows, and payment integrations to turn browsers into repeat buyers.</p>
+        <ul class="svc-list svc-list-light rv">
+          <li>Custom Shopify OS 2.0 theme design & setup</li>
+          <li>Product page & collection page optimization</li>
+          <li>Third-party app integration & theme customization</li>
+          <li>Shopify Plus enterprise setups & migrations</li>
+          <li>Frictionless payment gateway & check-out configuration</li>
+          <li>Inventory management & shipping setup</li>
+        </ul>
+        <div class="svc-results rv">
+          <div class="svc-result svc-result-light"><div class="svc-result-v">+240%</div><div class="svc-result-l">Sales Volume</div></div>
+          <div class="svc-result svc-result-light"><div class="svc-result-v">6.8x</div><div class="svc-result-l">ROI</div></div>
+          <div class="svc-result svc-result-light"><div class="svc-result-v">-22%</div><div class="svc-result-l">Abandoned Cart</div></div>
+        </div>
+        <div class="svc-cta-strip rv">
+          <a href="/contact"><button class="btn-blue">Build Shopify Store &nbsp;→</button></a>
+          <a href="/portfolio-web"><button class="btn-outline-light">📁 View Case Studies</button></a>
+        </div>
+      </div>
+      <div class="svc-visual vis-green rv d2">
+        <img src="/All%20Service%20Images/Shopify%20Development.png" alt="Shopify Development" class="svc-vis-main">
+        <img src="/Emoji/shopping_trolley.png" class="svc-visual-emoji" alt="Shopify Emoji">
+      </div>
+      <div class="svc-promo-card">
+        <div class="promo-text">
+          <h3>Audit your Shopify setup today.</h3>
+          <p>Get a comprehensive review of your store's speed, conversion rate, and app setup.</p>
+        </div>
+        <div class="promo-ctas">
+          <a href="/contact" class="btn-fill">Free Store Audit</a>
+          <a href="/contact" class="btn-green">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="qcontact" style="background:#f5f5f7;padding-top:0;">
+    <div class="qcontact-inner">
+      <div class="qcard qcard-light rv">
+        <div class="qcard-text">
+          <div class="qcard-label">🛒 Shopify Development</div>
+          <div class="qcard-title">Ready to grow your e-commerce sales?</div>
+          <div class="qcard-sub">Share your store URL and we'll audit your setup and show you your conversion opportunities.</div>
+        </div>
+        <div class="qcard-actions">
+          <a href="/contact"><button class="qcard-btn-primary">📩 Free Store Audit</button></a>
+          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20Shopify%20development." target="_blank"><button class="qcard-btn-wa">💬 WhatsApp</button></a>
+          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank"><button class="qcard-btn-li">in LinkedIn</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<script>
-(function(){
-  var t=document.getElementById('mobToggle'),d=document.getElementById('mobDrawer');
-  if(t&&d){
-    t.addEventListener('click',function(){t.classList.toggle('open');d.classList.toggle('open');});
-    d.querySelectorAll('a:not(.ms-sub)').forEach(function(a){
-      a.addEventListener('click',function(){t.classList.remove('open');d.classList.remove('open');});
+  <!-- === 4. LANDING PAGE DESIGN === -->
+  <section class="svc-block svc-block-dark" id="svc-landing">
+    <div class="svc-inner rev">
+      <div>
+        <div class="svc-num rv" style="color:var(--blue);">04 — Landing Page Design</div>
+        <h2 class="svc-title svc-title-dark rv">Landing pages engineered<br/>to convert traffic.</h2>
+        <p class="svc-desc svc-desc-dark rv">High-converting landing pages built with psychological triggers, compelling copywriting, and clear call-to-actions. Designed specifically to maximize the ROI of your Google, Facebook, and LinkedIn ad campaigns.</p>
+        <ul class="svc-list svc-list-dark rv">
+          <li>A/B tested, distraction-free page layouts</li>
+          <li>Conversion-focused headlines & copywriting</li>
+          <li>Seamless lead capture forms & CRM integrations</li>
+          <li>Analytics tracking, tracking pixels & event tracking</li>
+          <li>Ultra-fast page speed performance</li>
+          <li>Multi-variant landing page testing setups</li>
+        </ul>
+        <div class="svc-results rv">
+          <div class="svc-result svc-result-dark"><div class="svc-result-v">35%</div><div class="svc-result-l">Avg. Conv. Rate</div></div>
+          <div class="svc-result svc-result-dark"><div class="svc-result-v">-48%</div><div class="svc-result-l">Cost Per Lead</div></div>
+          <div class="svc-result svc-result-dark"><div class="svc-result-v">3.2x</div><div class="svc-result-l">Ad ROI</div></div>
+        </div>
+        <div class="svc-cta-strip rv">
+          <a href="/contact"><button class="btn-blue">Design Landing Page &nbsp;→</button></a>
+          <a href="/portfolio-web"><button class="btn-outline-dark">📁 View Case Studies</button></a>
+        </div>
+      </div>
+      <div class="svc-visual vis-red rv d2">
+        <img src="/All%20Service%20Images/Landing%20Pages.png" alt="Landing Page Design" class="svc-vis-main">
+        <img src="/Emoji/rocket.png" class="svc-visual-emoji" alt="Landing Page Emoji">
+      </div>
+      <div class="svc-promo-card">
+        <div class="promo-text">
+          <h3>Need a quick landing page?</h3>
+          <p>Connect with our design team to launch your high-converting page in as little as 48 hours.</p>
+        </div>
+        <div class="promo-ctas">
+          <a href="/contact" class="btn-fill">Launch Page Now</a>
+          <a href="/contact" class="btn-green">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="qcontact" style="background:#000;padding-top:0;">
+    <div class="qcontact-inner">
+      <div class="qcard qcard-dark rv">
+        <div class="qcard-text">
+          <div class="qcard-label">🚀 Landing Page Design</div>
+          <div class="qcard-title qcard-title-w">Need a high-converting landing page?</div>
+          <div class="qcard-sub">Let's build a dedicated page for your ad campaigns to maximize your advertising return.</div>
+        </div>
+        <div class="qcard-actions">
+          <a href="/contact"><button class="qcard-btn-primary">📩 Get Page Now</button></a>
+          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20Landing%20Page%20design." target="_blank"><button class="qcard-btn-wa">💬 WhatsApp</button></a>
+          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank"><button class="qcard-btn-li qcard-btn-li-dark">in LinkedIn</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === 5. WEBSITE SPEED OPTIMIZATION === -->
+  <section class="svc-block svc-block-light" id="svc-speed">
+    <div class="svc-inner">
+      <div>
+        <div class="svc-num rv">05 — Website Speed Optimization</div>
+        <h2 class="svc-title svc-title-light rv">Every millisecond counts<br/>for your bottom line.</h2>
+        <p class="svc-desc svc-desc-light rv">Core Web Vitals optimization. We compress images, minify code, setup content delivery networks (CDNs), and implement caching strategies to make your site blazing fast and Google PageSpeed approved.</p>
+        <ul class="svc-list svc-list-light rv">
+          <li>Core Web Vitals audits & code modifications</li>
+          <li>Lossless image compression & WebP/AVIF conversions</li>
+          <li>CDN setup (Cloudflare) & server-side caching</li>
+          <li>Code minification, deferring & lazy loading scripts</li>
+          <li>Database queries & theme bloat cleanup</li>
+          <li>Time to First Byte (TTFB) & server response optimization</li>
+        </ul>
+        <div class="svc-results rv">
+          <div class="svc-result svc-result-light"><div class="svc-result-v">100/100</div><div class="svc-result-l">PageSpeed score</div></div>
+          <div class="svc-result svc-result-light"><div class="svc-result-v">-60%</div><div class="svc-result-l">Load Time</div></div>
+          <div class="svc-result svc-result-light"><div class="svc-result-v">3x</div><div class="svc-result-l">User Retention</div></div>
+        </div>
+        <div class="svc-cta-strip rv">
+          <a href="/contact"><button class="btn-blue">Optimize My Speed &nbsp;→</button></a>
+          <a href="/portfolio-web"><button class="btn-outline-light">📁 View Case Studies</button></a>
+        </div>
+      </div>
+      <div class="svc-visual vis-purple rv d2">
+        <img src="/All%20Service%20Images/Speed%20Optimization.png" alt="Website Speed Optimization" class="svc-vis-main">
+        <img src="/Emoji/zap.png" class="svc-visual-emoji" alt="Speed Emoji">
+      </div>
+      <div class="svc-promo-card">
+        <div class="promo-text">
+          <h3>Is your website loading slow?</h3>
+          <p>Run a free PageSpeed audit today to see how fast your site loads and get recommendations.</p>
+        </div>
+        <div class="promo-ctas">
+          <a href="/contact" class="btn-fill">Free Speed Audit</a>
+          <a href="/contact" class="btn-green">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="qcontact" style="background:#f5f5f7;padding-top:0;">
+    <div class="qcontact-inner">
+      <div class="qcard qcard-light rv">
+        <div class="qcard-text">
+          <div class="qcard-label">⚡ Speed Optimization</div>
+          <div class="qcard-title">Want a blazing fast website?</div>
+          <div class="qcard-sub">Let us audit and optimize your site speed to improve user retention, search rankings, and conversions.</div>
+        </div>
+        <div class="qcard-actions">
+          <a href="/contact"><button class="qcard-btn-primary">📩 Speed Audit</button></a>
+          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20Website%20Speed%20optimization." target="_blank"><button class="qcard-btn-wa">💬 WhatsApp</button></a>
+          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank"><button class="qcard-btn-li">in LinkedIn</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === 6. WEBSITE MAINTENANCE === -->
+  <section class="svc-block svc-block-dark" id="svc-maintenance">
+    <div class="svc-inner rev">
+      <div>
+        <div class="svc-num rv" style="color:var(--blue);">06 — Website Maintenance</div>
+        <h2 class="svc-title svc-title-dark rv">Keep your site secure,<br/>updated &amp; always running.</h2>
+        <p class="svc-desc svc-desc-dark rv">Ongoing technical support, security monitoring, regular backup processes, and minor content updates to ensure your business website runs smoothly and securely 24 hours a day, 7 days a week.</p>
+        <ul class="svc-list svc-list-dark rv">
+          <li>Daily, weekly, and monthly offsite backups</li>
+          <li>CMS, plugin, and core database software updates</li>
+          <li>Continuous firewall setup & malware scanning</li>
+          <li>Uptime checks & instant downtime notifications</li>
+          <li>Priority bug fixes & text/layout content adjustments</li>
+          <li>Domain & web hosting configurations</li>
+        </ul>
+        <div class="svc-results rv">
+          <div class="svc-result svc-result-dark"><div class="svc-result-v">24/7</div><div class="svc-result-l">Monitoring</div></div>
+          <div class="svc-result svc-result-dark"><div class="svc-result-v">100%</div><div class="svc-result-l">Secure</div></div>
+          <div class="svc-result svc-result-dark"><div class="svc-result-v">&lt;30m</div><div class="svc-result-l">Response time</div></div>
+        </div>
+        <div class="svc-cta-strip rv">
+          <a href="/contact"><button class="btn-blue">Get Maintenance Plan &nbsp;→</button></a>
+          <a href="/portfolio-web"><button class="btn-outline-dark">📁 View Case Studies</button></a>
+        </div>
+      </div>
+      <div class="svc-visual vis-teal rv d2">
+        <img src="/All%20Service%20Images/Website%20Maintenance.png" alt="Website Maintenance" class="svc-vis-main">
+        <img src="/Emoji/shield.png" class="svc-visual-emoji" alt="Maintenance Emoji">
+      </div>
+      <div class="svc-promo-card">
+        <div class="promo-text">
+          <h3>Are you worried about website security?</h3>
+          <p>Let us handle the backups, software updates, and security monitoring so you can focus entirely on your business.</p>
+        </div>
+        <div class="promo-ctas">
+          <a href="/contact" class="btn-fill">Free Consultation</a>
+          <a href="/contact" class="btn-green">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="qcontact" style="background:#000;padding-top:0;">
+    <div class="qcontact-inner">
+      <div class="qcard qcard-dark rv">
+        <div class="qcard-text">
+          <div class="qcard-label">🛡️ Website Maintenance</div>
+          <div class="qcard-title qcard-title-w">Need peace of mind for your website?</div>
+          <div class="qcard-sub">Subscribe to our maintenance plans to keep your website updated, secure, and running without a glitch.</div>
+        </div>
+        <div class="qcard-actions">
+          <a href="/contact"><button class="qcard-btn-primary">📩 Subscribe Now</button></a>
+          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20Website%20Maintenance%20plans." target="_blank"><button class="qcard-btn-wa">💬 WhatsApp</button></a>
+          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank"><button class="qcard-btn-li qcard-btn-li-dark">in LinkedIn</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === 7. WEBSITE MIGRATION === -->
+  <section class="svc-block svc-block-light" id="svc-migration">
+    <div class="svc-inner">
+      <div>
+        <div class="svc-num rv">07 — Website Migration</div>
+        <h2 class="svc-title svc-title-light rv">Seamless site migration<br/>with zero ranking loss.</h2>
+        <p class="svc-desc svc-desc-light rv">Moving websites can be risky. We ensure a seamless transition of your domain, database, CMS, and link structure with zero downtime and preserved search rankings.</p>
+        <ul class="svc-list svc-list-light rv">
+          <li>CMS platform transitions (e.g. WordPress to Shopify)</li>
+          <li>Full database, user registry & asset transfer</li>
+          <li>301 redirect mapping & server-level configuration</li>
+          <li>Pre and post-migration SEO ranking audits</li>
+          <li>Broken link, image assets & script error resolutions</li>
+          <li>Secure domain name server (DNS) transfers</li>
+        </ul>
+        <div class="svc-results rv">
+          <div class="svc-result svc-result-light"><div class="svc-result-v">0%</div><div class="svc-result-l">Traffic Loss</div></div>
+          <div class="svc-result svc-result-light"><div class="svc-result-v">100%</div><div class="svc-result-l">Data Integrity</div></div>
+          <div class="svc-result svc-result-light"><div class="svc-result-v">Zero</div><div class="svc-result-l">Downtime</div></div>
+        </div>
+        <div class="svc-cta-strip rv">
+          <a href="/contact"><button class="btn-blue">Migrate Website &nbsp;→</button></a>
+          <a href="/portfolio-web"><button class="btn-outline-light">📁 View Case Studies</button></a>
+        </div>
+      </div>
+      <div class="svc-visual vis-blue rv d2">
+        <img src="/All%20Service%20Images/Technical%20SEO.png" alt="Website Migration" class="svc-vis-main">
+        <img src="/Emoji/airplane.png" class="svc-visual-emoji" alt="Migration Emoji">
+      </div>
+      <div class="svc-promo-card">
+        <div class="promo-text">
+          <h3>Planning a site migration soon?</h3>
+          <p>Get a complete pre-migration roadmap to safeguard your content, assets, and SEO rankings.</p>
+        </div>
+        <div class="promo-ctas">
+          <a href="/contact" class="btn-fill">Get Migration Plan</a>
+          <a href="/contact" class="btn-green">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="qcontact" style="background:#f5f5f7;padding-top:0;">
+    <div class="qcontact-inner">
+      <div class="qcard qcard-light rv">
+        <div class="qcard-text">
+          <div class="qcard-label">✈️ Website Migration</div>
+          <div class="qcard-title">Need a safe website migration?</div>
+          <div class="qcard-sub">Get in touch with us to safely migrate your website without losing search traffic or business data.</div>
+        </div>
+        <div class="qcard-actions">
+          <a href="/contact"><button class="qcard-btn-primary">📩 Plan Migration</button></a>
+          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20Website%20Migration%20services." target="_blank"><button class="qcard-btn-wa">💬 WhatsApp</button></a>
+          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank"><button class="qcard-btn-li">in LinkedIn</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === 8. CMS SETUP === -->
+  <section class="svc-block svc-block-dark" id="svc-cms">
+    <div class="svc-inner rev">
+      <div>
+        <div class="svc-num rv" style="color:var(--blue);">08 — CMS Setup</div>
+        <h2 class="svc-title svc-title-dark rv">CMS setup configured<br/>exactly for your team.</h2>
+        <p class="svc-desc svc-desc-dark rv">We configure, customize, and optimize your chosen CMS platform to give you a powerful, flexible, and easy-to-use editor interface.</p>
+        <ul class="svc-list svc-list-dark rv">
+          <li>CMS platform recommendations (WordPress, Shopify, Webflow, etc.)</li>
+          <li>Standard theme installation & base configuration</li>
+          <li>Setup of essential security, SEO & speed plugins/apps</li>
+          <li>Custom fields & content architecture modeling</li>
+          <li>Role-based user permissions & approval flows</li>
+          <li>Dashboard cleanups & administrative documentation</li>
+        </ul>
+        <div class="svc-results rv">
+          <div class="svc-result svc-result-dark"><div class="svc-result-v">5+</div><div class="svc-result-l">CMS Platforms</div></div>
+          <div class="svc-result svc-result-dark"><div class="svc-result-v">100%</div><div class="svc-result-l">Custom Config</div></div>
+          <div class="svc-result svc-result-dark"><div class="svc-result-v">48h</div><div class="svc-result-l">Base Setup</div></div>
+        </div>
+        <div class="svc-cta-strip rv">
+          <a href="/contact"><button class="btn-blue">Setup CMS Platform &nbsp;→</button></a>
+          <a href="/portfolio-web"><button class="btn-outline-dark">📁 View Case Studies</button></a>
+        </div>
+      </div>
+      <div class="svc-visual vis-purple rv d2">
+        <img src="/All%20Service%20Images/SaaS%20SEO.png" alt="CMS Setup" class="svc-vis-main">
+        <img src="/Emoji/gear.png" class="svc-visual-emoji" alt="CMS Setup Emoji">
+      </div>
+      <div class="svc-promo-card">
+        <div class="promo-text">
+          <h3>Not sure which CMS fits your project?</h3>
+          <p>We'll evaluate your project needs and recommend the perfect CMS platform for your team.</p>
+        </div>
+        <div class="promo-ctas">
+          <a href="/contact" class="btn-fill">Free Consultation</a>
+          <a href="/contact" class="btn-green">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="qcontact" style="background:#000;padding-top:0;">
+    <div class="qcontact-inner">
+      <div class="qcard qcard-dark rv">
+        <div class="qcard-text">
+          <div class="qcard-label">⚙️ CMS Setup</div>
+          <div class="qcard-title qcard-title-w">Ready to set up your CMS?</div>
+          <div class="qcard-sub">Contact us today and we'll configure a CMS that empowers your team to edit and manage content with ease.</div>
+        </div>
+        <div class="qcard-actions">
+          <a href="/contact"><button class="qcard-btn-primary">📩 Setup CMS</button></a>
+          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20CMS%20Setup%20services." target="_blank"><button class="qcard-btn-wa">💬 WhatsApp</button></a>
+          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank"><button class="qcard-btn-li qcard-btn-li-dark">in LinkedIn</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === PROCESS SECTION === -->
+  <section class="sec sec-light">
+    <div class="sw" style="text-align:center;max-width:620px;margin:0 auto 0;">
+      <div class="eyebrow rv"><div class="eyebrow-dot"></div>How It Works</div>
+      <h2 class="sec-title rv">Our proven 4-step<br/>web development process.</h2>
+      <p class="sec-sub rv" style="margin:14px auto 0;text-align:center;">No hidden phases. You'll know exactly what we're doing and why — every step of the way.</p>
+    </div>
+    <div class="sw">
+      <div class="process-grid">
+        <div class="step rv">
+          <div class="step-circle">1</div>
+          <div class="step-t">Discovery & UI/UX</div>
+          <div class="step-d">We study your brand, map out user journeys, and design fully custom, conversion-focused layout mockups in Figma.</div>
+        </div>
+        <div class="step rv d1">
+          <div class="step-circle">2</div>
+          <div class="step-t">Clean Development</div>
+          <div class="step-d">We build custom, standards-compliant themes, plugins, and structures using lightweight, highly optimized code.</div>
+        </div>
+        <div class="step rv d2">
+          <div class="step-circle">3</div>
+          <div class="step-t">Optimize & Test</div>
+          <div class="step-d">We run extensive PageSpeed, Core Web Vitals, security, and responsive checks across all browsers and devices.</div>
+        </div>
+        <div class="step rv d3">
+          <div class="step-circle">4</div>
+          <div class="step-t">Launch & Handover</div>
+          <div class="step-d">We launch your website with zero downtime, configure daily backups, and train your team on how to edit pages.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === WHY US SECTION === -->
+  <section class="sec sec-dark">
+    <div class="sw">
+      <div style="text-align:center;max-width:600px;margin:0 auto 0;">
+        <div class="eyebrow eyebrow-dark rv"><div class="eyebrow-dot"></div>Why Choose Us</div>
+        <h2 class="sec-title sec-title-w rv">Why clients trust Digital World.</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card rv">
+          <img src="/Emoji/bar_chart.png" class="why-em-img" alt="Results">
+          <div class="why-t">Conversion-First Focus</div>
+          <div class="why-d">We don't just design pretty websites; we design digital sales machines. Every layout decision is backed by conversion data.</div>
+        </div>
+        <div class="why-card rv d1">
+          <img src="/Emoji/zap.png" class="why-em-img" alt="Speed">
+          <div class="why-t">Blazing-Fast Code</div>
+          <div class="why-d">Core Web Vitals are key search ranking factors. We write lightweight, clean layouts that rank high and load instantly.</div>
+        </div>
+        <div class="why-card rv d2">
+          <img src="/Emoji/lock.png" class="why-em-img" alt="Security">
+          <div class="why-t">Bulletproof Security</div>
+          <div class="why-d">We configure firewalls, remove plugins with vulnerability risks, and implement robust security headers on every site we launch.</div>
+        </div>
+        <div class="why-card rv d3">
+          <img src="/Emoji/handshake.png" class="why-em-img" alt="Direct Access">
+          <div class="why-t">Direct Access</div>
+          <div class="why-d">You work directly with Kamrujjaman — no junior project managers, no delays. Expert assistance on your project, always.</div>
+        </div>
+        <div class="why-card rv d4">
+          <img src="/Emoji/mag.png" class="why-em-img" alt="Transparency">
+          <div class="why-t">Full Transparency</div>
+          <div class="why-d">Full ownership of files, graphics, themes, and configuration setups. We work with complete visibility and hourly communication updates.</div>
+        </div>
+        <div class="why-card rv d5">
+          <img src="/Emoji/earth_africa.png" class="why-em-img" alt="Global Support">
+          <div class="why-t">Global Support</div>
+          <div class="why-d">Serving clients in 11 countries across multiple time zones. Reach us easily via email, WhatsApp, or LinkedIn.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === TESTIMONIALS SECTION === -->
+  <section class="sec sec-darkgray">
+    <div class="sw">
+      <div style="text-align:center;max-width:600px;margin:0 auto 0;">
+        <div class="eyebrow eyebrow-dark rv"><div class="eyebrow-dot"></div>Client Stories</div>
+        <h2 class="sec-title sec-title-w rv">Trusted by businesses worldwide.</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card rv">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Digital World redesigned our corporate site in Figma and developed it on WordPress. Our speed score went from 30 to 95 and conversion rate doubled in 30 days!</p>
+          <div class="testi-author">David K.</div>
+          <div class="testi-meta"><img src="/Flag%20emoji/United%20States.svg" class="testi-flag-img" alt="US Flag"><span class="testi-country">New York, USA · SaaS Brand</span></div>
+        </div>
+        <div class="testi-card rv d1">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Our Shopify store setup was a mess with conflicting app integrations. Kamrujjaman cleaned the custom themes, boosted checkout speeds, and fixed cart dropouts.</p>
+          <div class="testi-author">Emma L.</div>
+          <div class="testi-meta"><img src="/Flag%20emoji/United%20Kingdom.svg" class="testi-flag-img" alt="UK Flag"><span class="testi-country">London, UK · E-commerce Retailer</span></div>
+        </div>
+        <div class="testi-card rv d2">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">They safely migrated our CMS system and 500+ blog articles to a new domain without losing a single organic ranking keyword. The redirect setups were flawless.</p>
+          <div class="testi-author">Tariq J.</div>
+          <div class="testi-meta"><img src="/Flag%20emoji/UAE.svg" class="testi-flag-img" alt="UAE Flag"><span class="testi-country">Dubai, UAE · Content Publisher</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === FINAL CTA === -->
+  <section class="cta-sec">
+    <div class="cta-glow"></div>
+    <div class="eyebrow eyebrow-dark rv" style="margin-bottom:24px;"><div class="eyebrow-dot"></div> Free Consultation</div>
+    <h2 class="cta-h rv">Ready to build your dream site?</h2>
+    <p class="cta-p rv">Book a free 30-minute web strategy call. We'll audit your current website speed and layout, identify conversion bottlenecks, and show you exactly what's possible — no obligation.</p>
+    <div class="cta-bs rv">
+      <a href="/contact"><button class="btn-fill" style="font-size:16px;padding:16px 36px;">Book Free Strategy call  →</button></a>
+      <a href="https://wa.me/8801798667820?text=Hi%20Kamrujjaman!%20I'd%20like%20a%20free%20web%20strategy%20call." target="_blank"><button class="btn-ghost" style="font-size:16px;padding:16px 36px;">💬 WhatsApp Us</button></a>
+    </div>
+    <div class="cta-contact-row rv">
+      <div class="cta-contact-item">📧 <a href="mailto:kj.jaman369@gmail.com">kj.jaman369@gmail.com</a></div>
+      <div class="cta-contact-item">📞 <a href="tel:+8801798667820">+880 1798-667820</a></div>
+      <div class="cta-contact-item">💼 <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank">LinkedIn</a></div>
+    </div>
+  </section>
+
+  <!-- === FOOTER === -->
+  <footer>
+    <div class="footer-w">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">Digital World</div>
+          <p class="footer-tagline">Full-Service Digital Marketing Agency · 5 Years Experience · Serving 11 countries worldwide.</p>
+          <div class="footer-flags">
+            <img src="/Flag%20emoji/United%20States.svg" alt="United States">
+            <img src="/Flag%20emoji/United%20Kingdom.svg" alt="United Kingdom">
+            <img src="/Flag%20emoji/Canada.svg" alt="Canada">
+            <img src="/Flag%20emoji/Australia.svg" alt="Australia">
+            <img src="/Flag%20emoji/Ireland.svg" alt="Ireland">
+            <img src="/Flag%20emoji/UAE.svg" alt="UAE">
+            <img src="/Flag%20emoji/South%20Africa.svg" alt="South Africa">
+            <img src="/Flag%20emoji/Germany.svg" alt="Germany">
+            <img src="/Flag%20emoji/Netherlands.svg" alt="Netherlands">
+            <img src="/Flag%20emoji/New%20Zealand.svg" alt="New Zealand">
+            <img src="/Flag%20emoji/Bangladesh.svg" alt="Bangladesh">
+          </div>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/digitalworld1988" class="footer-soc-link" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">f</a>
+            <a href="https://www.instagram.com/" class="footer-soc-link" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">ig</a>
+            <a href="https://x.com/" class="footer-soc-link" target="_blank" rel="noopener" title="X (Twitter)" aria-label="X">X</a>
+            <a href="https://www.pinterest.com/" class="footer-soc-link" target="_blank" rel="noopener" title="Pinterest" aria-label="Pinterest">P</a>
+            <a href="https://www.youtube.com/" class="footer-soc-link" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube">▶</a>
+            <a href="https://www.indeed.com/" class="footer-soc-link" target="_blank" rel="noopener" title="Indeed" aria-label="Indeed">in</a>
+            <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" class="footer-soc-link" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">Li</a>
+          </div>
+          <a href="/contact" style="display:inline-block;margin-top:18px;background:var(--blue,#0071e3);color:#fff;font-size:12px;font-weight:500;padding:10px 18px;border-radius:980px;text-decoration:none;">📅 Book Free Consultation</a>
+        </div>
+        <div class="footer-col">
+          <h4>SEO Services</h4>
+          <a class="footer-link" href="/services/seo#svc-local">Local SEO</a>
+          <a class="footer-link" href="/services/seo#svc-ecom">Ecommerce SEO</a>
+          <a class="footer-link" href="/services/seo#svc-intl">International SEO</a>
+          <a class="footer-link" href="/services/seo#svc-saas">SaaS SEO</a>
+          <a class="footer-link" href="/services/seo#svc-semantic">Semantic SEO</a>
+        </div>
+        <div class="footer-col">
+          <h4>Web &amp; Ads</h4>
+          <a class="footer-link" href="/services/web#svc-wordpress">WordPress Development</a>
+          <a class="footer-link" href="/services/web#svc-shopify">Shopify Development</a>
+          <a class="footer-link" href="/services/ppc#svc-search">Google Ads / PPC</a>
+          <a class="footer-link" href="/services/ppc#svc-facebook">Facebook &amp; Instagram Ads</a>
+          <a class="footer-link" href="/services/content#svc-content">Content Marketing</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="/about" class="footer-link">About Us</a>
+          <a href="/portfolio" class="footer-link">Portfolio</a>
+          <a href="/blog" class="footer-link">Blog</a>
+          <a class="footer-link" href="/contact">Contact</a>
+          <a class="footer-link" href="mailto:kj.jaman369@gmail.com">kj.jaman369@gmail.com</a>
+          <a class="footer-link" href="tel:+8801798667820">+880 1798-667820</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">Copyright © 2025 Digital World · Kamrujjaman Mufti. All rights reserved.</p>
+        <p class="footer-copy">Based in Dhaka, Bangladesh · Available worldwide</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/8801798667820?text=Hi%20KJ%20Digital%20World%2C%20I%20am%20interested%20in%20your%20services" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="wa-icon"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.585.69 5.003 1.895 7.1L2 30l7.1-1.895A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm7.397 9.865l-1.265 5.975c-.095.425-.488.725-.923.725-.085 0-.17-.01-.252-.03l-2.42-.63a9.87 9.87 0 01-4.21 1.045c-5.465 0-9.9-4.435-9.9-9.9 0-.48.034-.955.102-1.42.13-.93.914-1.6 1.854-1.6h.08c.46.02.89.23 1.17.57l1.59 1.98c.37.46.33 1.12-.09 1.53l-.79.77c-.27.26-.34.66-.17 1 .47.94 1.15 1.76 1.99 2.41.35.27.83.27 1.17.03l1.02-.78c.44-.34 1.06-.32 1.48.04l2.01 1.73c.37.32.5.82.33 1.27z" fill="currentColor"></path></svg></a>
+
+  <script>
+    /* —— CURSOR —— */
+    const cur = document.getElementById('cursor');
+    const ring = document.getElementById('cursor-ring');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX;
+      my = e.clientY;
+      if (cur) {
+        cur.style.left = mx + 'px';
+        cur.style.top = my + 'px';
+      }
     });
-    // collapsible section groups
-    d.querySelectorAll('.ms-section').forEach(function(sec){
-      sec.addEventListener('click',function(){
-        sec.classList.toggle('open');
-        var grp=sec.nextElementSibling;
-        if(grp&&grp.classList.contains('ms-group'))grp.classList.toggle('open');
+    
+    function animRing() {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      if (ring) {
+        ring.style.left = rx + 'px';
+        ring.style.top = ry + 'px';
+      }
+      requestAnimationFrame(animRing);
+    }
+    animRing();
+    
+    document.querySelectorAll('button, a, .nav-link, .svc-visual, .why-card, .testi-card, .step, .stat-box').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        if (cur) {
+          cur.style.width = '16px';
+          cur.style.height = '16px';
+        }
+        if (ring) {
+          ring.style.width = '54px';
+          ring.style.height = '54px';
+        }
+      });
+      el.addEventListener('mouseleave', () => {
+        if (cur) {
+          cur.style.width = '10px';
+          cur.style.height = '10px';
+        }
+        if (ring) {
+          ring.style.width = '36px';
+          ring.style.height = '36px';
+        }
       });
     });
-  }
-})();
-</script>
+
+    /* —— MARQUEE —— */
+    const items = ['🎨 UI/UX Design', '💻 WordPress', '🛒 Shopify', '🚀 Landing Pages', '⚡ Speed Optimization', '🛡️ Maintenance', '✈️ Website Migration', '⚙️ CMS Setup', '📱 Responsive Layouts', '📊 Conversion Focused', '🔒 Secure Hosting', '🌐 Custom Theme Development'];
+    const track = document.getElementById('mtrack');
+    const double = [...items, ...items];
+    if (track) {
+      track.innerHTML = double.map(i => `<div class="mitem"><b>${i}</b> <span>·</span></div>`).join('');
+    }
+
+    /* —— SCROLL REVEAL —— */
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
+    /* —— COUNT UP —— */
+    function countUp(el, target) {
+      let c = 0;
+      const dur = 2000;
+      const steps = Math.min(target, 60);
+      const inc = target / steps;
+      const interval = dur / steps;
+      const t = setInterval(() => {
+        c += inc;
+        el.textContent = Math.min(Math.round(c), target);
+        if (c >= target) clearInterval(t);
+      }, interval);
+    }
+    
+    const countObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          document.querySelectorAll('.cnt').forEach(el => countUp(el, +el.dataset.t));
+          countObs.disconnect();
+        }
+      });
+    }, { threshold: 0.4 });
+    const statsSection = document.querySelector('#statsBar');
+    if (statsSection) countObs.observe(statsSection);
+
+    /* —— STICKY NAV HIGHLIGHT (SCROLLSPY) —— */
+    const svcSections = ['svc-uiux', 'svc-wordpress', 'svc-shopify', 'svc-landing', 'svc-speed', 'svc-maintenance', 'svc-migration', 'svc-cms'];
+    const navLinks = document.querySelectorAll('.svc-nav-link');
+    const sectionObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          const match = document.querySelector(`.svc-nav-link[data-target="${e.target.id}"]`);
+          if (match) match.classList.add('active');
+        }
+      });
+    }, { threshold: 0.35 });
+    svcSections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) sectionObs.observe(el);
+    });
+
+    /* —— NAV LINK SMOOTH SCROLL —— */
+    navLinks.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.getElementById(btn.dataset.target);
+        if (target) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          btn.classList.add('active');
+          const navHeight = document.querySelector('nav').offsetHeight || 64;
+          const subNavHeight = document.querySelector('.svc-nav').offsetHeight || 50;
+          const extraOffset = 10;
+          const elementPosition = target.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition - navHeight - subNavHeight - extraOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+          
+          history.pushState(null, null, `#${btn.dataset.target}`);
+        }
+      });
+    });
+
+    // Handle scroll offset on page load if there is a hash
+    window.addEventListener('load', () => {
+      if (window.location.hash) {
+        const hash = window.location.hash.substring(1);
+        const target = document.getElementById(hash);
+        if (target) {
+          setTimeout(() => {
+            const navHeight = document.querySelector('nav').offsetHeight || 64;
+            const subNavHeight = document.querySelector('.svc-nav').offsetHeight || 50;
+            const extraOffset = 10;
+            const elementPosition = target.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = elementPosition - navHeight - subNavHeight - extraOffset;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'auto'
+            });
+          }, 150);
+        }
+      }
+    });
+
+    /* —— NAV BG ON SCROLL —— */
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (nav) {
+        nav.style.background = window.scrollY > 50 ? 'rgba(29,29,31,.95)' : 'rgba(29,29,31,.78)';
+      }
+    });
+
+    /* === MOBILE COLLAPSIBLE WIRE === */
+    (function() {
+      var d = document.getElementById('mobDrawer');
+      if (!d) return;
+      var secs = d.querySelectorAll('.ms-section');
+      secs.forEach(function(s) {
+        if (s.nextElementSibling && !s.nextElementSibling.classList.contains('ms-group')) {
+          var grp = document.createElement('div');
+          grp.className = 'ms-group';
+          var n = s.nextElementSibling;
+          while (n && n.classList && n.classList.contains('ms-sub')) {
+            var nx = n.nextElementSibling;
+            grp.appendChild(n);
+            n = nx;
+          }
+          s.parentNode.insertBefore(grp, n);
+        }
+        s.addEventListener('click', function() {
+          var g = s.nextElementSibling;
+          var open = !s.classList.contains('open');
+          s.classList.toggle('open', open);
+          if (g) g.classList.toggle('open', open);
+        });
+      });
+    })();
+
+    /* === MOBILE MENU WIRE-UP === */
+    (function() {
+      var t = document.getElementById('mobToggle');
+      var d = document.getElementById('mobDrawer');
+      if (t && d) {
+        t.addEventListener('click', function() {
+          var open = !d.classList.contains('open');
+          t.classList.toggle('open', open);
+          d.classList.toggle('open', open);
+          document.body.style.overflow = open ? 'hidden' : '';
+        });
+        d.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            t.classList.remove('open');
+            d.classList.remove('open');
+            document.body.style.overflow = '';
+          });
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
