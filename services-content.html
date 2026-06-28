@@ -134,15 +134,15 @@
     .svc-nav-link:hover{color:var(--near-black);background:rgba(0,0,0,.04);}
     .svc-nav-link.active{color:var(--purple);background:rgba(124,58,237,.08);}
 
-    /* === ICONS ROW (Stacked Emojis Layout exactly as in screenshot) === */
+    /* === ICONS ROW (Custom PNG emojis from folder) === */
     .svc-icons{display:flex;justify-content:center;gap:40px;padding:40px 24px;background:#0a0a0a;border-bottom:1px solid rgba(255,255,255,.06);}
-    .svc-icon-item{text-align:center;color:rgba(255,255,255,.85);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;transition:color .2s var(--ease),transform .2s var(--ease);}
+    .svc-icon-item{text-align:center;color:rgba(255,255,255,.85);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;transition:color .2s var(--ease),transform .2s var(--ease);display:flex;flex-direction:column;align-items:center;}
     .svc-icon-item:hover{color:#fff;transform:translateY(-2px);}
-    .svc-icon-item span{display:block;font-size:28px;margin-bottom:6px;}
+    .svc-icon-item img{display:block;width:28px;height:28px;margin-bottom:6px;object-fit:contain;}
     @media(max-width:600px){
       .svc-icons{gap:20px;flex-wrap:wrap;}
       .svc-icon-item{font-size:10px;}
-      .svc-icon-item span{font-size:22px;}
+      .svc-icon-item img{width:22px;height:22px;}
     }
 
     /* === SERVICE SECTIONS === */
@@ -158,9 +158,12 @@
     .svc-section.dark .svc-text h2{color:#fff;}
     .svc-section.light .svc-text h2{color:#1d1d1f;}
     .svc-text p{font-size:16px;line-height:1.8;color:var(--gray);margin-bottom:24px;}
+    
+    /* Lists with custom local PNG bullets */
     .svc-text ul{list-style:none;padding:0;}
     .svc-text ul li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--gray);padding:6px 0;}
-    .svc-text ul li::before{content:'✓';color:var(--green);font-weight:700;font-size:14px;}
+    .svc-text ul li::before{display:none;}
+    .li-emoji{width:16px;height:16px;object-fit:contain;flex-shrink:0;margin-right:2px;}
     
     /* Premium Visual Gradients (Deep and Rich Dark profiles matching screen) */
     .svc-visual{width:100%;aspect-ratio:4/3;border-radius:20px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;}
@@ -640,12 +643,12 @@
     <div class="mtrack" id="mtrack"></div>
   </div>
 
-  <!-- === ICONS ROW (Stacked Emojis Layout exactly as in screenshot) === -->
+  <!-- === ICONS ROW (Custom PNG emojis from Emoji folder) === -->
   <div class="svc-icons">
-    <div class="svc-icon-item"><span>✍️</span>Blog</div>
-    <div class="svc-icon-item"><span>📧</span>Email</div>
-    <div class="svc-icon-item"><span>📱</span>Social</div>
-    <div class="svc-icon-item"><span>📊</span>Strategy</div>
+    <div class="svc-icon-item"><img src="/Emoji/writing_hand.png" alt="Blog">Blog</div>
+    <div class="svc-icon-item"><img src="/Emoji/e-mail.png" alt="Email">Email</div>
+    <div class="svc-icon-item"><img src="/Emoji/iphone.png" alt="Social">Social</div>
+    <div class="svc-icon-item"><img src="/Emoji/bar_chart.png" alt="Strategy">Strategy</div>
   </div>
 
   <!-- === 1. BLOG WRITING & MANAGEMENT === -->
@@ -656,12 +659,12 @@
         <h2>Writings that rank, educate, and convert.</h2>
         <p>Research-driven, expertly crafted blog content that targets high-intent keywords, answers your audience's questions, and establishes your brand as an industry authority.</p>
         <ul>
-          <li>Keyword-targeted blog writing</li>
-          <li>Editorial calendar management</li>
-          <li>Content optimization &amp; updates</li>
-          <li>Topic cluster strategy</li>
-          <li>Expert writer network access</li>
-          <li>AI content editing &amp; formatting</li>
+          <li><img src="/Emoji/memo.png" class="li-emoji" alt="bullet">Keyword-targeted blog writing</li>
+          <li><img src="/Emoji/blue_book.png" class="li-emoji" alt="bullet">Editorial calendar management</li>
+          <li><img src="/Emoji/recycle.png" class="li-emoji" alt="bullet">Content optimization &amp; updates</li>
+          <li><img src="/Emoji/seedling.png" class="li-emoji" alt="bullet">Topic cluster strategy</li>
+          <li><img src="/Emoji/busts_in_silhouette.png" class="li-emoji" alt="bullet">Expert writer network access</li>
+          <li><img src="/Emoji/robot_face.png" class="li-emoji" alt="bullet">AI content editing &amp; formatting</li>
         </ul>
         <div class="svc-results">
           <div class="svc-result svc-result-light"><div class="svc-result-v">95%</div><div class="svc-result-l">User Satisfaction</div></div>
@@ -713,12 +716,12 @@
         <h2>Emails that open, click, and close deals.</h2>
         <p>From welcome sequences to promotional campaigns, we create email marketing that nurtures leads, drives repeat purchases, and keeps your brand top-of-mind.</p>
         <ul>
-          <li>Automated drip sequences</li>
-          <li>Newsletter design &amp; copywriting</li>
-          <li>A/B testing &amp; optimization</li>
-          <li>List segmentation &amp; personalization</li>
-          <li>E-commerce flow automation</li>
-          <li>Deliverability &amp; spam monitoring</li>
+          <li><img src="/Emoji/arrows_counterclockwise.png" class="li-emoji" alt="bullet">Automated drip sequences</li>
+          <li><img src="/Emoji/e-mail.png" class="li-emoji" alt="bullet">Newsletter design &amp; copywriting</li>
+          <li><img src="/Emoji/test_tube.png" class="li-emoji" alt="bullet">A/B testing &amp; optimization</li>
+          <li><img src="/Emoji/busts_in_silhouette.png" class="li-emoji" alt="bullet">List segmentation &amp; personalization</li>
+          <li><img src="/Emoji/shopping_trolley.png" class="li-emoji" alt="bullet">E-commerce flow automation</li>
+          <li><img src="/Emoji/shield.png" class="li-emoji" alt="bullet">Deliverability &amp; spam monitoring</li>
         </ul>
         <div class="svc-results">
           <div class="svc-result svc-result-dark"><div class="svc-result-v">38%</div><div class="svc-result-l">Open Rate</div></div>
@@ -770,12 +773,12 @@
         <h2>A full content engine built for growth.</h2>
         <p>Comprehensive content strategies that align with your business goals, target the right audience at every stage of the funnel, and deliver measurable ROI.</p>
         <ul>
-          <li>Content audit &amp; gap analysis</li>
-          <li>Buyer persona development</li>
-          <li>Content funnel mapping</li>
-          <li>Performance tracking &amp; reporting</li>
-          <li>Competitor analysis</li>
-          <li>Multi-channel distribution strategy</li>
+          <li><img src="/Emoji/mag.png" class="li-emoji" alt="bullet">Content audit &amp; gap analysis</li>
+          <li><img src="/Emoji/busts_in_silhouette.png" class="li-emoji" alt="bullet">Buyer persona development</li>
+          <li><img src="/Emoji/world_map.png" class="li-emoji" alt="bullet">Content funnel mapping</li>
+          <li><img src="/Emoji/chart_with_upwards_trend.png" class="li-emoji" alt="bullet">Performance tracking &amp; reporting</li>
+          <li><img src="/Emoji/scales.png" class="li-emoji" alt="bullet">Competitor analysis</li>
+          <li><img src="/Emoji/globe_with_meridians.png" class="li-emoji" alt="bullet">Multi-channel distribution strategy</li>
         </ul>
         <div class="svc-results">
           <div class="svc-result svc-result-light"><div class="svc-result-v">2.5x</div><div class="svc-result-l">Lead Increase</div></div>
@@ -827,12 +830,12 @@
         <h2>Optimize elements for high-performance conversions.</h2>
         <p>Data-driven conversion rate optimization through A/B testing, heatmap analysis, user behavior tracking, and strategic UX improvements that turn more visitors into customers.</p>
         <ul>
-          <li>A/B &amp; multivariate testing</li>
-          <li>Heatmap &amp; session recording analysis</li>
-          <li>Landing page optimization</li>
-          <li>Funnel analysis &amp; improvement</li>
-          <li>User research &amp; surveys</li>
-          <li>Speed &amp; mobile UX optimization</li>
+          <li><img src="/Emoji/test_tube.png" class="li-emoji" alt="bullet">A/B &amp; multivariate testing</li>
+          <li><img src="/Emoji/camera_with_flash.png" class="li-emoji" alt="bullet">Heatmap &amp; session recording analysis</li>
+          <li><img src="/Emoji/art.png" class="li-emoji" alt="bullet">Landing page optimization</li>
+          <li><img src="/Emoji/chart_with_upwards_trend.png" class="li-emoji" alt="bullet">Funnel analysis &amp; improvement</li>
+          <li><img src="/Emoji/memo.png" class="li-emoji" alt="bullet">User research &amp; surveys</li>
+          <li><img src="/Emoji/zap.png" class="li-emoji" alt="bullet">Speed &amp; mobile UX optimization</li>
         </ul>
         <div class="svc-results">
           <div class="svc-result svc-result-dark"><div class="svc-result-v">3.2%</div><div class="svc-result-l">Avg Conversion</div></div>
@@ -884,12 +887,12 @@
         <h2>High authority links Google actually trusts.</h2>
         <p>Acquire high-quality, relevant links from real publications, boosting your domain authority and search engine keyword rankings.</p>
         <ul>
-          <li>Blogger outreach &amp; relationship building</li>
-          <li>Broken link building strategy</li>
-          <li>Guest post placement</li>
-          <li>Link profile audit &amp; cleanup</li>
-          <li>Resource page link building</li>
-          <li>Competitor backlink analysis</li>
+          <li><img src="/Emoji/handshake.png" class="li-emoji" alt="bullet">Blogger outreach &amp; relationship building</li>
+          <li><img src="/Emoji/link.png" class="li-emoji" alt="bullet">Broken link building strategy</li>
+          <li><img src="/Emoji/blue_book.png" class="li-emoji" alt="bullet">Guest post placement</li>
+          <li><img src="/Emoji/recycle.png" class="li-emoji" alt="bullet">Link profile audit &amp; cleanup</li>
+          <li><img src="/Emoji/memo.png" class="li-emoji" alt="bullet">Resource page link building</li>
+          <li><img src="/Emoji/mag.png" class="li-emoji" alt="bullet">Competitor backlink analysis</li>
         </ul>
         <div class="svc-results">
           <div class="svc-result svc-result-light"><div class="svc-result-v">DR 70+</div><div class="svc-result-l">Max Link Authority</div></div>
@@ -941,12 +944,12 @@
         <h2>Get featured in major publications &amp; media.</h2>
         <p>Strategic digital PR through HARO, journalist outreach, press releases, and brand storytelling that earns high-authority media placements and backlinks.</p>
         <ul>
-          <li>HARO &amp; journalist outreach</li>
-          <li>Brand storytelling &amp; pitch creation</li>
-          <li>Crisis communication planning</li>
-          <li>Media list compilation</li>
-          <li>Product launch PR campaigns</li>
-          <li>Thought leadership positioning</li>
+          <li><img src="/Emoji/writing_hand.png" class="li-emoji" alt="bullet">HARO &amp; journalist outreach</li>
+          <li><img src="/Emoji/speech_balloon.png" class="li-emoji" alt="bullet">Brand storytelling &amp; pitch creation</li>
+          <li><img src="/Emoji/shield.png" class="li-emoji" alt="bullet">Crisis communication planning</li>
+          <li><img src="/Emoji/memo.png" class="li-emoji" alt="bullet">Media list compilation</li>
+          <li><img src="/Emoji/mega.png" class="li-emoji" alt="bullet">Product launch PR campaigns</li>
+          <li><img src="/Emoji/brain.png" class="li-emoji" alt="bullet">Thought leadership positioning</li>
         </ul>
         <div class="svc-results">
           <div class="svc-result svc-result-dark"><div class="svc-result-v">100%</div><div class="svc-result-l">Organic Placements</div></div>
@@ -998,12 +1001,12 @@
         <h2>Content that stops the scroll &amp; builds fans.</h2>
         <p>Platform-specific social media content that drives engagement, builds your community, and converts followers into customers across Instagram, LinkedIn, Facebook, and more.</p>
         <ul>
-          <li>Platform-specific content creation</li>
-          <li>Community management</li>
-          <li>Visual content &amp; graphic design</li>
-          <li>Hashtag strategy &amp; trending topics</li>
-          <li>Social media calendar creation</li>
-          <li>Analytics &amp; reporting</li>
+          <li><img src="/Emoji/iphone.png" class="li-emoji" alt="bullet">Platform-specific content creation</li>
+          <li><img src="/Emoji/busts_in_silhouette.png" class="li-emoji" alt="bullet">Community management</li>
+          <li><img src="/Emoji/art.png" class="li-emoji" alt="bullet">Visual content &amp; graphic design</li>
+          <li><img src="/Emoji/chart_with_upwards_trend.png" class="li-emoji" alt="bullet">Hashtag strategy &amp; trending topics</li>
+          <li><img src="/Emoji/memo.png" class="li-emoji" alt="bullet">Social media calendar creation</li>
+          <li><img src="/Emoji/bar_chart.png" class="li-emoji" alt="bullet">Analytics &amp; reporting</li>
         </ul>
         <div class="svc-results">
           <div class="svc-result svc-result-light"><div class="svc-result-v">+300%</div><div class="svc-result-l">Audience Growth</div></div>
@@ -1055,12 +1058,12 @@
         <h2>Announce your news to the right audience.</h2>
         <p>Distribute search-optimized press releases to premium wires and outlets, building immediate awareness, brand visibility, and direct search authority.</p>
         <ul>
-          <li>Press release writing &amp; editing</li>
-          <li>Wire distribution &amp; syndication</li>
-          <li>Media kit design &amp; creation</li>
-          <li>Post-distribution reporting</li>
-          <li>Local &amp; national targeting</li>
-          <li>Industry-specific outreach</li>
+          <li><img src="/Emoji/rolled_up_newspaper.png" class="li-emoji" alt="bullet">Press release writing &amp; editing</li>
+          <li><img src="/Emoji/globe_with_meridians.png" class="li-emoji" alt="bullet">Wire distribution &amp; syndication</li>
+          <li><img src="/Emoji/art.png" class="li-emoji" alt="bullet">Media kit design &amp; creation</li>
+          <li><img src="/Emoji/chart_with_upwards_trend.png" class="li-emoji" alt="bullet">Post-distribution reporting</li>
+          <li><img src="/Emoji/round_pushpin.png" class="li-emoji" alt="bullet">Local &amp; national targeting</li>
+          <li><img src="/Emoji/handshake.png" class="li-emoji" alt="bullet">Industry-specific outreach</li>
         </ul>
         <div class="svc-results">
           <div class="svc-result svc-result-dark"><div class="svc-result-v">200+</div><div class="svc-result-l">Syndications</div></div>
@@ -1189,19 +1192,19 @@
       <div class="testi-grid">
         <div class="testi-card rv">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">Digital World structured our corporate blog content into clusters. Our keyword ranks jumped by 150% and organic inbound inquiries doubled in 4 months.</p>
+          <p class="testi-text">Digital World redesigned our corporate site in Figma and developed it on WordPress. Our speed score went from 30 to 95 and conversion rate doubled in 30 days!</p>
           <div class="testi-author">David K.</div>
           <div class="testi-meta"><img src="/Flag%20emoji/United%20States.svg" class="testi-flag-img" alt="US Flag"><span class="testi-country">New York, USA · SaaS Brand</span></div>
         </div>
         <div class="testi-card rv d1">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">Their automated email welcome flows and weekly newsletters drove instant repeat sales. The copy aligns perfectly with our brand's voice.</p>
+          <p class="testi-text">Our Shopify store setup was a mess with conflicting app integrations. Kamrujjaman cleaned the custom themes, boosted checkout speeds, and fixed cart dropouts.</p>
           <div class="testi-author">Emma L.</div>
           <div class="testi-meta"><img src="/Flag%20emoji/United%20Kingdom.svg" class="testi-flag-img" alt="UK Flag"><span class="testi-country">London, UK · E-commerce Retailer</span></div>
         </div>
         <div class="testi-card rv d2">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">They pitched our brand stories on high-tier publications and earned 20+ whitehat backlinks. Our domain rating (DR) increased from 32 to 55.</p>
+          <p class="testi-text">They safely migrated our CMS system and 500+ blog articles to a new domain without losing a single organic ranking keyword. The redirect setups were flawless.</p>
           <div class="testi-author">Tariq J.</div>
           <div class="testi-meta"><img src="/Flag%20emoji/UAE.svg" class="testi-flag-img" alt="UAE Flag"><span class="testi-country">Dubai, UAE · Content Publisher</span></div>
         </div>

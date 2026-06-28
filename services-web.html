@@ -132,15 +132,15 @@
     .svc-nav-link:hover{color:var(--near-black);background:rgba(0,0,0,.04);}
     .svc-nav-link.active{color:var(--blue);background:rgba(0,113,227,.08);}
 
-    /* === ICONS ROW (Standard 4 Emojis Stacked Layout from screenshot) === */
+    /* === ICONS ROW (Custom PNG emojis from folder) === */
     .svc-icons{display:flex;justify-content:center;gap:40px;padding:40px 24px;background:#0a0a0a;border-bottom:1px solid rgba(255,255,255,.06);}
-    .svc-icon-item{text-align:center;color:rgba(255,255,255,.85);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;transition:color .2s var(--ease),transform .2s var(--ease);}
+    .svc-icon-item{text-align:center;color:rgba(255,255,255,.85);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;transition:color .2s var(--ease),transform .2s var(--ease);display:flex;flex-direction:column;align-items:center;}
     .svc-icon-item:hover{color:#fff;transform:translateY(-2px);}
-    .svc-icon-item span{display:block;font-size:28px;margin-bottom:6px;}
+    .svc-icon-item img{display:block;width:28px;height:28px;margin-bottom:6px;object-fit:contain;}
     @media(max-width:600px){
       .svc-icons{gap:20px;flex-wrap:wrap;}
       .svc-icon-item{font-size:10px;}
-      .svc-icon-item span{font-size:22px;}
+      .svc-icon-item img{width:22px;height:22px;}
     }
 
     /* === SERVICE SECTIONS === */
@@ -156,9 +156,12 @@
     .svc-section.dark .svc-text h2{color:#fff;}
     .svc-section.light .svc-text h2{color:#1d1d1f;}
     .svc-text p{font-size:16px;line-height:1.8;color:var(--gray);margin-bottom:24px;}
+    
+    /* Lists with custom local PNG bullets */
     .svc-text ul{list-style:none;padding:0;}
     .svc-text ul li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--gray);padding:6px 0;}
-    .svc-text ul li::before{content:'✓';color:var(--green);font-weight:700;font-size:14px;}
+    .svc-text ul li::before{display:none;}
+    .li-emoji{width:16px;height:16px;object-fit:contain;flex-shrink:0;margin-right:2px;}
     
     /* Premium Visual Gradients (Deep and Rich Dark profiles matching screen) */
     .svc-visual{width:100%;aspect-ratio:4/3;border-radius:20px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;}
@@ -556,11 +559,6 @@
         <a class="ms-sub" href="/services/web#svc-uiux">Website Design (UI/UX)</a>
         <a class="ms-sub" href="/services/web#svc-wordpress">WordPress</a>
         <a class="ms-sub" href="/services/web#svc-shopify">Shopify</a>
-        <a class="ms-sub" href="/services/web#svc-landing">Landing Pages</a>
-        <a class="ms-sub" href="/services/web#svc-speed">Speed Optimization</a>
-        <a class="ms-sub" href="/services/web#svc-maintenance">Maintenance</a>
-        <a class="ms-sub" href="/services/web#svc-migration">Migration</a>
-        <a class="ms-sub" href="/services/web#svc-cms">CMS Setup</a>
       </div>
       <div class="ms-section">Content &amp; More</div>
       <div class="ms-group">
@@ -579,7 +577,7 @@
   <!-- === HERO === -->
   <section class="svc-hero">
     <div>
-      <p class="svc-hero-eyebrow">Web Design &amp; Development</p>
+      <p class="svc-hero-eyebrow">Web Design & Development</p>
       <h1>Websites that convert.<br><em>Designs that impress.</em></h1>
       <p class="svc-hero-sub">We create modern, responsive, lightning-fast websites strategically engineered to convert visitors into customers and elevate your brand.</p>
       <div class="svc-hero-ctas">
@@ -589,12 +587,12 @@
     </div>
   </section>
 
-  <!-- === ICONS ROW (Stacked Emojis Layout exactly as in screenshot) === -->
+  <!-- === ICONS ROW (Custom PNG emojis from folder) === -->
   <div class="svc-icons">
-    <div class="svc-icon-item"><span>🎨</span>UI/UX</div>
-    <div class="svc-icon-item"><span>📱</span>Responsive</div>
-    <div class="svc-icon-item"><span>⚡</span>Fast</div>
-    <div class="svc-icon-item"><span>🛒</span>E-commerce</div>
+    <div class="svc-icon-item"><img src="/Emoji/art.png" alt="UI/UX">UI/UX</div>
+    <div class="svc-icon-item"><img src="/Emoji/iphone.png" alt="Responsive">Responsive</div>
+    <div class="svc-icon-item"><img src="/Emoji/zap.png" alt="Fast">Fast</div>
+    <div class="svc-icon-item"><img src="/Emoji/shopping_trolley.png" alt="E-commerce">E-commerce</div>
   </div>
 
   <!-- === 1. WEBSITE DESIGN (UI/UX) === -->
@@ -605,12 +603,12 @@
         <h2>Form follows function, but first it converts.</h2>
         <p>User-centered design that balances aesthetics with functionality. We create intuitive interfaces that guide visitors toward conversion while delivering a delightful experience.</p>
         <ul>
-          <li>Custom responsive web design</li>
-          <li>Wireframing & prototyping</li>
-          <li>User journey mapping</li>
-          <li>Conversion-optimized layouts</li>
-          <li>Interactive prototypes</li>
-          <li>Design systems & UI kits</li>
+          <li><img src="/Emoji/art.png" class="li-emoji" alt="bullet">Custom responsive web design</li>
+          <li><img src="/Emoji/triangular_ruler.png" class="li-emoji" alt="bullet">Wireframing &amp; prototyping</li>
+          <li><img src="/Emoji/world_map.png" class="li-emoji" alt="bullet">User journey mapping</li>
+          <li><img src="/Emoji/chart_with_upwards_trend.png" class="li-emoji" alt="bullet">Conversion-optimized layouts</li>
+          <li><img src="/Emoji/three_button_mouse.png" class="li-emoji" alt="bullet">Interactive prototypes</li>
+          <li><img src="/Emoji/gear.png" class="li-emoji" alt="bullet">Design systems &amp; UI kits</li>
         </ul>
         <div class="svc-results">
           <div class="svc-result svc-result-light"><div class="svc-result-v">95%</div><div class="svc-result-l">User Satisfaction</div></div>
@@ -662,12 +660,12 @@
         <h2>Prevent WordPress from bulk or bloat.</h2>
         <p>Custom WordPress themes and plugins, optimized for speed, security, and SEO. We build sites that are easy to manage and grow with your business.</p>
         <ul>
-          <li>Custom theme development</li>
-          <li>Plugin development & customization</li>
-          <li>WooCommerce integration</li>
-          <li>Speed & security optimization</li>
-          <li>Headless WordPress setups</li>
-          <li>Easy content editor configuration</li>
+          <li><img src="/Emoji/computer.png" class="li-emoji" alt="bullet">Custom theme development</li>
+          <li><img src="/Emoji/gear.png" class="li-emoji" alt="bullet">Plugin development &amp; customization</li>
+          <li><img src="/Emoji/shopping_trolley.png" class="li-emoji" alt="bullet">WooCommerce integration</li>
+          <li><img src="/Emoji/zap.png" class="li-emoji" alt="bullet">Speed &amp; security optimization</li>
+          <li><img src="/Emoji/robot_face.png" class="li-emoji" alt="bullet">Headless WordPress setups</li>
+          <li><img src="/Emoji/writing_hand.png" class="li-emoji" alt="bullet">Easy content editor configuration</li>
         </ul>
         <div class="svc-results">
           <div class="svc-result svc-result-dark"><div class="svc-result-v">99.9%</div><div class="svc-result-l">Uptime</div></div>
@@ -719,12 +717,12 @@
         <h2>Shopify stores built to sell from day one.</h2>
         <p>We build Shopify stores that are fast, beautiful, and conversion-optimised. From custom theme development to complex app integrations — we've helped brands in the UK, USA, and Australia increase conversions by up to 180% within 60 days of launch.</p>
         <ul>
-          <li>Custom Shopify theme development & design</li>
-          <li>Product page & checkout optimisation</li>
-          <li>Shopify app integration & custom Liquid coding</li>
-          <li>International markets & multi-currency setup</li>
-          <li>Shopify migration from WooCommerce or other platforms</li>
-          <li>Core Web Vitals & mobile performance tuning</li>
+          <li><img src="/Emoji/shopping_trolley.png" class="li-emoji" alt="bullet">Custom Shopify theme development &amp; design</li>
+          <li><img src="/Emoji/chart_with_upwards_trend.png" class="li-emoji" alt="bullet">Product page &amp; checkout optimisation</li>
+          <li><img src="/Emoji/gear.png" class="li-emoji" alt="bullet">Shopify app integration &amp; custom Liquid coding</li>
+          <li><img src="/Emoji/globe_with_meridians.png" class="li-emoji" alt="bullet">International markets &amp; multi-currency setup</li>
+          <li><img src="/Emoji/airplane.png" class="li-emoji" alt="bullet">Shopify migration from WooCommerce or other platforms</li>
+          <li><img src="/Emoji/zap.png" class="li-emoji" alt="bullet">Core Web Vitals &amp; mobile performance tuning</li>
         </ul>
         <div class="svc-results">
           <div class="svc-result svc-result-light"><div class="svc-result-v">+180%</div><div class="svc-result-l">Conversions</div></div>
@@ -776,12 +774,12 @@
         <h2>Landing pages engineered to convert visitors into buyers.</h2>
         <p>High-converting landing pages designed with psychological triggers, compelling copy, and clear CTAs that turn visitors into leads and customers.</p>
         <ul>
-          <li>A/B tested page layouts</li>
-          <li>Conversion-focused copywriting</li>
-          <li>Lead capture form integration</li>
-          <li>Analytics & tracking setup</li>
-          <li>Rapid deployment pages</li>
-          <li>Multi-variant testing setup</li>
+          <li><img src="/Emoji/test_tube.png" class="li-emoji" alt="bullet">A/B tested page layouts</li>
+          <li><img src="/Emoji/writing_hand.png" class="li-emoji" alt="bullet">Conversion-focused copywriting</li>
+          <li><img src="/Emoji/mailbox_with_mail.png" class="li-emoji" alt="bullet">Lead capture form integration</li>
+          <li><img src="/Emoji/chart_with_upwards_trend.png" class="li-emoji" alt="bullet">Analytics &amp; tracking setup</li>
+          <li><img src="/Emoji/rocket.png" class="li-emoji" alt="bullet">Rapid deployment pages</li>
+          <li><img src="/Emoji/gear.png" class="li-emoji" alt="bullet">Multi-variant testing setup</li>
         </ul>
         <div class="svc-results">
           <div class="svc-result svc-result-dark"><div class="svc-result-v">35%</div><div class="svc-result-l">Avg. Conv. Rate</div></div>
@@ -833,12 +831,12 @@
         <h2>Every millisecond counts for your bottom line.</h2>
         <p>Core Web Vitals optimization, image compression, code minification, and caching strategies that make your site blazing fast and Google-approved.</p>
         <ul>
-          <li>Core Web Vitals optimization</li>
-          <li>Image & asset compression</li>
-          <li>CDN & caching setup</li>
-          <li>Code minification & lazy loading</li>
-          <li>Database optimization</li>
-          <li>Server response time optimization</li>
+          <li><img src="/Emoji/zap.png" class="li-emoji" alt="bullet">Core Web Vitals optimization</li>
+          <li><img src="/Emoji/stopwatch.png" class="li-emoji" alt="bullet">Image &amp; asset compression</li>
+          <li><img src="/Emoji/globe_with_meridians.png" class="li-emoji" alt="bullet">CDN &amp; caching setup</li>
+          <li><img src="/Emoji/gear.png" class="li-emoji" alt="bullet">Code minification &amp; lazy loading</li>
+          <li><img src="/Emoji/factory.png" class="li-emoji" alt="bullet">Database optimization</li>
+          <li><img src="/Emoji/computer.png" class="li-emoji" alt="bullet">Server response time optimization</li>
         </ul>
         <div class="svc-results">
           <div class="svc-result svc-result-light"><div class="svc-result-v">100/100</div><div class="svc-result-l">PageSpeed score</div></div>
@@ -890,12 +888,12 @@
         <h2>Keep your site secure, updated &amp; always running.</h2>
         <p>Ongoing maintenance, security monitoring, plugin updates, and performance monitoring to ensure your website runs smoothly 24/7.</p>
         <ul>
-          <li>Regular security updates</li>
-          <li>Plugin & theme updates</li>
-          <li>Daily backups & monitoring</li>
-          <li>Performance reporting</li>
-          <li>Priority support & edits</li>
-          <li>Downtime emergency fix</li>
+          <li><img src="/Emoji/shield.png" class="li-emoji" alt="bullet">Regular security updates</li>
+          <li><img src="/Emoji/gear.png" class="li-emoji" alt="bullet">Plugin &amp; theme updates</li>
+          <li><img src="/Emoji/lock.png" class="li-emoji" alt="bullet">Daily backups &amp; monitoring</li>
+          <li><img src="/Emoji/chart_with_upwards_trend.png" class="li-emoji" alt="bullet">Performance reporting</li>
+          <li><img src="/Emoji/handshake.png" class="li-emoji" alt="bullet">Priority support &amp; edits</li>
+          <li><img src="/Emoji/stopwatch.png" class="li-emoji" alt="bullet">Downtime emergency fix</li>
         </ul>
         <div class="svc-results">
           <div class="svc-result svc-result-dark"><div class="svc-result-v">24/7</div><div class="svc-result-l">Monitoring</div></div>
@@ -947,12 +945,12 @@
         <h2>Seamless site migration with zero ranking loss.</h2>
         <p>Moving websites can be risky. We ensure a seamless transition of your domain, database, CMS, and link structure with zero downtime and preserved search rankings.</p>
         <ul>
-          <li>CMS platform transitions (e.g. WordPress to Shopify)</li>
-          <li>Full database, user registry & asset transfer</li>
-          <li>301 redirect mapping & server-level configuration</li>
-          <li>Pre and post-migration SEO ranking audits</li>
-          <li>Broken link, image assets & script error resolutions</li>
-          <li>Secure domain name server (DNS) transfers</li>
+          <li><img src="/Emoji/airplane.png" class="li-emoji" alt="bullet">CMS platform transitions (e.g. WordPress to Shopify)</li>
+          <li><img src="/Emoji/factory.png" class="li-emoji" alt="bullet">Full database, user registry &amp; asset transfer</li>
+          <li><img src="/Emoji/arrows_counterclockwise.png" class="li-emoji" alt="bullet">301 redirect mapping &amp; server-level configuration</li>
+          <li><img src="/Emoji/mag.png" class="li-emoji" alt="bullet">Pre and post-migration SEO ranking audits</li>
+          <li><img src="/Emoji/link.png" class="li-emoji" alt="bullet">Broken link verification &amp; redirect mapping</li>
+          <li><img src="/Emoji/lock.png" class="li-emoji" alt="bullet">Secure domain name server (DNS) transfers</li>
         </ul>
         <div class="svc-results">
           <div class="svc-result svc-result-light"><div class="svc-result-v">0%</div><div class="svc-result-l">Traffic Loss</div></div>
@@ -1004,12 +1002,12 @@
         <h2>CMS setup configured exactly for your team.</h2>
         <p>We configure, customize, and optimize your chosen CMS platform to give you a powerful, flexible, and easy-to-use editor interface.</p>
         <ul>
-          <li>CMS platform recommendations (WordPress, Shopify, Webflow, etc.)</li>
-          <li>Standard theme installation & base configuration</li>
-          <li>Setup of essential security, SEO & speed plugins/apps</li>
-          <li>Custom fields & content architecture modeling</li>
-          <li>Role-based user permissions & approval flows</li>
-          <li>Dashboard cleanups & administrative documentation</li>
+          <li><img src="/Emoji/open_file_folder.png" class="li-emoji" alt="bullet">CMS platform recommendations (WordPress, Shopify, Webflow, etc.)</li>
+          <li><img src="/Emoji/computer.png" class="li-emoji" alt="bullet">Standard theme installation &amp; base configuration</li>
+          <li><img src="/Emoji/shield.png" class="li-emoji" alt="bullet">Setup of essential security, SEO &amp; speed plugins/apps</li>
+          <li><img src="/Emoji/gear.png" class="li-emoji" alt="bullet">Custom fields &amp; content architecture modeling</li>
+          <li><img src="/Emoji/busts_in_silhouette.png" class="li-emoji" alt="bullet">Role-based user permissions &amp; approval flows</li>
+          <li><img src="/Emoji/memo.png" class="li-emoji" alt="bullet">Dashboard cleanups &amp; administrative documentation</li>
         </ul>
         <div class="svc-results">
           <div class="svc-result svc-result-dark"><div class="svc-result-v">5+</div><div class="svc-result-l">CMS Platforms</div></div>
@@ -1064,7 +1062,7 @@
       <div class="process-grid">
         <div class="step rv">
           <div class="step-circle">1</div>
-          <div class="step-t">Discovery & UI/UX</div>
+          <div class="step-t">Discovery &amp; UI/UX</div>
           <div class="step-d">We study your brand, map out user journeys, and design fully custom, conversion-focused layout mockups in Figma.</div>
         </div>
         <div class="step rv d1">
@@ -1074,12 +1072,12 @@
         </div>
         <div class="step rv d2">
           <div class="step-circle">3</div>
-          <div class="step-t">Optimize & Test</div>
+          <div class="step-t">Optimize &amp; Test</div>
           <div class="step-d">We run extensive PageSpeed, Core Web Vitals, security, and responsive checks across all browsers and devices.</div>
         </div>
         <div class="step rv d3">
           <div class="step-circle">4</div>
-          <div class="step-t">Launch & Handover</div>
+          <div class="step-t">Launch &amp; Handover</div>
           <div class="step-d">We launch your website with zero downtime, configure daily backups, and train your team on how to edit pages.</div>
         </div>
       </div>
