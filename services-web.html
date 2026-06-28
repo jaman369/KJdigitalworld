@@ -132,12 +132,16 @@
     .svc-nav-link:hover{color:var(--near-black);background:rgba(0,0,0,.04);}
     .svc-nav-link.active{color:var(--blue);background:rgba(0,113,227,.08);}
 
-    /* === ICONS ROW === */
-    .svc-icons{display:flex;justify-content:center;gap:40px;padding:40px 24px;background:#0a0a0a;border-bottom:1px solid rgba(255,255,255,.06);flex-wrap:wrap;}
-    .svc-icon-item{text-align:center;color:rgba(255,255,255,.85)!important;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;transition:color .2s var(--ease),transform .2s var(--ease);text-decoration:none;display:inline-block;}
-    .svc-icon-item:hover{color:#fff!important;transform:translateY(-2px);}
-    .svc-icon-item img{display:block;width:32px;height:32px;margin:0 auto 8px;object-fit:contain;}
-    @media(max-width:600px){.svc-icons{gap:20px;}.svc-icon-item{font-size:10px;}.svc-icon-item img{width:24px;height:24px;}}
+    /* === ICONS ROW (Standard 4 Emojis Stacked Layout from screenshot) === */
+    .svc-icons{display:flex;justify-content:center;gap:40px;padding:40px 24px;background:#0a0a0a;border-bottom:1px solid rgba(255,255,255,.06);}
+    .svc-icon-item{text-align:center;color:rgba(255,255,255,.85);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;transition:color .2s var(--ease),transform .2s var(--ease);}
+    .svc-icon-item:hover{color:#fff;transform:translateY(-2px);}
+    .svc-icon-item span{display:block;font-size:28px;margin-bottom:6px;}
+    @media(max-width:600px){
+      .svc-icons{gap:20px;flex-wrap:wrap;}
+      .svc-icon-item{font-size:10px;}
+      .svc-icon-item span{font-size:22px;}
+    }
 
     /* === SERVICE SECTIONS === */
     .svc-section{padding:96px 24px;}
@@ -370,7 +374,7 @@
     }
 
     /* === REVEAL === */
-    .rv{opacity:1;transform:none;transition:opacity .7s var(--ease),transform .7s var(--ease);}
+    .rv{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
     .rv.in{opacity:1;transform:translateY(0);}
     .d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}.d4{transition-delay:.32s;}.d5{transition-delay:.40s;}
 
@@ -585,16 +589,12 @@
     </div>
   </section>
 
-  <!-- === ICONS ROW (NAVIGATION) === -->
+  <!-- === ICONS ROW (Stacked Emojis Layout exactly as in screenshot) === -->
   <div class="svc-icons">
-    <a href="#svc-uiux" class="svc-icon-item"><img src="/Emoji/art.png" alt="UI/UX">UI/UX Design</a>
-    <a href="#svc-wordpress" class="svc-icon-item"><img src="/Emoji/computer.png" alt="WordPress">WordPress</a>
-    <a href="#svc-shopify" class="svc-icon-item"><img src="/Emoji/shopping_trolley.png" alt="Shopify">Shopify</a>
-    <a href="#svc-landing" class="svc-icon-item"><img src="/Emoji/rocket.png" alt="Landing Pages">Landing Pages</a>
-    <a href="#svc-speed" class="svc-icon-item"><img src="/Emoji/zap.png" alt="Speed">Speed Opt.</a>
-    <a href="#svc-maintenance" class="svc-icon-item"><img src="/Emoji/shield.png" alt="Maintenance">Maintenance</a>
-    <a href="#svc-migration" class="svc-icon-item"><img src="/Emoji/airplane.png" alt="Migration">Migration</a>
-    <a href="#svc-cms" class="svc-icon-item"><img src="/Emoji/gear.png" alt="CMS Setup">CMS Setup</a>
+    <div class="svc-icon-item"><span>🎨</span>UI/UX</div>
+    <div class="svc-icon-item"><span>📱</span>Responsive</div>
+    <div class="svc-icon-item"><span>⚡</span>Fast</div>
+    <div class="svc-icon-item"><span>🛒</span>E-commerce</div>
   </div>
 
   <!-- === 1. WEBSITE DESIGN (UI/UX) === -->
