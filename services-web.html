@@ -297,29 +297,76 @@
     /* === QUICK CONTACT CARD === */
     .qcontact{padding:0 24px 80px;}
     .qcontact-inner{max-width:1120px;margin:0 auto;}
-    .qcard{border-radius:24px;padding:40px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
-    .qcard-light{background:#fff;border:.5px solid var(--soft);box-shadow:0 8px 32px rgba(0,0,0,0.04);}
-    .qcard-dark{background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.07);}
-    .qcard-label{font-size:11px;font-weight:600;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;}
-    .qcard-title{font-family:var(--font-d);font-size:clamp(20px,2.5vw,28px);color:var(--near-black);line-height:1.2;margin-bottom:6px;}
+    .qcard{border-radius:24px;padding:32px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+    .qcard-light{background:#fff;border:1px solid rgba(0,0,0,0.06);box-shadow:0 10px 30px rgba(0,0,0,0.02);}
+    .qcard-dark{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+    
+    .qcard-label{font-size:11px;font-weight:600;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;}
+    .qcard-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:8px;}
+    
+    .qcard-title{font-family:var(--font-d);font-size:24px;font-weight:600;color:var(--near-black);line-height:1.2;margin-bottom:6px;letter-spacing:-.01em;}
     .qcard-title-w{color:#fff;}
-    .qcard-sub{font-size:14px;color:var(--gray);}
-    .qcard-sub-w{color:rgba(255,255,255,.38);}
-    .qcard-actions{display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0;}
-    .qcard-btn-primary{background:var(--blue);font-size:13px;font-weight:600;padding:12px 24px;border-radius:980px;border:none;cursor:pointer;font-family:var(--font-b);transition:background .2s,transform .15s,box-shadow .2s;white-space:nowrap;color:#fff;}
-    .qcard-btn-primary:hover{background:var(--blue-h);transform:scale(1.03);box-shadow:0 6px 20px rgba(0,113,227,.4);}
-    .qcard-btn-wa{background:#25D366;color:#fff;font-size:13px;font-weight:500;padding:12px 22px;border-radius:980px;border:none;cursor:pointer;font-family:var(--font-b);display:flex;align-items:center;gap:7px;transition:background .2s,transform .15s;white-space:nowrap;}
-    .qcard-btn-wa:hover{background:#20b858;transform:scale(1.03);}
-    .qcard-btn-li{background:transparent;color:var(--near-black);font-size:13px;font-weight:500;padding:12px 20px;border-radius:980px;border:1.5px solid var(--mid);cursor:pointer;font-family:var(--font-b);display:flex;align-items:center;gap:7px;transition:border-color .2s;white-space:nowrap;}
-    .qcard-btn-li:hover{border-color:#888;}
-    .qcard-btn-li-dark{color:#fff;border-color:rgba(255,255,255,.2);}
-    .qcard-btn-li-dark:hover{border-color:rgba(255,255,255,.5);}
+    .qcard-sub{font-size:14px;color:var(--gray);margin:0;}
+    .qcard-sub-w{color:rgba(255,255,255,.4);}
+
+    .qcard-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;flex-shrink:0;}
+    .qcard-actions .btn-fill {
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      border-radius: 980px;
+    }
+    .qcard-actions .btn-green {
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      background: var(--green);
+      color: #fff;
+      border-radius: 980px;
+      transition: background .2s, transform .15s;
+    }
+    .qcard-actions .btn-green:hover {
+      background: #009e66;
+      transform: scale(1.03);
+    }
+    .qcard-actions .btn-ghost {
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      border-radius: 980px;
+      background: #fff;
+      border: 1px solid var(--mid);
+      color: var(--near-black);
+      transition: border-color .2s, background .2s, transform .15s;
+    }
+    .qcard-dark .qcard-actions .btn-ghost {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.2);
+      color: #fff;
+    }
+    .qcard-actions .btn-ghost:hover {
+      background: rgba(0,0,0,0.03);
+      border-color: #888;
+      transform: scale(1.03);
+    }
+    .qcard-dark .qcard-actions .btn-ghost:hover {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,.5);
+    }
 
     @media(max-width:900px){
       .qcard{padding:24px 28px;gap:20px;}
       .qcard-actions{width:100%;}
-      .qcard-actions a{flex:1;text-align:center;}
-      .qcard-actions button{width:100%;justify-content:center;}
+      .qcard-actions a{flex:1;text-align:center;justify-content:center;}
     }
 
     /* === REVEAL === */
@@ -554,7 +601,7 @@
   <section class="svc-section light" id="svc-uiux">
     <div class="svc-inner">
       <div class="svc-text">
-        <p class="svc-text-eyebrow">Website Design (UI/UX)</p>
+        <p class="svc-text-eyebrow">01 — Website Design (UI/UX)</p>
         <h2>Form follows function, but first it converts.</h2>
         <p>User-centered design that balances aesthetics with functionality. We create intuitive interfaces that guide visitors toward conversion while delivering a delightful experience.</p>
         <ul>
@@ -572,7 +619,7 @@
         </div>
         <div class="svc-section-ctas">
           <a href="/contact" class="btn-fill">Get UI/UX Quote →</a>
-          <a href="/portfolio-web" class="btn-ghost">Case Study</a>
+          <a href="/portfolio-web" class="btn-ghost">📁 View Case Studies</a>
         </div>
       </div>
       <div class="svc-visual grad-1">
@@ -592,16 +639,16 @@
   </section>
   <div class="qcontact" style="background:#f5f5f7;padding-top:0;">
     <div class="qcontact-inner">
-      <div class="qcard qcard-light rv">
+      <div class="qcard qcard-light">
         <div class="qcard-text">
-          <div class="qcard-label">🎨 Website Design (UI/UX)</div>
-          <div class="qcard-title">Ready to elevate your user experience?</div>
-          <div class="qcard-sub">Let's discuss how we can design an interface that your users love and that drives conversions.</div>
+          <div class="qcard-label"><span class="qcard-dot"></span> WEBSITE DESIGN (UI/UX)</div>
+          <h3 class="qcard-title">Ready to design your website?</h3>
+          <p class="qcard-sub">From scratch or a redesign — we'll scope your project and give you a clear quote within 24 hours.</p>
         </div>
         <div class="qcard-actions">
-          <a href="/contact"><button class="qcard-btn-primary">📩 Get Free Audit</button></a>
-          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20Website%20Design%20%28UI%2FUX%29%20services." target="_blank"><button class="qcard-btn-wa">💬 WhatsApp</button></a>
-          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank"><button class="qcard-btn-li">in LinkedIn</button></a>
+          <a href="/contact" class="btn-fill"><span style="margin-right:4px;">📅</span> Get Free Scope</a>
+          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20Website%20Design%20%28UI%2FUX%29%20services." target="_blank" class="btn-green"><span style="margin-right:4px;">💬</span> WhatsApp</a>
+          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank" class="btn-ghost">in LinkedIn</a>
         </div>
       </div>
     </div>
@@ -611,8 +658,8 @@
   <section class="svc-section dark" id="svc-wordpress">
     <div class="svc-inner reverse">
       <div class="svc-text">
-        <p class="svc-text-eyebrow">WordPress Development</p>
-        <h2>Power of WordPress, without the bulk or bloat.</h2>
+        <p class="svc-text-eyebrow">02 — WordPress Development</p>
+        <h2>Prevent WordPress from bulk or bloat.</h2>
         <p>Custom WordPress themes and plugins, optimized for speed, security, and SEO. We build sites that are easy to manage and grow with your business.</p>
         <ul>
           <li>Custom theme development</li>
@@ -629,7 +676,7 @@
         </div>
         <div class="svc-section-ctas">
           <a href="/contact" class="btn-fill">Create WordPress Site →</a>
-          <a href="/portfolio-web" class="btn-ghost">Case Study</a>
+          <a href="/portfolio-web" class="btn-ghost">📁 View Case Studies</a>
         </div>
       </div>
       <div class="svc-visual grad-2">
@@ -649,16 +696,16 @@
   </section>
   <div class="qcontact" style="background:#000;padding-top:0;">
     <div class="qcontact-inner">
-      <div class="qcard qcard-dark rv">
+      <div class="qcard qcard-dark">
         <div class="qcard-text">
-          <div class="qcard-label">💻 WordPress Development</div>
-          <div class="qcard-title qcard-title-w">Want a custom, fast WordPress site?</div>
-          <div class="qcard-sub">Tell us your requirements and we'll build a secure, lightweight, and scalable site.</div>
+          <div class="qcard-label"><span class="qcard-dot"></span> WORDPRESS DEVELOPMENT</div>
+          <h3 class="qcard-title qcard-title-w">Ready to launch your WordPress site?</h3>
+          <p class="qcard-sub qcard-sub-w">New site or a redesign — we'll scope your project and give you a clear quote within 24 hours.</p>
         </div>
         <div class="qcard-actions">
-          <a href="/contact"><button class="qcard-btn-primary">📩 Contact Us</button></a>
-          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20WordPress%20development." target="_blank"><button class="qcard-btn-wa">💬 WhatsApp</button></a>
-          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank"><button class="qcard-btn-li qcard-btn-li-dark">in LinkedIn</button></a>
+          <a href="/contact" class="btn-fill"><span style="margin-right:4px;">📅</span> Get Free Scope</a>
+          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20WordPress%20development." target="_blank" class="btn-green"><span style="margin-right:4px;">💬</span> WhatsApp</a>
+          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank" class="btn-ghost">in LinkedIn</a>
         </div>
       </div>
     </div>
@@ -668,25 +715,25 @@
   <section class="svc-section light" id="svc-shopify">
     <div class="svc-inner">
       <div class="svc-text">
-        <p class="svc-text-eyebrow">Shopify Development</p>
-        <h2>E-commerce stores engineered to convert and sell.</h2>
-        <p>Custom Shopify stores designed for maximum conversion with optimized checkout flows, product pages, and seamless payment integration.</p>
+        <p class="svc-text-eyebrow">03 — Shopify Development</p>
+        <h2>Shopify stores built to sell from day one.</h2>
+        <p>We build Shopify stores that are fast, beautiful, and conversion-optimised. From custom theme development to complex app integrations — we've helped brands in the UK, USA, and Australia increase conversions by up to 180% within 60 days of launch.</p>
         <ul>
-          <li>Custom Shopify theme design</li>
-          <li>Product page optimization</li>
-          <li>Payment gateway integration</li>
-          <li>Inventory management setup</li>
-          <li>App integration & customization</li>
-          <li>Shopify Plus setups</li>
+          <li>Custom Shopify theme development & design</li>
+          <li>Product page & checkout optimisation</li>
+          <li>Shopify app integration & custom Liquid coding</li>
+          <li>International markets & multi-currency setup</li>
+          <li>Shopify migration from WooCommerce or other platforms</li>
+          <li>Core Web Vitals & mobile performance tuning</li>
         </ul>
         <div class="svc-results">
-          <div class="svc-result svc-result-light"><div class="svc-result-v">+240%</div><div class="svc-result-l">Sales Volume</div></div>
-          <div class="svc-result svc-result-light"><div class="svc-result-v">6.8x</div><div class="svc-result-l">ROI</div></div>
-          <div class="svc-result svc-result-light"><div class="svc-result-v">-22%</div><div class="svc-result-l">Abandoned Cart</div></div>
+          <div class="svc-result svc-result-light"><div class="svc-result-v">+180%</div><div class="svc-result-l">Conversions</div></div>
+          <div class="svc-result svc-result-light"><div class="svc-result-v">£38k</div><div class="svc-result-l">Monthly Rev Uplift</div></div>
+          <div class="svc-result svc-result-light"><div class="svc-result-v">30+</div><div class="svc-result-l">Stores Launched</div></div>
         </div>
         <div class="svc-section-ctas">
-          <a href="/contact" class="btn-fill">Build Shopify Store →</a>
-          <a href="/portfolio-web" class="btn-ghost">Case Study</a>
+          <a href="/contact" class="btn-fill">Build My Shopify Store →</a>
+          <a href="/portfolio-web" class="btn-ghost">📁 See Store Examples</a>
         </div>
       </div>
       <div class="svc-visual grad-3">
@@ -706,16 +753,16 @@
   </section>
   <div class="qcontact" style="background:#f5f5f7;padding-top:0;">
     <div class="qcontact-inner">
-      <div class="qcard qcard-light rv">
+      <div class="qcard qcard-light">
         <div class="qcard-text">
-          <div class="qcard-label">🛒 Shopify Development</div>
-          <div class="qcard-title">Ready to grow your e-commerce sales?</div>
-          <div class="qcard-sub">Share your store URL and we'll audit your setup and show you your conversion opportunities.</div>
+          <div class="qcard-label"><span class="qcard-dot"></span> SHOPIFY DEVELOPMENT</div>
+          <h3 class="qcard-title">Ready to launch your Shopify store?</h3>
+          <p class="qcard-sub">New store or a redesign — we'll scope your project and give you a clear quote within 24 hours.</p>
         </div>
         <div class="qcard-actions">
-          <a href="/contact"><button class="qcard-btn-primary">📩 Free Store Audit</button></a>
-          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20Shopify%20development." target="_blank"><button class="qcard-btn-wa">💬 WhatsApp</button></a>
-          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank"><button class="qcard-btn-li">in LinkedIn</button></a>
+          <a href="/contact" class="btn-fill"><span style="margin-right:4px;">📅</span> Get Free Scope</a>
+          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20Shopify%20development." target="_blank" class="btn-green"><span style="margin-right:4px;">💬</span> WhatsApp</a>
+          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank" class="btn-ghost">in LinkedIn</a>
         </div>
       </div>
     </div>
@@ -725,7 +772,7 @@
   <section class="svc-section dark" id="svc-landing">
     <div class="svc-inner reverse">
       <div class="svc-text">
-        <p class="svc-text-eyebrow">Landing Page Design</p>
+        <p class="svc-text-eyebrow">04 — Landing Page Design</p>
         <h2>Landing pages engineered to convert visitors into buyers.</h2>
         <p>High-converting landing pages designed with psychological triggers, compelling copy, and clear CTAs that turn visitors into leads and customers.</p>
         <ul>
@@ -743,7 +790,7 @@
         </div>
         <div class="svc-section-ctas">
           <a href="/contact" class="btn-fill">Design Landing Page →</a>
-          <a href="/portfolio-web" class="btn-ghost">Case Study</a>
+          <a href="/portfolio-web" class="btn-ghost">📁 View Case Studies</a>
         </div>
       </div>
       <div class="svc-visual grad-4">
@@ -763,16 +810,16 @@
   </section>
   <div class="qcontact" style="background:#000;padding-top:0;">
     <div class="qcontact-inner">
-      <div class="qcard qcard-dark rv">
+      <div class="qcard qcard-dark">
         <div class="qcard-text">
-          <div class="qcard-label">🚀 Landing Page Design</div>
-          <div class="qcard-title qcard-title-w">Need a high-converting landing page?</div>
-          <div class="qcard-sub">Let's build a dedicated page for your ad campaigns to maximize your advertising return.</div>
+          <div class="qcard-label"><span class="qcard-dot"></span> LANDING PAGE DESIGN</div>
+          <h3 class="qcard-title qcard-title-w">Ready to build your landing page?</h3>
+          <p class="qcard-sub qcard-sub-w">New campaign or a redesign — we'll scope your project and give you a clear quote within 24 hours.</p>
         </div>
         <div class="qcard-actions">
-          <a href="/contact"><button class="qcard-btn-primary">📩 Get Page Now</button></a>
-          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20Landing%20Page%20design." target="_blank"><button class="qcard-btn-wa">💬 WhatsApp</button></a>
-          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank"><button class="qcard-btn-li qcard-btn-li-dark">in LinkedIn</button></a>
+          <a href="/contact" class="btn-fill"><span style="margin-right:4px;">📅</span> Get Free Scope</a>
+          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20Landing%20Page%20design." target="_blank" class="btn-green"><span style="margin-right:4px;">💬</span> WhatsApp</a>
+          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank" class="btn-ghost">in LinkedIn</a>
         </div>
       </div>
     </div>
@@ -782,7 +829,7 @@
   <section class="svc-section light" id="svc-speed">
     <div class="svc-inner">
       <div class="svc-text">
-        <p class="svc-text-eyebrow">Website Speed Optimization</p>
+        <p class="svc-text-eyebrow">05 — Website Speed Optimization</p>
         <h2>Every millisecond counts for your bottom line.</h2>
         <p>Core Web Vitals optimization, image compression, code minification, and caching strategies that make your site blazing fast and Google-approved.</p>
         <ul>
@@ -800,7 +847,7 @@
         </div>
         <div class="svc-section-ctas">
           <a href="/contact" class="btn-fill">Optimize Speed →</a>
-          <a href="/portfolio-web" class="btn-ghost">Case Study</a>
+          <a href="/portfolio-web" class="btn-ghost">📁 View Case Studies</a>
         </div>
       </div>
       <div class="svc-visual grad-5">
@@ -820,16 +867,16 @@
   </section>
   <div class="qcontact" style="background:#f5f5f7;padding-top:0;">
     <div class="qcontact-inner">
-      <div class="qcard qcard-light rv">
+      <div class="qcard qcard-light">
         <div class="qcard-text">
-          <div class="qcard-label">⚡ Website Speed Optimization</div>
-          <div class="qcard-title">Want a blazing fast website?</div>
-          <div class="qcard-sub">Let us audit and optimize your site speed to improve user retention, search rankings, and conversions.</div>
+          <div class="qcard-label"><span class="qcard-dot"></span> SPEED OPTIMIZATION</div>
+          <h3 class="qcard-title">Ready to optimize your website speed?</h3>
+          <p class="qcard-sub">Slow site or a audit — we'll scope your project and give you a clear quote within 24 hours.</p>
         </div>
         <div class="qcard-actions">
-          <a href="/contact"><button class="qcard-btn-primary">📩 Speed Audit</button></a>
-          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20Website%20Speed%20optimization." target="_blank"><button class="qcard-btn-wa">💬 WhatsApp</button></a>
-          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank"><button class="qcard-btn-li">in LinkedIn</button></a>
+          <a href="/contact" class="btn-fill"><span style="margin-right:4px;">📅</span> Get Free Scope</a>
+          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20Website%20Speed%20optimization." target="_blank" class="btn-green"><span style="margin-right:4px;">💬</span> WhatsApp</a>
+          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank" class="btn-ghost">in LinkedIn</a>
         </div>
       </div>
     </div>
@@ -839,7 +886,7 @@
   <section class="svc-section dark" id="svc-maintenance">
     <div class="svc-inner reverse">
       <div class="svc-text">
-        <p class="svc-text-eyebrow">Website Maintenance</p>
+        <p class="svc-text-eyebrow">06 — Website Maintenance</p>
         <h2>Keep your site secure, updated &amp; always running.</h2>
         <p>Ongoing maintenance, security monitoring, plugin updates, and performance monitoring to ensure your website runs smoothly 24/7.</p>
         <ul>
@@ -857,7 +904,7 @@
         </div>
         <div class="svc-section-ctas">
           <a href="/contact" class="btn-fill">Get Maintenance →</a>
-          <a href="/portfolio-web" class="btn-ghost">Case Study</a>
+          <a href="/portfolio-web" class="btn-ghost">📁 View Case Studies</a>
         </div>
       </div>
       <div class="svc-visual grad-6">
@@ -877,16 +924,16 @@
   </section>
   <div class="qcontact" style="background:#000;padding-top:0;">
     <div class="qcontact-inner">
-      <div class="qcard qcard-dark rv">
+      <div class="qcard qcard-dark">
         <div class="qcard-text">
-          <div class="qcard-label">🛡️ Website Maintenance</div>
-          <div class="qcard-title qcard-title-w">Need peace of mind for your website?</div>
-          <div class="qcard-sub">Subscribe to our maintenance plans to keep your website updated, secure, and running without a glitch.</div>
+          <div class="qcard-label"><span class="qcard-dot"></span> WEBSITE MAINTENANCE</div>
+          <h3 class="qcard-title qcard-title-w">Ready to secure your website?</h3>
+          <p class="qcard-sub qcard-sub-w">Support plan or minor edits — we'll scope your project and give you a clear quote within 24 hours.</p>
         </div>
         <div class="qcard-actions">
-          <a href="/contact"><button class="qcard-btn-primary">📩 Subscribe Now</button></a>
-          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20Website%20Maintenance%20plans." target="_blank"><button class="qcard-btn-wa">💬 WhatsApp</button></a>
-          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank"><button class="qcard-btn-li qcard-btn-li-dark">in LinkedIn</button></a>
+          <a href="/contact" class="btn-fill"><span style="margin-right:4px;">📅</span> Get Free Scope</a>
+          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20Website%20Maintenance%20plans." target="_blank" class="btn-green"><span style="margin-right:4px;">💬</span> WhatsApp</a>
+          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank" class="btn-ghost">in LinkedIn</a>
         </div>
       </div>
     </div>
@@ -896,7 +943,7 @@
   <section class="svc-section light" id="svc-migration">
     <div class="svc-inner">
       <div class="svc-text">
-        <p class="svc-text-eyebrow">Website Migration</p>
+        <p class="svc-text-eyebrow">07 — Website Migration</p>
         <h2>Seamless site migration with zero ranking loss.</h2>
         <p>Moving websites can be risky. We ensure a seamless transition of your domain, database, CMS, and link structure with zero downtime and preserved search rankings.</p>
         <ul>
@@ -914,7 +961,7 @@
         </div>
         <div class="svc-section-ctas">
           <a href="/contact" class="btn-fill">Migrate Website →</a>
-          <a href="/portfolio-web" class="btn-ghost">Case Study</a>
+          <a href="/portfolio-web" class="btn-ghost">📁 View Case Studies</a>
         </div>
       </div>
       <div class="svc-visual grad-1">
@@ -934,16 +981,16 @@
   </section>
   <div class="qcontact" style="background:#f5f5f7;padding-top:0;">
     <div class="qcontact-inner">
-      <div class="qcard qcard-light rv">
+      <div class="qcard qcard-light">
         <div class="qcard-text">
-          <div class="qcard-label">✈️ Website Migration</div>
-          <div class="qcard-title">Need a safe website migration?</div>
-          <div class="qcard-sub">Get in touch with us to safely migrate your website without losing search traffic or business data.</div>
+          <div class="qcard-label"><span class="qcard-dot"></span> WEBSITE MIGRATION</div>
+          <h3 class="qcard-title">Ready to migrate your website?</h3>
+          <p class="qcard-sub">Safe transition or domain move — we'll scope your project and give you a clear quote within 24 hours.</p>
         </div>
         <div class="qcard-actions">
-          <a href="/contact"><button class="qcard-btn-primary">📩 Plan Migration</button></a>
-          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20Website%20Migration%20services." target="_blank"><button class="qcard-btn-wa">💬 WhatsApp</button></a>
-          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank"><button class="qcard-btn-li">in LinkedIn</button></a>
+          <a href="/contact" class="btn-fill"><span style="margin-right:4px;">📅</span> Get Free Scope</a>
+          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20Website%20Migration%20services." target="_blank" class="btn-green"><span style="margin-right:4px;">💬</span> WhatsApp</a>
+          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank" class="btn-ghost">in LinkedIn</a>
         </div>
       </div>
     </div>
@@ -953,7 +1000,7 @@
   <section class="svc-section dark" id="svc-cms">
     <div class="svc-inner reverse">
       <div class="svc-text">
-        <p class="svc-text-eyebrow">CMS Setup</p>
+        <p class="svc-text-eyebrow">08 — CMS Setup</p>
         <h2>CMS setup configured exactly for your team.</h2>
         <p>We configure, customize, and optimize your chosen CMS platform to give you a powerful, flexible, and easy-to-use editor interface.</p>
         <ul>
@@ -971,10 +1018,10 @@
         </div>
         <div class="svc-section-ctas">
           <a href="/contact" class="btn-fill">Setup CMS →</a>
-          <a href="/portfolio-web" class="btn-ghost">Case Study</a>
+          <a href="/portfolio-web" class="btn-ghost">📁 View Case Studies</a>
         </div>
       </div>
-      <div class="svc-visual grad-2">
+      <div class="svc-visual grad-3">
         <img src="/All%20Service%20Images/SaaS%20SEO.png" alt="CMS Setup" loading="lazy">
       </div>
       <div class="svc-promo-card">
@@ -991,16 +1038,16 @@
   </section>
   <div class="qcontact" style="background:#000;padding-top:0;">
     <div class="qcontact-inner">
-      <div class="qcard qcard-dark rv">
+      <div class="qcard qcard-dark">
         <div class="qcard-text">
-          <div class="qcard-label">⚙️ CMS Setup</div>
-          <div class="qcard-title qcard-title-w">Ready to set up your CMS?</div>
-          <div class="qcard-sub">Contact us today and we'll configure a CMS that empowers your team to edit and manage content with ease.</div>
+          <div class="qcard-label"><span class="qcard-dot"></span> CMS SETUP</div>
+          <h3 class="qcard-title qcard-title-w">Ready to set up your CMS?</h3>
+          <p class="qcard-sub qcard-sub-w">New platform configuration — we'll scope your project and give you a clear quote within 24 hours.</p>
         </div>
         <div class="qcard-actions">
-          <a href="/contact"><button class="qcard-btn-primary">📩 Setup CMS</button></a>
-          <a href="https://wa.me/8801798667820?text=Hi%20KJ%20Digital%20World%2C%20I%20am%20interested%20in%20your%20services" target="_blank"><button class="qcard-btn-wa">💬 WhatsApp</button></a>
-          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank"><button class="qcard-btn-li qcard-btn-li-dark">in LinkedIn</button></a>
+          <a href="/contact" class="btn-fill"><span style="margin-right:4px;">📅</span> Get Free Scope</a>
+          <a href="https://wa.me/8801798667820?text=Hi%20KJ%20Digital%20World%2C%20I%20am%20interested%20in%20your%20services" target="_blank" class="btn-green"><span style="margin-right:4px;">💬</span> WhatsApp</a>
+          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank" class="btn-ghost">in LinkedIn</a>
         </div>
       </div>
     </div>
