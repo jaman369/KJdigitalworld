@@ -172,6 +172,11 @@ if (scrollTopBtn) {
 
 // ---- Contact Form ----
 const contactForm = document.getElementById('contactForm');
+
+// ⚠️ REPLACE THIS URL with your own Google Apps Script Web App URL
+// Steps: Extensions → Apps Script → Deploy → New Deployment → Web App → Anyone → Deploy → Copy URL
+const SHEET_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxqs_A4SMd0mGwc8_o58r4EAZU9mvO-fQKShsoHORG418HwgPwPfWheo2dO7n1QFn2fzQ/exec';
+
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -181,7 +186,7 @@ if (contactForm) {
     inputs.forEach(input => {
       if (!input.value.trim()) {
         valid = false;
-        input.style.borderColor = 'var(--danger)';
+        input.style.borderColor = '#ff3b30';
         setTimeout(() => { input.style.borderColor = ''; }, 2000);
       }
     });
@@ -190,46 +195,57 @@ if (contactForm) {
       const submitBtn = contactForm.querySelector('.form-submit-btn, .f-submit, .btn-submit, button[type="submit"]');
       const originalBtnText = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.innerHTML = 'Sending...';
+      submitBtn.innerHTML = 'Sending…';
 
-      const formData = new FormData(contactForm);
+      // Build URL-encoded params (Apps Script reads e.parameter reliably)
+      const data = new URLSearchParams();
+      data.append('name',    document.getElementById('fname')?.value    || '');
+      data.append('email',   document.getElementById('femail')?.value   || '');
+      data.append('company', contactForm.querySelector('[name="company"]')?.value || '');
+      data.append('country', contactForm.querySelector('[name="country"]')?.value || '');
+      data.append('service', document.getElementById('fservice')?.value  || '');
+      data.append('budget',  document.getElementById('budgetInput')?.value || '');
+      data.append('message', document.getElementById('fmsg')?.value      || '');
+      data.append('_timestamp', new Date().toISOString());
+      data.append('_page', window.location.href);
 
-      fetch('https://script.google.com/macros/s/AKfycbxqs_A4SMd0mGwc8_o58r4EAZU9mvO-fQKShsoHORG418HwgPwPfWheo2dO7n1QFn2fzQ/exec', {
+      fetch(SHEET_SCRIPT_URL, {
         method: 'POST',
-        body: formData,
-        mode: 'no-cors'
+        body: data,
+        mode: 'no-cors'   // required for Apps Script — response is always opaque
       })
       .then(() => {
-        // Show success state
-        contactForm.style.display = 'none';
-        const successMsg = document.getElementById('formSuccess');
-        if (successMsg) successMsg.classList.add('show');
-
-        setTimeout(() => {
-          contactForm.reset();
-          contactForm.style.display = '';
-          if (successMsg) successMsg.classList.remove('show');
-        }, 5000);
+        showSuccess();
       })
-      .catch(error => {
-        console.error('Error submitting form:', error);
-        // Fallback: show success anyway in case of redirection/CORS block on success
-        contactForm.style.display = 'none';
-        const successMsg = document.getElementById('formSuccess');
-        if (successMsg) successMsg.classList.add('show');
-
-        setTimeout(() => {
-          contactForm.reset();
-          contactForm.style.display = '';
-          if (successMsg) successMsg.classList.remove('show');
-        }, 5000);
+      .catch(err => {
+        console.warn('Form submission error:', err);
+        // Show success anyway — no-cors means errors can be false positives
+        showSuccess();
       })
       .finally(() => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalBtnText;
       });
+
+      function showSuccess() {
+        contactForm.style.display = 'none';
+        const successMsg = document.getElementById('formSuccess');
+        if (successMsg) {
+          successMsg.style.display = 'block';
+          successMsg.classList.add('show');
+        }
+        setTimeout(() => {
+          contactForm.reset();
+          contactForm.style.display = '';
+          if (successMsg) {
+            successMsg.style.display = 'none';
+            successMsg.classList.remove('show');
+          }
+        }, 6000);
+      }
     }
   });
+
 }
 
 // ---- Budget Chips Logic ----
