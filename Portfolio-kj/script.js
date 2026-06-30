@@ -173,9 +173,8 @@ if (scrollTopBtn) {
 // ---- Contact Form ----
 const contactForm = document.getElementById('contactForm');
 
-// ⚠️ REPLACE THIS URL with your own Google Apps Script Web App URL
-// Steps: Extensions → Apps Script → Deploy → New Deployment → Web App → Anyone → Deploy → Copy URL
-const SHEET_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxqs_A4SMd0mGwc8_o58r4EAZU9mvO-fQKShsoHORG418HwgPwPfWheo2dO7n1QFn2fzQ/exec';
+// Google Apps Script Web App — connected to Google Sheet ID: 1EaDUSVjvNMH6eF0lsnrVCf381W3BKRG4DU5l3FDhJRU
+const SHEET_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwy4OaJ_9fMhRJ60XH-B1ZnjXvM17A56ucoK5vmo2v-JvIHd2lge2f4l1uFhsul3a7bnA/exec';
 
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
