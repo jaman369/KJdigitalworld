@@ -448,7 +448,7 @@
               </div>
               <div class="mega-col">
                 <h3>✍️ Content &amp; More</h3>
-                <a href="/services/content#svc-blog">Blog Writing &amp; Management</a>
+
                 <a href="/services/content#svc-email">Email Marketing</a>
                 <a href="/services/content#svc-content">Content Marketing</a>
                 <a href="/services/content#svc-cro">CRO Audit &amp; Testing</a>
@@ -500,7 +500,7 @@
       <div class="ms-section">Content &amp; More</div>
       <div class="ms-group">
         <a class="ms-sub" href="/services/content">All Content Services</a>
-        <a class="ms-sub" href="/services/content#svc-blog">Blog Writing &amp; Management</a>
+
         <a class="ms-sub" href="/services/content#svc-email">Email Marketing</a>
         <a class="ms-sub" href="/services/content#svc-content">Content Marketing</a>
         <a class="ms-sub" href="/services/content#svc-cro">CRO Audit &amp; Testing</a>
@@ -525,7 +525,7 @@
       <p class="svc-hero-sub">Compelling, SEO-optimized content that educates your audience, builds brand authority, and drives engagement across all channels.</p>
       <div class="svc-hero-ctas">
         <a href="/contact" class="btn-fill">Get Content Strategy →</a>
-        <a href="#svc-blog" class="btn-ghost">Explore Services</a>
+        <a href="#svc-email" class="btn-ghost">Explore Services</a>
       </div>
     </div>
   </section>
@@ -563,8 +563,7 @@
   <!-- === STICKY SERVICE NAVIGATION === -->
   <div class="svc-nav">
     <div class="svc-nav-inner">
-      <button class="svc-nav-link active" data-target="svc-blog">✍️ Blog Writing</button>
-      <button class="svc-nav-link" data-target="svc-email">📧 Email Marketing</button>
+      <button class="svc-nav-link active" data-target="svc-email">📧 Email Marketing</button>
       <button class="svc-nav-link" data-target="svc-content">📈 Content Marketing</button>
       <button class="svc-nav-link" data-target="svc-cro">🎯 CRO Audit</button>
       <button class="svc-nav-link" data-target="svc-backlink">🔗 Backlink Building</button>
@@ -574,47 +573,7 @@
     </div>
   </div>
 
-  <!-- === 1. BLOG WRITING & MANAGEMENT === -->
-  <section class="svc-section light" id="svc-blog">
-    <div class="svc-inner">
-      <div class="svc-text">
-        <p class="svc-text-eyebrow">01 — Blog Writing &amp; Management</p>
-        <h2>Writings that rank, educate, and convert.</h2>
-        <p>Research-driven, expertly crafted blog content that targets high-intent keywords, answers your audience's questions, and establishes your brand as an industry authority.</p>
-        <ul>
-          <li><img src="/Emoji/memo.png" class="li-emoji" alt="bullet">Keyword-targeted blog writing</li>
-          <li><img src="/Emoji/blue_book.png" class="li-emoji" alt="bullet">Editorial calendar management</li>
-          <li><img src="/Emoji/recycle.png" class="li-emoji" alt="bullet">Content optimization &amp; updates</li>
-          <li><img src="/Emoji/seedling.png" class="li-emoji" alt="bullet">Topic cluster strategy</li>
-          <li><img src="/Emoji/busts_in_silhouette.png" class="li-emoji" alt="bullet">Expert writer network access</li>
-          <li><img src="/Emoji/robot_face.png" class="li-emoji" alt="bullet">AI content editing &amp; formatting</li>
-        </ul>
-        <div class="svc-results">
-          <div class="svc-result svc-result-light"><div class="svc-result-v">95%</div><div class="svc-result-l">User Satisfaction</div></div>
-          <div class="svc-result svc-result-light"><div class="svc-result-v">+120%</div><div class="svc-result-l">Organic Traffic</div></div>
-          <div class="svc-result svc-result-light"><div class="svc-result-v">15+</div><div class="svc-result-l">Active Niches</div></div>
-        </div>
-        <div class="svc-section-ctas">
-          <a href="/contact" class="btn-fill">Get Blog Quote →</a>
-          <a href="/portfolio-content" class="btn-ghost">📁 View Case Studies</a>
-        </div>
-      </div>
-      <div class="svc-visual grad-1">
-        <img src="/All%20Service%20Images/Blog%20Writing.png" alt="Blog Writing Service" loading="lazy">
-      </div>
-      <div class="svc-promo-card">
-        <div class="promo-text">
-          <div class="qcard-label"><span class="qcard-dot"></span> BLOG WRITING &amp; MANAGEMENT</div>
-          <h3>Ready to grow your blog traffic?</h3>
-          <p>New strategy or ongoing articles — we'll scope your project and give you a clear quote within 24 hours.</p>
-        </div>
-        <div class="promo-ctas">
-          <a href="/contact" class="btn-fill"><span style="margin-right:4px;">📅</span> Get Free Scope</a>
-          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20Blog%20Writing%20and%20Management%20services." target="_blank" class="btn-green"><span style="margin-right:4px;">💬</span> WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <!-- === 2. EMAIL MARKETING === -->
   <section class="svc-section dark" id="svc-email">
@@ -1192,7 +1151,7 @@
     if (statsSection) countObs.observe(statsSection);
 
     /* —— STICKY NAV HIGHLIGHT (SCROLLSPY) —— */
-    const svcSections = ['svc-blog', 'svc-email', 'svc-content', 'svc-cro', 'svc-backlink', 'svc-pr', 'svc-social', 'svc-press'];
+    const svcSections = ['svc-email', 'svc-content', 'svc-cro', 'svc-backlink', 'svc-pr', 'svc-social', 'svc-press'];
     const navLinks = document.querySelectorAll('.svc-nav-link');
     const sectionObs = new IntersectionObserver(entries => {
       entries.forEach(e => {
