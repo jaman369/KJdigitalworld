@@ -1,0 +1,12 @@
+﻿about.html: Missing meta description
+blog.html: Missing meta description
+index.html: Missing resource -> /~flock.js (resolved: /~flock.js)
+lovable_contact.html: Missing <title> tag
+lovable_contact.html: Missing meta description
+portfolio-content.html: Missing meta description
+portfolio-cro.html: Missing meta description
+portfolio-ppc.html: Missing meta description
+portfolio-seo.html: Missing meta description
+portfolio-social.html: Missing meta description
+portfolio-web.html: Missing meta description
+portfolio.html: Missing meta description
