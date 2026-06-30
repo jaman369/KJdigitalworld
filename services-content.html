@@ -399,7 +399,115 @@
     .wa-float{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background-color:#25d366;color:#fff;border-radius:50px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.15);z-index:9999;display:flex;align-items:center;justify-content:center;transition:transform .3s ease,box-shadow .3s ease;text-decoration:none;}
     .wa-float:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(0,0,0,.2);}
     .wa-icon{width:32px;height:32px;}
+
+    /* === BLOG V2 SECTION === */
+    .blog-v2 { background: #000; padding: 96px 24px; }
+    .blog-v2-inner {
+      max-width: 1120px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: start;
+    }
+    /* Eyebrow pill */
+    .blog-v2-eyebrow {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 600; letter-spacing: .08em;
+      text-transform: uppercase; color: #fff;
+      background: rgba(220,38,38,.25); border: .5px solid rgba(220,38,38,.5);
+      padding: 5px 14px; border-radius: 980px; margin-bottom: 18px;
+    }
+    /* Heading */
+    .blog-v2-text h2 {
+      font-family: var(--font-d);
+      font-size: clamp(32px, 4.5vw, 56px);
+      line-height: 1.08; letter-spacing: -.025em;
+      color: #fff; margin-bottom: 18px;
+    }
+    .blog-v2-text > p {
+      font-size: 15px; line-height: 1.8;
+      color: rgba(255,255,255,.5); margin-bottom: 28px; max-width: 520px;
+    }
+    /* List */
+    .blog-v2-list { list-style: none; padding: 0; margin-bottom: 32px; }
+    .blog-v2-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 13.5px; color: rgba(255,255,255,.65);
+      padding: 7px 0; line-height: 1.6;
+      border-bottom: .5px solid rgba(255,255,255,.05);
+    }
+    .blog-v2-list li:last-child { border-bottom: none; }
+    .blog-v2-list .li-emoji { width: 15px; height: 15px; flex-shrink: 0; margin-top: 2px; }
+    /* CTA row */
+    .blog-v2-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+    .blog-v2-ctas .btn-fill { background: var(--blue); color: #fff; padding: 11px 24px; font-size: 13px; font-weight: 500; border-radius: 980px; text-decoration: none; transition: background .2s, transform .15s; }
+    .blog-v2-ctas .btn-fill:hover { background: var(--blue-h); transform: scale(1.03); }
+    .blog-wa-btn { color: rgba(255,255,255,.85); border: 1px solid rgba(255,255,255,.2); padding: 11px 22px; font-size: 13px; font-weight: 500; border-radius: 980px; text-decoration: none; transition: background .2s, border-color .2s; }
+    .blog-wa-btn:hover { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.35); }
+    /* Quick contact */
+    .blog-v2-quick {
+      display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+      padding: 16px 20px; border-radius: 14px;
+      background: rgba(255,255,255,.04); border: .5px solid rgba(255,255,255,.08);
+    }
+    .blog-v2-quick-label { font-size: 10px; font-weight: 600; letter-spacing: .1em; color: rgba(255,255,255,.35); text-transform: uppercase; margin-right: 4px; }
+    .blog-v2-qbtn {
+      font-size: 11.5px; font-weight: 500; padding: 6px 14px;
+      border-radius: 8px; text-decoration: none; transition: background .2s, color .2s;
+    }
+    .blog-qbtn-email  { background: rgba(0,113,227,.18); color: #3399ff; border: .5px solid rgba(0,113,227,.3); }
+    .blog-qbtn-email:hover  { background: rgba(0,113,227,.3); }
+    .blog-qbtn-wa   { background: rgba(37,211,102,.15); color: #25d366; border: .5px solid rgba(37,211,102,.3); }
+    .blog-qbtn-wa:hover   { background: rgba(37,211,102,.25); }
+    .blog-qbtn-li   { background: rgba(10,102,194,.18); color: #5eaeff; border: .5px solid rgba(10,102,194,.35); }
+    .blog-qbtn-li:hover   { background: rgba(10,102,194,.3); }
+    .blog-qbtn-fb   { background: rgba(24,119,242,.18); color: #6ea5f8; border: .5px solid rgba(24,119,242,.3); }
+    .blog-qbtn-fb:hover   { background: rgba(24,119,242,.3); }
+
+    /* === RIGHT STATS CARD === */
+    .blog-v2-card {
+      background: rgba(255,255,255,.04);
+      border: .5px solid rgba(255,255,255,.1);
+      border-radius: 22px; overflow: hidden;
+      backdrop-filter: blur(12px);
+    }
+    .blog-v2-card-header {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 28px 28px 20px;
+      background: linear-gradient(135deg, rgba(120,0,0,.45) 0%, rgba(60,0,0,.6) 100%);
+      border-bottom: .5px solid rgba(255,255,255,.07);
+    }
+    .blog-v2-card-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+    .blog-v2-card-label { font-size: 11px; font-weight: 600; color: rgba(255,255,255,.5); letter-spacing: .07em; text-transform: uppercase; margin-bottom: 6px; }
+    .blog-v2-card-top3 { font-family: var(--font-d); font-size: 42px; color: #fff; line-height: 1; letter-spacing: -.02em; }
+    .blog-v2-card-sub { font-size: 12px; color: rgba(255,255,255,.4); margin-top: 4px; line-height: 1.4; }
+    /* 2x2 stat grid */
+    .blog-v2-stats-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: rgba(255,255,255,.07);
+    }
+    .blog-v2-stat {
+      padding: 22px 22px;
+      background: rgba(255,255,255,.03);
+      transition: background .2s;
+    }
+    .blog-v2-stat:hover { background: rgba(255,255,255,.06); }
+    .blog-v2-stat-amber { background: rgba(245,166,35,.06); }
+    .blog-v2-stat-amber:hover { background: rgba(245,166,35,.1); }
+    .blog-v2-stat-icon { font-size: 18px; margin-bottom: 8px; }
+    .blog-v2-stat-label { font-size: 10px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; color: rgba(255,255,255,.38); margin-bottom: 4px; }
+    .blog-v2-stat-value { font-family: var(--font-d); font-size: 28px; color: #fff; line-height: 1; letter-spacing: -.01em; }
+    .blog-v2-stat-amber .blog-v2-stat-value { color: var(--amber); }
+    .blog-v2-stat-desc { font-size: 11px; color: rgba(255,255,255,.32); margin-top: 4px; line-height: 1.4; }
+
+    /* Responsive */
+    @media(max-width:900px) {
+      .blog-v2-inner { grid-template-columns: 1fr; gap: 48px; }
+      .blog-v2-card { order: -1; }
+    }
+    @media(max-width:600px) {
+      .blog-v2-quick { flex-direction: column; align-items: flex-start; }
+    }
   </style>
+
 </head>
 <body>
   <div id="cursor"></div>
@@ -563,9 +671,79 @@
 
 
 
+  <!-- === 1. BLOG WRITING & MANAGEMENT === -->
+  <section class="svc-section dark blog-v2" id="svc-blog">
+    <div class="svc-inner blog-v2-inner">
+
+      <!-- LEFT: Text -->
+      <div class="svc-text blog-v2-text">
+        <span class="blog-v2-eyebrow">● Blog Writing &amp; Management</span>
+        <h2>SEO blogs that rank,<br>educate, and convert.</h2>
+        <p>Not just words on a page. Every article is built on keyword research, topical authority mapping, and competitor gap analysis — written to rank on page one and turn readers into buyers.</p>
+        <ul class="blog-v2-list">
+          <li><img src="/Emoji/memo.png" class="li-emoji" alt="">Long-form SEO articles (1,500–6,000+ words) optimised for target keywords and search intent</li>
+          <li><img src="/Emoji/blue_book.png" class="li-emoji" alt="">Full editorial calendar planning — topics, titles, publish schedule, and internal linking strategy</li>
+          <li><img src="/Emoji/recycle.png" class="li-emoji" alt="">Ongoing monthly management — updates, republishing, and performance tracking via Google Search Console</li>
+          <li><img src="/Emoji/seedling.png" class="li-emoji" alt="">Topical cluster &amp; pillar page strategy to build deep authority in your niche</li>
+          <li><img src="/Emoji/robot_face.png" class="li-emoji" alt="">Human-written, expert-reviewed, and Copyscape-passed — no AI fluff, no filler</li>
+        </ul>
+        <div class="blog-v2-ctas">
+          <a href="/contact" class="btn-fill">📅 Get Blog Package →</a>
+          <a href="https://wa.me/8801798667820?text=Hi!%20I'm%20interested%20in%20Blog%20Writing%20and%20Management%20services." target="_blank" class="btn-ghost blog-wa-btn">💬 WhatsApp Us</a>
+        </div>
+        <div class="blog-v2-quick">
+          <span class="blog-v2-quick-label">QUICK CONTACT:</span>
+          <a href="mailto:kj.jaman369@gmail.com" class="blog-v2-qbtn blog-qbtn-email">📧 Email</a>
+          <a href="https://wa.me/8801798667820" target="_blank" class="blog-v2-qbtn blog-qbtn-wa">💬 WhatsApp</a>
+          <a href="https://www.linkedin.com/in/kamrujjaman-mufti/" target="_blank" class="blog-v2-qbtn blog-qbtn-li">in LinkedIn</a>
+          <a href="https://www.facebook.com/digitalworld1988" target="_blank" class="blog-v2-qbtn blog-qbtn-fb">f Facebook</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Stats Dashboard Card -->
+      <div class="blog-v2-card">
+        <div class="blog-v2-card-header">
+          <span class="blog-v2-card-icon">✍️</span>
+          <div>
+            <div class="blog-v2-card-label">Blog Writing &amp; Management</div>
+            <div class="blog-v2-card-top3">Top 3</div>
+            <div class="blog-v2-card-sub">Average Google ranking for client blogs within 50 days</div>
+          </div>
+        </div>
+        <div class="blog-v2-stats-grid">
+          <div class="blog-v2-stat">
+            <div class="blog-v2-stat-icon">📈</div>
+            <div class="blog-v2-stat-label">Traffic Lift</div>
+            <div class="blog-v2-stat-value">+240%</div>
+            <div class="blog-v2-stat-desc">Average organic traffic increase</div>
+          </div>
+          <div class="blog-v2-stat blog-v2-stat-amber">
+            <div class="blog-v2-stat-icon">📝</div>
+            <div class="blog-v2-stat-label">Articles Done</div>
+            <div class="blog-v2-stat-value">500+</div>
+            <div class="blog-v2-stat-desc">Published across 20+ niches</div>
+          </div>
+          <div class="blog-v2-stat">
+            <div class="blog-v2-stat-icon">🌍</div>
+            <div class="blog-v2-stat-label">Countries</div>
+            <div class="blog-v2-stat-value">11+</div>
+            <div class="blog-v2-stat-desc">Clients served worldwide</div>
+          </div>
+          <div class="blog-v2-stat">
+            <div class="blog-v2-stat-icon">🎯</div>
+            <div class="blog-v2-stat-label">Satisfaction</div>
+            <div class="blog-v2-stat-value">95%</div>
+            <div class="blog-v2-stat-desc">Client retention rate</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <!-- === 2. EMAIL MARKETING === -->
   <section class="svc-section dark" id="svc-email">
+
     <div class="svc-inner">
       <div class="svc-text">
         <p class="svc-text-eyebrow">02 — Email Marketing</p>
