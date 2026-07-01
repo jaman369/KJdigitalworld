@@ -96,7 +96,7 @@
     .svc-hero{min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:calc(var(--nav-h) + 60px) 24px 80px;position:relative;overflow:hidden;background:#0a0a0a;}
     .svc-hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(0,113,227,.12) 0%,transparent 70%);pointer-events:none;}
     .svc-hero-eyebrow{font-size:11px;font-weight:600;color:var(--blue);letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;}
-    .svc-hero h1{font-family:var(--font-d);font-size:clamp(36px,5.5vw,64px);color:#fff;line-height:1.08;margin-bottom:20px;letter-spacing:-.02em;}
+    .svc-hero h1{font-family:var(--font-d);font-size:clamp(48px,7vw,92px);color:#fff;line-height:1.08;margin-bottom:20px;letter-spacing:-.02em;}
     .svc-hero h1 em{font-style:italic;color:var(--blue);}
     .svc-hero-sub{font-size:17px;color:rgba(255,255,255,.5);max-width:600px;margin:0 auto 36px;line-height:1.7;font-weight:300;}
     .svc-hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
@@ -506,7 +506,98 @@
     @media(max-width:600px) {
       .blog-v2-quick { flex-direction: column; align-items: flex-start; }
     }
-  </style>
+  
+/* RESPONSIVE LAYOUT OVERRIDES START */
+
+/* ============================================================
+   RESPONSIVE OPTIMIZATION OVERRIDES (Mobile, Tablet, Desktop)
+   ============================================================ */
+
+/* 1. Fluid Typography & Prevent Word Overflow (e.g., "Kamrujjaman" or "Optimization") */
+@media (max-width: 480px) {
+  .hero-title, h1.hero-title, .hero h1, .portfolio-title, .svc-hero h1 {
+    font-size: clamp(28px, 8vw, 42px) !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+  .section-title, .sec-title, .svc-text h2 {
+    font-size: clamp(24px, 6vw, 32px) !important;
+  }
+}
+
+/* 2. Reposition Scroll-to-Top Button to avoid overlapping WhatsApp Floating Button */
+.scroll-top {
+  bottom: 96px !important;
+  right: 24px !important;
+  z-index: 9998 !important;
+}
+
+/* 3. Section padding scaling for mobile devices */
+@media (max-width: 768px) {
+  .section, .services-section, .feature-section, .sec, .svc-section {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+  .page-hero, .hero, .svc-hero {
+    padding-top: calc(var(--nav-h) + 32px) !important;
+    padding-bottom: 40px !important;
+    min-height: auto !important;
+  }
+}
+
+/* 4. Column Squeezing Fixes for Tablet & Small Laptops (900px - 1100px) */
+@media (min-width: 901px) and (max-width: 1100px) {
+  .svc-inner, .about-grid, .hero-grid, .contact-grid {
+    gap: 32px !important;
+  }
+  .mega-inner {
+    gap: 16px !important;
+    padding: 0 16px !important;
+  }
+}
+
+/* 5. Mobile Layout Tweaks for Industry Grid */
+@media (max-width: 500px) {
+  .industry-row {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .ind-card {
+    padding: 16px 14px !important;
+    gap: 12px !important;
+  }
+}
+
+/* 6. Mobile Layout Tweaks for Countries Cards in About Page */
+@media (max-width: 500px) {
+  .c-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .c-card {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 14px 18px !important;
+    text-align: left !important;
+  }
+  .c-flag {
+    margin: 0 !important;
+    width: 32px !important;
+  }
+  .c-name {
+    margin: 0 12px !important;
+    flex-grow: 1 !important;
+    font-size: 13px !important;
+  }
+  .c-stat {
+    margin: 0 !important;
+    font-size: 10px !important;
+  }
+}
+/* RESPONSIVE LAYOUT OVERRIDES END */
+</style>
 
 </head>
 <body>

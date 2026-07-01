@@ -784,6 +784,97 @@ img,video{max-width:100%;height:auto;}
 .mobile-drawer .ms-group.open{max-height:600px;}
 /* === END === */
 
+
+/* RESPONSIVE LAYOUT OVERRIDES START */
+
+/* ============================================================
+   RESPONSIVE OPTIMIZATION OVERRIDES (Mobile, Tablet, Desktop)
+   ============================================================ */
+
+/* 1. Fluid Typography & Prevent Word Overflow (e.g., "Kamrujjaman" or "Optimization") */
+@media (max-width: 480px) {
+  .hero-title, h1.hero-title, .hero h1, .portfolio-title, .svc-hero h1 {
+    font-size: clamp(28px, 8vw, 42px) !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+  .section-title, .sec-title, .svc-text h2 {
+    font-size: clamp(24px, 6vw, 32px) !important;
+  }
+}
+
+/* 2. Reposition Scroll-to-Top Button to avoid overlapping WhatsApp Floating Button */
+.scroll-top {
+  bottom: 96px !important;
+  right: 24px !important;
+  z-index: 9998 !important;
+}
+
+/* 3. Section padding scaling for mobile devices */
+@media (max-width: 768px) {
+  .section, .services-section, .feature-section, .sec, .svc-section {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+  .page-hero, .hero, .svc-hero {
+    padding-top: calc(var(--nav-h) + 32px) !important;
+    padding-bottom: 40px !important;
+    min-height: auto !important;
+  }
+}
+
+/* 4. Column Squeezing Fixes for Tablet & Small Laptops (900px - 1100px) */
+@media (min-width: 901px) and (max-width: 1100px) {
+  .svc-inner, .about-grid, .hero-grid, .contact-grid {
+    gap: 32px !important;
+  }
+  .mega-inner {
+    gap: 16px !important;
+    padding: 0 16px !important;
+  }
+}
+
+/* 5. Mobile Layout Tweaks for Industry Grid */
+@media (max-width: 500px) {
+  .industry-row {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .ind-card {
+    padding: 16px 14px !important;
+    gap: 12px !important;
+  }
+}
+
+/* 6. Mobile Layout Tweaks for Countries Cards in About Page */
+@media (max-width: 500px) {
+  .c-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .c-card {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 14px 18px !important;
+    text-align: left !important;
+  }
+  .c-flag {
+    margin: 0 !important;
+    width: 32px !important;
+  }
+  .c-name {
+    margin: 0 12px !important;
+    flex-grow: 1 !important;
+    font-size: 13px !important;
+  }
+  .c-stat {
+    margin: 0 !important;
+    font-size: 10px !important;
+  }
+}
+/* RESPONSIVE LAYOUT OVERRIDES END */
 /* CANON-NAV-FOOTER-END */
 
 </style><div>
