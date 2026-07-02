@@ -170,11 +170,8 @@ if (scrollTopBtn) {
   });
 }
 
-// ---- Contact Form ----
 const contactForm = document.getElementById('contactForm');
-
-// Google Apps Script Web App — connected to Google Sheet ID: 1EaDUSVjvNMH6eF0lsnrVCf381W3BKRG4DU5l3FDhJRU
-const SHEET_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwy4OaJ_9fMhRJ60XH-B1ZnjXvM17A56ucoK5vmo2v-JvIHd2lge2f4l1uFhsul3a7bnA/exec';
+const WEB3FORMS_ACCESS_KEY = '0fb8d7d9-5f7d-4098-98e3-f2cc4e9d4c9e';
 
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
@@ -196,35 +193,44 @@ if (contactForm) {
       submitBtn.disabled = true;
       submitBtn.innerHTML = 'Sending…';
 
-      // Build URL-encoded params (Apps Script reads e.parameter reliably)
-      const data = new URLSearchParams();
-      data.append('name',    document.getElementById('fname')?.value    || '');
-      data.append('email',   document.getElementById('femail')?.value   || '');
-      data.append('company', contactForm.querySelector('[name="company"]')?.value || '');
-      data.append('country', contactForm.querySelector('[name="country"]')?.value || '');
-      data.append('service', document.getElementById('fservice')?.value  || '');
-      data.append('budget',  document.getElementById('budgetInput')?.value || '');
-      data.append('message', document.getElementById('fmsg')?.value      || '');
-      data.append('_timestamp', new Date().toISOString());
-      data.append('_page', window.location.href);
+      // Build Form Data for Web3Forms
+      const formData = new FormData(contactForm);
+      formData.append('access_key', WEB3FORMS_ACCESS_KEY);
 
-      fetch(SHEET_SCRIPT_URL, {
+      // Ensure specific fields (like the custom budget chips) are appended if not automatically present
+      const budgetVal = document.getElementById('budgetInput')?.value;
+      if (budgetVal && !formData.has('budget')) {
+        formData.append('budget', budgetVal);
+      }
+
+      // Optional: Add metadata
+      formData.append('_subject', 'New Contact Form Submission');
+      formData.append('_page', window.location.href);
+
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: data,
-        mode: 'no-cors'   // required for Apps Script — response is always opaque
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
       })
-      .then(() => {
-        showSuccess();
-      })
-      .catch(err => {
-        console.warn('Form submission error:', err);
-        // Show success anyway — no-cors means errors can be false positives
-        showSuccess();
-      })
-      .finally(() => {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnText;
-      });
+        .then(response => response.json())
+        .then(result => {
+          if (result.success) {
+            showSuccess();
+          } else {
+            console.warn('Form submission failed:', result.message);
+            alert('Submission failed: ' + result.message);
+          }
+        })
+        .catch(err => {
+          console.error('Form submission error:', err);
+          alert('There was an error sending your message. Please try again.');
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+        });
 
       function showSuccess() {
         contactForm.style.display = 'none';
@@ -271,7 +277,7 @@ if (budgetChips.length > 0 && budgetInput) {
       budgetChips.forEach(c => c.classList.remove('sel'));
       // Add active styling to clicked chip
       chip.classList.add('sel');
-      
+
       // Update hidden input value
       budgetInput.value = chip.textContent.trim();
     });

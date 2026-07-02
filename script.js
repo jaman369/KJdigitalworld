@@ -172,6 +172,9 @@ if (scrollTopBtn) {
 
 // ---- Contact Form ----
 const contactForm = document.getElementById('contactForm');
+
+const WEB3FORMS_ACCESS_KEY = '0fb8d7d9-5f7d-4098-98e3-f2cc4e9d4c9e';
+
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -193,36 +196,46 @@ if (contactForm) {
       submitBtn.innerHTML = 'Sending...';
 
       const formData = new FormData(contactForm);
+      formData.append('access_key', WEB3FORMS_ACCESS_KEY);
+      
+      // Ensure specific fields (like the custom budget chips) are appended if not automatically present
+      const budgetVal = document.getElementById('budgetInput')?.value;
+      if (budgetVal && !formData.has('budget')) {
+        formData.append('budget', budgetVal);
+      }
+      
+      // Optional: Add metadata
+      formData.append('_subject', 'New Contact Form Submission');
+      formData.append('_page', window.location.href);
 
-      fetch('https://script.google.com/macros/s/AKfycbxqs_A4SMd0mGwc8_o58r4EAZU9mvO-fQKShsoHORG418HwgPwPfWheo2dO7n1QFn2fzQ/exec', {
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: formData,
-        mode: 'no-cors'
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
       })
-      .then(() => {
-        // Show success state
-        contactForm.style.display = 'none';
-        const successMsg = document.getElementById('formSuccess');
-        if (successMsg) successMsg.style.display = 'block';
+      .then(response => response.json())
+      .then(result => {
+        if (result.success) {
+          // Show success state
+          contactForm.style.display = 'none';
+          const successMsg = document.getElementById('formSuccess');
+          if (successMsg) successMsg.style.display = 'block';
 
-        setTimeout(() => {
-          contactForm.reset();
-          contactForm.style.display = '';
-          if (successMsg) successMsg.style.display = 'none';
-        }, 5000);
+          setTimeout(() => {
+            contactForm.reset();
+            contactForm.style.display = '';
+            if (successMsg) successMsg.style.display = 'none';
+          }, 5000);
+        } else {
+          console.warn('Form submission failed:', result.message);
+          alert('Submission failed: ' + result.message);
+        }
       })
       .catch(error => {
         console.error('Error submitting form:', error);
-        // Fallback: show success anyway in case of redirection/CORS block on success
-        contactForm.style.display = 'none';
-        const successMsg = document.getElementById('formSuccess');
-        if (successMsg) successMsg.style.display = 'block';
-
-        setTimeout(() => {
-          contactForm.reset();
-          contactForm.style.display = '';
-          if (successMsg) successMsg.style.display = 'none';
-        }, 5000);
+        alert('There was an error sending your message. Please try again.');
       })
       .finally(() => {
         submitBtn.disabled = false;
